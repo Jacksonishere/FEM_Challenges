@@ -1,0 +1,59 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/** BASE **/
+body {
+	position: relative;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1rem;
+	min-height: 100vh;
+	line-height: 1.6;
+	background: $White-Pink-Gradient;
+
+	// @include grid(center, center);
+
+}
+
+header, .cover-photo, main{
+	width: 100%;
+	max-width: 375px;
+}
+img{
+	display: block;
+}
+input{
+	height: 3rem;
+	width: 100%;
+	font-family: inherit;
+	border-radius: 2rem;
+	
+	&[type=email]{
+		background: hsl(0, 100%, 98%);
+		padding: 1rem;
+		border: solid 1px $Desaturated-Red;
+		text-transform: capitalize;
+
+		&::placeholder{
+			color: $Desaturated-Red;
+		}
+	}
+	&[type=submit]{
+		background: $Light-Dark-Pink-Gradient;
+		box-shadow: 0px 8px 8px 4px rgba(206, 151, 151, .28);
+		width: 4rem;
+		border: none;
+	}
+}
+
+.attribution{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
+}

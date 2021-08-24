@@ -1,0 +1,54 @@
+.content {
+    padding: 4rem 2rem;
+	text-align: center;
+	.coming-soon {
+		font-size: 1.875rem;
+		line-height: 1.3;
+
+		text-transform: uppercase;
+		letter-spacing: 0.75rem;
+		color: $Dark-Grayish-Red;
+		> span {
+			font-weight: 300;
+			color: $Desaturated-Red;
+		}
+	}
+
+	.welcome {
+		color: $Desaturated-Red;
+        padding-block: 1rem 1.875rem;
+        font-size: .875rem;
+	}
+
+	.subscribe-form {
+        position: relative;
+		width: 100%;    
+        .enter-email{
+            position: relative;
+            
+            > svg{
+                visibility: hidden;
+                position: absolute;
+                top: 50%; 
+                right: 25%;
+                transform: translateY(-50%);
+            }
+            
+        }
+		.submit-btn {
+			position: absolute;
+            top: 0;
+            right: 0;
+            width: 64px;    
+            height: 48px;
+            
+            > svg {
+                position: absolute;
+                top: 50%; 
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+		}
+	}
+}
