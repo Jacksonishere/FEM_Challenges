@@ -1,9 +1,19 @@
 .content {
     padding: 4rem 2rem;
-	text-align: center;
+    
+    @include breakpoint-up(xlarge){
+        text-align: left;
+        max-width: 445px;
+        padding: 0 0 0 0;
+        margin-left: 10.25rem;
+    }
 	.coming-soon {
 		font-size: 1.875rem;
 		line-height: 1.3;
+
+        @include breakpoint-up(xlarge){
+            font-size: 2.8125rem;
+        }
 
 		text-transform: uppercase;
 		letter-spacing: 0.75rem;
@@ -18,6 +28,10 @@
 		color: $Desaturated-Red;
         padding-block: 1rem 1.875rem;
         font-size: .875rem;
+
+        @include breakpoint-up(xlarge){
+            font-size: .935rem;
+        }
 	}
 
 	.subscribe-form {
@@ -41,7 +55,11 @@
             right: 0;
             width: 64px;    
             height: 48px;
-            
+
+            @include breakpoint-up(xlarge){
+                width: 100px;
+            }
+
             > svg {
                 position: absolute;
                 top: 50%; 
