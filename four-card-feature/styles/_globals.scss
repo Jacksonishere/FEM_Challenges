@@ -1,0 +1,57 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/** BASE **/
+body {
+	position: relative;
+	font-family: "Poppins", sans-serif;
+	font-size: 0.935rem;
+	min-height: 100vh;
+	line-height: 1.8;
+
+	@include grid(center, center);
+	padding-block: 5.625rem;
+	background-color: $Very-Light-Gray;
+}
+
+section,
+main {
+	width: 85%;
+	max-width: 375px;
+}
+
+h1,
+h2 {
+	color: $Very-Dark-Blue;
+}
+h2 {
+	font-size: 1.125rem;
+}
+
+p {
+	color: $Grayish-Blue;
+	font-weight: 400;
+	font-size: 0.75rem;
+}
+
+@include breakpoint-up(xlarge) {
+	h1 {
+		font-size: 1.875rem;
+	}
+	p {
+		font-size: 0.9375rem;
+	}
+	section{
+		max-width: 450px;
+	}
+	main {
+		width: 100%;
+		max-width: 1110px;
+	}
+}
