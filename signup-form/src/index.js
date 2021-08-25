@@ -7,36 +7,29 @@ function validateEmail(email) {
 const form = document.getElementById("form");
 
 function validateInput(input, value) {
-	const errorIcon = form.querySelector(`#${input} .input .error`);
-	const errorMsg = form.querySelector(`#${input} .error-msg`);
-
-	console.log(errorIcon);
-
+	const textInput = form.querySelector(`#${input}`);
 	if (value === "") {
-		console.log("empty");
-		errorIcon.style.visibility = "visible";
-		errorMsg.style.visibility = "visible";
+        textInput.classList.add("error-effect");
+        textInput.querySelector("input").placeholder = "";
 	} else {
-		errorIcon.style.visibility = "hidden";
-		errorMsg.style.visibility = "hidden";
+		textInput.classList.remove("error-effect");
 	}
 }
 
 function validateEmailInput(value) {
-    const errorIcon = form.querySelector(`#email .input .error`);
-    const errorMsg = form.querySelector(`#email .error-msg`);
+    const emailInput = form.querySelector("#email");
+    const errorMsg = emailInput.querySelector(".error-msg");
 	if (value === "") {
-        errorIcon.style.visibility = "visible";
-		errorMsg.style.visibility = "visible";
+        emailInput.querySelector("input").placeholder = "";
+        errorMsg.textContent = "Please Enter An Email";
+        emailInput.classList.add("error-effect");
 	}
     else if(!validateEmail(value)){
         errorMsg.textContent = "Looks like this is not an email";
-        errorIcon.style.visibility = "visible";
-		errorMsg.style.visibility = "visible";
+        emailInput.classList.add("error-effect");
     }
     else{
-        errorIcon.style.visibility = "hidden";
-        errorMsg.style.visibility = "hidden";
+        emailInput.classList.remove("error-effect");
     }
 }
 
@@ -53,3 +46,12 @@ form.addEventListener("submit", (e) => {
 	validateEmailInput(email);
 	validateInput("password", password);
 });
+
+const inputs = form.querySelectorAll("input");
+console.log(inputs);
+inputs.forEach( (element) => {
+    element.addEventListener("keypress", () =>{
+        element.parentElement.parentElement.classList.remove("error-effect");
+        console.log("typing");
+    })
+})

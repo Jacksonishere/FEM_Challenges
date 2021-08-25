@@ -83,6 +83,7 @@ input, button {
   width: 100%;
   height: 100%;
   color: #3e3c49;
+  outline: none;
   border-radius: 8px;
 }
 
@@ -90,6 +91,11 @@ input {
   padding: 1.5rem 1.125rem;
   font-weight: 500;
   border: solid 1px lightgray;
+}
+
+input:focus {
+  border-color: #3e3c49;
+  color: #3e3c49;
 }
 
 button {
@@ -216,5 +222,18 @@ button {
 
 .form-section .form .terms strong {
   color: #ff7a7a;
+}
+
+.error-effect .input input {
+  color: #ff7a7a;
+  border: 2px solid #ff7a7a;
+}
+
+.error-effect .input .error {
+  visibility: visible !important;
+}
+
+.error-effect .error-msg {
+  visibility: visible !important;
 }
 /*# sourceMappingURL=styles.css.map */

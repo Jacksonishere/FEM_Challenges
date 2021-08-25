@@ -69,3 +69,19 @@
 		}
 	}
 }
+
+.error-effect{
+    .input{
+        input{
+            color: $Red;
+            border: 2px solid $Red;
+        }
+
+        .error{
+            visibility: visible !important;
+        }
+    }
+    .error-msg{
+        visibility: visible !important; 
+    }
+}
