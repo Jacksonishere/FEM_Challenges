@@ -1,19 +1,18 @@
 .content {
-    padding: 4rem 2rem;
-    
-    @include breakpoint-up(xlarge){
-        text-align: left;
-        max-width: 445px;
-        padding: 0 0 0 0;
-        margin-left: 10.25rem;
-    }
+	padding: 4rem 2rem;
+	@include breakpoint-up(xlarge) {
+		text-align: left;
+		max-width: 445px;
+		padding: 0 0 0 0;
+		margin-left: 10.25rem;
+	}
 	.coming-soon {
 		font-size: 1.875rem;
 		line-height: 1.3;
 
-        @include breakpoint-up(xlarge){
-            font-size: 2.8125rem;
-        }
+		@include breakpoint-up(xlarge) {
+			font-size: 2.8125rem;
+		}
 
 		text-transform: uppercase;
 		letter-spacing: 0.75rem;
@@ -26,47 +25,64 @@
 
 	.welcome {
 		color: $Desaturated-Red;
-        padding-block: 1rem 1.875rem;
-        font-size: .875rem;
+		padding-block: 1rem 1.875rem;
+		font-size: 0.875rem;
 
-        @include breakpoint-up(xlarge){
-            font-size: .935rem;
-        }
+		@include breakpoint-up(xlarge) {
+			font-size: 0.935rem;
+		}
 	}
 
 	.subscribe-form {
-        position: relative;
-		width: 100%;    
-        .enter-email{
-            position: relative;
-            
-            > svg{
-                visibility: hidden;
-                position: absolute;
-                top: 50%; 
-                right: 25%;
-                transform: translateY(-50%);
-            }
-            
-        }
+		position: relative;
+		width: 100%;
+		height: 51px;
+		.enter-email {
+			position: relative;
+			height: 100%;
+			> svg {
+				visibility: hidden;
+				position: absolute;
+				top: 50%;
+				right: 25%;
+				transform: translateY(-50%);
+			}
+		}
 		.submit-btn {
 			position: absolute;
-            top: 0;
-            right: 0;
-            width: 64px;    
-            height: 48px;
+			top: 0;
+			right: 0;
+			width: 64px;
+			height: 100%;
 
-            @include breakpoint-up(xlarge){
-                width: 100px;
-            }
+			button {
+				background: $Light-Dark-Pink-Gradient;
+				box-shadow: 0px 8px 8px 4px rgba(206, 151, 151, 0.28);
+				border: none;
+				cursor: pointer;
 
-            > svg {
-                position: absolute;
-                top: 50%; 
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
+                &:hover{
+                    opacity: 0.6;
+                }
+			}
 
+			@include breakpoint-up(xlarge) {
+				width: 100px;
+			}
+
+			> svg {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
 		}
+	}
+	.warning {
+		visibility: hidden;
+		color: $Soft-Red;
+		font-size: 0.9375rem;
+		margin-left: 1rem;
+		padding-block: 0.5rem;
 	}
 }

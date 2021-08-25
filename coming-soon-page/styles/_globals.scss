@@ -16,12 +16,16 @@ body {
 	line-height: 1.6;
 	background: $White-Pink-Gradient;
 
-	@include grid(center, start);
+	@include grid(center, center);
 
 	@include breakpoint-up(xlarge){
+		@include grid(center, start);
 		grid-template-columns: 1fr auto;
 		grid-template-rows: auto 1fr;
 		// padding: 4rem 10.25rem 8.5rem 0;
+
+		background: url("/images/bg-pattern-desktop.svg"),$White-Pink-Gradient ;
+		background-repeat: no-repeat;
 	}
 
 }
@@ -35,12 +39,12 @@ body {
 img{
 	display: block;
 }
-input{
-	height: 3rem;
+input, button{
 	width: 100%;
+	height: 100%;
 	font-family: inherit;
 	border-radius: 4rem;
-	
+
 	&[type=email]{
 		background: hsl(0, 100%, 98%);
 		padding: 1rem;
@@ -50,11 +54,10 @@ input{
 		&::placeholder{
 			color: $Desaturated-Red;
 		}
-	}
-	&[type=submit]{
-		background: $Light-Dark-Pink-Gradient;
-		box-shadow: 0px 8px 8px 4px rgba(206, 151, 151, .28);
-		border: none;
+
+		&:focus{
+			outline: none;
+		}
 	}
 }
 
