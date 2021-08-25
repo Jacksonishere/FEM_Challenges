@@ -49,7 +49,6 @@ input, button{
 		background: hsl(0, 100%, 98%);
 		padding: 1rem;
 		border: solid 1px $Desaturated-Red;
-		text-transform: capitalize;
 
 		&::placeholder{
 			color: $Desaturated-Red;

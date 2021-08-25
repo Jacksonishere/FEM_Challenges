@@ -66,7 +66,6 @@ input[type=email], button[type=email] {
   background: #fff5f5;
   padding: 1rem;
   border: solid 1px #ce9797;
-  text-transform: capitalize;
 }
 
 input[type=email]::-webkit-input-placeholder, button[type=email]::-webkit-input-placeholder {

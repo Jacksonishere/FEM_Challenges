@@ -42,8 +42,8 @@
 			</p>
 			<form id="subscribe-form" action="subscribe" class="subscribe-form">
 				<div class="enter-email">
-					<input id="email" type="email" placeholder="email address" name="email" />
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+					<input id="email" type="email" placeholder="Enter Email Address" name="email" />
+					<svg id="alert" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
 						<g fill="none" fill-rule="evenodd">
 							<circle cx="12" cy="12" r="12" fill="#F96464" />
 							<path
@@ -62,7 +62,7 @@
 					</button>
 				</div>
 			</form>
-			<p class="warning">
+			<p id="alertmsg" class="warning">
 				Please provide a valid email
 			</p>
 		</main>
@@ -73,5 +73,7 @@
 				<a href="#">Your Name Here</a>.
 			</p>
 		</footer>
+
+		<script src="./src/index.js"></script>
 	</body>
 </html>
