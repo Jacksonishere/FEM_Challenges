@@ -24,16 +24,16 @@ body {
   justify-items: center;
 }
 
-@media (min-width: 87.5em) {
+@media (min-width: 48em) {
   body {
     display: -ms-grid;
     display: grid;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    justify-items: start;
-    -ms-grid-columns: 1fr auto;
-        grid-template-columns: 1fr auto;
+    justify-items: center;
+    -ms-grid-columns: 3fr 2fr;
+        grid-template-columns: 3fr 2fr;
     -ms-grid-rows: auto 1fr;
         grid-template-rows: auto 1fr;
     background: url("/images/bg-pattern-desktop.svg"), linear-gradient(135deg, white, #fff5f5);
@@ -45,7 +45,7 @@ body {
   width: 100%;
 }
 
-@media (max-width: 87.4375em) {
+@media (max-width: 47.9375em) {
   .header, .cover-photo, .content {
     max-width: 375px;
   }
@@ -100,12 +100,12 @@ input[type=email]:focus, button[type=email]:focus {
   padding: 2rem;
 }
 
-.header div .logo-img {
+.header .logo-img {
   height: 22px;
   max-width: 100%;
 }
 
-@media (min-width: 87.5em) {
+@media (min-width: 48em) {
   .header {
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
@@ -114,19 +114,23 @@ input[type=email]:focus, button[type=email]:focus {
     -ms-grid-row-span: 1;
     grid-row: 1 / 2;
     padding: 4rem 0 0 0;
-    margin-left: 10.25rem;
+    width: 445px;
   }
   .header .logo-img {
     height: 40px !important;
   }
 }
 
-.cover-photo img {
-  max-width: 100%;
+@media (max-width: 47.9375em) {
+  .cover-photo img {
+    max-width: 100%;
+  }
 }
 
-@media (min-width: 87.5em) {
+@media (min-width: 48em) {
   .cover-photo {
+    width: 100%;
+    height: 100%;
     -ms-grid-column: 2;
     -ms-grid-column-span: 1;
     grid-column: 2 / 3;
@@ -135,6 +139,12 @@ input[type=email]:focus, button[type=email]:focus {
     grid-row: 1 / 3;
   }
   .cover-photo img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
     content: url(/images/hero-desktop.jpg);
   }
 }
@@ -143,12 +153,11 @@ input[type=email]:focus, button[type=email]:focus {
   padding: 4rem 2rem;
 }
 
-@media (min-width: 87.5em) {
+@media (min-width: 48em) {
   .content {
     text-align: left;
     max-width: 445px;
     padding: 0 0 0 0;
-    margin-left: 10.25rem;
   }
 }
 
@@ -160,7 +169,7 @@ input[type=email]:focus, button[type=email]:focus {
   color: #413a3a;
 }
 
-@media (min-width: 87.5em) {
+@media (min-width: 48em) {
   .content .coming-soon {
     font-size: 2.8125rem;
   }
@@ -177,7 +186,7 @@ input[type=email]:focus, button[type=email]:focus {
   font-size: 0.875rem;
 }
 
-@media (min-width: 87.5em) {
+@media (min-width: 48em) {
   .content .welcome {
     font-size: 0.935rem;
   }
@@ -223,7 +232,7 @@ input[type=email]:focus, button[type=email]:focus {
   opacity: 0.6;
 }
 
-@media (min-width: 87.5em) {
+@media (min-width: 48em) {
   .content .subscribe-form .submit-btn {
     width: 100px;
   }

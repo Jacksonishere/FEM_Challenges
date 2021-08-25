@@ -18,11 +18,10 @@ body {
 
 	@include grid(center, center);
 
-	@include breakpoint-up(xlarge){
-		@include grid(center, start);
-		grid-template-columns: 1fr auto;
+	@include breakpoint-up(medium){
+		@include grid(center, center);
+		grid-template-columns: 3fr 2fr;
 		grid-template-rows: auto 1fr;
-		// padding: 4rem 10.25rem 8.5rem 0;
 
 		background: url("/images/bg-pattern-desktop.svg"),$White-Pink-Gradient ;
 		background-repeat: no-repeat;
@@ -32,7 +31,7 @@ body {
 
 .header, .cover-photo, .content{
 	width: 100%;
-	@include breakpoint-down(large){
+	@include breakpoint-down(small){
 		max-width: 375px;
 	}
 }
