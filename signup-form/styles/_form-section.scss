@@ -1,0 +1,71 @@
+.form-section {
+    @include breakpoint-up(large){
+        margin-top: 0;
+        flex: 50%;
+        width: 50%;
+        max-width: 540px;
+    }
+    margin-top: 4.25rem;
+	.free-trial-info {
+        text-align: center;
+		color: white;
+		width: 100%;
+		padding-block: 1.5rem;
+		background: $Blue;
+		border-radius: 8px;
+		box-shadow: 0 0.5rem 2px 0 #3e3c493b;
+
+        @include breakpoint-up(large){
+            br{
+                text-align: left;
+                display: none;
+            }
+        }
+	}
+
+	.form {
+        box-shadow: 0 0.5rem 2px 0 #3e3c493b;
+        margin-top: 1.25rem;
+		padding: 1.5rem;
+		background: white;
+		border-radius: 8px;
+		.input-holder {
+			&:not(:first-child) {
+				margin-top: 1rem;
+			}
+
+			.input {
+				position: relative;
+				height: 55px;
+				.error {
+                    visibility: hidden;
+					position: absolute;
+					top: 50%;
+					right: 10%;
+					transform: translateY(-50%);
+				}
+			}
+
+			.error-msg {
+                visibility: hidden;
+				padding-right: 1rem;
+				color: $Red;
+				text-align: right;
+				font-size: 0.625rem;
+				font-style: italic;
+				content: "hey";
+			}
+		}
+		.terms {
+            margin-top: 1rem;
+            padding: 0 1.5rem;
+
+			font-size: 0.75rem;
+			color: $Grayish-Blue;
+
+			strong {
+				color: $Red;
+			}
+		}
+	}
+}

@@ -1,0 +1,75 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/** BASE **/
+body {
+	position: relative;
+	font-family: 'Poppins', sans-serif;
+	font-size: 1rem;
+	min-height: 100vh;
+	line-height: 1.6;
+	@include grid(center, center);
+
+	//img is semi transparent, the gradient should follow the image.
+	background: url("/images/bg-intro-mobile.png"), linear-gradient(to bottom, $Red, $Red)no-repeat;
+
+	@include breakpoint-up(large){
+		padding-block: 5rem;
+		background: url("/images/bg-intro-desktop.png"), linear-gradient(to bottom, $Red, $Red)no-repeat;
+	}
+	
+	// background: linear-gradient(to bottom, $Red, $Red), url("/images/bg-intro-mobile.png") no-repeat;
+}
+
+
+.container{
+	text-align: center;
+	width: 90%;
+	@include breakpoint-down(medium){
+		padding-block: 6.125rem;
+		max-width: 375px;
+		@include flex(column, center, center)
+	}
+	@include breakpoint-up(large){
+		// padding-block: 60px 80px;
+		@include flex(row, center, center);
+		// gap: 4rem;
+		gap: unquote($string: "max(4rem, 10vw)");
+		// max-width: 1110px;
+	}
+}
+
+input, button{
+	display: block;
+	font-family: inherit;
+	width: 100%;
+	height: 100%;
+	color: $Dark-Blue;
+	border-radius: 8px;
+}
+
+input{
+	padding: 1.5rem 1.125rem;
+	font-weight: 500;
+	border: solid 1px lightgray;
+
+	
+}	
+button{
+	padding-block: 1.375rem calc(1.25rem - 2px);
+	background-color: $Green;
+	color: white;
+	font-family: inherit;
+	font-weight: 600;
+	letter-spacing: .05rem;
+	text-transform: uppercase;
+
+	border: none;
+	border-bottom: 2px solid green;
+}	
