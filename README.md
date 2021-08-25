@@ -3,7 +3,7 @@
 Hello and Welcome! 👋👋👋. This repository consists of all the solutions to the challenges from [frontend mentor](frontendmentor.io). <br> 
 Frontend Mentor challenges help you improve your frontend coding skills by building realistic projects, with a realistic workflow. 
 
-### Previews
+## Previews
 
 You can click the image to view the live site! 💻😁 
 
