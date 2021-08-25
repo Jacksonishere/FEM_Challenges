@@ -31,7 +31,7 @@
 		border-radius: 8px;
 
         @include breakpoint-up(large){
-            padding-block: 3rem;
+            padding-block: 2.5rem;
         }
 		.input-holder {
 			&:not(:first-child) {
