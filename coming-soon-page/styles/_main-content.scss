@@ -1,5 +1,6 @@
 .content {
 	padding: 4rem 2rem;
+    text-align: center;
 	@include breakpoint-up(medium) {
 		text-align: left;
 		max-width: 445px;

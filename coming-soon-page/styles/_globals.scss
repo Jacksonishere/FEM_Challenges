@@ -23,7 +23,8 @@ body {
 		grid-template-columns: 3fr 2fr;
 		grid-template-rows: auto 1fr;
 
-		background: url("/images/bg-pattern-desktop.svg"),$White-Pink-Gradient ;
+		background: url("/images/bg-pattern-desktop.svg");
+		background-size: 60% 100%;
 		background-repeat: no-repeat;
 	}
 
