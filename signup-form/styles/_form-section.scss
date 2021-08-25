@@ -29,6 +29,10 @@
 		padding: 1.5rem;
 		background: white;
 		border-radius: 8px;
+
+        @include breakpoint-up(large){
+            padding-block: 3rem;
+        }
 		.input-holder {
 			&:not(:first-child) {
 				margin-top: 1rem;
