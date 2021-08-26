@@ -11,7 +11,8 @@
 body {
 	position: relative;
 	font-family: 'Libre Franklin', sans-serif;
-	font-size: .75rem;
+	//once it reaches 600px (600*.02 = .75rem), the fontweight is going to be 2vw until it hits 1.125rem, which at that point its going to stop.
+	font-size: unquote("clamp(.75rem, 2vw, 1.125rem)");
 	min-height: 100vh;
 	line-height: 1.3;
 	color: $Very-Dark-Blue;
