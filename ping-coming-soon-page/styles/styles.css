@@ -1,0 +1,233 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/** BASE **/
+body {
+  position: relative;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: .75rem;
+  min-height: 100vh;
+  line-height: 1.3;
+  color: #151f29;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  padding-block: 2.5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input {
+  display: block;
+  width: 100%;
+  height: 2.5rem;
+  font-family: inherit;
+  border-radius: 2rem;
+  outline: none;
+}
+
+input {
+  padding: .8125rem 0 .8125rem 2rem;
+  font-weight: 300;
+  border: 1px solid #c2d3ff;
+  color: #151f29;
+}
+
+input::-webkit-input-placeholder {
+  color: #c2d3ff;
+}
+
+input:-ms-input-placeholder {
+  color: #c2d3ff;
+}
+
+input::-ms-input-placeholder {
+  color: #c2d3ff;
+}
+
+input::placeholder {
+  color: #c2d3ff;
+}
+
+button {
+  border: none;
+  margin-top: 1rem;
+  background-color: #4f7df3;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+
+.invalid input {
+  border: 1px solid #ff5263;
+}
+
+@media (max-width: 47.9375em) {
+  .invalid .warning {
+    visibility: visible !important;
+    position: relative !important;
+  }
+}
+
+@media (min-width: 48em) {
+  .invalid .warning {
+    visibility: visible !important;
+    top: 100%;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+  }
+}
+
+.fa {
+  text-decoration: none;
+  width: 34px;
+  height: 34px;
+  padding-block: 8px;
+  font-size: 16px !important;
+  text-align: center;
+  border: 1px solid #969696;
+  border-radius: 100%;
+  color: #4f7df3;
+}
+
+.fa:hover {
+  color: white;
+  background-color: #4f7df3;
+  border-color: #4f7df3;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+@media (max-width: 47.9375em) {
+  .container {
+    width: 75%;
+    max-width: 330px;
+  }
+}
+
+@media (min-width: 48em) {
+  .container {
+    width: 100%;
+    max-width: 635px;
+  }
+}
+
+.container .header {
+  width: 100%;
+  text-align: center;
+  border-top: 1px transparent solid;
+  color: #151f29;
+}
+
+.container .header img {
+  margin: 2.4375rem auto 2.5rem;
+}
+
+.container .header h1 {
+  color: #969696;
+  font-weight: 300;
+  letter-spacing: .01rem;
+}
+
+.container .header h1 strong {
+  color: #151f29;
+}
+
+.container .header p {
+  margin-top: 1.5rem;
+}
+
+.container .main {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.container .main .form {
+  position: relative;
+}
+
+.container .main .form .warning {
+  visibility: hidden;
+  position: absolute;
+  padding: .25rem;
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+  color: #ff5263;
+}
+
+@media (min-width: 48em) {
+  .container .main .form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container .main .form input {
+    width: 66%;
+  }
+  .container .main .form button {
+    width: 31%;
+    margin-top: 0 !important;
+  }
+}
+
+.container .main .dashboard {
+  margin-top: 2.5rem;
+  width: 113%;
+  -webkit-transform: translateX(-6.5%);
+          transform: translateX(-6.5%);
+}
+
+.container .footer {
+  margin-top: 7.625rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .footer .socials :not(:first-child) {
+  margin-left: .8125rem;
+}
+
+.container .footer .copyright {
+  margin-top: 1.25rem;
+  color: #969696;
+}
+/*# sourceMappingURL=styles.css.map */

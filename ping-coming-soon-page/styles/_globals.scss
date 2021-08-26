@@ -1,0 +1,116 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/** BASE **/
+body {
+	position: relative;
+	font-family: 'Libre Franklin', sans-serif;
+	font-size: .75rem;
+	min-height: 100vh;
+	line-height: 1.3;
+	color: $Very-Dark-Blue;
+
+	@include grid();
+	justify-items: center;
+	padding-block: 2.5rem;
+}
+
+img{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+button, input{
+	display: block;
+	width: 100%;
+	height: 2.5rem;
+	font-family: inherit;
+	border-radius: 2rem;
+	outline: none;
+}
+
+input{
+	padding: .8125rem 0 .8125rem 2rem; 
+	font-weight: 300;
+	border: 1px solid $Pale-Blue;
+	color: $Very-Dark-Blue;
+
+	&::placeholder{
+		color: $Pale-Blue;
+	}
+}
+
+button{
+	border: none;
+	margin-top: 1rem;
+	background-color: $Blue;
+	color: white;
+	text-align: center;
+	font-weight: 600;
+}
+
+.invalid{
+	input{
+		border: 1px solid $Light-Red;
+	}
+	@include breakpoint-down(medium){
+		.warning{
+			visibility: visible !important;
+			position: relative !important;
+		}
+	}
+	@include breakpoint-up(medium){
+		.warning{
+			visibility: visible !important;
+			top: 100%;
+			transform: translateX(50%);
+		}
+	}
+	
+}
+
+.fa{
+	text-decoration: none;
+	width: 34px;
+	height: 34px;	
+	padding-block: 8px;
+	font-size: 16px !important;
+	text-align: center;
+	border: 1px solid $Gray;
+	border-radius: 100%;
+
+	color: $Blue;
+
+	&:hover{
+		color: white;
+		background-color: $Blue;
+		border-color: $Blue;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+

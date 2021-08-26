@@ -1,0 +1,86 @@
+.container{
+    
+    @include breakpoint-down(medium){
+        width: 75%;
+		max-width: 330px;
+	}
+    @include breakpoint-up(medium){
+        width: 100%;
+        max-width: 635px;
+    }
+
+    .header{
+        width: 100%;
+        text-align: center;
+        border-top: 1px transparent solid;
+        color: $Very-Dark-Blue;
+
+        img{
+            margin: 2.4375rem auto 2.5rem;
+        }
+        h1{
+            color: $Gray;
+            font-weight: 300;
+            letter-spacing: .01rem;
+            strong{
+                color: $Very-Dark-Blue;
+            }
+        }
+        p{
+            margin-top: 1.5rem;
+        }
+    }
+
+    .main{
+        width: 100%;
+        margin-top: 2rem;
+        .form{
+            position: relative;
+            .warning{
+                visibility: hidden;
+                position: absolute;
+                padding: .25rem;
+                text-align: center;
+                font-style: italic;
+                font-weight: 300;
+                color: $Light-Red;
+            }
+            @include breakpoint-up(medium){
+                @include flex(row, center, space-between);
+
+                input{
+                    // flex: 66%;
+                    width: 66%;
+                }
+
+                button{
+                    // flex: 31%;
+                    width: 31%;
+                    margin-top: 0 !important;
+                }
+            }
+        }
+
+        .dashboard{
+            margin-top: 2.5rem;
+            width: 113%;
+            transform: translateX(-6.5%);
+        }
+    }
+
+    .footer{
+        margin-top: 7.625rem;
+        
+        @include flex(column, center, center);
+
+        .socials{
+            :not(:first-child){
+                margin-left: .8125rem;
+            }
+        }
+        .copyright{
+            margin-top: 1.25rem;
+            color: $Gray;
+        }
+    }
+}
