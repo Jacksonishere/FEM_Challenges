@@ -1,18 +1,31 @@
 .container{
-    width: 80%; 
+    width: 83%; 
+    @include grid();
+    box-shadow: 0px 8px 16px 0px rgba(152, 166, 189 , .43);
+    @include breakpoint-down(medium){
+        max-width: 375px;
+    }
     
     > *{
-        padding: 2rem 1.625rem;
+        padding: 0 1.5rem;
     }
-    @include grid();
+
+    @include breakpoint-up(medium){
+        max-width: 635px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto auto;
+    }
 
     .header{
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+
+        padding-block: 2rem;
         background-color: white;
         h1{
             color: $Cyan;
         }
         h2{
-            margin-top: 2rem;
             color: $Bright-Yellow;
         }
         p{
@@ -20,47 +33,74 @@
             color: $Grayish-Blue;
             line-height: 1.6;
         }
+        @include breakpoint-up(medium){
+            grid-column: 1 / 3;
+            grid-row: 1 / 2;
+        }
     }
 
     .subscription-card{
+        padding-block: 1.75rem 1.5rem;
         color: white;
         background-color: $Cyan;
         .price-tag{
-            margin-top: 1.875rem;
+            margin-top: 1.625rem;
+            @include flex(row, center);
             strong{
-                font-size: 1.5rem;
+                font-size: 1.5625rem;
+            }
+            small{
+                margin-left: 1rem;          
+                color: $Light-Gray;
+                font-size: .75rem;
             }
         }
         .signup-btn{
-            margin-top: 1.875rem;
+            margin: 1.1875rem auto 0;
             padding-block: 1rem;
             display: block;
             width: 100%;
+            max-width: 238px;
             height: 3rem;
             font-family: inherit;
             font-weight: 700;
+            font-size: .75rem;
             text-align: center;
             background-color: $Bright-Yellow;
             color: white;
             border: none;
             border-radius: 4px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0, 0, .1);
+        }
+        @include breakpoint-up(medium){
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
         }
     }
 
     .footer{
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        
+        padding-block: 1.75rem;
         background-color: $Bright-Cyan;
         color: $Light-Gray;
 
         ul{
-            margin-top: 1.875rem;
+            margin-top: 1.75rem;
             list-style-type: none;
 
             li{
                 :not(:first-child){
                     margin-top: .75rem;
                 }
-                display: inline-block;
+                display: block;
             }
+        }
+        @include breakpoint-up(medium){
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            border-radius: 0;
         }
     }
 }

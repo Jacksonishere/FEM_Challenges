@@ -11,12 +11,19 @@
 body {
 	position: relative;
 	font-family: 'Karla', sans-serif;
-	font-size: .6875rem;
+	font-size: .75rem;
 	min-height: 100vh;
 	line-height: 1.6;
 	background-color: $Light-Gray;
 	@include grid(center, center);
-	
+	padding-block: 4.5rem;
+}
+
+h1{
+	font-size: 1rem;
+}
+h2{
+	font-size: .8375rem;
 }
 
 .attribution{
