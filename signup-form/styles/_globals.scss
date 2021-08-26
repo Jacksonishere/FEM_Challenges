@@ -38,9 +38,9 @@ body {
 	}
 	@include breakpoint-up(large){
 		// padding-block: 60px 80px;
-		@include flex(row, center, center);
+		@include flex(row, center, space-around);
 		// gap: 4rem;
-		gap: unquote($string: "max(4rem, 10vw)");
+		// gap: unquote($string: "max(4rem, 10vw)");
 		// max-width: 1110px;
 	}
 }

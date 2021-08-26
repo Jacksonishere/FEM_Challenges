@@ -1,0 +1,29 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/** BASE **/
+body {
+	position: relative;
+	font-family: 'Karla', sans-serif;
+	font-size: .6875rem;
+	min-height: 100vh;
+	line-height: 1.6;
+	background-color: $Light-Gray;
+	@include grid(center, center);
+	
+}
+
+.attribution{
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
