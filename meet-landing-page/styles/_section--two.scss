@@ -1,0 +1,35 @@
+.section2{
+    margin-top: 3.5rem;
+    padding: 0 6vw;
+    @include grid(center, center);
+
+
+    .gallery{
+        @include grid();
+        gap: 1.5rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        img{
+            border-radius: .5rem;
+        }
+
+        @include breakpoint-up(medium){
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            gap: .75rem;
+        }
+
+    }
+    strong{
+        margin-top: 4rem;
+    }
+
+    h2{
+        margin-top: 2rem;
+        font-size: 30px;
+    }
+    p{
+        margin-top: 2.375rem;
+    }
+}

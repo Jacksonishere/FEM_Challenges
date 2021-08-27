@@ -1,0 +1,88 @@
+.section1 {
+	width: 100%;
+	overflow: hidden;
+
+    @include grid(center, center);
+    @include breakpoint-up(large){
+        @include flex(row, center, center);
+        gap: 5vw;
+    }
+	#mobile-tablet {
+		width: 110%;
+		padding-block: 3.375rem !important;
+
+        @include breakpoint-up(medium){
+            img{
+                content: url("/assets/tablet/image-hero.png");
+            }
+        }
+        @include breakpoint-up(large){
+            display: none;
+        }
+	}
+
+    #desktopleft, #dekstopright{
+        @include breakpoint-down(large){
+            display: none;
+        }
+
+        @include breakpoint-up(large){
+            display: block;
+            flex-basis: 390px;
+            img{
+                min-width: 390px;
+            }
+        }
+    }
+
+    .content{
+        flex: 30%;
+    }
+
+
+	h1 {
+		// margin-top: 3.375rem;
+		font-size: 38px;
+		font-weight: 900;
+	}
+
+	p {
+		padding-block: 2rem !important;
+	}
+
+	.buttons {
+		padding-block: 1.25rem;
+		.download {
+			width: 193px;
+			background-color: $Dark-Cyan;
+			span {
+				color: $Light-Cyan;
+			}
+
+			&:hover {
+				background-color: rgba(77, 150, 168, 0.74);
+			}
+		}
+		.info {
+			width: 139px;
+			background-color: $Dark-Violet;
+
+			&:hover {
+				background-color: $Light-Violet;
+			}
+		}
+        @include flex(column, center, center);
+        
+		@include breakpoint-down(medium) {
+			.info {
+				margin-top: 1rem;
+			}
+		}
+        @include breakpoint-up(medium){
+			flex-direction: row;
+            .info {
+				margin-left: 1rem;
+			}
+        }
+	}
+}
