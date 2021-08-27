@@ -1,17 +1,13 @@
 .section1 {
 	width: 100%;
-	overflow: hidden;
+	// overflow: hidden;
 
 	@include grid(center, center);
+
 	@include breakpoint-up(large) {
 		@include flex(row, center, center);
 		gap: 6.25rem;
-
-		margin-top: 3rem;
-		.content {
-			padding: 0 0 0 0;
-			max-width: 550px;
-		}
+		margin-top: 80px;
 	}
 
 	#mobile-tablet {
@@ -34,7 +30,12 @@
 
 		@include breakpoint-up(large) {
 			display: block;
+			flex: 0 1 auto;
+			flex-shrink: 0;
 		}
+	}
+	.desktopleft{
+		transform: translateY(-20%);
 	}
 
 	h1 {

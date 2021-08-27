@@ -22,6 +22,12 @@ body {
   justify-items: center;
 }
 
+@media (min-width: 64em) {
+  body {
+    padding-block: 80px 0;
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -45,12 +51,18 @@ h1 {
 
 @media (min-width: 64em) {
   h1 {
-    font-size: clamp(38px, 3.7vw, 64px) !important;
+    font-size: clamp(38px, 3.7vw, 54px) !important;
   }
 }
 
 h2 {
   font-size: 30px;
+}
+
+@media (min-width: 64em) {
+  h2 {
+    font-size: clamp(30px, 2.9vw, 36px) !important;
+  }
 }
 
 p {
@@ -76,10 +88,12 @@ button {
   border: none;
   outline: none;
   border-radius: 100px;
+  cursor: pointer;
 }
 
 .container {
   width: 100%;
+  overflow: hidden;
 }
 
 .separator {
@@ -149,8 +163,13 @@ button {
 
 .content {
   width: 100%;
-  max-width: 450px;
-  padding: 0 6vw;
+  max-width: 550px;
+}
+
+@media (max-width: 47.9375em) {
+  .content {
+    padding: 0 6vw;
+  }
 }
 
 .attribution {
@@ -161,7 +180,6 @@ button {
 
 .section1 {
   width: 100%;
-  overflow: hidden;
   display: -ms-grid;
   display: grid;
   -webkit-box-align: center;
@@ -186,11 +204,7 @@ button {
         -ms-flex-pack: center;
             justify-content: center;
     gap: 6.25rem;
-    margin-top: 3rem;
-  }
-  .section1 .content {
-    padding: 0 0 0 0;
-    max-width: 550px;
+    margin-top: 80px;
   }
 }
 
@@ -220,7 +234,17 @@ button {
   .section1 .desktopleft,
   .section1 .desktopright {
     display: block;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
   }
+}
+
+.section1 .desktopleft {
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
 }
 
 .section1 h1 {
@@ -320,6 +344,7 @@ button {
     -ms-grid-rows: auto;
         grid-template-rows: auto;
     gap: .75rem;
+    max-width: 1110px;
   }
 }
 
@@ -343,16 +368,40 @@ button {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
+  padding: 6rem 6vw 4.5rem;
+  text-align: left;
   border-top: 1px solid transparent;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(77, 150, 168, 0.9)), to(rgba(77, 150, 168, 0.9))), url("/assets/mobile/image-footer.jpg") center center/cover no-repeat;
   background: linear-gradient(to bottom, rgba(77, 150, 168, 0.9), rgba(77, 150, 168, 0.9)), url("/assets/mobile/image-footer.jpg") center center/cover no-repeat;
-  padding: 6rem 6vw 4.5rem;
 }
 
 @media (min-width: 48em) {
   .footer {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(77, 150, 168, 0.9)), to(rgba(77, 150, 168, 0.9))), url("/assets/tablet/image-footer.jpg") center center/cover no-repeat;
     background: linear-gradient(to bottom, rgba(77, 150, 168, 0.9), rgba(77, 150, 168, 0.9)), url("/assets/tablet/image-footer.jpg") center center/cover no-repeat;
+  }
+}
+
+@media (min-width: 64em) {
+  .footer {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(77, 150, 168, 0.9)), to(rgba(77, 150, 168, 0.9))), url("/assets/desktop/image-footer.jpg") center center/cover no-repeat;
+    background: linear-gradient(to bottom, rgba(77, 150, 168, 0.9), rgba(77, 150, 168, 0.9)), url("/assets/desktop/image-footer.jpg") center center/cover no-repeat;
+    padding: 7rem 11.6vw;
+  }
+  .footer .content {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: flex-end;
+    min-width: 100%;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    gap: 8%;
+  }
+  .footer .content > * {
+    margin-top: 0;
   }
 }
 

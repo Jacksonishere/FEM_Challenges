@@ -1,34 +1,53 @@
-.footer{
-    @include grid(center, center);
+.footer {
+	@include grid(center, center);
+	padding: 6rem 6vw 4.5rem;
+	text-align: left;
 
-    border-top: 1px solid transparent;  
-    
-    background: linear-gradient(to bottom,$Opaque-Cyan, $Opaque-Cyan), url("/assets/mobile/image-footer.jpg") center center/cover no-repeat;
-    
-    @include breakpoint-up(medium){
-        background: linear-gradient(to bottom,$Opaque-Cyan, $Opaque-Cyan), url("/assets/tablet/image-footer.jpg") center center/cover no-repeat;
-    }
+	border-top: 1px solid transparent;
 
-    padding: 6rem 6vw 4.5rem;
-    h2{
-        color: white;
-        // margin-top: 6rem;
-    }
-    p{
-        color: white;
-        margin-top: 1.625rem;
-    }
+	background: linear-gradient(to bottom, $Opaque-Cyan, $Opaque-Cyan),
+		url("/assets/mobile/image-footer.jpg") center center/cover no-repeat;
 
-    button{
-        margin-top: 2rem;
-        width: 193px;
-        background-color: $Dark-Violet;
-        span{
-            color: $Light-Violet;
-        }
+	@include breakpoint-up(medium) {
+		background: linear-gradient(to bottom, $Opaque-Cyan, $Opaque-Cyan),
+			url("/assets/tablet/image-footer.jpg") center center/cover no-repeat;
+	}
 
-        &:hover{
-            background-color: rgba(132, 94, 176, 0.747);
-        }
-    }
+	@include breakpoint-up(large) {
+		background: linear-gradient(to bottom, $Opaque-Cyan, $Opaque-Cyan),
+			url("/assets/desktop/image-footer.jpg") center center/cover no-repeat;
+		padding: 7rem 11.6vw;
+
+		.content {
+			@include grid(center, flex-end);
+			min-width: 100%;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 8%;
+
+			> * {
+				margin-top: 0;
+			}
+		}
+	}
+	h2 {
+		color: white;
+		// margin-top: 6rem;
+	}
+	p {
+		color: white;
+		margin-top: 1.625rem;
+	}
+
+	button {
+		margin-top: 2rem;
+		width: 193px;
+		background-color: $Dark-Violet;
+		span {
+			color: $Light-Violet;
+		}
+
+		&:hover {
+			background-color: rgba(132, 94, 176, 0.747);
+		}
+	}
 }

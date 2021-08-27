@@ -11,6 +11,9 @@
 body {
 	position: relative;
 	padding-block: 3rem 0;
+	@include breakpoint-up(large){
+		padding-block: 80px 0;
+	}
 	font-family: 'Red Hat Display', sans-serif;
 	
 	font-size: 1rem;
@@ -43,12 +46,15 @@ h1{
 	font-size: 38px;
 
 	@include breakpoint-up(large){
-		font-size: unquote("clamp(38px, 3.7vw, 64px)") !important;
+		font-size: unquote("clamp(38px, 3.7vw, 54px)") !important;
 	}
 }
 
 h2{
 	font-size: 30px;
+	@include breakpoint-up(large){
+		font-size: unquote("clamp(30px, 2.9vw, 36px)") !important;
+	}
 }
 p{
 	color: $Dark-Gray;
@@ -68,10 +74,12 @@ button{
 	border: none;
 	outline: none;
 	border-radius: 100px;
+	cursor: pointer;
 }
 
 .container{
 	width: 100%;
+	overflow: hidden;
 }
 
 .separator{
@@ -127,8 +135,11 @@ button{
 
 .content{
 	width: 100%;
-	max-width: 450px;
-	padding: 0 6vw;
+	max-width: 550px;
+
+	@include breakpoint-down(medium){
+		padding: 0 6vw;
+	}
 }
 
 
