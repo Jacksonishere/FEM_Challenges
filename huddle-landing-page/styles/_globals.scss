@@ -26,7 +26,10 @@ body {
 	// background-position: top center;
 	
 	@include breakpoint-up(large){
-		background: url("/images/bg-desktop.svg");
+		background: url("/images/bg-desktop.svg") $Violet no-repeat top center/100%;
+		text-align: left;
+		padding: 4.375rem;
+		font-size: unquote("clamp(.9375rem, 1.3vw, 1.375rem)");
 	}
 	min-height: 100vh;
 	@include grid();
