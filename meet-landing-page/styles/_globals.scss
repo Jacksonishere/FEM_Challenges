@@ -10,7 +10,7 @@
 /** BASE **/
 body {
 	position: relative;
-	padding-block: 2rem 0;
+	padding-block: 3rem 0;
 	font-family: 'Red Hat Display', sans-serif;
 	
 	font-size: 1rem;
@@ -41,6 +41,10 @@ h1,h2{
 
 h1{
 	font-size: 38px;
+
+	@include breakpoint-up(large){
+		font-size: unquote("clamp(38px, 3.7vw, 64px)") !important;
+	}
 }
 
 h2{

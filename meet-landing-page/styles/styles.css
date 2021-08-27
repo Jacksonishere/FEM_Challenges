@@ -11,7 +11,7 @@
 /** BASE **/
 body {
   position: relative;
-  padding-block: 2rem 0;
+  padding-block: 3rem 0;
   font-family: 'Red Hat Display', sans-serif;
   font-size: 1rem;
   text-align: center;
@@ -41,6 +41,12 @@ h1, h2 {
 
 h1 {
   font-size: 38px;
+}
+
+@media (min-width: 64em) {
+  h1 {
+    font-size: clamp(38px, 3.7vw, 64px) !important;
+  }
 }
 
 h2 {
@@ -179,7 +185,12 @@ button {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    gap: 5vw;
+    gap: 6.25rem;
+    margin-top: 3rem;
+  }
+  .section1 .content {
+    padding: 0 0 0 0;
+    max-width: 550px;
   }
 }
 
@@ -200,31 +211,19 @@ button {
   }
 }
 
-@media (max-width: 63.9375em) {
-  .section1 #desktopleft, .section1 #dekstopright {
-    display: none;
-  }
+.section1 .desktopleft,
+.section1 .desktopright {
+  display: none;
 }
 
 @media (min-width: 64em) {
-  .section1 #desktopleft, .section1 #dekstopright {
+  .section1 .desktopleft,
+  .section1 .desktopright {
     display: block;
-    -ms-flex-preferred-size: 390px;
-        flex-basis: 390px;
   }
-  .section1 #desktopleft img, .section1 #dekstopright img {
-    min-width: 390px;
-  }
-}
-
-.section1 .content {
-  -webkit-box-flex: 30%;
-      -ms-flex: 30%;
-          flex: 30%;
 }
 
 .section1 h1 {
-  font-size: 38px;
   font-weight: 900;
 }
 
