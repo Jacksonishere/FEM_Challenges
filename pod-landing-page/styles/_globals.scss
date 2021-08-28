@@ -12,17 +12,28 @@ body {
 	position: relative;
 	font-family: 'Chivo', sans-serif;
 	font-size: 1rem;
-	text-align: center;
 	line-height: 1.6;
-
 	min-height: 100vh;
-	background: linear-gradient(to bottom, $Mobile-BG, $Mobile-BG), url("/assets/mobile/image-host.jpg") no-repeat top center/cover;
+
 	@include grid();
 	justify-items: center;
-}
 
-figure{
-	// text-align: center;
+	text-align: center;
+	background: linear-gradient(to bottom, $Mobile-BG, $Mobile-BG), url("/assets/mobile/image-host.jpg") no-repeat top center/cover;
+	
+	@include breakpoint-up(medium){
+		text-align: left;
+		background-color: $Black-Blue;
+		background-image: url("/assets/tablet/image-host.jpg");
+		background-repeat: no-repeat;
+		background-position: top right;
+	}
+	@include breakpoint-up(xlarge){
+		background-image: url("/assets/desktop/image-host.jpg");
+		background-position: top 50% right 0;
+		min-height: 900px;
+		justify-content: flex-start;
+	}
 }
 
 img{
