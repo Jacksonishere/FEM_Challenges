@@ -1,0 +1,67 @@
+.container{
+    @include breakpoint-down(medium){
+        width: 87%;
+        max-width: 400px;
+    }
+
+    .header{
+        padding-block: 3.75rem;
+    }
+    
+    .main{
+        h1{
+            color: white;
+            font-weight: 300;
+            text-transform: uppercase;
+            font-size: 26px;
+
+            span{
+                color: $Main-Green;
+            }
+        }
+
+        p{
+            padding-block: 1.75rem;
+            color: $Saturated-Gray-Blue;
+            font-weight: 300;
+        }
+
+        .sponsors{
+            @include grid(center, center);
+            grid-template-columns: repeat(4, 1fr);
+            img{
+                max-height: 22px;
+            }
+            gap: 1rem;
+        }
+
+        .form{
+            margin-top: 2.5rem;
+
+            input, button{
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                font-family: inherit;
+                font-weight: 700;
+
+                border: none;
+                outline: none;
+                border-radius: 2rem;
+            }
+            input{
+                background-color: $Dark-Saturated-Gray-Blue;
+                padding-left: 1.5rem;
+                &::placeholder{
+                    color: $Saturated-Gray-Blue;;
+                }
+            }
+            button{
+                margin-top: 1rem;
+                background-color: $Main-Green;
+                color: $Dark-Saturated-Gray-Blue;
+            }
+            
+        }
+    }
+}

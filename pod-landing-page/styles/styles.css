@@ -1,0 +1,122 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/** BASE **/
+body {
+  position: relative;
+  font-family: 'Chivo', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.6;
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(18, 23, 37, 0.95)), to(rgba(18, 23, 37, 0.95))), url("/assets/mobile/image-host.jpg") no-repeat top center/cover;
+  background: linear-gradient(to bottom, rgba(18, 23, 37, 0.95), rgba(18, 23, 37, 0.95)), url("/assets/mobile/image-host.jpg") no-repeat top center/cover;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+img {
+  max-width: 100%;
+  color: #c2cbe5;
+}
+
+.attribution {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+@media (max-width: 47.9375em) {
+  .container {
+    width: 87%;
+    max-width: 400px;
+  }
+}
+
+.container .header {
+  padding-block: 3.75rem;
+}
+
+.container .main h1 {
+  color: white;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 26px;
+}
+
+.container .main h1 span {
+  color: #5ee6af;
+}
+
+.container .main p {
+  padding-block: 1.75rem;
+  color: #5a668a;
+  font-weight: 300;
+}
+
+.container .main .sponsors {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.container .main .sponsors img {
+  max-height: 22px;
+}
+
+.container .main .form {
+  margin-top: 2.5rem;
+}
+
+.container .main .form input, .container .main .form button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 2rem;
+}
+
+.container .main .form input {
+  background-color: #2c344b;
+  padding-left: 1.5rem;
+}
+
+.container .main .form input::-webkit-input-placeholder {
+  color: #5a668a;
+}
+
+.container .main .form input:-ms-input-placeholder {
+  color: #5a668a;
+}
+
+.container .main .form input::-ms-input-placeholder {
+  color: #5a668a;
+}
+
+.container .main .form input::placeholder {
+  color: #5a668a;
+}
+
+.container .main .form button {
+  margin-top: 1rem;
+  background-color: #5ee6af;
+  color: #2c344b;
+}
+/*# sourceMappingURL=styles.css.map */
