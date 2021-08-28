@@ -16,6 +16,8 @@ You can click the image to view the live site! 💻😁
 [<img src="./ping-coming-soon-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://modest-mclean-0ba8cf.netlify.app/)
 [<img src="./huddle-landing-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://sad-carson-cad135.netlify.app/)
 [<img src="./meet-landing-page/assets/preview.jpg" alt="preview" width="200"/>](https://pensive-volhard-d9ff60.netlify.app/)
+[<img src="./faq-accordion/design/desktop-preview.jpg" alt="preview" width="200"/>](https://zen-kowalevski-eefc95.netlify.app/)
+
 
 
 
