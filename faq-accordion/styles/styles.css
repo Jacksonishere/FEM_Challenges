@@ -1,0 +1,208 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/** BASE **/
+body {
+  position: relative;
+  padding-block: 9.25rem 5.3125rem;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), color-stop(85%), to(#6565e7));
+  background: linear-gradient(to bottom, #af67e9, 85%, #6565e7);
+}
+
+@media (min-width: 64em) {
+  body {
+    background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+    background: linear-gradient(to bottom, #af67e9, #6565e7);
+    padding-block: 9.25rem;
+  }
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #1d1e35;
+}
+
+details {
+  color: #1d1e35;
+  padding-block: 1.1875rem;
+  font-size: clamp(.6375rem, 4vw, .8375rem) !important;
+  border-bottom: 1px solid #e7e7e9;
+}
+
+details summary {
+  list-style: none;
+}
+
+details summary::after {
+  content: url("/images/icon-arrow-down.svg");
+  float: right;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+details p {
+  color: #787887;
+  padding: 1rem 1rem 0 0;
+  -webkit-animation: sweep 0.3s ease;
+          animation: sweep 0.3s ease;
+}
+
+details[open] summary {
+  font-weight: 700;
+}
+
+details[open] summary::after {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.attribution {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+@-webkit-keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: -10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 0px;
+  }
+}
+
+.container {
+  position: relative;
+  border-radius: 1rem;
+  background-color: white;
+  width: 87%;
+}
+
+@media (max-width: 63.9375em) {
+  .container {
+    max-width: 375px;
+    padding: 0 1.5rem 3rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .container {
+    width: 920px;
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+.container .illustrations {
+  overflow: hidden;
+  text-align: center;
+}
+
+@media (max-width: 63.9375em) {
+  .container .illustrations .woman-desktop {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-55%, -55%);
+            transform: translate(-55%, -55%);
+  }
+}
+
+@media (min-width: 64em) {
+  .container .illustrations {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100%;
+    background: url("/images/bg-pattern-desktop.svg") no-repeat;
+    background-position: bottom 32% right -11%;
+  }
+  .container .illustrations .woman-desktop {
+    content: url("/images/illustration-woman-online-desktop.svg");
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate(-15%, -50%);
+            transform: translate(-15%, -50%);
+  }
+  .container .illustrations .switch {
+    content: url("/images/illustration-box-desktop.svg");
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(-50%, -25%);
+            transform: translate(-50%, -25%);
+  }
+}
+
+.container .content {
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+@media (min-width: 64em) {
+  .container .content {
+    padding: 3rem 0 4rem 1rem;
+  }
+  .container .content h1 {
+    text-align: left;
+  }
+}
+
+.container .content h1 {
+  margin-top: 1.75rem;
+}
+
+.container .content .accordion {
+  border-top: 1px solid transparent;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 64em) {
+  .container .content .accordion {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 1;
+    grid-column: 2 / 3;
+    max-width: 350px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
