@@ -230,10 +230,34 @@ img {
   color: #5a668a;
 }
 
+.container .main .form .hide {
+  display: none;
+}
+
+.container .main .form .error-msg {
+  display: block;
+  padding: 0.5rem 0 0 0;
+  color: red;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+@media (min-width: 48em) {
+  .container .main .form .error-msg {
+    position: absolute;
+    padding: 0.5rem 0 0 1rem;
+  }
+}
+
 .container .main .form button {
+  cursor: pointer;
   margin-top: 1rem;
   background-color: #5ee6af;
   color: #2c344b;
+}
+
+.container .main .form button:hover {
+  background-color: #65ffc1;
 }
 
 @media (min-width: 48em) {

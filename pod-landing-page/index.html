@@ -26,8 +26,11 @@
         <div class="sponsors">
           <img src="/assets/desktop/spotify.svg" alt="spotify"><img src="/assets/desktop/apple-podcast.svg" alt="apple"><img src="/assets/desktop/google-podcasts.svg" alt="apple"><img src="/assets/desktop/pocket-casts.svg" alt="pocketcasts">
         </div>
-        <form action="#" class="form">
+        <form autocomplete="off" id="form" action="#" class="form">
           <input id="email" type="text" placeholder="Email address">
+          <p id="error-msg" class="hide">
+            Oops! Please check your email
+          </p>
           <button type="submit" id="submit">Request Access</button>
         </form>
 			</main>
@@ -35,5 +38,6 @@
         <img src="/assets/desktop/bg-pattern-dots.svg" alt="bg pattern dots">
       </figure>
 		</div>
+    <script src="/src/index.js"></script>
 	</body>
 </html>

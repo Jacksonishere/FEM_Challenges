@@ -28,10 +28,10 @@
 			max-width: 635px;
 			@include flex(column);
 		}
-        @include breakpoint-up(xlarge){
-            max-width: 725px;
-            margin-top: 2rem;
-        }
+		@include breakpoint-up(xlarge) {
+			max-width: 725px;
+			margin-top: 2rem;
+		}
 		h1 {
 			line-height: 1.3;
 			color: white;
@@ -41,9 +41,9 @@
 			@include breakpoint-up(medium) {
 				font-size: 48px;
 			}
-            @include breakpoint-up(xlarge){
-                font-size: 55px;
-            }
+			@include breakpoint-up(xlarge) {
+				font-size: 55px;
+			}
 
 			span {
 				color: $Main-Green;
@@ -82,17 +82,17 @@
 		}
 
 		.form {
-            max-width: 435px;
+			max-width: 435px;
 			padding-block: 2.5rem 0;
-            @include breakpoint-up(medium) {
-                order: 3;
-                padding-block: 2.5rem 2.5rem;
-                position: relative;
-            }
-            
+			@include breakpoint-up(medium) {
+				order: 3;
+				padding-block: 2.5rem 2.5rem;
+				position: relative;
+			}
+
 			input,
 			button {
-                display: block;
+				display: block;
 				width: 100%;
 				padding: 1rem;
 				font-family: inherit;
@@ -109,16 +109,36 @@
 					color: $Saturated-Gray-Blue;
 				}
 			}
+            .hide{
+                display: none;
+            }
+			.error-msg {
+                display: block;
+				// position: absolute;
+				padding: 0.5rem 0 0 0;
+				@include breakpoint-up(medium) {
+					position: absolute;
+					padding: 0.5rem 0 0 1rem;
+				}
+				color: red;
+				font-weight: 700;
+				font-size: 12px;
+			}
 			button {
+				cursor: pointer;
 				margin-top: 1rem;
 				background-color: $Main-Green;
 				color: $Dark-Saturated-Gray-Blue;
+
+				&:hover {
+					background-color: $Button-Hover;
+				}
 
 				@include breakpoint-up(medium) {
 					margin-top: 0;
 					padding: 0;
 					position: absolute;
-                    top: 0;
+					top: 0;
 					top: 50%;
 					transform: translate(-3px, -50%);
 					right: 0;
