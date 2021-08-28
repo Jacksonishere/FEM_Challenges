@@ -41,6 +41,7 @@ details {
   color: #1d1e35;
   padding-block: 1.1875rem;
   font-size: clamp(.6375rem, 4vw, .8375rem) !important;
+  cursor: pointer;
   border-bottom: 1px solid #e7e7e9;
 }
 
