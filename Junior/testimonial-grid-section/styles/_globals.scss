@@ -10,8 +10,7 @@
 /** BASE **/
 body {
 	position: relative;
-	@include grid();
-	justify-items: center;
+	@include grid(center, center);
 
 	font-family: "Barlow Semi Condensed", sans-serif;
 	font-size: 0.8125rem;
@@ -29,7 +28,7 @@ img {
 
 h1 {
 	color: $White;
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 }
 
 h2{

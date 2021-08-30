@@ -10,7 +10,7 @@
         width: 90%;
         max-width: 1100px;
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(4, min-content);
+		grid-template-rows: repeat(4, auto);
 	}
 
     @include breakpoint-up(large){
@@ -19,7 +19,7 @@
     }
 
 	.card {
-		padding: 2rem;
+		padding: 1.25rem 2rem 2rem;
 		border-radius: 0.5rem;
 
 		@include breakpoint-btwn(medium, large) {
@@ -41,6 +41,9 @@
 
 		&.first {
 			background-color: $Moderate-violet;
+			background-image: url("/images/bg-pattern-quotation.svg");
+			background-repeat: no-repeat;
+			background-position: top 0 right 18%;
 			img{
 				border: 2px solid rgb(159, 101, 252);
 			}
