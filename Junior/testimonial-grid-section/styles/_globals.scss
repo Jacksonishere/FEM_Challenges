@@ -23,8 +23,7 @@ body {
 img {
 	display: block;
 	max-width: 100%;
-	max-height: 2rem;
-	border: 1px solid $Light-gray;
+	max-height: 2.25rem;
 	border-radius: 100%;
 }
 
@@ -33,9 +32,20 @@ h1 {
 	font-size: 1.5rem;
 }
 
+h2{
+	font-size: 1rem;
+	color: $White;
+}
+
+h3{
+	font-size: .8125rem;
+	font-weight: 400;
+	color: rgba(255,255,255,.5);
+}
+
 blockquote {
 	line-height: 1.6;
-	color: $Light-gray;
+	color: rgba(255,255,255,.7);
 }
 strong {
 	color: $White;

@@ -23,8 +23,7 @@ body {
 img {
   display: block;
   max-width: 100%;
-  max-height: 2rem;
-  border: 1px solid #cfcfcf;
+  max-height: 2.25rem;
   border-radius: 100%;
 }
 
@@ -33,9 +32,20 @@ h1 {
   font-size: 1.5rem;
 }
 
+h2 {
+  font-size: 1rem;
+  color: white;
+}
+
+h3 {
+  font-size: .8125rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 blockquote {
   line-height: 1.6;
-  color: #cfcfcf;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 strong {
@@ -115,6 +125,10 @@ strong {
   background-color: #7541c8;
 }
 
+.container .card.first img {
+  border: 2px solid #9f65fc;
+}
+
 @media (min-width: 48em) and (max-width: 63.9375em) {
   .container .card.first {
     -ms-grid-row: 1;
@@ -132,7 +146,7 @@ strong {
 }
 
 .container .card.second {
-  background-color: #19212e;
+  background-color: #48556a;
 }
 
 @media (min-width: 48em) and (max-width: 63.9375em) {
@@ -159,10 +173,16 @@ strong {
   color: #19212e;
 }
 
-.container .card.third strong,
-.container .card.third blockquote, .container .card.fifth strong,
-.container .card.fifth blockquote {
+.container .card.third h2, .container .card.third h3, .container .card.third blockquote, .container .card.fifth h2, .container .card.fifth h3, .container .card.fifth blockquote {
   color: #48556a;
+}
+
+.container .card.third h3, .container .card.fifth h3 {
+  opacity: .6;
+}
+
+.container .card.third blockquote, .container .card.fifth blockquote {
+  opacity: .6;
 }
 
 @media (min-width: 48em) and (max-width: 63.9375em) {
@@ -183,6 +203,10 @@ strong {
 
 .container .card.fourth {
   background-color: #19212e;
+}
+
+.container .card.fourth img {
+  border: 2px solid #9f65fc;
 }
 
 @media (min-width: 48em) and (max-width: 63.9375em) {

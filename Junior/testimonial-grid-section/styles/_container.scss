@@ -41,6 +41,9 @@
 
 		&.first {
 			background-color: $Moderate-violet;
+			img{
+				border: 2px solid rgb(159, 101, 252);
+			}
 
 			@include breakpoint-btwn(medium,large) {
 				grid-row: 1 / 3;
@@ -50,7 +53,7 @@
 			}
 		}
 		&.second {
-			background-color: $Very-dark-blackish-blue;
+			background-color: $Very-dark-grayish-blue;
 
 			@include breakpoint-btwn(medium,large) {
 				grid-row: 1 / 2;
@@ -65,9 +68,14 @@
 			h1 {
 				color: $Very-dark-blackish-blue;
 			}
-			strong,
-			blockquote {
+			h2, h3, blockquote {
 				color: $Very-dark-grayish-blue;
+			}
+			h3{
+				opacity: .6;
+			}
+			blockquote{
+				opacity: .6;
 			}
 		}
 		&.third {
@@ -80,6 +88,9 @@
 		}
 
 		&.fourth {
+			img{
+				border: 2px solid rgb(159, 101, 252);
+			}
             @include breakpoint-btwn(medium,large){
                 grid-row: 2 / 4;
             }
