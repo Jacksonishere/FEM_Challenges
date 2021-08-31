@@ -1,24 +1,22 @@
 .features {
 	margin-top: -1px;
-	article {
-		@include breakpoint-down(medium) {
-			@include flex(column);
-		}
+	h1 {
+		font-size: 40px;
+		font-weight: 900;
+		color: $Very-dark-desaturated-blue;
 	}
-    h1 {
-        font-size: 36px;
-        font-weight: 900;
-        color: $Very-dark-desaturated-blue;
-    }
-    p {
-        margin-top: 40px;
-        line-height: 1.6;
-        font-size: 1rem;
-        color: $Dark-grayish-blue;
-    }
-    img{
-        width: 100%;
-    }
+	p {
+		margin-top: 40px;
+		line-height: 1.6;
+		font-size: 1.125rem;
+		color: $Grayish-blue;
+	}
+
+	img {
+		width: 100%;
+		object-fit: cover;
+		object-position: center center;
+	}
 	.transform,
 	.standout {
 		&__details {
@@ -46,27 +44,107 @@
 				}
 			}
 		}
+		@include breakpoint-up(medium) {
+			text-align: left;
+			@include grid(center);
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 600px;
+
+			figure {
+				height: 600px;
+
+				> img {
+					height: inherit;
+				}
+			}
+			.wrapper {
+				@include grid();
+				width: 100%;
+				max-width: 550px;
+				padding-inline: 0;
+			}
+			&__details {
+				padding: 165px 0 150px;
+				max-width: 440px;
+			}
+		}
 	}
-	.transform a::after {
-		background-color: $Opaque-Yellow;
-	}
-	.standout a::after {
-		background-color: $Opaque-Red;
+	.transform {
+		a::after {
+			background-color: $Opaque-Yellow;
+		}
+		a:hover::after{
+			background-color: $Yellow;
+		}
+		@include breakpoint-up(medium) {
+			.wrapper {
+				grid-row: 1 / 2;
+				grid-column: 1 / 2;
+				justify-self: flex-end;
+				justify-content: flex-start;
+			}
+
+			&__egg {
+				grid-column: 2 / 3;
+				grid-row: 1 / 2;
+			}
+		}
 	}
 
-    .ux, .photography{
-        padding: 400px 1.375rem 60px;
-    }
-    .ux{
-        background: url("/images/mobile/image-graphic-design.jpg") no-repeat center center/cover;
-        h2,p{
-            color: $Dark-desaturated-cyan;
-        }
-    }
-    .photography{
-        background: url("/images/mobile/image-photography.jpg") no-repeat center center/cover;
-        h2,p{
-            color: $Dark-blue;
-        }
-    }
+	.standout {
+		a::after {
+			background-color: $Opaque-Red;
+		}
+		a:hover::after{
+			background-color: $Soft-red;
+		}
+		@include breakpoint-up(medium) {
+			.wrapper {
+				justify-self: flex-start;
+				justify-content: flex-end;
+			}
+		}
+	}
+
+	.third__section {
+		.ux,
+		.photography {
+			padding: 400px 1.375rem 60px;
+		}
+		.ux {
+			background: url("/images/mobile/image-graphic-design.jpg") no-repeat center center/cover;
+			h2,
+			p {
+				color: $Dark-desaturated-cyan;
+			}
+		}
+		.photography {
+			background: url("/images/mobile/image-photography.jpg") no-repeat center center/cover;
+			h2,
+			p {
+				color: $Dark-blue;
+			}
+		}
+		@include breakpoint-up(medium) {
+			@include grid();
+			justify-items: center;
+			grid-template-columns: 1fr 1fr;
+
+			.ux {
+				background: url("/images/desktop/image-graphic-design.jpg") no-repeat center center/cover;
+			}
+			.photography {
+				background: url("/images/desktop/image-photography.jpg") no-repeat center center/cover;
+			}
+			.ux,
+			.photography {
+                width: 100%;
+                @include grid();
+                justify-content: center;
+				&__details{
+                    max-width: 375px;
+                }
+			}
+		}
+	}
 }

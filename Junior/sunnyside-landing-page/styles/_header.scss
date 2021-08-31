@@ -7,8 +7,7 @@
 	}
 	.nav {
 		position: relative;
-		outline: solid 1px red;
-		@include flex(row);
+		@include flex(row, flex-start);
 		padding: 2rem 1.5rem;
 
 		@include breakpoint-up(medium) {
@@ -66,18 +65,27 @@
 
 			.contact {
 				display: block;
+				padding: 1.25rem 1.875rem;
 				font-family: "Fraunces", serif;
 				text-transform: uppercase;
-				padding: 1.25rem 1.875rem;
 				background-color: $Yellow;
+				border-radius: 2rem;
 				strong {
 					color: $Very-dark-desaturated-blue;
 				}
-				border-radius: 2rem;
                 @include breakpoint-up(medium){
                     background-color: $White;
                     transform: translateY(-30%);
+					transition: transform .3s ease;
+					&:hover{
+						background-color: rgba(255,255,255,.4);
+						strong{
+							color: white;
+						}
+						transform: translateY(-30%) scale(1.1);
+					}
                 }
+
 			}
 		}
 

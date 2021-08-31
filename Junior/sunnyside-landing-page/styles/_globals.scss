@@ -13,12 +13,12 @@ body {
 	@include grid(center, center);
 
 	text-align: center;
-	font-family: 'Barlow', sans-serif;
+	font-family: "Barlow", sans-serif;
 	font-size: 1.1875rem;
 	min-height: 100vh;
 }
 
-figure{
+figure {
 	@include grid(center, center);
 }
 img {
@@ -26,35 +26,35 @@ img {
 	max-width: 100%;
 }
 
-ul{
+ul {
 	list-style-type: none;
 }
 
-a{
-	// display: block;
+a {
+	cursor: pointer;
 	text-decoration: none;
-	color: $Dark-grayish-blue;
-
-	@include breakpoint-up(medium){
-		color: white;
+	@include breakpoint-down(medium) {
+		color: $Dark-grayish-blue;
 	}
+	color: white;
 }
 
-h1,h2,h3,h4{
-	font-family: 'Fraunces', serif;
+h1,
+h2,
+h3,
+h4 {
+	font-family: "Fraunces", serif;
 }
 
-h1{
-	@include breakpoint-up(medium){
+h1 {
+	@include breakpoint-up(medium) {
 		font-size: 2.625rem;
 	}
 }
 
-h2{
+h2 {
 	font-size: 1.625rem;
 }
-
-
 
 .attribution {
 	position: absolute;
