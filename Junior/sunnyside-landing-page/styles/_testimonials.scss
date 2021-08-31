@@ -1,0 +1,39 @@
+.testimonials{
+    padding: 68px 36px; 
+    h2{
+        text-transform: uppercase;
+        font-size: 1rem;
+        letter-spacing: 4px;
+        color: $Grayish-blue;
+    }
+    .cards{
+        img{
+            max-height: 72px;
+            border-radius: 100%;
+        }
+        section{
+            @include flex(column, center);
+            margin-top: 68px;
+
+            blockquote, h3{
+                margin-top: 40px;
+                font-size: 17px;
+                line-height: 1.7;
+            }
+            blockquote{
+                color: $Very-dark-grayish-blue;
+            }
+            h3{
+                color: $Very-dark-desaturated-blue;
+                font-weight: 900;
+            }
+            h4{
+                margin-top: .375rem;
+                font-family: 'Barlow', sans-serif;
+                font-size: .875rem;
+                color: $Grayish-blue;
+            }
+        }
+
+    }
+}

@@ -18,6 +18,9 @@ body {
 	min-height: 100vh;
 }
 
+figure{
+	@include grid(center, center);
+}
 img {
 	display: block;
 	max-width: 100%;
@@ -28,7 +31,7 @@ ul{
 }
 
 a{
-	display: block;
+	// display: block;
 	text-decoration: none;
 	color: $Dark-grayish-blue;
 
@@ -45,6 +48,10 @@ h1{
 	@include breakpoint-up(medium){
 		font-size: 2.625rem;
 	}
+}
+
+h2{
+	font-size: 1.625rem;
 }
 
 

@@ -1,0 +1,33 @@
+.footer{
+    background-color: $Dark-moderate-cyan;
+
+    &__content{
+        padding: 60px 38px 70px;
+        figure{
+            img{
+                opacity: .8;
+                height: 30px;
+            }
+        }
+        a{
+            font-size: 1rem;
+            color: $Dark-desaturated-cyan
+        }
+        ul{
+            @include flex(row, center, center);
+        }
+
+        .footer__menu{
+            li{
+                opacity: .8;
+            }
+            margin-top: 40px;
+            gap: 55px;
+        }
+
+        .socials{
+            margin-top: 80px;
+            gap: 28px;
+        }
+    }
+}

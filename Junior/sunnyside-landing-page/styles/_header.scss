@@ -65,6 +65,7 @@
             }
 
 			.contact {
+				display: block;
 				font-family: "Fraunces", serif;
 				text-transform: uppercase;
 				padding: 1.25rem 1.875rem;
@@ -75,7 +76,7 @@
 				border-radius: 2rem;
                 @include breakpoint-up(medium){
                     background-color: $White;
-                    transform: translateY(-25%);
+                    transform: translateY(-30%);
                 }
 			}
 		}
