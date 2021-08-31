@@ -24,6 +24,7 @@ body {
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
@@ -37,8 +38,20 @@ a {
   color: #818498;
 }
 
+@media (min-width: 48em) {
+  a {
+    color: white;
+  }
+}
+
 h1, h2, h3, h4 {
   font-family: 'Fraunces', serif;
+}
+
+@media (min-width: 48em) {
+  h1 {
+    font-size: 2.625rem;
+  }
 }
 
 .attribution {
@@ -47,7 +60,7 @@ h1, h2, h3, h4 {
   bottom: 0;
 }
 
-.contaier {
+.container {
   width: 100%;
 }
 
@@ -79,57 +92,73 @@ h1, h2, h3, h4 {
   .header .nav {
     padding: 3rem 2.375rem;
   }
-  .header .nav .hamburger__menu {
-    display: none;
+}
+
+@media (min-width: 48em) {
+  .header .nav__logo {
+    margin-top: 1.75px;
   }
 }
 
-.header .nav__menu {
-  visibility: hidden;
-  opacity: 0;
-  margin-top: -15px;
-  -webkit-transition: visibility 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
-  transition: visibility 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  top: 150%;
-  left: 1.5rem;
-  width: calc(100% - 3rem);
-  padding: 2.375rem;
-  background-color: white;
+@media (max-width: 47.9375em) {
+  .header .nav__menu {
+    visibility: hidden;
+    opacity: 0;
+    margin-top: -15px;
+    -webkit-transition: visibility 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+    transition: visibility 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    top: 150%;
+    left: 1.5rem;
+    width: calc(100% - 3rem);
+    padding: 2.375rem;
+    background-color: white;
+  }
+  .header .nav__menu.dropdown {
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0px;
+  }
+  .header .nav__menu::after {
+    content: "";
+    position: absolute;
+    top: -24px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 24px solid white;
+    border-left: 24px solid transparent;
+  }
+  .header .nav__menu li:not(:first-child) {
+    margin-top: 2.625rem;
+  }
 }
 
-.header .nav__menu.dropdown {
-  visibility: visible;
-  opacity: 1;
-  margin-top: 0px;
-}
-
-.header .nav__menu::after {
-  content: "";
-  position: absolute;
-  top: -24px;
-  right: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 24px solid white;
-  border-left: 24px solid transparent;
-}
-
-.header .nav__menu li:not(:first-child) {
-  margin-top: 2.625rem;
+@media (min-width: 48em) {
+  .header .nav__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-left: auto;
+    gap: 3rem;
+  }
 }
 
 .header .nav__menu .contact {
@@ -144,8 +173,22 @@ h1, h2, h3, h4 {
   color: #23303e;
 }
 
+@media (min-width: 48em) {
+  .header .nav__menu .contact {
+    background-color: white;
+    -webkit-transform: translateY(-25%);
+            transform: translateY(-25%);
+  }
+}
+
 .header .nav .hamburger__menu {
   margin-left: auto;
+}
+
+@media (min-width: 48em) {
+  .header .nav .hamburger__menu {
+    display: none;
+  }
 }
 
 .header h1 {
@@ -156,8 +199,19 @@ h1, h2, h3, h4 {
 }
 
 .header .down__arrow {
-  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
   margin-block: 55px 130px;
+}
+
+@media (min-width: 48em) {
+  .header .down__arrow {
+    margin-block: 100px 325px;
+  }
 }
 
 @-webkit-keyframes sweep {

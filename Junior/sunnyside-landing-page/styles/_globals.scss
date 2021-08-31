@@ -19,24 +19,33 @@ body {
 }
 
 img {
-	// display: block;
+	display: block;
 	max-width: 100%;
 }
 
 ul{
 	list-style-type: none;
 }
+
 a{
 	display: block;
 	text-decoration: none;
 	color: $Dark-grayish-blue;
+
+	@include breakpoint-up(medium){
+		color: white;
+	}
 }
 
 h1,h2,h3,h4{
 	font-family: 'Fraunces', serif;
 }
 
-
+h1{
+	@include breakpoint-up(medium){
+		font-size: 2.625rem;
+	}
+}
 
 
 
