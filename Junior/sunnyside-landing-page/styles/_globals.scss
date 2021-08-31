@@ -1,0 +1,49 @@
+/** RESET **/
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/** BASE **/
+body {
+	position: relative;
+	@include grid(center, center);
+
+	text-align: center;
+	font-family: 'Barlow', sans-serif;
+	font-size: 1.1875rem;
+	min-height: 100vh;
+}
+
+img {
+	// display: block;
+	max-width: 100%;
+}
+
+ul{
+	list-style-type: none;
+}
+a{
+	display: block;
+	text-decoration: none;
+	color: $Dark-grayish-blue;
+}
+
+h1,h2,h3,h4{
+	font-family: 'Fraunces', serif;
+}
+
+
+
+
+
+.attribution {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	// left: 50%;
+	// transform: translateX(-50%);
+}

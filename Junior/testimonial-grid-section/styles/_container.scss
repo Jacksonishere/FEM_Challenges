@@ -39,7 +39,7 @@
 			}
         }
 
-		&.first {
+		&.daniel {
 			background-color: $Moderate-violet;
 			background-image: url("/images/bg-pattern-quotation.svg");
 			background-repeat: no-repeat;
@@ -55,18 +55,19 @@
 				grid-column: 1 / 3;
 			}
 		}
-		&.second {
+		&.jonathan {
 			background-color: $Very-dark-grayish-blue;
 
 			@include breakpoint-btwn(medium,large) {
 				grid-row: 1 / 2;
 			}
-            @include breakpoint-up(large){
-				grid-column: 1 / 2;
-            }
+			@include breakpoint-up(large) {
+				grid-row: 1 / 2;
+				grid-column: 3 / 4;
+			}
 		}
-		&.third,
-		&.fifth {
+		&.jeanette,
+		&.kira {
 			background-color: $White;
 			h1 {
 				color: $Very-dark-blackish-blue;
@@ -81,16 +82,17 @@
 				opacity: .6;
 			}
 		}
-		&.third {
+		&.jeanette {
 			@include breakpoint-btwn(medium,large) {
 				grid-row: 3 / 4;
 			}
-            @include breakpoint-up(large) {
-				grid-column: 3 / 4;
-			}
+            @include breakpoint-up(large){
+				grid-column: 1 / 2;
+				grid-row: 2 / 3;
+            }
 		}
 
-		&.fourth {
+		&.patrick {
 			img{
 				border: 2px solid rgb(159, 101, 252);
 			}
@@ -103,7 +105,7 @@
 			background-color: $Very-dark-blackish-blue;
 		}
 
-        &.fifth{
+        &.kira{
             @include breakpoint-btwn(medium,large){
                 grid-column: 1 / 3;
                 grid-row: 4 / 5;
