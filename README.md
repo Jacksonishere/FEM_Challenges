@@ -19,6 +19,10 @@ You can click the image to view the live site! 💻😁
 [<img src="./faq-accordion/design/desktop-preview.jpg" alt="preview" width="200"/>](https://zen-kowalevski-eefc95.netlify.app/)
 [<img src="./pod-landing-page/assets/preview.jpg" alt="preview" width="200"/>](https://gallant-ritchie-25fab9.netlify.app/)
 
+#### ⭐️⭐️ JUNIOR
+
+[<img src=".Junior/testimonial-grid-section/design/desktop-preview.jpg" alt="preview" width="200"/>](https://suspicious-raman-94e803.netlify.app/)
+[<img src="./Junior/sunnyside-landing-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://nervous-nightingale-455d64.netlify.app/)
 
 
 
