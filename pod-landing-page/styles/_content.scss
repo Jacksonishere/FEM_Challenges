@@ -14,9 +14,9 @@
 	}
 
 	.header {
-		padding-block: 3.75rem;
+		padding: 3.75rem 0;
 		@include breakpoint-up(xlarge) {
-			padding-block: 0 3.75rem;
+			padding: 0 0 3.75rem;
 		}
 	}
 
@@ -24,7 +24,7 @@
 		@include breakpoint-up(medium) {
 			background-color: $Black-Blue;
 			margin-top: 5rem;
-			padding-block: 5.5rem 1rem;
+			padding: 5.5rem 0 1rem;
 			max-width: 635px;
 			@include flex(column);
 		}
@@ -52,9 +52,9 @@
 
 		p {
 			max-width: 435px;
-			padding-block: 1.75rem;
+			padding: 1.75rem 0;
 			@include breakpoint-up(medium) {
-				padding-block: 1.75rem 0;
+				padding: 1.75rem 0 0;
 				font-size: 1.125rem;
 			}
 			color: $Saturated-Gray-Blue;
@@ -83,10 +83,10 @@
 
 		.form {
 			max-width: 435px;
-			padding-block: 2.5rem 0;
+			padding: 2.5rem 0 0;
 			@include breakpoint-up(medium) {
 				order: 3;
-				padding-block: 2.5rem 2.5rem;
+				padding: 2.5rem 0 2.5rem;
 				position: relative;
 			}
 

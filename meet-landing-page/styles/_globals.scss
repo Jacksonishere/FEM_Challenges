@@ -10,9 +10,9 @@
 /** BASE **/
 body {
 	position: relative;
-	padding-block: 3rem 0;
+	padding: 3rem 0 0;
 	@include breakpoint-up(large){
-		padding-block: 80px 0;
+		padding: 80px 0 0;
 	}
 	font-family: 'Red Hat Display', sans-serif;
 	

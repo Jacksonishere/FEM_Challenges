@@ -65,7 +65,7 @@ input, button {
 
 input[type=email], button[type=email] {
   background: #fff5f5;
-  padding: 1rem;
+  padding: 1.5rem;
   border: solid 1px #ce9797;
 }
 
@@ -184,7 +184,7 @@ input[type=email]:focus, button[type=email]:focus {
 
 .content .welcome {
   color: #ce9797;
-  padding-block: 1rem 1.875rem;
+  padding: 1rem 0 1.875rem;
   font-size: 0.875rem;
 }
 
@@ -253,6 +253,6 @@ input[type=email]:focus, button[type=email]:focus {
   color: #f96262;
   font-size: 0.9375rem;
   margin-left: 1rem;
-  padding-block: 0.5rem;
+  padding: 0.5rem 0;
 }
 /*# sourceMappingURL=styles.css.map */

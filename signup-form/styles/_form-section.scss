@@ -10,7 +10,7 @@
         text-align: center;
 		color: white;
 		width: 100%;
-		padding-block: 1.5rem;
+		padding: 1.5rem 0;
 		background: $Blue;
 		border-radius: 8px;
 		box-shadow: 0 0.5rem 2px 0 #3e3c493b;
@@ -31,7 +31,7 @@
 		border-radius: 8px;
 
         @include breakpoint-up(large){
-            padding-block: 2.5rem;
+            padding: 2.5rem 0;
         }
 		.input-holder {
 			&:not(:first-child) {

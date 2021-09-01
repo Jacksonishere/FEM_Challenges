@@ -16,7 +16,7 @@ body {
 	line-height: 1.8;
 
 	@include grid(center, center);
-	padding-block: 5.625rem;
+	padding: 5.625rem 0;
 	background-color: $Very-Light-Gray;
 }
 

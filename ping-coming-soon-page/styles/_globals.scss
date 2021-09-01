@@ -19,7 +19,7 @@ body {
 
 	@include grid();
 	justify-items: center;
-	padding-block: 2.5rem;
+	padding: 2.5rem 0;
 }
 
 img{
@@ -81,7 +81,7 @@ button{
 	text-decoration: none;
 	width: 34px;
 	height: 34px;	
-	padding-block: 8px;
+	padding: 8px 0;
 	font-size: 16px !important;
 	text-align: center;
 	border: 1px solid $Gray;

@@ -11,7 +11,7 @@
 /** BASE **/
 body {
   position: relative;
-  padding-block: 9.25rem 5.3125rem;
+  padding: 9.25rem 0 5.3125rem;
   font-family: "Kumbh Sans", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
@@ -27,7 +27,7 @@ body {
   body {
     background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
     background: linear-gradient(to bottom, #af67e9, #6565e7);
-    padding-block: 9.25rem;
+    padding: 9.25rem 0;
   }
 }
 
@@ -39,7 +39,7 @@ h1 {
 
 details {
   color: #1d1e35;
-  padding-block: 1.1875rem;
+  padding: 1.1875rem 0;
   font-size: clamp(.6375rem, 4vw, .8375rem) !important;
   cursor: pointer;
   border-bottom: 1px solid #e7e7e9;
@@ -63,6 +63,9 @@ details summary::after {
 details p {
   color: #787887;
   padding: 1rem 1rem 0 0;
+}
+
+details[open] {
   -webkit-animation: sweep 0.3s ease;
           animation: sweep 0.3s ease;
 }

@@ -10,7 +10,7 @@
 /** BASE **/
 body {
 	position: relative;
-	padding-block: 9.25rem 5.3125rem;
+	padding: 9.25rem 0 5.3125rem;
 	font-family: "Kumbh Sans", sans-serif;
 	font-size: 1rem;
 	// text-align: center;
@@ -24,7 +24,7 @@ body {
 
 	@include breakpoint-up(large) {
 		background: linear-gradient(to bottom, $Soft-violet, $Soft-blue);
-		padding-block: 9.25rem;
+		padding: 9.25rem 0;
 	}
 }
 // img{
@@ -39,7 +39,7 @@ h1 {
 
 details {
 	color: $Very-dark-desaturated-blue;
-	padding-block: 1.1875rem;
+	padding: 1.1875rem 0;
 	font-size: unquote("clamp(.6375rem, 4vw, .8375rem)") !important;
 	cursor: pointer;
 

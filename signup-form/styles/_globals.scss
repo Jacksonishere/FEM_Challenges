@@ -20,7 +20,7 @@ body {
 	background: url("/images/bg-intro-mobile.png"), linear-gradient(to bottom, $Red, $Red)no-repeat;
 
 	@include breakpoint-up(large){
-		padding-block: 5rem;
+		padding: 5rem 0;
 		background: url("/images/bg-intro-desktop.png"), linear-gradient(to bottom, $Red, $Red)no-repeat;
 	}
 	
@@ -32,7 +32,7 @@ body {
 	text-align: center;
 	width: 90%;
 	@include breakpoint-down(medium){
-		padding-block: 6.125rem;
+		padding: 6.125rem 0;
 		max-width: 375px;
 		@include flex(column, center, center)
 	}
@@ -68,7 +68,7 @@ input{
 	
 }	
 button{
-	padding-block: 1.375rem calc(1.25rem - 2px);
+	padding: 1.375rem 0 calc(1.25rem - 2px);
 	background-color: $Green;
 	color: white;
 	font-family: inherit;

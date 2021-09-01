@@ -6,13 +6,22 @@
 
 	@include breakpoint-up(large) {
 		@include flex(row, center, center);
-		gap: 6.25rem;
+		// gap: 6.25rem;
+		// > * + *{
+		// 	margin-left: 55px;
+		// }
+		.content{
+			margin-left: 6.25rem;
+		}
+		.desktopright{
+			margin-left: 6.25rem;
+		}
 		margin-top: 80px;
 	}
 
 	#mobile-tablet {
 		width: 110%;
-		padding-block: 3.375rem !important;
+		padding: 3.375rem 0 !important;
 
 		@include breakpoint-up(medium) {
 			img {
@@ -43,11 +52,11 @@
 	}
 
 	p {
-		padding-block: 2rem !important;
+		padding: 2rem 0 !important;
 	}
 
 	.buttons {
-		padding-block: 1.25rem;
+		padding: 1.25rem 0;
 		.download {
 			width: 193px;
 			background-color: $Dark-Cyan;

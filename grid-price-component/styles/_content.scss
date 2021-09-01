@@ -20,7 +20,7 @@
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;
 
-        padding-block: 2rem;
+        padding: 2rem 0;
         background-color: white;
         h1{
             color: $Cyan;
@@ -40,7 +40,7 @@
     }
 
     .subscription-card{
-        padding-block: 1.75rem 1.5rem;
+        padding: 1.75rem 0 1.5rem;
         color: white;
         background-color: $Cyan;
         .price-tag{
@@ -57,7 +57,7 @@
         }
         .signup-btn{
             margin: 1.1875rem auto 0;
-            padding-block: 1rem;
+            padding: 1rem 0;
             display: block;
             width: 100%;
             max-width: 238px;
@@ -82,7 +82,7 @@
         border-bottom-left-radius: 8px;
         border-bottom-right-radius: 8px;
         
-        padding-block: 1.75rem;
+        padding: 1.75rem 0;
         background-color: $Bright-Cyan;
         color: $Light-Gray;
 

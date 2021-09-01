@@ -11,7 +11,7 @@
 /** BASE **/
 body {
   position: relative;
-  padding-block: 2rem;
+  padding: 2rem 0;
   font-family: 'Open Sans', sans-serif;
   font-size: .9375rem;
   text-align: center;
@@ -47,7 +47,7 @@ img {
   text-decoration: none;
   width: 34px;
   height: 34px;
-  padding-block: 8px;
+  padding: 8px 0;
   font-size: 16px !important;
   text-align: center;
   border: 1px solid white;
@@ -148,7 +148,7 @@ img {
 }
 
 .container .main .content p {
-  padding-block: 2rem;
+  padding: 2rem 0;
 }
 
 .container .main .content button {

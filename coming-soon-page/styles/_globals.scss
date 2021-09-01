@@ -47,7 +47,7 @@ input, button{
 
 	&[type=email]{
 		background: hsl(0, 100%, 98%);
-		padding: 1rem;
+		padding: 1.5rem;
 		border: solid 1px $Desaturated-Red;
 
 		&::placeholder{

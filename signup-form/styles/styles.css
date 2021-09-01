@@ -27,7 +27,7 @@ body {
 
 @media (min-width: 64em) {
   body {
-    padding-block: 5rem;
+    padding: 5rem 0;
     background: url("/images/bg-intro-desktop.png"), -webkit-gradient(linear, left top, left bottom, from(#ff7a7a), to(#ff7a7a)) no-repeat;
     background: url("/images/bg-intro-desktop.png"), linear-gradient(to bottom, #ff7a7a, #ff7a7a) no-repeat;
   }
@@ -40,7 +40,7 @@ body {
 
 @media (max-width: 63.9375em) {
   .container {
-    padding-block: 6.125rem;
+    padding: 6.125rem 0;
     max-width: 375px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -97,7 +97,7 @@ input:focus {
 }
 
 button {
-  padding-block: 1.375rem calc(1.25rem - 2px);
+  padding: 1.375rem 0 calc(1.25rem - 2px);
   background-color: #38cc8c;
   color: white;
   font-family: inherit;
@@ -160,7 +160,7 @@ button {
   text-align: center;
   color: white;
   width: 100%;
-  padding-block: 1.5rem;
+  padding: 1.5rem 0;
   background: #6055a5;
   border-radius: 8px;
   -webkit-box-shadow: 0 0.5rem 2px 0 #3e3c493b;
@@ -185,7 +185,7 @@ button {
 
 @media (min-width: 64em) {
   .form-section .form {
-    padding-block: 2.5rem;
+    padding: 2.5rem 0;
   }
 }
 

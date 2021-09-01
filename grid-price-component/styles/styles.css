@@ -22,7 +22,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  padding-block: 4.5rem;
+  padding: 4.5rem 0;
 }
 
 h1 {
@@ -72,7 +72,7 @@ h2 {
 .container .header {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  padding-block: 2rem;
+  padding: 2rem 0;
   background-color: white;
 }
 
@@ -102,7 +102,7 @@ h2 {
 }
 
 .container .subscription-card {
-  padding-block: 1.75rem 1.5rem;
+  padding: 1.75rem 0 1.5rem;
   color: white;
   background-color: #2ab2af;
 }
@@ -133,7 +133,7 @@ h2 {
 
 .container .subscription-card .signup-btn {
   margin: 1.1875rem auto 0;
-  padding-block: 1rem;
+  padding: 1rem 0;
   display: block;
   width: 100%;
   max-width: 238px;
@@ -164,7 +164,7 @@ h2 {
 .container .footer {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  padding-block: 1.75rem;
+  padding: 1.75rem 0;
   background-color: #2dc8c5;
   color: #e5eff5;
 }
