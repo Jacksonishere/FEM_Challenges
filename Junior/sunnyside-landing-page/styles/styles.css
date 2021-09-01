@@ -307,9 +307,16 @@ h2 {
   position: relative;
   text-transform: uppercase;
   color: #23303e;
-  font-weight: 900;
+  font-weight: 700;
   font-family: "Fraunces", serif;
   font-size: 1.125rem;
+  -webkit-transition: font-size .3s ease;
+  transition: font-size .3s ease;
+}
+
+.features .transform__details .learnmore a:hover,
+.features .standout__details .learnmore a:hover {
+  font-size: 1.1875rem;
 }
 
 .features .transform__details .learnmore a::after,
@@ -318,7 +325,7 @@ h2 {
   position: absolute;
   z-index: -1;
   left: -5%;
-  bottom: -2px;
+  bottom: -1px;
   width: 110%;
   height: 9px;
   border-radius: 4px;
