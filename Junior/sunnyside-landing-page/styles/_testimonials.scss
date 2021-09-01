@@ -37,7 +37,7 @@
 		}
 	}
 	@include breakpoint-up(medium) {
-        padding-block: 165px;
+        padding: 165px 0;
 
 		h2 {
 			font-size: 1.375rem;

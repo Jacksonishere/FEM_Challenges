@@ -60,7 +60,10 @@
             @include breakpoint-up(medium){
                 @include flex(row);
                 margin-left: auto;
-                gap: 3rem;  
+                // gap: 3rem;  
+				> * + *{
+					margin-left: 55px;
+				}
             }
 
 			.contact {
@@ -106,9 +109,9 @@
 
 	.down__arrow {
 		@include grid(center, center);
-		margin-block: 55px 130px;
+		margin: 55px 0 130px;
         @include breakpoint-up(medium){
-            margin-block: 100px 325px;
+            margin: 100px 0 325px;
         }
 	}
 }

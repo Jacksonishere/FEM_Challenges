@@ -175,7 +175,9 @@ h2 {
         -ms-flex-direction: row;
             flex-direction: row;
     margin-left: auto;
-    gap: 3rem;
+  }
+  .header .nav__menu > * + * {
+    margin-left: 55px;
   }
 }
 
@@ -236,12 +238,12 @@ h2 {
       -ms-flex-align: center;
           align-items: center;
   justify-items: center;
-  margin-block: 55px 130px;
+  margin: 55px 0 130px;
 }
 
 @media (min-width: 48em) {
   .header .down__arrow {
-    margin-block: 100px 325px;
+    margin: 100px 0 325px;
   }
 }
 
@@ -359,7 +361,8 @@ h2 {
     display: grid;
     width: 100%;
     max-width: 550px;
-    padding-inline: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   .features .transform__details,
   .features .standout__details {
@@ -523,7 +526,7 @@ h2 {
 
 @media (min-width: 48em) {
   .testimonials {
-    padding-block: 165px;
+    padding: 165px 0;
   }
   .testimonials h2 {
     font-size: 1.375rem;
@@ -600,7 +603,6 @@ h2 {
 
 .footer__content .footer__menu {
   margin-top: 40px;
-  gap: 55px;
 }
 
 .footer__content .footer__menu li {
@@ -615,9 +617,16 @@ h2 {
   color: white;
 }
 
+.footer__content .footer__menu > * + * {
+  margin-left: 55px;
+}
+
 .footer__content .socials {
   margin-top: 80px;
-  gap: 28px;
+}
+
+.footer__content .socials > * + * {
+  margin-left: 55px;
 }
 
 .footer__content .socials svg {

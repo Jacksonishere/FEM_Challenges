@@ -26,14 +26,21 @@
 				a:hover {
 					color: white;
 				}
+
 			}
 			margin-top: 40px;
-			gap: 55px;
+			> * + *{
+				margin-left: 55px;
+			}
+			// gap: 55px;
 		}
 
 		.socials {
 			margin-top: 80px;
-			gap: 28px;
+			> * + *{
+				margin-left: 55px;
+			}
+			// gap: 28px;
 
 			svg {
 				display: block;
