@@ -1,6 +1,16 @@
 .main {
-	padding-top: toRem(127);
-	// outline: solid 1px magenta;
+	margin-top: toRem(127);
+    @include breakpoint-up(medium){
+        @include flex(row, fe);
+        
+        .section-one{
+            flex: 0 1 38%;
+        }
+        .section-two{
+            flex: 0 1 62%;
+        }
+
+    }
 	section {
 		border-radius: $br;
 		background-color: $clr-neutral-700;
@@ -9,7 +19,6 @@
 
 	.section-one {
 		border-top-right-radius: toRem(100);
-
 		.service-icons {
 			margin-top: 2rem;
 			@include flex(row);
@@ -28,6 +37,9 @@
 		position: relative;
 		margin-top: 1rem;
         padding-bottom: toRem(46); 
+        @include breakpoint-up(medium){
+            margin-left: toRem(30);
+        }
 		p {
 			strong {
 				font-weight: $fw-700;

@@ -94,7 +94,7 @@ body {
 }
 
 .container {
-  width: min(90%, 1110px);
+  width: min(90%, 920px);
   margin-left: auto;
   margin-right: auto;
 }
@@ -104,7 +104,20 @@ body {
 }
 
 .main {
-  padding-top: 7.9375rem;
+  margin-top: 7.9375rem;
+}
+@media (min-width: 48em) {
+  .main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .main .section-one {
+    flex: 0 1 38%;
+  }
+  .main .section-two {
+    flex: 0 1 62%;
+  }
 }
 .main section {
   border-radius: 0.5rem;
@@ -131,6 +144,11 @@ body {
   position: relative;
   margin-top: 1rem;
   padding-bottom: 2.875rem;
+}
+@media (min-width: 48em) {
+  .main .section-two {
+    margin-left: 1.875rem;
+  }
 }
 .main .section-two p strong {
   font-weight: 700;
