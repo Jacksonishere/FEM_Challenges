@@ -1,0 +1,33 @@
+body{
+    font-family: $ff-primary;
+    font-size: var(--fs-400);
+    position: relative;
+    padding-top: 1px;
+
+
+    background: url("/images/pattern-curve.svg") no-repeat;
+    background-position: bottom left;
+    background-size: 100%;
+    // &::before{
+    //     @include pseudo(100%, toRem(800));
+    //     z-index: -1;
+
+    //     @include breakpoint-down(medium){
+    //         background: url("/images/bg-mobile.png") no-repeat center center/cover;
+    //     }
+        
+    //     @include breakpoint-up(medium){
+    //         background-color: $clr-neutral-900;
+    //         background-image: url("/images/bg-desktop.png");
+    //         background-repeat: no-repeat;
+    //         background-position: bottom left;
+    //     }
+    // }
+}
+
+.attribution{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}

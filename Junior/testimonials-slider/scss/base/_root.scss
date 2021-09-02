@@ -1,0 +1,28 @@
+:root{
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+
+    @include breakpoint-up(medium){
+        --fs-400: clamp(.75rem, 1.5vw, 1.25rem);
+        --fs-500: clamp(1.125rem, 2.3vw, 2rem);
+    }
+
+}
+
+$clr-primary-400: hsl(240, 18%, 77%);
+$clr-primary-700: hsl(240, 38%, 20%);
+
+
+// $clr-neutral-100: ;
+// $clr-neutral-400: ;
+// $clr-neutral-700: ;
+// $clr-neutral-900: ;
+
+$ff-primary: 'Inter', sans-serif;;
+
+$fw-300: 300;
+$fw-500: 500;
+$fw-700: 700;
+
+$br: .5rem;

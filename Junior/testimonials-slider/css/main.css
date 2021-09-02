@@ -1,0 +1,346 @@
+/* FLEX AND GRIDBOX */
+/* CENTER BLOCK */
+/* PSEUDO ELEMENT */
+/* BACKGROUND  */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-width: 1200px;
+}
+@media (max-width: 47.9375em) {
+  .container {
+    max-width: 500px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+:root {
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+}
+@media (min-width: 48em) {
+  :root {
+    --fs-400: clamp(.75rem, 1.5vw, 1.25rem);
+    --fs-500: clamp(1.125rem, 2.3vw, 2rem);
+  }
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  display: block;
+}
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-size: var(--fs-400);
+  position: relative;
+  padding-top: 1px;
+  background: url("/images/pattern-curve.svg") no-repeat;
+  background-position: bottom left;
+  background-size: 100%;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.main {
+  padding: 3.3125rem 0;
+}
+@media (min-width: 48em) {
+  .main {
+    padding: 7rem 0;
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-template-columns: 4.2fr 1.1fr 4.7fr;
+    grid-template-rows: auto;
+  }
+}
+.main .slider {
+  position: relative;
+  background: url("/images/pattern-bg.svg") no-repeat center center/100% 100%;
+  padding: 2.3125rem;
+  -webkit-animation: droptop 0.6s ease;
+          animation: droptop 0.6s ease;
+}
+.main .slider img {
+  border-radius: 0.5rem;
+  box-shadow: 0px 42px 52px -32px rgba(32, 32, 70, 0.5);
+}
+.main .slider-btns {
+  border-radius: 4rem;
+  background-color: white;
+  position: absolute;
+  width: min(23.5%, 7rem);
+  height: min(12.5%, 3.5rem);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 5px 52px -12px rgba(32, 32, 70, 0.55);
+  display: flex;
+  flex-direction: row;
+}
+.main .slider-btns > * {
+  transition: transform 0.3s ease-in-out;
+  background-color: white;
+  flex: 1 1 50%;
+  border-radius: inherit;
+}
+.main .slider-btns > *:hover {
+  transform: scale(0.9);
+}
+.main .slider-btns > *:hover path {
+  opacity: 0.8;
+}
+.main .slider-btns > * svg {
+  transform: scale(0.73);
+}
+.main .slider-btns > * svg path {
+  transition: opacity 0.3s ease;
+}
+@media (min-width: 48em) {
+  .main .slider-btns {
+    left: 25%;
+  }
+  .main .slider-btns svg {
+    transform: scale(1);
+  }
+}
+@media (min-width: 48em) {
+  .main .slider {
+    grid-area: 1/2/2/4;
+    max-width: 36.0625rem;
+    justify-self: flex-end;
+  }
+}
+.main .testimonial {
+  position: relative;
+  background: url("/images/pattern-quotes.svg") no-repeat;
+  background-size: auto 22%;
+  background-position: top 0 left 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  margin-top: 2rem;
+  padding-top: 1.8125rem;
+  text-align: center;
+  -webkit-animation: sweepleft 0.6s ease-in-out;
+          animation: sweepleft 0.6s ease-in-out;
+}
+.main .testimonial .quote {
+  font-size: var(--fs-500);
+  font-weight: 300;
+  color: #202046;
+}
+.main .testimonial .testimonee {
+  position: relative;
+  margin-top: 1.8125rem;
+  color: #babacf;
+  font-weight: 300;
+  -webkit-animation: sweepright 0.9s ease-in-out;
+          animation: sweepright 0.9s ease-in-out;
+}
+.main .testimonial .testimonee b {
+  color: #202046;
+}
+@media (max-width: 47.9375em) {
+  .main .testimonial span {
+    display: block;
+  }
+}
+@media (min-width: 48em) {
+  .main .testimonial {
+    grid-area: 1/1/2/3;
+    z-index: 2;
+    margin-top: 0;
+    padding-top: 4.0625rem;
+    background-position: top 0 left 19%;
+    text-align: left;
+  }
+  .main .testimonial span {
+    margin-left: 0.5rem;
+  }
+  .main .testimonial br {
+    display: none;
+  }
+}
+
+@-webkit-keyframes sweepleft {
+  0% {
+    opacity: 0;
+    left: -20px;
+  }
+  50% {
+    opacity: 0;
+    left: -20px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes sweepleft {
+  0% {
+    opacity: 0;
+    left: -20px;
+  }
+  50% {
+    opacity: 0;
+    left: -20px;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@-webkit-keyframes sweepright {
+  0% {
+    opacity: 0;
+    right: -20px;
+  }
+  66% {
+    opacity: 0;
+    right: -20px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+@keyframes sweepright {
+  0% {
+    opacity: 0;
+    right: -20px;
+  }
+  66% {
+    opacity: 0;
+    right: -20px;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+}
+@-webkit-keyframes droptop {
+  0% {
+    opacity: 0;
+    top: -2rem;
+  }
+  50% {
+    opacity: 0;
+    top: -2rem;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+@keyframes droptop {
+  0% {
+    opacity: 0;
+    top: -2rem;
+  }
+  50% {
+    opacity: 0;
+    top: -2rem;
+  }
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}/*# sourceMappingURL=main.css.map */

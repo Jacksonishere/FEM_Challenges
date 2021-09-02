@@ -1,0 +1,167 @@
+.main {
+	padding: toRem(53) 0;
+	@include breakpoint-up(medium) {
+		padding: toRem(112) 0;
+		@include grid(c);
+		grid-auto-flow: column;
+		grid-template-columns: 4.2fr 1.1fr 4.7fr;
+		grid-template-rows: auto;
+	}
+	.slider {
+		position: relative;
+		background: url("/images/pattern-bg.svg") no-repeat center center/100% 100%;
+
+		padding: toRem(37);
+
+		img {
+			border-radius: $br;
+			box-shadow: 0px 42px 52px -32px rgba(32, 32, 70, 0.5);
+		}
+
+		&-btns {
+			border-radius: 4rem;
+			background-color: white;
+			position: absolute;
+			width: unquote("min(23.5%, 7rem)");
+			height: unquote("min(12.5%, 3.5rem)");
+			left: 50%;
+			transform: translate(-50%, -50%);
+			box-shadow: 0px 5px 52px -12px rgba(32, 32, 70, 0.55);
+
+			@include flex(row, center, center);
+			> * {
+				transition: transform 0.3s ease-in-out;
+				&:hover {
+					transform: scale(0.9);
+
+					path {
+						opacity: 0.8;
+					}
+				}
+
+				background-color: white;
+				flex: 1 1 50%;
+				border-radius: inherit;
+
+				svg {
+					transform: scale(0.73);
+
+					path {
+						transition: opacity 0.3s ease;
+					}
+				}
+			}
+			@include breakpoint-up(medium) {
+				left: 25%;
+				svg {
+					transform: scale(1);
+				}
+			}
+		}
+		@include breakpoint-up(medium) {
+			grid-area: 1 / 2 / 2 / 4;
+			max-width: toRem(577);
+			justify-self: flex-end;
+		}
+		animation: droptop .6s ease;
+	}
+	.testimonial {
+		position: relative;
+		background: url("/images/pattern-quotes.svg") no-repeat;
+		background-size: auto 22%;
+		background-position: top 0 left 50%;
+		@include center-auto;
+		width: 95%;
+		margin-top: 2rem;
+		padding-top: toRem(29);
+		text-align: center;
+        
+        animation: sweepleft .6s ease-in-out;
+		.quote {
+			font-size: var(--fs-500);
+			font-weight: $fw-300;
+			color: $clr-primary-700;
+
+		}
+
+		.testimonee {
+			position: relative;
+			margin-top: toRem(29);
+			color: $clr-primary-400;
+			font-weight: $fw-300;
+			b {
+				color: $clr-primary-700;
+			}
+			animation: sweepright .9s ease-in-out;
+		}
+		@include breakpoint-down(medium) {
+			span {
+				display: block;
+			}
+		}
+
+		@include breakpoint-up(medium) {
+			grid-area: 1 / 1 / 2 / 3;
+			z-index: 2;
+			margin-top: 0;
+			padding-top: toRem(65);
+			background-position: top 0 left 19%;
+			text-align: left;
+
+			span {
+				margin-left: 0.5rem;
+			}
+
+			br {
+				display: none;
+			}
+		}
+	}
+}
+
+@keyframes sweepleft {
+	0% {
+		opacity: 0;
+		left: -20px;
+	}
+    50%{
+        opacity: 0;
+		left: -20px;
+    }
+	100% {
+		opacity: 1;
+		left: 0;
+	}
+}
+
+@keyframes sweepright {
+	0% {
+		opacity: 0;
+		right: -20px;
+	}
+
+	66% {
+		opacity: 0;
+		right: -20px;
+	}
+
+	100% {
+		opacity: 1;
+		right: 0;
+	}
+}
+
+@keyframes droptop {
+	0% {
+		opacity: 0;
+		top: -2rem;
+	}
+    50% {
+		opacity: 0;
+		top: -2rem;
+	}
+	100% {
+		opacity: 1;
+		top: 0;
+	}
+}

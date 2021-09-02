@@ -1,0 +1,12 @@
+.container{
+    @include center-auto;
+    width: 90%;
+    max-width: 1200px;
+    @include breakpoint-down(medium){
+        max-width: 500px;
+    }
+}
+
+.text-center{
+    text-align: center;
+}
