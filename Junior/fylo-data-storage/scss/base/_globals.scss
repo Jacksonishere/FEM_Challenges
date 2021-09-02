@@ -1,0 +1,11 @@
+figure{
+    @include grid(c);
+}
+
+body{
+    font-family: $ff-primary;
+    font-size: var(--fs-400);
+    color: $clr-neutral-100;
+
+    background: url("/images/bg-mobile.png") no-repeat center center/cover;
+}

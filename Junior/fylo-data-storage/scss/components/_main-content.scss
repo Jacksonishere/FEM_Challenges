@@ -1,0 +1,99 @@
+.main {
+	padding-top: toRem(127);
+	// outline: solid 1px magenta;
+	section {
+		border-radius: $br;
+		background-color: $clr-neutral-700;
+		padding: toRem(41);
+	}
+
+	.section-one {
+		border-top-right-radius: toRem(100);
+
+		.service-icons {
+			margin-top: 2rem;
+			@include flex(row);
+
+			> * {
+				padding: toRem(12) toRem(14);
+				background-color: $clr-neutral-900;
+				border-radius: $br;
+			}
+			> * + * {
+				margin-left: 1rem;
+			}
+		}
+	}
+	.section-two {
+		position: relative;
+		margin-top: 1rem;
+        padding-bottom: toRem(46); 
+		p {
+			strong {
+				font-weight: $fw-700;
+			}
+		}
+		.gigs-left {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+            width: 179px;
+			transform: translate(-50%, 50%);
+            padding: .375rem 0;
+			background-color: white;
+			border-radius: $br;
+
+			@include flex(row, c, c);
+			strong {
+				&:first-child {
+					font-size: toRem(40);
+					color: $clr-neutral-900;
+				}
+				&:last-child {
+                    margin-left: .5rem;
+					text-transform: uppercase;
+					font-size: 0.75rem;
+                    letter-spacing: 1px;
+					color: $clr-neutral-400;
+				}
+			}
+		}
+
+		.status-bar {
+			position: relative;
+			margin-top: 1rem;
+			border-radius: 2rem;
+			height: 20px;
+
+			background: $clr-neutral-900;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 3px;
+				width: 74%;
+				height: 14px;
+				transform: translateY(-50%);
+				background: $clr-gradient;
+				border-radius: $br;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				right: 25.5%;
+				width: 10px;
+				height: 10px;
+				transform: translateY(-50%);
+				background-color: $clr-neutral-100;
+				border-radius: 100%;
+			}
+		}
+
+		.gigs {
+			margin-top: toRem(10);
+			@include flex(row, null, sb);
+		}
+	}
+}

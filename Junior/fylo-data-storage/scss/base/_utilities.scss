@@ -1,0 +1,8 @@
+.container{
+    width: unquote("min(90%, 1110px)");
+    @include center-auto;
+}
+
+.text-center{
+    text-align: center;
+}
