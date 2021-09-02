@@ -39,7 +39,7 @@ $flex-grid: (
 	"c": center,
 );
 
-@mixin flex($flexdirection: null, $alignitems:null, $justifycontent: null) {
+@mixin flex($flexdirection: null, $alignitems: null, $justifycontent: null) {
 	display: flex;
 	flex-direction: $flexdirection;
 	align-items: map-get($flex-grid, $alignitems);
@@ -61,8 +61,13 @@ $flex-grid: (
 }
 
 /* PSEUDO ELEMENT */
-@mixin pseudo($display: block, $pos: absolute, $content: "") {
+@mixin pseudo($width: 100%, $height: 100%, $pos: absolute, $content: "", $display: block){
 	content: $content;
-	display: $display;
 	position: $pos;
+	display: $display;
+	width: $width;
+	height: $height;
 }
+
+/* BACKGROUND  */
+
