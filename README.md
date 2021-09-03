@@ -23,6 +23,8 @@ You can click the image to view the live site! 💻😁
 
 [<img src="./Junior/testimonial-grid-section/design/desktop-preview.jpg" alt="preview" width="200"/>](https://suspicious-raman-94e803.netlify.app/)
 [<img src="./Junior/sunnyside-landing-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://nervous-nightingale-455d64.netlify.app/)
+[<img src="./Junior/testimonial-grid-section/design/desktop-preview.jpg" alt="preview" width="200"/>](https://sharp-albattani-708b32.netlify.app/)
+[<img src="./Junior/testimonials-slider/design/desktop-preview.jpg" alt="preview" width="200"/>](https://adoring-kare-cfb228.netlify.app/)
 
 
 
