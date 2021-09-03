@@ -10,3 +10,13 @@
 .text-center{
     text-align: center;
 }
+
+.disappear{
+    transform: translateX(-30%);
+    opacity: 0;
+}
+
+.appear{
+    transform: translateX(0);
+    opacity: 1;  
+}
