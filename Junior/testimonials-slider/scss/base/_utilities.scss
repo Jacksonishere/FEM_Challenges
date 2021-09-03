@@ -11,12 +11,23 @@
     text-align: center;
 }
 
-.disappear{
-    transform: translateX(-30%);
-    opacity: 0;
+
+.sweepfromSide{
+    @include sweepfromSide;
+}
+.sweepoutLeft{
+    @include sweepoutSide(-30%);
+}
+.sweepoutRight{
+    @include sweepoutSide(30%);
 }
 
-.appear{
-    transform: translateX(0);
-    opacity: 1;  
+.sweepfromLevel{
+    @include sweepfromLevel;
+}
+.sweeoutTop{
+    @include sweepoutLevel(-30%);
+}
+.sweeoutBottom{
+    @include sweepoutLevel(30%);
 }

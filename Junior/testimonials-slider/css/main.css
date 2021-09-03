@@ -2,6 +2,7 @@
 /* CENTER BLOCK */
 /* PSEUDO ELEMENT */
 /* BACKGROUND  */
+/* TRANSITIONS */
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -18,14 +19,34 @@
   text-align: center;
 }
 
-.disappear {
-  transform: translateX(-30%);
-  opacity: 0;
+.sweepfromSide {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
-.appear {
-  transform: translateX(0);
-  opacity: 1;
+.sweepoutLeft {
+  opacity: 0 !important;
+  transform: translateX(-30%) !important;
+}
+
+.sweepoutRight {
+  opacity: 0 !important;
+  transform: translateX(30%) !important;
+}
+
+.sweepfromLevel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.sweeoutTop {
+  opacity: 0 !important;
+  transform: translateY(-30%) !important;
+}
+
+.sweeoutBottom {
+  opacity: 0 !important;
+  transform: translateY(30%) !important;
 }
 
 :root {
@@ -106,6 +127,7 @@ select {
   border: none;
   outline: none;
   display: block;
+  cursor: pointer;
 }
 input:focus,
 button:focus,
@@ -165,13 +187,13 @@ body {
   position: relative;
   background: url("/images/pattern-bg.svg") no-repeat center center/100% 100%;
   padding: 2.3125rem;
-  opacity: 0;
-  -webkit-animation: droptop 1s ease forwards;
-          animation: droptop 1s ease forwards;
 }
 .main .slider img {
   border-radius: 0.5rem;
   box-shadow: 0px 42px 52px -32px rgba(32, 32, 70, 0.5);
+  opacity: 0;
+  transform: translateY(-30%);
+  transition: transform 0.6s ease, opacity 0.6s ease;
 }
 .main .slider-btns {
   border-radius: 4rem;
@@ -234,16 +256,17 @@ body {
   font-weight: 300;
   color: #202046;
   opacity: 0;
-  -webkit-animation: sweepleft 1s 0.5s ease forwards;
-          animation: sweepleft 1s 0.5s ease forwards;
+  transform: translateX(-30%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .main .testimonial .testimonee {
   opacity: 0;
   margin-top: 1.8125rem;
   color: #babacf;
   font-weight: 300;
-  -webkit-animation: sweepright 1s 1s ease forwards;
-          animation: sweepright 1s 1s ease forwards;
+  opacity: 0;
+  transform: translateX(30%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .main .testimonial .testimonee b {
   color: #202046;
@@ -255,9 +278,9 @@ body {
 }
 @media (min-width: 48em) {
   .main .testimonial {
+    margin-top: 0;
     grid-area: 1/1/2/3;
     z-index: 2;
-    margin-top: 0;
     background-position: top 0 left 19%;
     text-align: left;
   }
@@ -266,67 +289,5 @@ body {
   }
   .main .testimonial br {
     display: none;
-  }
-}
-
-@-webkit-keyframes sweepleft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-@keyframes sweepleft {
-  0% {
-    opacity: 0;
-    transform: translateX(-30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-@-webkit-keyframes sweepright {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-@keyframes sweepright {
-  0% {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-@-webkit-keyframes droptop {
-  0% {
-    opacity: 0;
-    transform: translateY(-30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-@keyframes droptop {
-  0% {
-    opacity: 0;
-    transform: translateY(-30%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
   }
 }/*# sourceMappingURL=main.css.map */
