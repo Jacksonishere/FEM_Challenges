@@ -15,19 +15,6 @@
 .sweepfromSide{
     @include sweepfromSide;
 }
-.sweepoutLeft{
-    @include sweepoutSide(-30%);
-}
-.sweepoutRight{
-    @include sweepoutSide(30%);
-}
-
 .sweepfromLevel{
     @include sweepfromLevel;
-}
-.sweeoutTop{
-    @include sweepoutLevel(-30%);
-}
-.sweeoutBottom{
-    @include sweepoutLevel(30%);
 }

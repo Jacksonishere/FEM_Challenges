@@ -24,29 +24,9 @@
   transform: translateX(0) !important;
 }
 
-.sweepoutLeft {
-  opacity: 0 !important;
-  transform: translateX(-30%) !important;
-}
-
-.sweepoutRight {
-  opacity: 0 !important;
-  transform: translateX(30%) !important;
-}
-
 .sweepfromLevel {
   opacity: 1 !important;
   transform: translateY(0) !important;
-}
-
-.sweeoutTop {
-  opacity: 0 !important;
-  transform: translateY(-30%) !important;
-}
-
-.sweeoutBottom {
-  opacity: 0 !important;
-  transform: translateY(30%) !important;
 }
 
 :root {
@@ -256,7 +236,7 @@ body {
   font-weight: 300;
   color: #202046;
   opacity: 0;
-  transform: translateX(-30%);
+  transform: translateX(-50%);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .main .testimonial .testimonee {
@@ -265,7 +245,7 @@ body {
   color: #babacf;
   font-weight: 300;
   opacity: 0;
-  transform: translateX(30%);
+  transform: translateX(50%);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .main .testimonial .testimonee b {
@@ -282,6 +262,7 @@ body {
     grid-area: 1/1/2/3;
     z-index: 2;
     background-position: top 0 left 19%;
+    height: 16.9375rem;
     text-align: left;
   }
   .main .testimonial span {

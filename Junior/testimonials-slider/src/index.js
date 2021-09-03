@@ -86,6 +86,11 @@ const changeSlider = (side) => {
 
 	toggleTransitions();
 
+    /*  If it doesnt contain sweepfromside, it means:
+        A button was clicked in which we toggled the transition, meaning it is now going back to its original place, hidden and disappeared, and we need to set a timeout to change the content and then make it reappear.
+
+        If it does contain, in which the button was clicked and then clicked again afterwards, adding sweepfromside automatically, then we don't need to change content.
+    */
 	if (!testimonial_quote.classList.contains("sweepfromSide")) {
 		timeout = setTimeout(() => {
 			//change content

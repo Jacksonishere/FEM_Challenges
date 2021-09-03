@@ -84,7 +84,7 @@
 			color: $clr-primary-700;
 			
             opacity: 0;
-            transform: translateX(-30%);
+            transform: translateX(-50%);
             transition: opacity .6s ease, transform .6s ease;
 		}
 
@@ -98,7 +98,7 @@
 			}
 
             opacity: 0;
-            transform: translateX(30%);
+            transform: translateX(50%);
             transition: opacity .6s ease, transform .6s ease;
 		}
         
@@ -114,6 +114,7 @@
 			z-index: 2;
 			// padding-top: toRem(65);
 			background-position: top 0 left 19%;
+			height: toRem(271);
 			text-align: left;
 
 			span {

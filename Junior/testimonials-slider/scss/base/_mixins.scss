@@ -77,17 +77,9 @@ $flex-grid: (
 	opacity: 1 !important;
 	transform: translateX(0) !important;
 }
-@mixin sweepoutSide($to){
-	opacity: 0 !important;
-	transform: translateX($to) !important;
-}
 @mixin sweepfromLevel{
 	opacity: 1 !important;
 	transform: translateY(0) !important;
-}
-@mixin sweepoutLevel($to){
-	opacity: 0 !important;
-	transform: translateY($to) !important;
 }
 
 
