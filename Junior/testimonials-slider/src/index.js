@@ -44,15 +44,6 @@ const testimonies = [
 	},
 ];
 
-const alterButtons = (toggle) => {
-	if (toggle === "disable") {
-		showLeft.disabled = true;
-		showRight.disabled = true;
-	} else if (toggle === "enable") {
-		showLeft.disabled = false;
-		showRight.disabled = false;
-	}
-};
 
 const setContent = (testimony_obj) => {
 	const { img, testimony, name, role } = testimony_obj;
@@ -65,23 +56,18 @@ const setContent = (testimony_obj) => {
 const handleTimeout = () => {
     if(timeout){
         clearTimeout(timeout);
-        timeout = null;
-
-        console.log("cleared timeout");
     }
 }
-
-
 
 const changeSlider = (side) => {
 	//in case timeout was set to make elements appear in again, clear it because we're going to
 	handleTimeout();
-
 	if (side === "left") {
 		index--;
 	} else {
 		index++;
 	}
+
 	const currTestimony = testimonies[Math.abs(index % testimonies.length)];
 
 	toggleTransitions();
@@ -95,9 +81,8 @@ const changeSlider = (side) => {
 		timeout = setTimeout(() => {
 			//change content
 			setContent(currTestimony);
-
 			toggleTransitions();
-		}, 600);
+		}, 650);
 	}
 };
 
@@ -108,7 +93,3 @@ showLeft.addEventListener("click", () => {
 showRight.addEventListener("click", () => {
 	changeSlider("right");
 });
-
-//handle case when clicked then clicked again so that it only toggles once.
-
-//only whne going back is an issue

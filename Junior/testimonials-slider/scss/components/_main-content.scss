@@ -37,12 +37,14 @@
 
 			> * {
 				transition: transform 0.3s ease-in-out;
-				&:hover {
-					svg{
-						transform: scale(1.25);
-					}
-					path {
-						opacity: 0.6;
+				@include breakpoint-up(medium){
+					&:hover {
+						svg{
+							transform: scale(1.25);
+						}
+						path {
+							opacity: 0.6;
+						}
 					}
 				}
 

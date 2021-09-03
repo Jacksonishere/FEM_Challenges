@@ -193,11 +193,13 @@ body {
   background-color: white;
   flex: 1 1 50%;
 }
-.main .slider-btns > *:hover svg {
-  transform: scale(1.25);
-}
-.main .slider-btns > *:hover path {
-  opacity: 0.6;
+@media (min-width: 48em) {
+  .main .slider-btns > *:hover svg {
+    transform: scale(1.25);
+  }
+  .main .slider-btns > *:hover path {
+    opacity: 0.6;
+  }
 }
 .main .slider-btns > * svg {
   transition: transform 0.3s ease;
