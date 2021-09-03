@@ -24,6 +24,7 @@
 
 		&-btns {
 			border-radius: 4rem;
+			overflow: hidden;
 			background-color: white;
 			position: absolute;
 			width: unquote("min(23.5%, 7rem)");
@@ -33,21 +34,23 @@
 			box-shadow: 0px 5px 52px -12px rgba(32, 32, 70, 0.55);
 
 			@include flex(row, center, center);
+
 			> * {
 				transition: transform 0.3s ease-in-out;
 				&:hover {
-					transform: scale(0.9);
-
+					svg{
+						transform: scale(1.25);
+					}
 					path {
-						opacity: 0.8;
+						opacity: 0.6;
 					}
 				}
 
 				background-color: white;
 				flex: 1 1 50%;
-				border-radius: inherit;
 
 				svg {
+					transition: transform .3s ease;
 					transform: scale(0.73);
 
 					path {

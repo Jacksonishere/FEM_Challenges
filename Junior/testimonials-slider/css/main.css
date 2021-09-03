@@ -177,6 +177,7 @@ body {
 }
 .main .slider-btns {
   border-radius: 4rem;
+  overflow: hidden;
   background-color: white;
   position: absolute;
   width: min(23.5%, 7rem);
@@ -191,15 +192,15 @@ body {
   transition: transform 0.3s ease-in-out;
   background-color: white;
   flex: 1 1 50%;
-  border-radius: inherit;
 }
-.main .slider-btns > *:hover {
-  transform: scale(0.9);
+.main .slider-btns > *:hover svg {
+  transform: scale(1.25);
 }
 .main .slider-btns > *:hover path {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .main .slider-btns > * svg {
+  transition: transform 0.3s ease;
   transform: scale(0.73);
 }
 .main .slider-btns > * svg path {
