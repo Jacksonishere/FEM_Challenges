@@ -33,9 +33,26 @@
 			transform: translate(-50%, -50%);
 			box-shadow: 0px 5px 52px -12px rgba(32, 32, 70, 0.55);
 
-			@include flex(row, center, center);
-
+			@include flex(row);
+			@include breakpoint-up(medium) {
+				left: 30%;
+				svg {
+					transform: scale(1);
+				}
+			}
 			> * {
+				background-color: white;
+				flex: 0 1 50%;
+				
+				svg {
+					transition: transform .3s ease;
+					transform: scale(0.73);
+					
+					path {
+						transition: opacity 0.3s ease;
+					}
+				}
+				
 				transition: transform 0.3s ease-in-out;
 				@include breakpoint-up(medium){
 					&:hover {
@@ -46,24 +63,6 @@
 							opacity: 0.6;
 						}
 					}
-				}
-
-				background-color: white;
-				flex: 1 1 50%;
-
-				svg {
-					transition: transform .3s ease;
-					transform: scale(0.73);
-
-					path {
-						transition: opacity 0.3s ease;
-					}
-				}
-			}
-			@include breakpoint-up(medium) {
-				left: 25%;
-				svg {
-					transform: scale(1);
 				}
 			}
 		}
@@ -115,11 +114,11 @@
 
 		@include breakpoint-up(medium) {
 			margin-top: 0;
+			padding-top: toRem(36);
 			grid-area: 1 / 1 / 2 / 3;
 			z-index: 2;
-			// padding-top: toRem(65);
 			background-position: top 0 left 19%;
-			height: toRem(271);
+			height: 65%;
 			text-align: left;
 
 			span {

@@ -188,18 +188,18 @@ body {
   display: flex;
   flex-direction: row;
 }
-.main .slider-btns > * {
-  transition: transform 0.3s ease-in-out;
-  background-color: white;
-  flex: 1 1 50%;
-}
 @media (min-width: 48em) {
-  .main .slider-btns > *:hover svg {
-    transform: scale(1.25);
+  .main .slider-btns {
+    left: 30%;
   }
-  .main .slider-btns > *:hover path {
-    opacity: 0.6;
+  .main .slider-btns svg {
+    transform: scale(1);
   }
+}
+.main .slider-btns > * {
+  background-color: white;
+  flex: 0 1 50%;
+  transition: transform 0.3s ease-in-out;
 }
 .main .slider-btns > * svg {
   transition: transform 0.3s ease;
@@ -209,11 +209,11 @@ body {
   transition: opacity 0.3s ease;
 }
 @media (min-width: 48em) {
-  .main .slider-btns {
-    left: 25%;
+  .main .slider-btns > *:hover svg {
+    transform: scale(1.25);
   }
-  .main .slider-btns svg {
-    transform: scale(1);
+  .main .slider-btns > *:hover path {
+    opacity: 0.6;
   }
 }
 @media (min-width: 48em) {
@@ -262,10 +262,11 @@ body {
 @media (min-width: 48em) {
   .main .testimonial {
     margin-top: 0;
+    padding-top: 2.25rem;
     grid-area: 1/1/2/3;
     z-index: 2;
     background-position: top 0 left 19%;
-    height: 16.9375rem;
+    height: 65%;
     text-align: left;
   }
   .main .testimonial span {

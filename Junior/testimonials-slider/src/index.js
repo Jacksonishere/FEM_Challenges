@@ -56,6 +56,7 @@ const setContent = (testimony_obj) => {
 const handleTimeout = () => {
     if(timeout){
         clearTimeout(timeout);
+        timeout = null;
     }
 }
 
@@ -82,7 +83,7 @@ const changeSlider = (side) => {
 			//change content
 			setContent(currTestimony);
 			toggleTransitions();
-		}, 650);
+		}, 601);
 	}
 };
 
