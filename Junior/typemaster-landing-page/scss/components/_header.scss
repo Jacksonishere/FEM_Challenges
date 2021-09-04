@@ -1,0 +1,15 @@
+.header{
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    background-color: $clr-neutral-100;
+    
+    .nav{
+        padding: toRem(26);
+        @include flex(row, c, sb);
+
+        .order{
+            background-color: $clr-neutral-400;
+        }
+    }
+}

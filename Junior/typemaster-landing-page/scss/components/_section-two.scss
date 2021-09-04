@@ -1,0 +1,34 @@
+.section-two{
+    .keyboards{
+        max-height: 400px;
+        @include flex(row);
+        margin-left: -3rem;
+        img{
+            max-width: none;
+            width: 100%;
+            height: 100%;
+        }
+        > * {
+            overflow: hidden;
+            flex-grow: 1;
+        }
+        .phone-keyboard{
+            border-radius: 0 $br $br 0;
+            background-color: $clr-primary-700;
+            img{
+                mix-blend-mode: multiply;
+            }
+        }
+        .glass-keyboard{
+            margin-left: 1.5rem;
+            border-radius: $br;
+        }
+    }
+    .title{
+        margin-top: toRem(75);
+    }
+    .desc{
+        margin: 1.5rem 0;
+    }
+
+}

@@ -1,0 +1,40 @@
+.section-one {
+	margin: toRem(142) 0 1.5rem;
+	text-align: left;
+
+	.typemaster {
+		margin-bottom: 4rem;
+
+		.desc {
+			max-width: toRem(428);
+			margin: toRem(36) 0;
+		}
+		.order-info {
+			@include flex(row, c);
+			.preorder {
+				background-color: $clr-primary-700;
+				color: $clr-neutral-100;
+			}
+			.release-date {
+				margin-left: toRem(40);
+				text-transform: uppercase;
+				font-weight: 600;
+			}
+		}
+	}
+	.keyboard {
+        @include flex(row);
+        margin-right: -3rem;
+		img {
+			border-radius: 1rem 0 0 1rem;
+		}
+	}
+	// img{
+	//     max-width: none;
+	//     width: calc(100% + 24px);
+	//     max-height: toRem(400);
+	//     object-fit: cover;
+	//     object-position: center;
+	//     border-radius: 1rem 0 0 1rem;
+	// }
+}

@@ -1,0 +1,32 @@
+:root{
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+
+    @include breakpoint-up(medium){
+        --fs-400: clamp(1rem, 2vw, 1.625rem);
+        --fs-500: clamp(1.125rem, 2.3vw, 2rem);
+    }
+
+    --fs-h1: 3rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.5rem;
+
+}
+
+$clr-primary-400: rgb(255, 155, 98);
+$clr-primary-700: rgb(241, 103, 24);
+
+$clr-neutral-100: rgb(255,255,255);
+$clr-neutral-400: rgb(232, 239, 242);
+$clr-neutral-700: rgb(123, 139, 173);
+$clr-neutral-900: rgb(22,37,66);
+
+$ff-primary: 'Barlow', sans-serif;
+
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-900: 900;
+
+$br: .5rem;

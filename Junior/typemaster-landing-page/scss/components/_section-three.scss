@@ -1,0 +1,17 @@
+.section-three{
+    .card{
+        margin: 4rem 0;
+        img{
+            padding: 1rem;
+            background-color: $clr-primary-700;
+            display: inline-block;
+            border-radius: 1rem;
+        }
+        h3{
+            margin-top: 3rem;
+        }
+        p{
+            margin-top: toRem(28);
+        }
+    }
+}
