@@ -10,6 +10,9 @@ body{
 
 button{
     padding: .75rem .875rem;
+    @include breakpoint-up(medium){
+        padding: 1.125rem 1.25rem;
+    }
     font-weight: $fw-600;
     text-transform: uppercase;
     border-radius: $br;

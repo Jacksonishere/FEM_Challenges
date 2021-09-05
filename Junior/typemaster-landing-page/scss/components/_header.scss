@@ -1,15 +1,20 @@
-.header{
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-    background-color: $clr-neutral-100;
-    
-    .nav{
-        padding: toRem(26);
-        @include flex(row, c, sb);
+.header {
+	position: fixed;
+	z-index: 100;
+	width: 100%;
+	background-color: $clr-neutral-100;
 
-        .order{
-            background-color: $clr-neutral-400;
-        }
-    }
+	.nav {
+		padding-top: toRem(26);
+		padding-bottom: toRem(26);
+		@include flex(row, c, sb);
+
+		.order {
+			background-color: $clr-neutral-400;
+		}
+		@include breakpoint-up(medium) {
+			padding-top: toRem(40);
+			padding-bottom: toRem(40);
+		}
+	}
 }
