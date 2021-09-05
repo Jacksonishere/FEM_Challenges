@@ -31,9 +31,9 @@
         }
     }
     @include breakpoint-up(large){
-        margin-top: toRem(144);
+        margin-top: toRem(170);
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: min-content;
-        gap: 2rem;
+        gap: 3rem;
     }
 }

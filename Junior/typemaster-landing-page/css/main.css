@@ -149,7 +149,7 @@ body {
 }
 
 main {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 button {
@@ -482,11 +482,11 @@ p {
 }
 @media (min-width: 64em) {
   .section-three {
-    margin-top: 9rem;
+    margin-top: 10.625rem;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: -webkit-min-content;
     grid-template-rows: min-content;
-    gap: 2rem;
+    gap: 3rem;
   }
 }
 

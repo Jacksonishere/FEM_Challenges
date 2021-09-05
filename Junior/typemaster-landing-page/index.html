@@ -7,6 +7,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png" />
 		<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 		<title>Frontend Mentor | Typemaster pre-launch landing page</title>
 	</head>
@@ -37,7 +38,7 @@
 				</figure>
 			</section>
 
-			<section class="container section-two">
+			<section class="container section-two" data-aos="fade-right">
 				<div class="keyboards">
 					<figure class="phone-keyboard">
 						<img src="/assets/mobile/image-phone-and-keyboard.jpg" alt="" />
@@ -55,7 +56,7 @@
 			</section>
 
 			<section class="container section-three">
-				<div class="card">
+				<div class="card" data-aos="fade-up" data-aos-offset="200">
 					<figure><img src="/assets/shared/icon-compatible.svg" alt="" /></figure>
 					<h3>Highly <br />compatible</h3>
 					<p>
@@ -63,7 +64,7 @@
 						no installation or driver needed.
 					</p>
 				</div>
-				<div class="card">
+				<div class="card" data-aos="fade-up" data-aos-offset="200" data-aos-delay="50">
 					<figure><img src="/assets/shared/icon-bluetooth.svg" alt="" /></figure>
 					<h3>Wireless <br />with bluetooth</h3>
 					<p>
@@ -71,7 +72,7 @@
 						the unifying receiver into your computer.
 					</p>
 				</div>
-				<div class="card">
+				<div class="card" data-aos="fade-up" data-aos-offset="200" data-aos-delay="100">
 					<figure><img src="/assets/shared/icon-battery.svg" alt="" /></figure>
 					<h3>High capacity <br />battery</h3>
 					<p>
@@ -79,7 +80,7 @@
 						40 hours of usage time between charges.
 					</p>
 				</div>
-				<div class="card">
+				<div class="card" data-aos="fade-up" data-aos-offset="200" data-aos-delay="150">
 					<figure><img src="/assets/shared/icon-light.svg" alt="" /></figure>
 					<h3>RGB backlit <br />modes</h3>
 					<p>
@@ -92,5 +93,13 @@
 		<footer class="footer">
 			<p><b>Typemaster 2021 </b> | All Rights Reserved</p>
 		</footer>
+
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script>
+			AOS.init({
+				offset:"100", 
+				duration:"450"
+			});
+		</script>
 	</body>
 </html>
