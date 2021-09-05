@@ -1,6 +1,7 @@
 .section-three{
     @include grid();
     gap: 4rem;
+    margin-top: toRem(111);
     .card{
         figure{
             @include center-auto;
@@ -20,12 +21,19 @@
     @include breakpoint-up(medium){
         grid-template-columns: 1fr 1fr;
         grid-template-rows: min-content min-content;
-        
+        margin-top: toRem(70);
+        gap: 3.5rem;
         .card{
             margin: 0;
             figure{
                 margin: 0;
             }
         }
+    }
+    @include breakpoint-up(large){
+        margin-top: toRem(144);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: min-content;
+        gap: 2rem;
     }
 }

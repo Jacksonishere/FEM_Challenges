@@ -4,8 +4,18 @@
 
 	@include breakpoint-up(medium) {
 		@include flex(row, c);
-        margin-bottom: 3rem;
+		margin-bottom: 3rem;
 	}
+    
+    @include breakpoint-up(large){
+        button{
+			transition: background-color .3s ease;
+
+			&:hover{
+				background-color: $clr-primary-400 !important;
+			}
+		}
+    }
 
 	.typemaster {
 		margin-bottom: 4rem;
@@ -24,11 +34,15 @@
 				font-weight: 600;
 			}
 		}
-		@include breakpoint-up(medium) {
+		@include breakpoint-btwn(medium, large) {
 			width: 49%;
 			max-width: toRem(340);
 			flex-shrink: 0;
 			margin-bottom: 0;
+		}
+		@include breakpoint-up(large) {
+			margin-bottom: 0;
+			max-width: toRem(445);
 		}
 	}
 	.keyboard {
@@ -39,16 +53,25 @@
 
 		@include breakpoint-up(medium) {
             flex-grow: 1;
-			width: 51%;
+            @include flex();
 			margin-left: toRem(69);
+			width: 51%;
+			min-height: toRem(425);
 			img {
 				content: url("/assets/tablet/image-keyboard.jpg");
 				max-width: none;
-                width: 100%;
-				// height: 425px;
-                min-height: toRem(425);
-                object-fit: cover;
-                object-position: left center;
+				width: 100%;
+				object-fit: cover;
+				object-position: left center;
+			}
+		}
+		@include breakpoint-up(large) {
+			margin-left: toRem(125);
+			margin-right: 0;
+			min-height: toRem(480);
+			img {
+				border-radius: $br;
+				content: url("/assets/desktop/image-keyboard.jpg");
 			}
 		}
 	}

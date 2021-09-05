@@ -15,4 +15,15 @@
 			background-color: $clr-neutral-400;
 		}
 	}
+	
+	@include breakpoint-up(large){
+		button{
+			transition: background-color .3s ease, color .3s ease;
+
+			&:hover{
+				background-color: $clr-neutral-900 !important;
+				color: white;
+			}
+		}
+	}
 }

@@ -3,14 +3,18 @@
     --fs-500: 1.125rem;
     --fs-600: 1.25rem;
 
+    --fs-h1: 3rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.5rem;
+
     @include breakpoint-up(medium){
         // --fs-400: clamp(1rem, 2vw, 1.625rem);
         // --fs-500: clamp(1.125rem, 2.3vw, 2rem);
     }
 
-    --fs-h1: 3rem;
-    --fs-h2: 2rem;
-    --fs-h3: 1.5rem;
+    @include breakpoint-up(large){
+        --fs-h1: 3.5rem;
+    }
 
 }
 
