@@ -3,7 +3,6 @@
     padding: 0 toRem(24);
     
     max-width: 1214px;
-    overflow: hidden;
     
     @include breakpoint-up(medium){
         padding: 0 toRem(44);

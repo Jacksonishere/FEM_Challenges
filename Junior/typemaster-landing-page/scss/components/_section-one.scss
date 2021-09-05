@@ -6,16 +6,27 @@
 		@include flex(row, c);
 		margin-bottom: 3rem;
 	}
-    
-    @include breakpoint-up(large){
-        button{
-			transition: background-color .3s ease;
 
-			&:hover{
+	@include breakpoint-up(large) {
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			background-image: url("/assets/shared/pattern-square.svg");
+			width: toRem(255);
+			height: toRem(240);
+			top: 0;
+			right: 0;
+			transform: translateX(calc(100% - 14px));
+		}
+		button {
+			transition: background-color 0.3s ease;
+
+			&:hover {
 				background-color: $clr-primary-400 !important;
 			}
 		}
-    }
+	}
 
 	.typemaster {
 		margin-bottom: 4rem;
@@ -52,8 +63,8 @@
 		}
 
 		@include breakpoint-up(medium) {
-            flex-grow: 1;
-            @include flex();
+			flex-grow: 1;
+			@include flex();
 			margin-left: toRem(69);
 			width: 51%;
 			min-height: toRem(425);

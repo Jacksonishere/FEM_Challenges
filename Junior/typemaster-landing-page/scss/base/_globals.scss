@@ -4,11 +4,14 @@ body{
     font-family: $ff-primary;
     font-size: var(--fs-400);
     text-align: center;
-
     @include breakpoint-up(medium){
         text-align: left;
     }
 
+}
+
+main{
+    overflow-x: hidden;
 }
 
 button{

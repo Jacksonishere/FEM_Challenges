@@ -8,7 +8,6 @@
   margin-right: auto;
   padding: 0 1.5rem;
   max-width: 1214px;
-  overflow: hidden;
 }
 @media (min-width: 48em) {
   .container {
@@ -149,6 +148,10 @@ body {
   }
 }
 
+main {
+  overflow-x: hidden;
+}
+
 button {
   padding: 0.75rem 0.875rem;
   font-weight: 600;
@@ -231,6 +234,19 @@ p {
   }
 }
 @media (min-width: 64em) {
+  .section-one {
+    position: relative;
+  }
+  .section-one::before {
+    content: "";
+    position: absolute;
+    background-image: url("/assets/shared/pattern-square.svg");
+    width: 15.9375rem;
+    height: 15rem;
+    top: 0;
+    right: 0;
+    transform: translateX(calc(100% - 14px));
+  }
   .section-one button {
     transition: background-color 0.3s ease;
   }
@@ -413,6 +429,17 @@ p {
   .section-two {
     grid-template-columns: 7fr 3fr;
     grid-template-rows: 240px 240px;
+    position: relative;
+  }
+  .section-two::before {
+    content: "";
+    position: absolute;
+    background-image: url("/assets/shared/pattern-square.svg");
+    width: 15.9375rem;
+    height: 15rem;
+    top: 0;
+    left: 0;
+    transform: translateX(calc(-100% + 14px));
   }
 }
 
