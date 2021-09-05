@@ -1,10 +1,13 @@
 body{
     position: relative;
-    padding-top: 1px;
+    border-top: 1px solid white;
     font-family: $ff-primary;
     font-size: var(--fs-400);
     text-align: center;
 
+    @include breakpoint-up(medium){
+        text-align: left;
+    }
 
 }
 

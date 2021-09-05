@@ -2,12 +2,13 @@
 	margin: toRem(142) auto 1.5rem;
 	text-align: left;
 
-    @include breakpoint-up(medium){
-        @include flex(row, c);
-    }
+	@include breakpoint-up(medium) {
+		@include flex(row, c);
+        margin-bottom: 3rem;
+	}
 
 	.typemaster {
-        margin-bottom: 4rem;
+		margin-bottom: 4rem;
 		.desc {
 			margin: toRem(36) 0;
 		}
@@ -23,32 +24,32 @@
 				font-weight: 600;
 			}
 		}
-        @include breakpoint-up(medium){
-            // flex: 1 0 49%;
-            width: 49%;
-            max-width: toRem(340);
-            flex-shrink: 0;
-            margin-bottom: 0;
-        }
+		@include breakpoint-up(medium) {
+			width: 49%;
+			max-width: toRem(340);
+			flex-shrink: 0;
+			margin-bottom: 0;
+		}
 	}
 	.keyboard {
-        @include flex(row);
-        margin-right: -3rem;
+		margin-right: -3rem;
 		img {
 			border-radius: 1rem 0 0 1rem;
 		}
 
-        @include breakpoint-up(medium){
-            // flex: 1 1 51%;
-            width: 51%;
-            margin-left: toRem(69);
-            // margin-right: 0;
-            img{
-                content: url("/assets/tablet/image-keyboard.jpg");
-                max-width: none; 
+		@include breakpoint-up(medium) {
+            flex-grow: 1;
+			width: 51%;
+			margin-left: toRem(69);
+			img {
+				content: url("/assets/tablet/image-keyboard.jpg");
+				max-width: none;
                 width: 100%;
-                min-height: 425px;       
-            }
-        }
+				// height: 425px;
+                min-height: toRem(425);
+                object-fit: cover;
+                object-position: left center;
+			}
+		}
 	}
 }

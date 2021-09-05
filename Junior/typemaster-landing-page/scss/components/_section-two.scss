@@ -1,34 +1,68 @@
-.section-two{
-    .keyboards{
-        max-height: 400px;
-        @include flex(row);
-        margin-left: -3rem;
-        img{
-            max-width: none;
-            width: 100%;
-            height: 100%;
-        }
-        > * {
-            overflow: hidden;
-            flex-grow: 1;
-        }
-        .phone-keyboard{
-            border-radius: 0 $br $br 0;
-            background-color: $clr-primary-700;
-            img{
-                mix-blend-mode: multiply;
-            }
-        }
-        .glass-keyboard{
-            margin-left: 1.5rem;
-            border-radius: $br;
-        }
-    }
-    .title{
-        margin-top: toRem(75);
-    }
-    .desc{
-        margin: 1.5rem 0;
-    }
+.section-two {
+	.keyboards {
+		max-height: 400px;
+		@include flex(row);
+		margin-left: -3rem;
+		img {
+			max-width: none;
+			width: 100%;
+			height: 100%;
+		}
+		> * {
+			overflow: hidden;
+			flex-grow: 1;
+		}
+		.phone-keyboard {
+			border-radius: 0 $br $br 0;
+			background-color: $clr-primary-700;
+			img {
+				mix-blend-mode: multiply;
+			}
+		}
+		.glass-keyboard {
+			margin-left: 1.5rem;
+			border-radius: $br;
+		}
+		@include breakpoint-up(medium) {
+			margin-left: 0;
+			grid-area: 1 / 1 / 2 / -1;
 
+			.phone-keyboard {
+                border-radius: $br;
+				img {
+					content: url("/assets/tablet/image-phone-and-keyboard.jpg");
+				}
+			}
+			.glass-keyboard {
+				img {
+					content: url("/assets/tablet/image-glass-and-keyboard.jpg");
+				}
+			}
+		}
+	}
+	.title {
+		margin-top: toRem(75);
+		@include breakpoint-up(medium) {
+            margin-top: 0;
+            padding: toRem(75) 0;
+			grid-area: 2 / 1 / 3 / 2;
+            align-self: center;
+		}
+	}
+	.desc {
+		margin: 1.5rem 0;
+		@include breakpoint-up(medium) {
+            grid-area: 2 / 2 / 3 / 3;
+            // width: 77%;
+            align-self: center;
+            justify-self: center;
+		}
+	}
+
+	@include breakpoint-up(medium) {
+		@include grid();
+		grid-template-columns: 2.9fr 7.1fr;
+		grid-template-rows: repeat(2, min-content);
+        gap: 0 toRem(75);
+	}
 }
