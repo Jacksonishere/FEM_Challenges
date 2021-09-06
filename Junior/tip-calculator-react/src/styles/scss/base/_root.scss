@@ -1,0 +1,37 @@
+:root{
+    --fs-400: 1rem;
+    --fs-700: 1.5rem;
+
+
+    --fs-h1: 3rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.5rem;
+
+    @include breakpoint-up(medium){
+        // --fs-400: clamp(1rem, 2vw, 1.625rem);
+        // --fs-500: clamp(1.125rem, 2.3vw, 2rem);
+    }
+
+    @include breakpoint-up(large){
+        --fs-h1: 3.5rem;
+    }
+
+}
+
+$clr-primary-900: hsl(172, 67%, 45%);
+
+$clr-neutral-100: rgb(255,255,255);
+$clr-neutral-200: hsl(189, 41%, 97%);
+$clr-neutral-300: hsl(185, 41%, 84%);
+$clr-neutral-500: hsl(184, 14%, 56%);
+$clr-neutral-700: hsl(186, 14%, 43%);
+$clr-neutral-900: hsl(183, 100%, 15%);
+
+
+
+$ff-primary: 'Space Mono', monospace;
+
+$fw-400: 400;
+$fw-700: 700;
+
+$br: .25rem;

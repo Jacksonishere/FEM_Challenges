@@ -1,0 +1,36 @@
+.tip_amt {
+	@include grid(c);
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(3, min-content);
+	gap: 2rem;
+
+    margin: 2rem 2rem 0;
+    padding: 2.875rem 2rem 2rem;
+	background-color: $clr-neutral-900;
+    border-radius: 1rem;
+
+	p {
+		color: $clr-neutral-500;
+		font-weight: $fw-400;
+        margin: 0;
+
+		b {
+			color: white;
+		}
+
+		&:nth-child(even) {
+            margin-top: -6px;
+            justify-self: flex-end;
+			font-size: 2rem;
+            font-weight: 700;
+			color: $clr-primary-900;
+		}
+	}
+	button {
+        padding: .5rem;
+		grid-area: 3 / 1 / -1 / -1;
+		text-transform: uppercase;
+		color: $clr-neutral-900;
+		background-color: $clr-primary-900;
+	}
+}

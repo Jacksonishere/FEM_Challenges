@@ -1,0 +1,15 @@
+.count_input{
+    label{
+        position: relative;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: toRem(17);
+            width: toRem(17);
+            background: url("../../../images/icon-person.svg") no-repeat center ;
+        }
+    }
+}

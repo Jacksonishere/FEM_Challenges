@@ -1,0 +1,18 @@
+.tip{
+    margin: 2rem 0;
+    button{
+        color: $clr-neutral-100;
+        background-color: $clr-neutral-900;
+        width: 100%;
+    }
+
+    p{
+
+    }
+    .select{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}

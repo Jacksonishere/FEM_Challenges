@@ -1,0 +1,60 @@
+body{
+    position: relative;
+    font-family: $ff-primary;
+    font-size: var(--fs-400);
+}
+
+figure{
+    display: grid;
+    justify-items: center;
+}
+
+label{
+    display: block;
+    width: 100%;
+    border-radius: $br;
+}
+
+button,input{
+    border-radius: $br;
+    font-size: var(--fs-700);
+    font-weight: 700;
+}
+
+input{
+    padding: 1.125rem 1.125rem 1.125rem 2.25rem;
+    width: 100%;
+    height: 3rem;
+    background-color: $clr-neutral-200;
+    text-align: right;
+
+    &:focus{
+        color: $clr-neutral-900;
+        outline: solid 2px $clr-primary-900;
+    }
+
+    &::-webkit-inner-spin-button, 
+    &::-webkit-outer-spin-button { 
+      -webkit-appearance: none; 
+      margin: 0; 
+    }
+}
+
+p{
+    margin-bottom: .75rem;
+    color: $clr-neutral-700;
+    font-weight: $fw-700;
+}
+
+main{
+    padding: 2rem 0;
+}
+
+
+
+.attribution{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
