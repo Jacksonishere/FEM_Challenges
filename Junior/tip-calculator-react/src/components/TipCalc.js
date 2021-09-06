@@ -7,11 +7,15 @@ import TipAmount from "./TipAmount";
 
 const TipCalc = () => {
 	return (
-		<main className="main">
-			<Bill />
-            <SelectTip />
-            <PeopleCount />
-			<TipAmount />
+		<main className="container tip_calc">
+			<article className="container selection">
+				<Bill />
+				<SelectTip />
+				<PeopleCount />
+			</article>
+			<article className="container display">
+				<TipAmount />
+			</article>
 		</main>
 	);
 };

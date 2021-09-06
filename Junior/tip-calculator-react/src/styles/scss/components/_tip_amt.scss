@@ -1,10 +1,9 @@
 .tip_amt {
 	@include grid(c);
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(3, min-content);
+	grid-template-rows: repeat(2, min-content) 1fr;
 	gap: 2rem;
 
-    margin: 2rem 2rem 0;
     padding: 2.875rem 2rem 2rem;
 	background-color: $clr-neutral-900;
     border-radius: 1rem;
@@ -29,8 +28,18 @@
 	button {
         padding: .5rem;
 		grid-area: 3 / 1 / -1 / -1;
+        align-self: flex-end;
 		text-transform: uppercase;
 		color: $clr-neutral-900;
 		background-color: $clr-primary-900;
+
+        &.disabled{
+            background-color: $clr-primary-900;
+            opacity: .2;
+        }
 	}
+
+    @include breakpoint-up(medium){
+        height: 100%;
+    }
 }

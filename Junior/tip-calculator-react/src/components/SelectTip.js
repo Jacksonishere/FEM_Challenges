@@ -1,9 +1,9 @@
 import React from 'react'
-import Button from './Button'
+import Button from './utility/Button'
 
 const SelectTip = () => {
     return (
-        <section className="container tip">
+        <section className="tip">
             <p>Select Tip %</p>
             <section className="select">
                 <Button text="5%"/>

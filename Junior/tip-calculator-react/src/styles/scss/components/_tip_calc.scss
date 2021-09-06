@@ -1,0 +1,26 @@
+.tip_calc{
+    background-color: $clr-neutral-100;
+    border-radius: 2rem;
+    padding: 2rem 0;
+    
+    @include breakpoint-up(medium){
+        display: flex;
+    }
+
+    .selection{
+        @include breakpoint-up(medium){
+            padding: 1rem 3rem;
+        }
+        width: 100%;
+    }
+
+    .display{
+        width: 100%;
+        margin-top: 2.5rem;
+
+        @include breakpoint-up(medium){
+            padding-left: 0;
+            margin-top: 0;
+        }
+    }
+}

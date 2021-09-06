@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "./Input";
+import Input from "./utility/Input";
 
 const Bill = () => {
 	return (

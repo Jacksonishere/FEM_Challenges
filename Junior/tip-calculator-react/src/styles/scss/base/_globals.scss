@@ -2,6 +2,8 @@ body{
     position: relative;
     font-family: $ff-primary;
     font-size: var(--fs-400);
+    background-color: $clr-neutral-300;
+    border-top: 1px solid $clr-neutral-300;
 }
 
 figure{
@@ -46,15 +48,3 @@ p{
     font-weight: $fw-700;
 }
 
-main{
-    padding: 2rem 0;
-}
-
-
-
-.attribution{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}

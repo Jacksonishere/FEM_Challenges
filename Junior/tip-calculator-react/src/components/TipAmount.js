@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from './Button'
+import Button from './utility/Button'
 
 const TipAmount = () => {
     return (
@@ -8,7 +8,7 @@ const TipAmount = () => {
             <p className="tip-per">$0.00</p>
             <p className="total-person"><b>Total</b> <br />/ person</p>
             <p className="total-per">$0.00</p>
-            <Button text="RESET"/>
+            <Button className="disabled" text="RESET"/>
         </section >
     )
 }

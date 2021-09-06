@@ -7,10 +7,21 @@
   margin-left: auto;
   margin-right: auto;
   padding: 0 2rem;
-  max-width: 1100px;
+  max-width: 925px;
 }
+
 .text-center {
   text-align: center;
+}
+
+.attribution {
+  padding: 6rem 0 4rem;
+  font-size: 11px;
+  font-family: inherit;
+  text-align: center;
+}
+.attribution a {
+  color: #3e52a3;
 }
 
 .sweepfromSide {
@@ -129,6 +140,8 @@ body {
   position: relative;
   font-family: "Space Mono", monospace;
   font-size: var(--fs-400);
+  background-color: #c5e4e7;
+  border-top: 1px solid #c5e4e7;
 }
 
 figure {
@@ -170,15 +183,13 @@ p {
   font-weight: 700;
 }
 
-main {
-  padding: 2rem 0;
+.header {
+  margin: 2.75rem 0;
 }
-
-.attribution {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+@media (min-width: 48em) {
+  .header {
+    margin: 9.375rem 0 5.75rem;
+  }
 }
 
 .Bill label {
@@ -214,6 +225,10 @@ main {
   color: white;
   background-color: #00494d;
   width: 100%;
+  height: 3rem;
+}
+.tip input {
+  padding-left: 0;
 }
 .tip .select {
   display: grid;
@@ -221,14 +236,19 @@ main {
   grid-template-rows: repeat(3, 1fr);
   gap: 1rem;
 }
+@media (min-width: 48em) {
+  .tip .select {
+    grid-template-rows: none;
+    grid-template-columns: repeat(auto-fit, minmax(7.3125rem, 1fr));
+  }
+}
 
 .tip_amt {
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, min-content);
+  grid-template-rows: repeat(2, min-content) 1fr;
   gap: 2rem;
-  margin: 2rem 2rem 0;
   padding: 2.875rem 2rem 2rem;
   background-color: #00494d;
   border-radius: 1rem;
@@ -251,7 +271,46 @@ main {
 .tip_amt button {
   padding: 0.5rem;
   grid-area: 3/1/-1/-1;
+  align-self: flex-end;
   text-transform: uppercase;
   color: #00494d;
   background-color: #26c0ab;
+}
+.tip_amt button.disabled {
+  background-color: #26c0ab;
+  opacity: 0.2;
+}
+@media (min-width: 48em) {
+  .tip_amt {
+    height: 100%;
+  }
+}
+
+.tip_calc {
+  background-color: white;
+  border-radius: 2rem;
+  padding: 2rem 0;
+}
+@media (min-width: 48em) {
+  .tip_calc {
+    display: flex;
+  }
+}
+.tip_calc .selection {
+  width: 100%;
+}
+@media (min-width: 48em) {
+  .tip_calc .selection {
+    padding: 1rem 3rem;
+  }
+}
+.tip_calc .display {
+  width: 100%;
+  margin-top: 2.5rem;
+}
+@media (min-width: 48em) {
+  .tip_calc .display {
+    padding-left: 0;
+    margin-top: 0;
+  }
 }/*# sourceMappingURL=main.css.map */

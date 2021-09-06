@@ -1,21 +1,32 @@
-.container{
-    @include center-auto;
-    padding: 0 toRem(32);
-    
-    max-width: 1100px;
-    
-    @include breakpoint-up(medium){
+.container {
+	@include center-auto;
+	padding: 0 toRem(32);
+
+	max-width: 925px;
+
+	// @include breakpoint-down(medium) {
+    //     max-width: 450px;
+	// }
+}
+
+.text-center {
+	text-align: center;
+}
+
+.attribution {
+    padding: 6rem 0 4rem;
+	font-size: 11px;
+    font-family: inherit;
+	text-align: center;
+
+    a{
+        color: hsl(228, 45%, 44%);
     }
 }
 
-.text-center{
-    text-align: center;
+.sweepfromSide {
+	@include sweepfromSide;
 }
-
-
-.sweepfromSide{
-    @include sweepfromSide;
-}
-.sweepfromLevel{
-    @include sweepfromLevel;
+.sweepfromLevel {
+	@include sweepfromLevel;
 }

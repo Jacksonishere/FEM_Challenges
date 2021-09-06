@@ -2,7 +2,7 @@ import React from 'react'
 
 const Input = ({inputType, className}) => {
     return (
-        <section className={`container ${className}`} >
+        <section className={`${className}`} >
             <p>{inputType}</p>
             <label>
                 <input type="number" placeholder="0" min="0"/>

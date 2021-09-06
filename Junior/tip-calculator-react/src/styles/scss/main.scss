@@ -5,7 +5,9 @@
 @import "./base/reset";
 @import "./base/globals";
 
+@import "./components/header";
 @import "./components/bill";
 @import "./components/count_input";
-@import "./components/tip";
+@import "./components/tip_perc";
 @import "./components/tip_amt";
+@import "./components/tip_calc";

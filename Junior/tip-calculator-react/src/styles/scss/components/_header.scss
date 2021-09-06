@@ -1,0 +1,6 @@
+.header{
+    margin: toRem(44) 0;
+    @include breakpoint-up(medium){
+        margin: toRem(150) 0 toRem(92);
+    } 
+}
