@@ -168,6 +168,10 @@ input {
   background-color: #f4fafa;
   text-align: right;
 }
+input::placeholder {
+  opacity: 0.5;
+  color: #5e7a7d;
+}
 input:focus {
   color: #00494d;
   outline: solid 2px #26c0ab;
@@ -268,15 +272,22 @@ p {
   font-weight: 700;
   color: #26c0ab;
 }
+@media (min-width: 48em) {
+  .tip_amt p:nth-child(even) {
+    font-size: clamp(2rem, 3.1vw, 2.875rem);
+  }
+}
 .tip_amt button {
-  padding: 0.5rem;
+  padding: 0.75rem;
   grid-area: 3/1/-1/-1;
   align-self: flex-end;
   text-transform: uppercase;
+  font-size: 1.25rem;
   color: #00494d;
   background-color: #26c0ab;
 }
-.tip_amt button.disabled {
+.tip_amt button:disabled {
+  cursor: not-allowed;
   background-color: #26c0ab;
   opacity: 0.2;
 }

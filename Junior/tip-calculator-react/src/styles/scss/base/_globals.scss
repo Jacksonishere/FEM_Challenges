@@ -30,6 +30,11 @@ input{
     background-color: $clr-neutral-200;
     text-align: right;
 
+    &::placeholder{
+        opacity: .5;
+        color: $clr-neutral-700;
+    }
+
     &:focus{
         color: $clr-neutral-900;
         outline: solid 2px $clr-primary-900;

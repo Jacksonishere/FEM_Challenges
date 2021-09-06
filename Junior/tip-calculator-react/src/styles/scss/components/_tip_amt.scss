@@ -23,17 +23,22 @@
 			font-size: 2rem;
             font-weight: 700;
 			color: $clr-primary-900;
+            @include breakpoint-up(medium){
+                font-size: unquote("clamp(2rem, 3.1vw, 2.875rem)")
+            }
 		}
 	}
 	button {
-        padding: .5rem;
+        padding: .75rem;
 		grid-area: 3 / 1 / -1 / -1;
         align-self: flex-end;
 		text-transform: uppercase;
+        font-size: 1.25rem;
 		color: $clr-neutral-900;
 		background-color: $clr-primary-900;
 
-        &.disabled{
+        &:disabled{
+            cursor: not-allowed;
             background-color: $clr-primary-900;
             opacity: .2;
         }
