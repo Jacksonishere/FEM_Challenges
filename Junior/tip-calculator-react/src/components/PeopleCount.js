@@ -1,10 +1,10 @@
 import React from "react";
 import Input from "./utility/Input";
 
-const PeopleCount = () => {
+const PeopleCount = ({updatePpl, num}) => {
 	return (
 		<>
-			<Input inputType="Number of People" className="count_input" />
+			<Input value={num} inputType="Number of People" className="count_input" triggerEvent={updatePpl} />
 		</>
 	);
 };

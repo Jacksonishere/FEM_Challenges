@@ -1,55 +1,57 @@
-body{
-    position: relative;
-    font-family: $ff-primary;
-    font-size: var(--fs-400);
-    background-color: $clr-neutral-300;
-    border-top: 1px solid $clr-neutral-300;
+body {
+	position: relative;
+	font-family: $ff-primary;
+	font-size: var(--fs-400);
+	background-color: $clr-neutral-300;
+	border-top: 1px solid $clr-neutral-300;
 }
 
-figure{
-    display: grid;
-    justify-items: center;
+figure {
+	display: grid;
+	justify-items: center;
 }
 
-label{
-    display: block;
-    width: 100%;
-    border-radius: $br;
+label {
+	display: block;
+	width: 100%;
+	border-radius: $br;
 }
 
-button,input{
-    border-radius: $br;
-    font-size: var(--fs-700);
-    font-weight: 700;
+button,
+input {
+	border-radius: $br;
+	font-size: var(--fs-700);
+	font-weight: 700;
 }
 
-input{
-    padding: 1.125rem 1.125rem 1.125rem 2.25rem;
-    width: 100%;
-    height: 3rem;
-    background-color: $clr-neutral-200;
-    text-align: right;
+input {
+	padding: 0 1.125rem;
+	width: 100%;
+	height: 3rem;
+	background-color: $clr-neutral-200;
+	text-align: right;
+    border: solid 2px transparent;
 
-    &::placeholder{
-        opacity: .5;
-        color: $clr-neutral-700;
-    }
+	&::placeholder {
+		opacity: 0.5;
+		color: $clr-neutral-700;
+	}
 
-    &:focus{
-        color: $clr-neutral-900;
-        outline: solid 2px $clr-primary-900;
-    }
+	&:focus {
+		color: $clr-neutral-900;
+		border: solid 2px $clr-primary-900;
+		border-radius: $br;
+	}
 
-    &::-webkit-inner-spin-button, 
-    &::-webkit-outer-spin-button { 
-      -webkit-appearance: none; 
-      margin: 0; 
-    }
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 }
 
-p{
-    margin-bottom: .75rem;
-    color: $clr-neutral-700;
-    font-weight: $fw-700;
+p {
+	margin-bottom: 0.75rem;
+	color: $clr-neutral-700;
+	font-weight: $fw-700;
 }
-

@@ -37,6 +37,8 @@
 		color: $clr-neutral-900;
 		background-color: $clr-primary-900;
 
+        transition: background-color .3s ease, opacity .3s ease;
+
         &:disabled{
             cursor: not-allowed;
             background-color: $clr-primary-900;

@@ -5,10 +5,18 @@
         background-color: $clr-neutral-900;
         width: 100%;
         height: 3rem;
+
+        transition: color .3s ease, background-color .3s ease;
+
+        &.enabled{
+            color: $clr-neutral-900;
+            background-color: $clr-primary-900;
+        }
     }
 
     input{
         padding-left: 0;
+        padding-right: .5rem;
     }
     
     p{

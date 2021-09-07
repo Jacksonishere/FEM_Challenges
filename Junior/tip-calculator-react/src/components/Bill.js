@@ -1,10 +1,12 @@
 import React from "react";
+
 import Input from "./utility/Input";
 
-const Bill = () => {
+const Bill = ({updateTotal, price}) => {
+	console.log("rerendering bill");
 	return (
 		<>
-			<Input inputType="Bill" className="Bill" />
+			<Input value={price} inputType="Bill" className="Bill" triggerEvent={updateTotal} />
 		</>
 	);
 };
