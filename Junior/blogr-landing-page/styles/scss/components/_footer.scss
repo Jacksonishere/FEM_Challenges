@@ -1,4 +1,5 @@
 .footer{
+    margin-top: toRem(100);
     padding-bottom: toRem(75);
     background-color: $clr-neutral-900;
     border-top-right-radius: $br-large;
@@ -15,6 +16,7 @@
         }
         ul{
             li{
+                opacity: .6;
                 margin-top: .75rem; 
                 &:first-child{
                     margin-top: 1.5rem;

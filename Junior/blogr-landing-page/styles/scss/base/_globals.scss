@@ -5,6 +5,10 @@ body{
     text-align: center;
   
 }
+footer{
+    font-family: $ff-secondary;
+    font-size: toRem(18);
+}
 
 h1,h2{
     color: $clr-neutral-900;

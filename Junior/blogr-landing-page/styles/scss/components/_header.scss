@@ -15,8 +15,6 @@
 		padding-bottom: toRem(56);
 
 		@include breakpoint-down(medium) {
-			.logo {
-			}
 			&-menu {
 				position: absolute;
                 top: 100%;
@@ -25,7 +23,7 @@
                 padding: 1.5rem;
                 background-color: $clr-neutral-100;
                 border-radius: $br-small;
-				// visibility: hidden;
+				visibility: hidden;
 
                 .menu-item{
                     &:not(:first-child){
@@ -90,6 +88,12 @@
 
 	.header-info {
 		margin-top: toRem(57);
+        h1,p{
+            color: $clr-neutral-100;
+        }
+        h1{
+            font-size: toRem(36);
+        }
 		p {
 			@include center-auto;
 			width: 90%;

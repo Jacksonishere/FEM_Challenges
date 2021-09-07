@@ -137,6 +137,11 @@ body {
   text-align: center;
 }
 
+footer {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.125rem;
+}
+
 h1, h2 {
   color: #25252d;
 }
@@ -193,6 +198,7 @@ main p {
     padding: 1.5rem;
     background-color: white;
     border-radius: 0.5rem;
+    visibility: hidden;
   }
   .header .nav-menu .menu-item {
     font-size: var(--fs-500);
@@ -245,6 +251,12 @@ main p {
 }
 .header .header-info {
   margin-top: 3.5625rem;
+}
+.header .header-info h1, .header .header-info p {
+  color: white;
+}
+.header .header-info h1 {
+  font-size: 2.25rem;
 }
 .header .header-info p {
   margin-left: auto;
@@ -317,6 +329,7 @@ main p {
 }
 
 .footer {
+  margin-top: 6.25rem;
   padding-bottom: 4.6875rem;
   background-color: #25252d;
   border-top-right-radius: 6rem;
@@ -331,6 +344,7 @@ main p {
   margin-top: 2.75rem;
 }
 .footer section ul li {
+  opacity: 0.6;
   margin-top: 0.75rem;
 }
 .footer section ul li:first-child {
