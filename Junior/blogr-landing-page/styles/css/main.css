@@ -1,0 +1,338 @@
+/* FLEX AND GRIDBOX */
+/* CENTER BLOCK */
+/* PSEUDO ELEMENT */
+/* BACKGROUND  */
+/* TRANSITIONS */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem;
+  max-width: 1100px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sweepfromSide {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.sweepfromLevel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+:root {
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-h1: 1.75rem;
+  --fs-h2: 1.75rem;
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+figure {
+  display: grid;
+  justify-items: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  display: block;
+  cursor: pointer;
+  background-color: transparent;
+}
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  position: relative;
+  font-family: "Overpass", sans-serif;
+  font-size: var(--fs-400);
+  text-align: center;
+}
+
+h1, h2 {
+  color: #25252d;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: 1.7;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.3;
+}
+
+p {
+  font-size: var(--fs-400);
+  font-weight: 300;
+  color: #4b5862;
+  line-height: 1.8;
+}
+
+a {
+  color: #4b5862;
+}
+
+main {
+  margin-top: 6.25rem;
+}
+main p {
+  margin: 1.5rem 0 2.5rem;
+}
+
+.header {
+  padding-bottom: 9.75rem;
+  background: url("/images/bg-pattern-intro.svg"), linear-gradient(155deg, #ff8f70, #ff3d54);
+  background-position: top 36% left 39%;
+  background-size: 1800px 1800px, cover;
+  color: white;
+  border-bottom-left-radius: 6rem;
+}
+.header .nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+@media (max-width: 47.9375em) {
+  .header .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 1.5rem;
+    right: 1.5rem;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.5rem;
+  }
+  .header .nav-menu .menu-item {
+    font-size: var(--fs-500);
+  }
+  .header .nav-menu .menu-item:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+  .header .nav-menu .menu-item button {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header .nav-menu .menu-item button::after {
+    content: url("/images/icon-arrow-dark.svg");
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-left: 0.375rem;
+    margin-top: -1px;
+  }
+  .header .nav-menu .menu-item .dropdown-wrapper {
+    height: 0;
+    overflow: hidden;
+  }
+  .header .nav-menu .menu-item .dropdown-wrapper ul {
+    margin-top: 1rem;
+    padding: 1.5rem 0;
+    background-color: rgba(45, 46, 64, 0.1);
+    border-radius: 0.5rem;
+  }
+  .header .nav-menu .menu-item .dropdown-wrapper ul li:not(:first-child) {
+    margin-top: 1.5rem;
+  }
+  .header .nav-menu .enabled .dropdown-wrapper {
+    height: auto !important;
+    max-height: 1000px !important;
+  }
+  .header .nav-menu .client {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header .nav-menu .client :last-child {
+    background: linear-gradient(155deg, #ff8f70, #ff3d54);
+    color: white;
+  }
+  .header .nav .ham-menu {
+    margin-left: auto;
+  }
+}
+.header .header-info {
+  margin-top: 3.5625rem;
+}
+.header .header-info p {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  font-size: var(--fs-500);
+}
+.header .header-info .get-started {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.header .header-info .get-started :first-child {
+  background-color: white;
+  color: #ff525d;
+}
+.header .header-info .get-started :last-child {
+  margin-left: 1rem;
+  color: white;
+  border: solid 1px white;
+}
+
+.bubbly {
+  padding: 0.9375rem 0;
+  width: 8.5625rem;
+  border-radius: 4rem;
+  font-weight: 600;
+}
+
+.section-one figure {
+  margin: 2.625rem -1.5rem;
+}
+.section-two {
+  position: relative;
+  margin-top: 16.875rem;
+  padding-top: 13.5rem;
+  padding-bottom: 5.8125rem;
+  height: 39.0625rem;
+  background: url("/images/bg-pattern-circles.svg"), linear-gradient(90deg, #2c2d3f, #3f4164);
+  background-size: 650px 650px, 100%;
+  background-position: bottom 250px right 50%, top center;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: 6rem;
+  border-top-right-radius: 6rem;
+}
+.section-two::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  content: "";
+  background: url("/images/illustration-phones.svg") no-repeat;
+  background-size: 100%;
+  width: 20.8125rem;
+  height: 21.875rem;
+  transform: translate(-50%, -50%);
+}
+.section-two > * {
+  color: white;
+}
+.section-two p {
+  opacity: 0.6;
+}
+.section-two h1 {
+  font-size: 2.5rem;
+}
+
+.section-three {
+  margin-top: 4.6875rem;
+}
+
+.footer {
+  padding-bottom: 4.6875rem;
+  background-color: #25252d;
+  border-top-right-radius: 6rem;
+}
+.footer figure {
+  padding: 4.6875rem 0;
+}
+.footer section a {
+  color: white;
+}
+.footer section:not(:first-child) {
+  margin-top: 2.75rem;
+}
+.footer section ul li {
+  margin-top: 0.75rem;
+}
+.footer section ul li:first-child {
+  margin-top: 1.5rem;
+}/*# sourceMappingURL=main.css.map */

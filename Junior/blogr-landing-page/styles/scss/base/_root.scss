@@ -1,0 +1,46 @@
+:root{
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+
+    --fs-h1: 1.75rem;
+    --fs-h2: 1.75rem;
+    // --fs-h3: 1.5rem;
+
+    @include breakpoint-up(medium){
+        // --fs-400: clamp(1rem, 2vw, 1.625rem);
+        // --fs-500: clamp(1.125rem, 2.3vw, 2rem);
+    }
+
+    @include breakpoint-up(large){
+        // --fs-h1: 3.5rem;
+    }
+
+}
+
+$clr-primary-400: hsl(355, 100%, 74%);
+$clr-primary-700: hsl(356, 100%, 66%);
+$clr-primary-900: hsl(208, 49%, 24%);
+
+$clr-neutral-100: rgb(255,255,255);
+$clr-neutral-400: hsl(240, 2%, 79%);
+$clr-neutral-700: hsl(207, 13%, 34%);
+$clr-neutral-900: hsl(240, 10%, 16%);
+
+$clr-gradient-intro: linear-gradient(155deg, hsl(13, 100%, 72%),
+hsl(353, 100%, 62%));
+$clr-gradient-body: linear-gradient(90deg, hsl(237, 17%, 21%),
+hsl(237, 23%, 32%));
+
+$ff-primary: 'Overpass', sans-serif;
+$ff-secondary: 'Ubuntu', sans-serif;
+
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-900: 900;
+
+$br-small: .5rem;
+$br-medium: 4rem;
+$br-large: 6rem;
+

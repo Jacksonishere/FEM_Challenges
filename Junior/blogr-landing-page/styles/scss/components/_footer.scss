@@ -1,0 +1,25 @@
+.footer{
+    padding-bottom: toRem(75);
+    background-color: $clr-neutral-900;
+    border-top-right-radius: $br-large;
+
+    figure{
+        padding: toRem(75) 0;
+    }
+    section{
+        a{
+            color: $clr-neutral-100;
+        }
+        &:not(:first-child){
+            margin-top: toRem(44);
+        }
+        ul{
+            li{
+                margin-top: .75rem; 
+                &:first-child{
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+    }
+}
