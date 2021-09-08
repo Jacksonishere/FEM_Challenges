@@ -8,92 +8,137 @@
 
 	.nav {
 		position: relative;
-		display: flex;
-		flex-direction: row;
+        @include flex(row);
 
 		padding-top: toRem(56);
 		padding-bottom: toRem(56);
 
-		@include breakpoint-down(medium) {
-			&-menu {
+		&-menu {
+			@include breakpoint-down(large) {
 				position: absolute;
-                top: 100%;
-                left: toRem(24);
-                right: toRem(24);
-                padding: 1.5rem;
-                background-color: $clr-neutral-100;
-                border-radius: $br-small;
+				top: 100%;
+				left: toRem(24);
+				right: toRem(24);
 				visibility: hidden;
+			}
+			padding: 1.5rem;
+			background-color: $clr-neutral-100;
+			border-radius: $br-small;
 
-                .menu-item{
-                    &:not(:first-child){
+			@include breakpoint-up(large) {
+                padding-right: 0;
+                width: 100%;
+                background-color: transparent;
+				margin-left: 3rem;
+                @include flex(row, c, c);
+			}
+
+			.menu-item {
+				&:not(:first-child) {
+                    @include breakpoint-down(large){
                         margin-top: 1.5rem;
                     }
-                    font-size: var(--fs-500);
+					@include breakpoint-up(large) {
+						margin-left: 3.5rem;
+					}
+				}
+                position: relative;
+				font-size: var(--fs-500);
+                
+				button {
+					position: relative;
+					@include center-auto;
 
-                    //TRANSITION FOR ENABLING
-                    button{
-                        position: relative;
-                        @include center-auto;
-    
+					&::after {
+						content: url("/images/icon-arrow-dark.svg");
+						position: absolute;
+						top: 0;
+						bottom: 0;
+						margin-left: 0.375rem;
+						margin-top: -1px;
+					}
+                    @include breakpoint-up(large){
+                        padding: 0;
+                        color: $clr-neutral-100;
+                        font-family: $ff-secondary;
+                        font-weight: 500;
+                        opacity: .8;
                         &::after{
-                            content: url("/images/icon-arrow-dark.svg");
-                            position: absolute;
-                            top: 0;
-                            bottom: 0;
-                            margin-left: .375rem;
-                            margin-top: -1px;
+                            content: url("/images/icon-arrow-light.svg");
                         }
                     }
-                    .dropdown-wrapper{
-                        height: 0;
-                        overflow: hidden;
+				}
+				.dropdown-wrapper {
+					height: 0;
+					overflow: hidden;
+					ul {
+						margin-top: 1rem;
+						padding: 1.5rem 0;
+						background-color: rgba(45, 46, 64, 0.1);
+						border-radius: $br-small;
+						li {
+							&:not(:first-child) {
+								margin-top: 1.5rem;
+							}
+						}
+					}
+                    @include breakpoint-up(large){
+                        position: absolute;
+                        left: 50%;
+                        top: 100%;
+                        transform: translateX(-50%);
                         ul{
-                            margin-top: 1rem;
-                            padding: 1.5rem 0;
-                            background-color: rgba(45, 46, 64, .1);
-                            border-radius: $br-small;
+                            margin-top: 0;
+                            padding: 2rem;
+                            width: toRem(168);
+                            background-color: $clr-neutral-100;
                             li{
-                                &:not(:first-child){
-                                    margin-top: 1.5rem;
-                                }
+                                text-align: left;
                             }
                         }
                     }
-                }
-                //when button clicked, add class
-                .enabled{
-                    .dropdown-wrapper{
-                        height: auto !important;
-                        max-height: 1000px !important;
-                    }
-                }
-
-                .client{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    :last-child{
-                        background: $clr-gradient-intro;
-                        color: $clr-neutral-100;
-                    }
-                }
+				}
+			}
+			//when button clicked, add class
+			.enabled {
+				.dropdown-wrapper {
+					height: auto !important;
+					max-height: 1000px !important;
+				}
 			}
 
-			.ham-menu {
-				margin-left: auto;
+			.client {
+                @include flex(column, c,c);
+				:last-child {
+					background: $clr-gradient-intro;
+					color: $clr-neutral-100;
+
+                    @include breakpoint-up(large){
+                        color: $clr-primary-700;
+                        background: $clr-neutral-100;
+                    }
+				}
+                @include breakpoint-up(large){
+                    margin-left: auto;
+                    flex-direction: row;
+                }
 			}
+		}
+
+		.ham-menu {
+			margin-left: auto;
+            @include breakpoint-up(large){
+                display: none;
+            }
 		}
 	}
 
 	.header-info {
 		margin-top: toRem(57);
-        h1,p{
-            color: $clr-neutral-100;
-        }
-        h1{
-            font-size: toRem(36);
-        }
+		h1,
+		p {
+			color: $clr-neutral-100;
+		}
 		p {
 			@include center-auto;
 			width: 90%;
@@ -101,8 +146,9 @@
 		}
 		.get-started {
 			margin-top: 2rem;
-			display: flex;
+			@include flex();
 			justify-content: center;
+            
 			:first-child {
 				background-color: $clr-neutral-100;
 				color: $clr-primary-700;
@@ -117,8 +163,15 @@
 }
 
 .bubbly {
-    padding: 0.9375rem 0;
-    width: toRem(137);
-    border-radius: $br-medium;
-    font-weight: 600;
+	padding: 0.6875rem 0;
+	width: toRem(137);
+	border-radius: $br-medium;
+	font-weight: 600;
+
+    @include breakpoint-up(large){
+        font-family: $ff-secondary;
+        font-size: 1.0875rem;
+		width: toRem(147);
+        color: $clr-neutral-100;
+    }
 }

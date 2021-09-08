@@ -3,7 +3,8 @@ body{
     font-family: $ff-primary;
     font-size: var(--fs-400);
     text-align: center;
-  
+
+ 
 }
 footer{
     font-family: $ff-secondary;
@@ -34,10 +35,14 @@ a{
 }
 
 main{
-    margin-top: toRem(100);
+    // margin-top: toRem(100);
+    overflow: hidden;
 
     p{
         margin: 1.5rem 0 toRem(40);
+        @include breakpoint-down(large){
+            margin-bottom: 0;
+        }
     }
 }
 // .attribution{

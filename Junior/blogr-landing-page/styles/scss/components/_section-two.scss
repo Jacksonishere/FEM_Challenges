@@ -1,39 +1,70 @@
-.section-two{
-    position: relative;
-    margin-top: toRem(270);
-    padding-top: toRem(216);
-    padding-bottom: toRem(93);
+.section-two {
+	position: relative;
+	padding-top: toRem(216);
+	padding-bottom: toRem(93);
 
-    height: toRem(625);
+	height: toRem(625);
 
-    background: url("/images/bg-pattern-circles.svg"), $clr-gradient-body;
-    background-size: 650px 650px, 100%;
-    background-position: bottom 250px right 50%, top center;
-    background-repeat: no-repeat;
+	background: url("/images/bg-pattern-circles.svg"), $clr-gradient-body;
+	background-size: 650px 650px, 100%;
+	background-position: bottom 250px right 50%, top center;
+	background-repeat: no-repeat;
 
-    &::after{
-        position: absolute;
-        top: 0;
-        left: 50%;
-        right: 0;
-        content: "";
-        background: url("/images/illustration-phones.svg") no-repeat;
-        background-size: 100%;
-        width: toRem(333);
-        height: toRem(350);
-        transform: translate(-50%, -50%);
+	&::after {
+		position: absolute;
+		content: "";
+		background: url("/images/illustration-phones.svg") no-repeat;
+        @include breakpoint-down(large){
+            top: 0;
+            left: 50%;
+            right: 0;
+            background-size: 100%;
+            width: toRem(333);
+            height: toRem(350);
+            transform: translate(-50%, -50%);
+        }
 
-    }
+        @include breakpoint-up(large){
+            top: 50%;
+            right: 50%;
+            width: toRem(552);
+            // width: 35%;
+            // max-width: toRem(552);
+            // background-size: 100%;
+            // background-position: center;
+            height: toRem(579);
+            transform: translateY(-50%);
+        }
+	}
 
-    border-bottom-left-radius: $br-large;
-    border-top-right-radius: $br-large;
-    > * {
-        color: $clr-neutral-100;
-    }
-    p{
-        opacity: .6;
-    }
-    h1{
-        font-size: toRem(40);
-    }
+	@include breakpoint-up(large) {
+		padding: 0;
+		height: toRem(400);
+		text-align: left;
+		@include grid();
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+
+		.content {
+			grid-column: 2 / 3;
+            max-width: toRem(550);
+            p{
+                margin-top: 0;
+            }
+		}
+	}
+
+	border-bottom-left-radius: $br-large;
+	border-top-right-radius: $br-large;
+	.content {
+		> * {
+			color: $clr-neutral-100;
+		}
+		p {
+			opacity: 0.6;
+		}
+		h1 {
+			font-size: toRem(38);
+		}
+	}
 }

@@ -1,8 +1,51 @@
-.section-one{
-    figure{
-        margin: toRem(42) -1.5rem;
-    }
-    .introduction{
-        
-    }
+.section-one {
+    padding-bottom: toRem(270);
+	@include breakpoint-up(large) {
+		figure {
+			display: none;
+		}
+		text-align: left;
+
+        position: relative;
+		@include grid();
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(3, min-content);
+
+        &::after{
+            position: absolute;
+            content: "";    
+            top: 0;
+            bottom: 0;
+            left: 58%;
+            // right: 0;
+            width: 50vw;
+            background: url("/images/illustration-editor-desktop.svg") no-repeat;
+            background-position: left center;
+        }
+	}
+	figure {
+		margin: toRem(42) -1.5rem;
+	}
+	h1 {
+        font-size: toRem(40);
+        padding-top: 7rem;
+        @include breakpoint-up(large) {
+            padding: 8rem;
+			grid-area: 1 / 1 / 2 / 3;
+			text-align: center;
+		}
+	}
+	.introduction {
+		@include breakpoint-up(large) {
+			// margin-top: toRem(110);
+			grid-area: 2 / 1 / 3 / 2;
+		}
+	}
+	.robust {
+		margin-top: toRem(38);
+		@include breakpoint-up(large) {
+			margin-top: toRem(86);
+		}
+		grid-area: 3 / 1 / 4 / 2;
+	}
 }

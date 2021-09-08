@@ -1,3 +1,45 @@
-.section-three{
-    margin-top: toRem(75);
+.section-three {
+	padding-top: toRem(75);
+	.powerful {
+		margin-top: toRem(38);
+	}
+
+	@include breakpoint-up(large) {
+		padding-top: toRem(270);
+		padding-bottom: toRem(270);
+
+		text-align: left;
+
+		figure {
+			display: none;
+		}
+
+        p{
+            margin-bottom: 0;
+        }
+		position: relative;
+		@include grid();
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: repeat(2, min-content);
+
+		&::after {
+			position: absolute;
+			content: "";
+			top: 0;
+			bottom: 0;
+			right: 58%;
+			width: 50vw;
+			background: url("/images/illustration-laptop-desktop.svg") no-repeat;
+			background-position: right center;
+		}
+		.free {
+			grid-area: 1 / 2 / 2 / 3;
+            align-self: flex-end;
+		}
+		.powerful {
+			margin-top: toRem(86);
+			grid-area: 2 / 2 / 3 / 3;
+            align-self: flex-start;
+		}
+	}
 }

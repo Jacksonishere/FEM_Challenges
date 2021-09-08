@@ -1,5 +1,5 @@
 .footer{
-    margin-top: toRem(100);
+    text-align: left;
     padding-bottom: toRem(75);
     background-color: $clr-neutral-900;
     border-top-right-radius: $br-large;
@@ -22,6 +22,17 @@
                     margin-top: 1.5rem;
                 }
             }
+        }
+    }
+    @include breakpoint-up(large){
+        padding: toRem(75) 0;
+        &-content{
+            @include grid(fs, fs);
+            grid-template-columns: repeat(4, 1fr);
+        }
+        figure, section{
+            padding: 0;
+            margin: 0 !important;
         }
     }
 }
