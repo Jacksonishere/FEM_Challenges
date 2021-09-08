@@ -1,9 +1,8 @@
 .footer{
-    text-align: left;
     padding-bottom: toRem(75);
     background-color: $clr-neutral-900;
     border-top-right-radius: $br-large;
-
+    
     figure{
         padding: toRem(75) 0;
     }
@@ -26,6 +25,7 @@
     }
     @include breakpoint-up(large){
         padding: toRem(75) 0;
+        text-align: left;
         &-content{
             @include grid(fs, fs);
             grid-template-columns: repeat(4, 1fr);

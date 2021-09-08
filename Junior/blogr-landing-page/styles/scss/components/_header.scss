@@ -6,9 +6,13 @@
 	color: $clr-neutral-100;
 	border-bottom-left-radius: $br-large;
 
+	@include breakpoint-up(large) {
+		font-family: $ff-secondary;
+	}
+
 	.nav {
 		position: relative;
-        @include flex(row);
+		@include flex(row);
 
 		padding-top: toRem(56);
 		padding-bottom: toRem(56);
@@ -26,25 +30,25 @@
 			border-radius: $br-small;
 
 			@include breakpoint-up(large) {
-                padding-right: 0;
-                width: 100%;
-                background-color: transparent;
 				margin-left: 3rem;
-                @include flex(row, c, c);
+				padding-right: 0;
+				@include flex(row, c, c);
+				width: 100%;
+				background-color: transparent;
 			}
 
 			.menu-item {
 				&:not(:first-child) {
-                    @include breakpoint-down(large){
-                        margin-top: 1.5rem;
-                    }
+					@include breakpoint-down(large) {
+						margin-top: 1.5rem;
+					}
 					@include breakpoint-up(large) {
 						margin-left: 3.5rem;
 					}
 				}
-                position: relative;
+				position: relative;
 				font-size: var(--fs-500);
-                
+
 				button {
 					position: relative;
 					@include center-auto;
@@ -54,22 +58,27 @@
 						position: absolute;
 						top: 0;
 						bottom: 0;
-						margin-left: 0.375rem;
+						padding: 0 .375rem;
 						margin-top: -1px;
 					}
-                    @include breakpoint-up(large){
-                        padding: 0;
-                        color: $clr-neutral-100;
-                        font-family: $ff-secondary;
-                        font-weight: 500;
-                        opacity: .8;
-                        &::after{
-                            content: url("/images/icon-arrow-light.svg");
-                        }
-                    }
+					@include breakpoint-up(large) {
+						padding: 0;
+						color: $clr-neutral-100;
+						font-family: $ff-secondary;
+						font-weight: 500;
+						opacity: 0.6;
+						&::after {
+							transform-origin: center 57%;
+							content: url("/images/icon-arrow-light.svg");
+						}
+					}
 				}
 				.dropdown-wrapper {
 					height: 0;
+					.empty {
+						height: 0;
+					}
+					cursor: pointer;
 					overflow: hidden;
 					ul {
 						margin-top: 1rem;
@@ -82,25 +91,46 @@
 							}
 						}
 					}
-                    @include breakpoint-up(large){
-                        position: absolute;
-                        left: 50%;
-                        top: 100%;
-                        transform: translateX(-50%);
-                        ul{
-                            margin-top: 0;
-                            padding: 2rem;
-                            width: toRem(168);
-                            background-color: $clr-neutral-100;
-                            li{
-                                text-align: left;
-                            }
-                        }
-                    }
+					@include breakpoint-up(large) {
+						.empty {
+							height: 2.5rem;
+						}
+						position: absolute;
+						left: 50%;
+						top: 100%;
+						transform: translateX(-50%);
+						ul {
+							margin-top: 0;
+							padding: 2rem;
+							width: toRem(168);
+							background-color: $clr-neutral-100;
+							li {
+								text-align: left;
+								font-size: 0.9375rem;
+							}
+						}
+					}
 				}
 			}
 			//when button clicked, add class
 			.enabled {
+				button {
+					@include breakpoint-up(large) {
+						opacity: 1;
+						&::before {
+							position: absolute;
+							content: "";
+							bottom: 0;
+							left: -2px;
+							right: -2px;
+							height: 2px;
+							background-color: $clr-neutral-100;
+						}
+						&::after {
+							transform: rotate(180deg);
+						}
+					}
+				}
 				.dropdown-wrapper {
 					height: auto !important;
 					max-height: 1000px !important;
@@ -108,28 +138,28 @@
 			}
 
 			.client {
-                @include flex(column, c,c);
+				@include flex(column, c, c);
 				:last-child {
 					background: $clr-gradient-intro;
 					color: $clr-neutral-100;
 
-                    @include breakpoint-up(large){
-                        color: $clr-primary-700;
-                        background: $clr-neutral-100;
-                    }
+					@include breakpoint-up(large) {
+						color: $clr-primary-700;
+						background: $clr-neutral-100;
+					}
 				}
-                @include breakpoint-up(large){
-                    margin-left: auto;
-                    flex-direction: row;
-                }
+				@include breakpoint-up(large) {
+					margin-left: auto;
+					flex-direction: row;
+				}
 			}
 		}
 
 		.ham-menu {
 			margin-left: auto;
-            @include breakpoint-up(large){
-                display: none;
-            }
+			@include breakpoint-up(large) {
+				display: none;
+			}
 		}
 	}
 
@@ -137,6 +167,7 @@
 		margin-top: toRem(57);
 		h1,
 		p {
+			font-family: $ff-primary;
 			color: $clr-neutral-100;
 		}
 		p {
@@ -148,7 +179,7 @@
 			margin-top: 2rem;
 			@include flex();
 			justify-content: center;
-            
+
 			:first-child {
 				background-color: $clr-neutral-100;
 				color: $clr-primary-700;
@@ -168,10 +199,9 @@
 	border-radius: $br-medium;
 	font-weight: 600;
 
-    @include breakpoint-up(large){
-        font-family: $ff-secondary;
-        font-size: 1.0875rem;
+	@include breakpoint-up(large) {
+		font-size: 1.0875rem;
 		width: toRem(147);
-        color: $clr-neutral-100;
-    }
+		color: $clr-neutral-100;
+	}
 }

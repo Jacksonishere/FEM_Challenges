@@ -200,6 +200,11 @@ main p {
   color: white;
   border-bottom-left-radius: 6rem;
 }
+@media (min-width: 64em) {
+  .header {
+    font-family: "Ubuntu", sans-serif;
+  }
+}
 .header .nav {
   position: relative;
   display: flex;
@@ -223,14 +228,14 @@ main p {
 }
 @media (min-width: 64em) {
   .header .nav-menu {
-    padding-right: 0;
-    width: 100%;
-    background-color: transparent;
     margin-left: 3rem;
+    padding-right: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    background-color: transparent;
   }
 }
 .header .nav-menu .menu-item {
@@ -257,7 +262,7 @@ main p {
   position: absolute;
   top: 0;
   bottom: 0;
-  margin-left: 0.375rem;
+  padding: 0 0.375rem;
   margin-top: -1px;
 }
 @media (min-width: 64em) {
@@ -266,15 +271,20 @@ main p {
     color: white;
     font-family: "Ubuntu", sans-serif;
     font-weight: 500;
-    opacity: 0.8;
+    opacity: 0.6;
   }
   .header .nav-menu .menu-item button::after {
+    transform-origin: center 57%;
     content: url("/images/icon-arrow-light.svg");
   }
 }
 .header .nav-menu .menu-item .dropdown-wrapper {
   height: 0;
+  cursor: pointer;
   overflow: hidden;
+}
+.header .nav-menu .menu-item .dropdown-wrapper .empty {
+  height: 0;
 }
 .header .nav-menu .menu-item .dropdown-wrapper ul {
   margin-top: 1rem;
@@ -292,6 +302,9 @@ main p {
     top: 100%;
     transform: translateX(-50%);
   }
+  .header .nav-menu .menu-item .dropdown-wrapper .empty {
+    height: 2.5rem;
+  }
   .header .nav-menu .menu-item .dropdown-wrapper ul {
     margin-top: 0;
     padding: 2rem;
@@ -300,6 +313,24 @@ main p {
   }
   .header .nav-menu .menu-item .dropdown-wrapper ul li {
     text-align: left;
+    font-size: 0.9375rem;
+  }
+}
+@media (min-width: 64em) {
+  .header .nav-menu .enabled button {
+    opacity: 1;
+  }
+  .header .nav-menu .enabled button::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: -2px;
+    right: -2px;
+    height: 2px;
+    background-color: white;
+  }
+  .header .nav-menu .enabled button::after {
+    transform: rotate(180deg);
   }
 }
 .header .nav-menu .enabled .dropdown-wrapper {
@@ -341,6 +372,7 @@ main p {
 }
 .header .header-info h1,
 .header .header-info p {
+  font-family: "Overpass", sans-serif;
   color: white;
 }
 .header .header-info p {
@@ -372,7 +404,6 @@ main p {
 }
 @media (min-width: 64em) {
   .bubbly {
-    font-family: "Ubuntu", sans-serif;
     font-size: 1.0875rem;
     width: 9.1875rem;
     color: white;
@@ -499,6 +530,7 @@ main p {
 
 .section-three {
   padding-top: 4.6875rem;
+  padding-bottom: 4.6875rem;
 }
 .section-three .powerful {
   margin-top: 2.375rem;
@@ -541,7 +573,6 @@ main p {
 }
 
 .footer {
-  text-align: left;
   padding-bottom: 4.6875rem;
   background-color: #25252d;
   border-top-right-radius: 6rem;
@@ -565,6 +596,7 @@ main p {
 @media (min-width: 64em) {
   .footer {
     padding: 4.6875rem 0;
+    text-align: left;
   }
   .footer-content {
     display: grid;
