@@ -4,13 +4,10 @@ import Button from "./utility/Button";
 
 const SelectTip = ({ updateTip, didReset, updateReset }) => {
     const percInput = useRef(null);
-    console.log("rendering select tip");
 
 	const [selectedBtn, setSelectedBtn] = useState(-1);
     useEffect( () => {
-        console.log("in use effect");
         if(didReset){
-            console.log("it did reset");
             setSelectedBtn(-1);
             percInput.current.value = "";
             updateReset();

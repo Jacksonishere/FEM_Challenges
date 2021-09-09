@@ -64,7 +64,6 @@ const TipCalc = () => {
 		})
 		setDidReset(true);
 	}
-	console.log("Rerendering tipcalc");
 
 	return (
 		<main className="container tip_calc">
