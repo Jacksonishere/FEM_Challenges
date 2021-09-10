@@ -1,0 +1,30 @@
+body {
+	position: relative;
+	font-family: $ff-primary;
+	font-size: var(--fs-400);
+}
+
+a {
+    display: block;
+	width: 100%;
+	color: $clr-neutral-900;
+    font-weight: 500;
+    font-size: 1.125rem;
+
+    @include breakpoint-up(medium){
+        color: white;
+        font-size: .875rem;
+    }
+    
+
+}
+
+button{
+    padding: 0;
+}
+li {
+	width: 100%;
+    @include breakpoint-up(medium){
+        width: max-content;
+    }
+}

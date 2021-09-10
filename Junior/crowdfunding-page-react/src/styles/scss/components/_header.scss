@@ -1,0 +1,102 @@
+.header {
+    position: relative;
+    z-index: 6;
+	padding-bottom: toRem(228);
+	background: url("../../../images/image-hero-mobile.jpg") no-repeat top center/cover;
+	background-color: rgba(0, 0, 0, 0.15);
+    transition: background-color .3s ease;
+	background-blend-mode: overlay;
+	.nav {
+		position: relative;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+
+		/* webpackIgnore: true */
+		@include flex(row, c);
+
+		.logo {
+		}
+
+		&-menu {
+			@include breakpoint-down(medium) {
+				visibility: hidden;
+				opacity: 0;
+				transform: translateY(-10%);
+				transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+				position: absolute;
+				top: 102%;
+				width: calc(100% - 48px);
+				@include flex(column, fs);
+				border-radius: $br-s;
+				background-color: white;
+				li {
+					padding: 1.5rem;
+				}
+
+				> * + * {
+					border-top: 1px solid rgba(0, 0, 0, 0.1);
+				}
+			}
+
+			@include breakpoint-up(medium) {
+				visibility: visible !important;
+				@include flex(row, c);
+				margin-left: auto;
+
+				> * + * {
+					margin-left: 1.5rem;
+				}
+			}
+		}
+
+		&-mobile {
+            @include breakpoint-up(medium) {
+                display: none;
+            }
+			@include flex(row, c);
+			margin-left: auto;
+            position: relative;
+
+            &-menu, &-close{
+                transition: visibility .3s ease, opacity .3s ease, transform .3s ease;
+            }
+			&-menu {
+                visibility: visible;
+                opacity: 1;
+                transform: scale(1);
+			}
+
+			&-close {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                visibility: hidden;
+                opacity: 0;
+                transform: scale(0);
+			}
+		}
+	}
+	@include breakpoint-down(medium) {
+		&.enabled {
+            background-color: rgba(0, 0, 0, 0.3);
+			.nav-menu {
+				visibility: visible;
+				opacity: 1;
+				transform: translateY(0);
+			}
+            .nav-mobile{
+                &-menu {
+                    visibility: hidden;
+                    opacity: 0;
+                    transform: scale(0);
+                }
+    
+                &-close {
+                    visibility: visible;
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+		}
+	}
+}
