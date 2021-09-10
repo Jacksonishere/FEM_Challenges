@@ -1,12 +1,10 @@
 .header {
     position: relative;
     z-index: 6;
+    background-color: transparent;
 	padding-bottom: toRem(228);
-	background: url("../../../images/image-hero-mobile.jpg") no-repeat top center/cover;
-	background-color: rgba(0, 0, 0, 0.15);
-    transition: background-color .3s ease;
-	background-blend-mode: overlay;
-	.nav {
+	
+    .nav {
 		position: relative;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
@@ -23,9 +21,10 @@
 				opacity: 0;
 				transform: translateY(-10%);
 				transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+
 				position: absolute;
 				top: 102%;
-				width: calc(100% - 48px);
+				width: 100%;
 				@include flex(column, fs);
 				border-radius: $br-s;
 				background-color: white;

@@ -1,0 +1,51 @@
+.pledge {
+	position: relative;
+	margin-top: toRem(-55);
+	padding: toRem(52) 1.5rem toRem(40);
+	@include breakpoint-up(medium) {
+		padding: toRem(52) 3rem toRem(40);
+	}
+	background-color: white;
+	border-radius: $br-s;
+    border: solid 1px rgba(0,0,0, .08);
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: toRem(56);
+		height: toRem(56);
+		background: url("../../../images/logo-mastercraft.svg") no-repeat top center/cover;
+	}
+
+	p {
+        padding: 0 .5rem;
+		margin-top: 1rem;
+	}
+
+	.interactions {
+		@include flex(row, c, sb);
+		margin-top: 1.5rem;
+		@include breakpoint-up(medium) {
+			margin-top: unquote("clamp(1.5rem, 3.1vw, 2.5rem)");
+		}
+		.back {
+			padding: 1rem toRem(42);
+			background-color: $clr-primary-400;
+		}
+		.bookmark {
+			@include breakpoint-up(medium) {
+				@include flex(row, c);
+				background-color: rgba(0, 0, 0, 0.05);
+				&::after {
+					display: inline-block;
+					padding: 1rem;
+					content: "Bookmark";
+					color: $clr-neutral-700;
+				}
+			}
+		}
+	}
+}

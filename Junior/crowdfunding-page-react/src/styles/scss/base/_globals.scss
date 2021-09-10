@@ -1,30 +1,74 @@
+html {
+	width: 100%;
+}
+
 body {
 	position: relative;
 	font-family: $ff-primary;
 	font-size: var(--fs-400);
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.header-bg {
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: toRem(312);
+		background: url("../../../images/image-hero-mobile.jpg") no-repeat top center/cover;
+		background-color: rgba(0, 0, 0, 0.06);
+		transition: background-color 0.3s ease;
+		background-blend-mode: overlay;
+	}
+	@include breakpoint-up(medium) {
+		&::before {
+			background: url("../../../images/image-hero-desktop.jpg") no-repeat top center/cover;
+		}
+	}
+}
+
+h1 {
+	font-size: var(--fs-h1);
+}
+
+p {
+	color: $clr-neutral-700;
+    line-height: 1.8;
 }
 
 a {
-    display: block;
+	display: block;
 	width: 100%;
 	color: $clr-neutral-900;
-    font-weight: 500;
-    font-size: 1.125rem;
+	font-weight: 500;
+	font-size: 1.125rem;
 
-    @include breakpoint-up(medium){
-        color: white;
-        font-size: .875rem;
-    }
-    
-
+	@include breakpoint-up(medium) {
+		color: white;
+		font-size: 0.875rem;
+	}
 }
 
-button{
-    padding: 0;
+button {
+	padding: 0;
 }
+
+.interactions, .card {
+	button {
+		height: toRem(56);
+		border-radius: $br-xl;
+		color: white;
+		font-weight: 700;
+		font-size: var(--fs-500);
+	}
+}
+
 li {
 	width: 100%;
-    @include breakpoint-up(medium){
-        width: max-content;
-    }
+	@include breakpoint-up(medium) {
+		width: max-content;
+	}
 }

@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useRef } from "react";
 
 import useClickOutside from "../customHooks/useClickOutside";
+
 import Logo from "../images/logo.svg";
 
 const Header = ({ triggerOverlay }) => {
@@ -17,6 +18,8 @@ const Header = ({ triggerOverlay }) => {
 		triggerToggles(false);
 		console.log("clicked outside");
 	});
+
+	
 	return (
 		<header className={`header ${isToggled ? "enabled" : ""}`}>
 			<nav className="container nav">
