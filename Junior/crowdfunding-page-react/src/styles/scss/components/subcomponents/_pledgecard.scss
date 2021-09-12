@@ -1,0 +1,162 @@
+.pledge-card {
+	margin-top: 2rem;
+	border-radius: $br-s;
+	border: solid 1px rgba(165, 132, 132, 0.35);
+
+	.top {
+		padding: 1.5rem;
+		@include grid(c);
+		grid-template-columns: auto 1fr;
+		grid-template-rows: 1fr min-content repeat(2, auto);
+		gap: 0 1rem;
+
+		.custom-radio {
+			position: relative;
+			width: 1.5rem;
+			height: 1.5rem;
+			grid-area: 1 / 1 / 3 / 2;
+
+			input[type="radio"] {
+				display: none;
+			}
+
+			&-styles {
+				position: absolute;
+				width: 1.5rem;
+				height: 1.5rem;
+				border-radius: 50%;
+				border: solid 1px rgba(0, 0, 0, 0.35);
+				@include flex(row, c, c);
+
+				&::after {
+					// content: "";
+					position: absolute;
+					width: 0.75rem;
+					height: 0.75rem;
+					border-radius: 50%;
+					background-color: $clr-primary-400;
+				}
+			}
+
+			input[type="radio"]:checked {
+				+ .custom-radio-styles {
+					border: solid 1px $clr-primary-400;
+
+					&:after {
+						content: "";
+					}
+				}
+			}
+		}
+
+		.title {
+			grid-area: 1 / 2 / 2 / 3;
+		}
+		.price {
+			grid-area: 2 / 2 / 3 / 3;
+			color: $clr-primary-400;
+		}
+		.desc {
+			grid-area: 3 / 1 / 4 / 3;
+			margin-top: 1.25rem;
+		}
+		.remaining {
+			grid-area: 4 / 1 / 5 / 3;
+			padding: 1.25rem 0;
+			@include flex(row, c);
+			b {
+				font-size: 1.25rem;
+			}
+			span {
+				font-size: 0.9375rem;
+				margin-left: 0.5rem;
+				color: $clr-neutral-700;
+			}
+		}
+
+		@include breakpoint-up(medium) {
+			grid-template-columns: repeat(3, auto) 1fr;
+			grid-template-rows: repeat(2, auto);
+			gap: 0.5rem 2rem;
+			> * {
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			.custom-radio {
+				grid-area: 1 / 1 / 2 / 2;
+				// align-self: flex-start;
+			}
+			.title {
+				grid-area: 1 / 2 / 2 / 3;
+			}
+			.price {
+				grid-area: 1 / 3 / 2 / 4;
+			}
+			.desc {
+				grid-area: 2 / 2 / 3 / -1;
+			}
+			.remaining {
+				grid-area: 1 / 4 / 2 / -1;
+				justify-self: flex-end;
+			}
+		}
+	}
+
+	.hidden {
+		text-align: center;
+		// height: 0;
+		overflow: hidden;
+		&-content {
+			padding: 1.5rem;
+			border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+			form {
+				position: relative;
+				margin-top: 1.5rem;
+				@include flex(row, c, sb);
+
+				color: $clr-neutral-700;
+				label {
+					position: absolute;
+					left: 1.125rem;
+					font-size: 0.875rem;
+				}
+				input,
+				button {
+					width: 48%;
+				}
+				input {
+					padding: 0 2rem;
+					height: 3.5rem;
+					background-color: white;
+					border: 1px solid rgba(0, 0, 0, 0.2);
+					border-radius: $br-xl;
+					font-weight: bold;
+				}
+				button {
+					background-color: $clr-primary-400;
+				}
+			}
+
+			@include breakpoint-up(medium) {
+                > * {
+                    margin: 0 !important;
+                    padding: 0 !important;
+                }
+
+				@include grid(c);
+                grid-template-columns: 1.5fr 1fr;
+
+				p {
+                    justify-self: flex-start;
+                    grid-column: 1 / 2;
+				}
+                form{
+                    button{
+                        margin-left: 1rem;
+                    }
+                }
+			}
+		}
+	}
+}

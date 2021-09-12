@@ -1,8 +1,8 @@
 .container{
+    // margin: 0 toRem(24);
     @include center-auto;
-    margin: 0 toRem(24);
-    
-    max-width: 920px;
+    width: 90%;
+    max-width: 730px;
     
     @include breakpoint-up(medium){
     }

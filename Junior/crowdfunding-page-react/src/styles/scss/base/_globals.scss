@@ -8,6 +8,8 @@ body {
 	font-size: var(--fs-400);
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.05);
+
+	// @include flex(column, c);
 }
 
 .header-bg {
@@ -34,6 +36,10 @@ h1 {
 	font-size: var(--fs-h1);
 }
 
+h2{
+	font-size: var(--fs-h2);
+}
+
 p {
 	color: $clr-neutral-700;
     line-height: 1.8;
@@ -56,13 +62,13 @@ button {
 	padding: 0;
 }
 
-.interactions, .card {
+.interactions, .card, .pledge-card {
 	button {
-		height: toRem(56);
+		height: 3.5rem;
 		border-radius: $br-xl;
 		color: white;
-		font-weight: 700;
-		font-size: var(--fs-500);
+		font-weight: 500;
+		font-size: var(--fs-400);
 	}
 }
 

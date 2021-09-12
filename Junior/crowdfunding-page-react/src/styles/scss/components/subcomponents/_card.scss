@@ -1,7 +1,8 @@
 .card {
+	margin-top: 2rem;
 	padding: 1.5rem;
 	border-radius: $br-s;
-	border: solid 1px rgba(165, 132, 132, 0.35);
+	border: solid 1px rgba(0, 0, 0, 0.1);
 
 	.title {
 	}
@@ -12,6 +13,7 @@
 		margin-top: 1.25rem;
 	}
 	.remaining {
+		padding: 1.25rem 0;
         @include flex(row, c);
 		b {
 			font-size: 2rem;
@@ -20,10 +22,37 @@
             margin-left: .5rem;
             color: $clr-neutral-700;
         }
-		padding: 1.25rem 0;
 	}
 	.select {
-        padding: 0 2rem;
+		width: toRem(157);
 		background-color: $clr-primary-400;
+	}
+
+	@include breakpoint-up(medium){
+		@include grid();
+		grid-template: 1fr 1fr;
+		grid-template-rows: repeat(3, auto);
+		padding: toRem(37) 2rem 0;
+		
+		.title{
+			grid-area: 1 / 1 / 2 / 2;
+		}
+		.price{
+			grid-area: 1 / 2 / 2 / 3;
+			justify-self: flex-end;
+		}
+		.desc{
+			grid-area: 2 / 1 / 3 / 3;
+		}
+		.remaining{
+			padding: 1.875rem 0 toRem(37);
+			grid-area: 3 / 1 / 4 / 2;
+			align-self: center;
+		}
+		.select{
+			grid-area: 3 / 2 / 4 / 3;
+			justify-self: flex-end;
+			align-self: center;
+		}
 	}
 }

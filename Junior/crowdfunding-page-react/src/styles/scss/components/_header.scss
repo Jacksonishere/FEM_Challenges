@@ -1,16 +1,16 @@
 .header {
-    position: relative;
-    z-index: 6;
-    background-color: transparent;
+	position: relative;
+	z-index: 6;
+	background-color: transparent;
 	padding-bottom: toRem(228);
-	
-    .nav {
+
+	.nav {
 		position: relative;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
 
 		/* webpackIgnore: true */
-		@include flex(row, c);
+		@include flex(row, c, sb);
 
 		.logo {
 		}
@@ -40,7 +40,7 @@
 			@include breakpoint-up(medium) {
 				visibility: visible !important;
 				@include flex(row, c);
-				margin-left: auto;
+				// margin-left: auto;
 
 				> * + * {
 					margin-left: 1.5rem;
@@ -49,53 +49,54 @@
 		}
 
 		&-mobile {
-            @include breakpoint-up(medium) {
-                display: none;
-            }
+			@include breakpoint-up(medium) {
+				display: none;
+			}
 			@include flex(row, c);
 			margin-left: auto;
-            position: relative;
+			position: relative;
 
-            &-menu, &-close{
-                transition: visibility .3s ease, opacity .3s ease, transform .3s ease;
-            }
+			&-menu,
+			&-close {
+				transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+			}
 			&-menu {
-                visibility: visible;
-                opacity: 1;
-                transform: scale(1);
+				visibility: visible;
+				opacity: 1;
+				transform: scale(1);
 			}
 
 			&-close {
-                position: absolute;
-                top: 0;
-                width: 100%;
-                visibility: hidden;
-                opacity: 0;
-                transform: scale(0);
+				position: absolute;
+				top: 0;
+				width: 100%;
+				visibility: hidden;
+				opacity: 0;
+				transform: scale(0);
 			}
 		}
 	}
 	@include breakpoint-down(medium) {
 		&.enabled {
-            background-color: rgba(0, 0, 0, 0.3);
+			background-color: rgba(0, 0, 0, 0.3);
 			.nav-menu {
 				visibility: visible;
 				opacity: 1;
 				transform: translateY(0);
 			}
-            .nav-mobile{
-                &-menu {
-                    visibility: hidden;
-                    opacity: 0;
-                    transform: scale(0);
-                }
-    
-                &-close {
-                    visibility: visible;
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
+			.nav-mobile {
+				&-menu {
+					visibility: hidden;
+					opacity: 0;
+					transform: scale(0);
+				}
+
+				&-close {
+					visibility: visible;
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
 		}
 	}
 }

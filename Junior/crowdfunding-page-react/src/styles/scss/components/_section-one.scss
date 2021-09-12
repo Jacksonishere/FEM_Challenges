@@ -7,7 +7,7 @@
 	}
 	background-color: white;
 	border-radius: $br-s;
-    border: solid 1px rgba(0,0,0, .08);
+	border: solid 1px rgba(0, 0, 0, 0.08);
 
 	&::before {
 		content: "";
@@ -21,7 +21,7 @@
 	}
 
 	p {
-        padding: 0 .5rem;
+		padding: 0 0.5rem;
 		margin-top: 1rem;
 	}
 
@@ -32,7 +32,9 @@
 			margin-top: unquote("clamp(1.5rem, 3.1vw, 2.5rem)");
 		}
 		.back {
-			padding: 1rem toRem(42);
+			padding: 0 toRem(42);
+			font-weight: 700;
+			font-size: var(--fs-500);
 			background-color: $clr-primary-400;
 		}
 		.bookmark {

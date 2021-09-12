@@ -9,7 +9,6 @@ const Header = ({ triggerOverlay }) => {
 	const [isToggled, setIsToggled] = useState(false);
 
 	const triggerToggles = (toggle) => {
-		console.log("triggering");
 		setIsToggled(toggle);
 		triggerOverlay(toggle);
 	};
