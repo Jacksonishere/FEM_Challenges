@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import { TriggerContext } from "../../context/TriggerContext";
+import { ModalOverlayContext } from "../../context/ModalOverlayContext";
 
 const RewardCard = ({ title, price, desc, remaining, id }) => {
 	const { setIdTrigger } = useContext(TriggerContext);
+	const {setStatus} = useContext(ModalOverlayContext);
+
 
 	return (
 		<div className="card">
@@ -17,6 +20,7 @@ const RewardCard = ({ title, price, desc, remaining, id }) => {
 				className="select"
 				onClick={(e) => {
 					setIdTrigger(id);
+					setStatus("show");
 				}}>
 				Select Reward
 			</button>

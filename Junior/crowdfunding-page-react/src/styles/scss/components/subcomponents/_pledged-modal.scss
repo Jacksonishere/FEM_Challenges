@@ -1,0 +1,37 @@
+.pledged-modal{
+    padding: 2rem 1.5rem 2rem;
+    position: fixed;
+    top: 17.5vh;
+    left: 0;
+    right: 0;
+    height: 65vh;
+
+    z-index: 7;
+    background-color: white;
+
+    visibility: hidden;
+	opacity: 0;
+    outline: solid 1px magenta;
+	transform: translateY(-3rem);
+    transition: visibility .3s ease, opacity .3s ease, transform .3s ease;
+    
+    text-align: center;
+    border-radius: $br-s;
+
+    &.enabled {
+		visibility: visible;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+    > * + * {
+        margin-top: 2.5rem;
+    }
+
+    button{
+        background-color: $clr-primary-400;
+        font-weight: 700;
+        width: toRem(107);
+    }
+
+}

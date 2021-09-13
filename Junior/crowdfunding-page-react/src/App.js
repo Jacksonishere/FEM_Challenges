@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+// import { useState, useContext } from "react";
 
 import Header from "./components/Header";
 import Pledge from "./components/Pledge";
@@ -7,10 +7,11 @@ import PledgeInfo from "./components/PledgeInfo";
 import Modal from "./components/Modal";
 
 import Overlay from "./components/subcomponents/Overlay";
-import PledgeOverlay from "./components/subcomponents/PledgeOverlay";
+import ModalOverlay from "./components/subcomponents/ModalOverlay";
 
-import TriggerContextProvider, { TriggerContext } from "./context/TriggerContext";
-import OverlayContextProvider, { OverlayContext } from "./context/OverlayContext";
+import TriggerContextProvider from "./context/TriggerContext";
+import OverlayContextProvider from "./context/OverlayContext";
+import ModalOverlayContextProvider from "./context/ModalOverlayContext";
 
 function App() {
 	return (
@@ -20,15 +21,17 @@ function App() {
 				<Overlay />
 				<Header />
 			</OverlayContextProvider>
-			<TriggerContextProvider>
-				<main className="main">
-					<PledgeOverlay />
-					<Pledge />
-					<PledgeProgress />
-					<PledgeInfo />
-					<Modal />
-				</main>
-			</TriggerContextProvider>
+			<ModalOverlayContextProvider>
+				<TriggerContextProvider>
+					<main className="main">
+						<ModalOverlay />
+						<Pledge />
+						<PledgeProgress />
+						<PledgeInfo />
+						<Modal />
+					</main>
+				</TriggerContextProvider>
+			</ModalOverlayContextProvider>
 		</>
 	);
 }

@@ -158,6 +158,14 @@
 			}
 		}
 	}
+
+	&-oos{
+		opacity: .5;
+		pointer-events: none;
+		button{
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+	}
 }
 
 .selected {
