@@ -5,6 +5,7 @@ const useClickOutside = (handler) => {
     const domNode = useRef()
 
     useEffect( () => {
+        console.log("useeffect called");
         let outsideClickHandler = (e) => {
             if(!domNode.current.contains(e.target)){
                 handler();

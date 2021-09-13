@@ -19,7 +19,7 @@
     @include sweepfromLevel;
 }
 
-.overlay{
+.overlay, .pledge-overlay{
     position: fixed;
     top: 0;
     width: 100vw;
@@ -35,4 +35,8 @@
         visibility: visible;
         background-color: rgba(0,0,0, .3);
     }
+}
+
+.pledge-overlay{
+    z-index: 7;
 }

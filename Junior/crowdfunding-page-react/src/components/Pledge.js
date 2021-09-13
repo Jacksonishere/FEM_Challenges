@@ -1,12 +1,17 @@
 import React from "react";
+import { useContext } from "react/cjs/react.development";
+import { TriggerContext } from "../context/TriggerContext";
 
 const Pledge = () => {
+	const {setIdTrigger} = useContext(TriggerContext);
 	return (
 		<section className="container pledge">
 			<h1>Mastecraft Bamboo Monitor Riser</h1>
 			<p>A beautifully handcrafted monitor stand to reduce neck and eye strain</p>
 			<div className="interactions">
-				<button className="back">Back this project</button>
+				<button className="back" onClick={(e) => {
+					setIdTrigger(-1);
+				}}>Back this project</button>
 				<button className="bookmark">
 					<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
 						<g fill="none" fillRule="evenodd">

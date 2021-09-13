@@ -1,22 +1,27 @@
 .modal {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem 3rem;
     position: fixed;
-    top: 5vh;
+    top: 10vh;
     left: 0;
     right: 0;
-    height: 90vh;
+    height: 80vh;
 
     z-index: 7;
     background-color: white;
 
+
     overflow: auto;
-	// visibility: hidden;
-	// opacity: 0;
-	// transform: translateY(-3rem);
+	visibility: hidden;
+	opacity: 0;
+	transform: translateY(-3rem);
     transition: visibility .3s ease, opacity .3s ease, transform .3s ease;
     
     text-align: left;
     border-radius: $br-s;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
 	&.enabled {
 		visibility: visible;
@@ -25,6 +30,7 @@
 	}
 
     &-back{
+        scroll-margin: 2rem;
         @include grid(c);
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(2, auto);

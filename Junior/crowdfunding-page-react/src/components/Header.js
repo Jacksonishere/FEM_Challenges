@@ -1,26 +1,25 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState, useRef, useContext } from "react";
 
 import useClickOutside from "../customHooks/useClickOutside";
+import { OverlayContext } from "../context/OverlayContext";
 
 import Logo from "../images/logo.svg";
 
-const Header = ({ triggerOverlay }) => {
-	const [isToggled, setIsToggled] = useState(false);
-
-	const triggerToggles = (toggle) => {
-		setIsToggled(toggle);
-		triggerOverlay(toggle);
-	};
+const Header = () => {
+	const {toggleOverlay, setToggleOverlay} = useContext(OverlayContext);
+	
+	const triggerToggle = (toggle) => {
+		setToggleOverlay(toggle);
+	}
 	
 	const menu = useClickOutside(() => {
-		triggerToggles(false);
-		console.log("clicked outside");
+		triggerToggle(false);
 	});
 
 	
 	return (
-		<header className={`header ${isToggled ? "enabled" : ""}`}>
+		<header className={`header ${toggleOverlay ? "enabled" : ""}`}>
 			<nav className="container nav">
 				<figure className="logo">
 					<img src={Logo} alt="" />
@@ -39,7 +38,7 @@ const Header = ({ triggerOverlay }) => {
 				<div className="nav-mobile">
 					<button
 						onClick={(e) => {
-							triggerToggles(true);
+							triggerToggle(true);
 						}}
 						className="nav-mobile-menu">
 						<svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -50,7 +49,7 @@ const Header = ({ triggerOverlay }) => {
 					</button>
 					<button
 						onClick={(e) => {
-							triggerToggles(false);
+							triggerToggle(false);
 						}}
 						className="nav-mobile-close">
 						<svg width="14" height="15" xmlns="http://www.w3.org/2000/svg">
