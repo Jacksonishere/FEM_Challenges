@@ -13,6 +13,7 @@ import TriggerContextProvider from "./context/TriggerContext";
 import OverlayContextProvider from "./context/OverlayContext";
 import ModalOverlayContextProvider from "./context/ModalOverlayContext";
 import CardsContextProvider from "./context/CardsContext";
+import ProgressContextProvider from "./context/ProgressContext";
 
 function App() {
 	return (
@@ -23,17 +24,19 @@ function App() {
 				<Header />
 			</OverlayContextProvider>
 			<TriggerContextProvider>
-				<ModalOverlayContextProvider>
-					<CardsContextProvider>
-						<main className="main">
-							<ModalOverlay />
-							<Pledge />
-							<PledgeProgress />
-							<PledgeInfo />
-							<Modal />
-						</main>
-					</CardsContextProvider>
-				</ModalOverlayContextProvider>
+				<ProgressContextProvider>
+					<ModalOverlayContextProvider>
+						<CardsContextProvider>
+							<main className="main">
+								<ModalOverlay />
+								<Pledge />
+								<PledgeProgress />
+								<PledgeInfo />
+								<Modal />
+							</main>
+						</CardsContextProvider>
+					</ModalOverlayContextProvider>
+				</ProgressContextProvider>
 			</TriggerContextProvider>
 		</>
 	);

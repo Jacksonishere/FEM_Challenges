@@ -36,6 +36,11 @@
 			font-weight: 700;
 			font-size: var(--fs-500);
 			background-color: $clr-primary-400;
+			transition: background-color 0.3s ease;
+
+			&:hover {
+				background-color: $clr-primary-700;
+			}
 		}
 		.bookmark {
 			@include breakpoint-up(medium) {

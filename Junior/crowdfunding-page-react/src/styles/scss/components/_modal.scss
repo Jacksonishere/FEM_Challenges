@@ -11,8 +11,8 @@
 
 
     overflow: scroll;
-	// visibility: hidden;
-	// opacity: 0;
+	visibility: hidden;
+	opacity: 0;
 	transform: translateY(-3rem);
     transition: visibility .3s ease, opacity .3s ease, transform .3s ease;
     

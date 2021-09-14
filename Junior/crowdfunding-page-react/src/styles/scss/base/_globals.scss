@@ -21,13 +21,15 @@ body {
 		width: 100%;
 		height: toRem(312);
 		background: url("../../../images/image-hero-mobile.jpg") no-repeat top center/cover;
-		background-color: rgba(0, 0, 0, 0.06);
+		background-color: rgba(0, 0, 0, 0.3);
 		transition: background-color 0.3s ease;
 		background-blend-mode: overlay;
 	}
 	@include breakpoint-up(medium) {
 		&::before {
 			background: url("../../../images/image-hero-desktop.jpg") no-repeat top center/cover;
+			background-color: rgba(0, 0, 0, 0.3);
+			background-blend-mode: overlay;
 		}
 	}
 }
@@ -36,13 +38,13 @@ h1 {
 	font-size: var(--fs-h1);
 }
 
-h2{
+h2 {
 	font-size: var(--fs-h2);
 }
 
 p {
 	color: $clr-neutral-700;
-    line-height: 1.8;
+	line-height: 1.8;
 }
 
 a {
@@ -51,10 +53,14 @@ a {
 	color: $clr-neutral-900;
 	font-weight: 500;
 	font-size: 1.125rem;
+	transition: color 0.3s ease;
 
 	@include breakpoint-up(medium) {
 		color: white;
-		font-size: 0.875rem;
+		font-size: 1rem;
+		&:hover {
+			color: $clr-primary-400;
+		}
 	}
 }
 
@@ -62,13 +68,21 @@ button {
 	padding: 0;
 }
 
-.interactions, .card, .pledge-card, .pledged-modal {
+.interactions,
+.card,
+.hidden,
+.pledged-modal {
 	button {
 		height: 3.5rem;
 		border-radius: $br-xl;
 		color: white;
 		font-weight: 500;
 		font-size: var(--fs-400);
+		transition: background-color .3s ease;
+
+		&:hover{
+			background-color: $clr-primary-700
+		}
 	}
 }
 

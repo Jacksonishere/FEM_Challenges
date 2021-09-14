@@ -103,7 +103,7 @@
 
 		overflow: hidden;
 		&-content {
-			padding: 1.5rem 1.5rem 2.5rem;
+			padding: 1.5rem;
 			border-top: 1px solid rgba(0, 0, 0, 0.2);
 
 			form {
@@ -137,12 +137,16 @@
 				.warning{
 					visibility: hidden;
 					position: absolute;
-					top: 110%;
+					top: 100%;
 					font-size: .75rem;
 					color: red;
 				}
 				button {
 					background-color: $clr-primary-400;
+
+					&:hover{
+						background-color: $clr-primary-700;
+					}
 				}
 			}
 

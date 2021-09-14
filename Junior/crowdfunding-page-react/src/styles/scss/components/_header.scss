@@ -8,6 +8,7 @@
 		position: relative;
 		padding-top: 2rem;
 		padding-bottom: 2rem;
+		max-width: toRem(1100);
 
 		/* webpackIgnore: true */
 		@include flex(row, c, sb);
@@ -43,7 +44,7 @@
 				// margin-left: auto;
 
 				> * + * {
-					margin-left: 1.5rem;
+					margin-left: 2rem;
 				}
 			}
 		}
