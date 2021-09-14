@@ -1,10 +1,10 @@
 .pledge-card {
+	scroll-margin-top: 2rem;
 	margin-top: 2rem;
 	border-radius: $br-s;
 	border: solid 1px rgba(165, 132, 132, 0.35);
 
 	transition: border .3s ease;
-	scroll-margin: 2rem;
 	.top {
 		padding: 1.5rem;
 		@include grid(c);
@@ -31,17 +31,19 @@
 				@include flex(row, c, c);
 
 				&::after {
-					// content: "";
+					content: "";
 					position: absolute;
 					width: 0.75rem;
 					height: 0.75rem;
 					border-radius: 50%;
-					background-color: $clr-primary-400;
+					background-color: transparent;
+					transition: background-color .3s ease;
 				}
 			}
 		}
 
 		.title {
+			transition: color .3s ease;
 			grid-area: 1 / 2 / 2 / 3;
 		}
 		.price {
@@ -97,11 +99,11 @@
 	.hidden {
 		text-align: center;
 		// height: 0;
-		transition: max-height .5s ease, opacity .5s ease;
+		transition: max-height .3s ease, opacity .3s ease;
 
 		overflow: hidden;
 		&-content {
-			padding: 1.5rem;
+			padding: 1.5rem 1.5rem 2.5rem;
 			border-top: 1px solid rgba(0, 0, 0, 0.2);
 
 			form {
@@ -132,6 +134,13 @@
 						display: none;
 					}
 				}
+				.warning{
+					visibility: hidden;
+					position: absolute;
+					top: 110%;
+					font-size: .75rem;
+					color: red;
+				}
 				button {
 					background-color: $clr-primary-400;
 				}
@@ -156,10 +165,18 @@
 					}
 				}
 			}
+			&.invalidForm{
+				input{
+					border: solid 1px red;
+				}
+				.warning{
+					visibility: visible;
+				}
+			}
 		}
 	}
 
-	&-oos{
+	&.oos{
 		opacity: .5;
 		pointer-events: none;
 		button{
@@ -171,12 +188,16 @@
 .selected {
 	border: solid 1px $clr-primary-400;
 
+	.title{
+		color: $clr-primary-400;
+	}
+
 	.top {
 		.custom-radio-styles {
 			border: solid 1px $clr-primary-400;
 
 			&:after {
-				content: "";
+				background-color: $clr-primary-400;
 			}
 		}
 	}

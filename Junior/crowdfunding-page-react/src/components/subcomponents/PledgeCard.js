@@ -1,28 +1,70 @@
-import React, { useContext, useRef, useEffect } from "react";
+import React, { useContext, useRef, useEffect, useState } from "react";
 import { TriggerContext } from "../../context/TriggerContext";
+import { CardsContext } from "../../context/CardsContext";
 
-const PledgeCard = ({ title, price, desc, remaining, id }) => {
-	console.log("rerending pledgecard");
+const PledgeCard = ({ id, successHandler }) => {
+	//for triggering card, giving it the green accents when selected
 	const { idTrigger, setIdTrigger } = useContext(TriggerContext);
-	const card = useRef();
+	const selectedCard = useRef();
+	//hidden form until a card is selected
 	const hidden = useRef();
 
-	let scrollTimeout = null;
+	//Use cards from card context to display info and to set the remaining for when the form is successful
+	const { cards, setCards } = useContext(CardsContext);
+	const card = cards[id];
+
+	//Ref that persists, that holds the previous scrollTimeout that gets added when the user clicks on select reward outside the modal and inside the modal. 
+	const scrollTimeout = useRef();
 
 	useEffect(() => {
 		if (idTrigger === id) {
-			scrollTimeout = setTimeout(() => {
-				card.current.scrollIntoView({ behavior: "smooth" });
+			scrollTimeout.current = setTimeout(() => {
+				selectedCard.current.scrollIntoView({ behavior: "smooth" });
 			}, 300);
 		}
 
 		return () => {
-			clearTimeout(scrollTimeout);
+			clearTimeout(scrollTimeout.current);
 		};
-	});
+	}, [idTrigger]);
+
+
+	const [invalid, setInvalid] = useState(false);
+	const formInput = useRef();
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const formData = new FormData(e.target);
+		const formProps = Object.fromEntries(formData);
+		
+		const submittedInput = formProps.amount;
+
+		if(isNaN(submittedInput) || submittedInput < card.price){
+			setInvalid(true);
+		}
+		else{
+			console.log("success input");
+			if(id > 0){
+				const updateCards = cards.map( (card, index) => {
+					if(id === index){
+						return {...card, remaining: card.remaining - 1}
+					}
+					else{
+						return card;
+					}
+				});
+				setCards(updateCards);
+			}
+			formInput.current.value = null;
+			setInvalid(false);
+			successHandler()
+		}
+	};
 
 	return (
-		<div ref={card} className={`pledge-card ${idTrigger === id ? "selected" : ""}`}>
+		<div
+			ref={selectedCard}
+			className={`pledge-card ${card.remaining === 0 ? "oos" : ""} ${idTrigger === id ? "selected" : ""}`}>
 			<div
 				className="top"
 				onClick={(e) => {
@@ -33,15 +75,18 @@ const PledgeCard = ({ title, price, desc, remaining, id }) => {
 					<div className="custom-radio-styles"></div>
 				</label>
 
-				<strong className="title">{title}</strong>
+				<strong className="title">{card.title}</strong>
 
-				{id !== 0 ?? <p className="price">{`Pledge $${price} or more`}</p>}
-				<p className="desc">{desc}</p>
-				{id !== 0 ?? (
+				{id !== 0 ? <p className="price">{`Pledge $${card.price} or more`}</p> : ""}
+
+				<p className="desc">{card.desc}</p>
+				{id !== 0 ? (
 					<div className="remaining">
-						<b>{remaining}</b>
+						<b>{card.remaining}</b>
 						<span>left</span>{" "}
 					</div>
+				) : (
+					""
 				)}
 			</div>
 
@@ -49,13 +94,14 @@ const PledgeCard = ({ title, price, desc, remaining, id }) => {
 				className="hidden"
 				ref={hidden}
 				style={{ maxHeight: idTrigger === id ? hidden.current.scrollHeight : "0px" }}>
-				<div className="hidden-content">
+				<div className={`hidden-content ${invalid ? "invalidForm" : ""}`}>
 					<p>Enter your pledge</p>
-					<form action="" className="pledge-amount">
+					<form action="" className="pledge-amount" onSubmit={handleSubmit}>
 						<label htmlFor="amount">
 							<b>$</b>
 						</label>
-						<input id="amount" type="number" placeholder="" />
+						<input ref={formInput} id="amount" type="text" placeholder="" name="amount"/>
+						<p className="warning">Please enter a valid pledge</p>
 						<button type="submit">Continue</button>
 					</form>
 				</div>

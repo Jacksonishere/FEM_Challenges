@@ -1,5 +1,5 @@
 .modal {
-    padding: 2rem 1.5rem 3rem;
+    padding: 2rem 1.5rem;
     position: fixed;
     top: 10vh;
     left: 0;
@@ -10,9 +10,9 @@
     background-color: white;
 
 
-    overflow: auto;
-	visibility: hidden;
-	opacity: 0;
+    overflow: scroll;
+	// visibility: hidden;
+	// opacity: 0;
 	transform: translateY(-3rem);
     transition: visibility .3s ease, opacity .3s ease, transform .3s ease;
     
@@ -30,9 +30,9 @@
 	}
 
     &-back{
-        scroll-margin: 2rem;
+        scroll-margin-top: 2rem;
         @include grid(c);
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr max-content;
         grid-template-rows: repeat(2, auto);
         gap: 1rem 0;
 

@@ -12,6 +12,7 @@ import ModalOverlay from "./components/subcomponents/ModalOverlay";
 import TriggerContextProvider from "./context/TriggerContext";
 import OverlayContextProvider from "./context/OverlayContext";
 import ModalOverlayContextProvider from "./context/ModalOverlayContext";
+import CardsContextProvider from "./context/CardsContext";
 
 function App() {
 	return (
@@ -21,17 +22,19 @@ function App() {
 				<Overlay />
 				<Header />
 			</OverlayContextProvider>
-			<ModalOverlayContextProvider>
-				<TriggerContextProvider>
-					<main className="main">
-						<ModalOverlay />
-						<Pledge />
-						<PledgeProgress />
-						<PledgeInfo />
-						<Modal />
-					</main>
-				</TriggerContextProvider>
-			</ModalOverlayContextProvider>
+			<TriggerContextProvider>
+				<ModalOverlayContextProvider>
+					<CardsContextProvider>
+						<main className="main">
+							<ModalOverlay />
+							<Pledge />
+							<PledgeProgress />
+							<PledgeInfo />
+							<Modal />
+						</main>
+					</CardsContextProvider>
+				</ModalOverlayContextProvider>
+			</TriggerContextProvider>
 		</>
 	);
 }

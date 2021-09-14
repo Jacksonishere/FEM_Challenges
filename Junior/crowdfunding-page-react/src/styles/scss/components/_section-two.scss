@@ -9,8 +9,8 @@
         text-align: left;
 		@include grid();
 		// grid-template-columns: repeat(2, max-content) 1fr;
-        grid-template-columns: repeat(3, 1fr);
-		gap: 0 toRem(90);
+        grid-template-columns: .8fr 1fr 1fr;
+		// gap: 0 toRem(90);
 		grid-template-rows: auto auto;
 		padding: 1.5rem 3rem;
 	}
@@ -21,11 +21,14 @@
 			padding-top: 1.25rem;
 		}
         @include breakpoint-up(medium){
-            // padding-left: 10vw;
+			// width: 100%;
         }
 	}
 
 	section {
+		&:not(:first-child){
+			text-align: center;
+		}
 		position: relative;
 		h1{
 			font-size: 2rem;
@@ -48,8 +51,7 @@
 			@include breakpoint-up(medium) {
 				top: 0;
 				bottom: 0;
-				left: unquote("calc(-1 * clamp(2.8125rem , 8vw, 5.625rem))");
-                // left: 0;
+                left: 0;
 				width: 1px;
 			}
 			background-color: rgba(0, 0, 0, 0.08);

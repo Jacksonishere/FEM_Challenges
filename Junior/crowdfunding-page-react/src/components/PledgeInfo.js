@@ -17,32 +17,9 @@ const PledgeInfo = () => {
 				</p>
 			</section>
 			<section className="rewards">
-				<RewardCard
-					title="Bamboo Stand"
-					price={25}
-					desc="You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and 
-  you’ll be added to a special Backer member list."
-					remaining={101}
-					id={1}
-				/>
-				<RewardCard
-					title="Black Edition Stand"
-					price={75}
-					desc="You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer 
-					member list. Shipping is included."
-					remaining={64}
-					id={2}
-				/>
-				<RewardCard
-					title="
-					Mahogany Special Edition"
-					price={200}
-					desc="You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added 
-					to our Backer member list. Shipping is included."
-					remaining={0}
-					id={3}
-				/>
-
+				<RewardCard id={1} />
+				<RewardCard id={2} />
+				<RewardCard id={3} />
 			</section>
 		</article>
 	);
