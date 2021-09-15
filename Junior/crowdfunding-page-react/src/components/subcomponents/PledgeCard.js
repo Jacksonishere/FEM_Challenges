@@ -22,7 +22,7 @@ const PledgeCard = ({ id, successHandler }) => {
 		if (idTrigger === id) {
 			scrollTimeout.current = setTimeout(() => {
 				selectedCard.current.scrollIntoView({ behavior: "smooth" });
-			}, 300);
+			}, 350);
 		}
 
 		return () => {

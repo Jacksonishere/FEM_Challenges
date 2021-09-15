@@ -4,19 +4,19 @@
     top: 50%;
     left: 0;
     right: 0;
-    height: 65vh;
+    width: unquote("min(50vw, 475px)");
+    height: unquote("min(65vh, 435px)");
     transform: translateY(-55%);
-    max-height: toRem(450);
 
     z-index: 7;
     background-color: white;
 
     visibility: hidden;
 	opacity: 0;
-    outline: solid 1px magenta;
 	transform: translateY(-3rem);
     transition: visibility .3s ease, opacity .3s ease, transform .3s ease;
     
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, .2);
     text-align: center;
     border-radius: $br-s;
 
