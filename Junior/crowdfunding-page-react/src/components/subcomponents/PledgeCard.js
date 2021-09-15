@@ -18,7 +18,6 @@ const PledgeCard = ({ id, successHandler }) => {
 	const scrollTimeout = useRef();
 
 	useEffect(() => {
-		console.log(typeof progress.total, typeof progress.backers);
 		if (idTrigger === id) {
 			scrollTimeout.current = setTimeout(() => {
 				selectedCard.current.scrollIntoView({ behavior: "smooth" });
@@ -41,7 +40,6 @@ const PledgeCard = ({ id, successHandler }) => {
 		const formProps = Object.fromEntries(formData);
 
 		const submittedInput = formProps.amount;
-		console.log(typeof submittedInput, "submited input");
 
 		if (isNaN(submittedInput) || submittedInput < card.price) {
 			setInvalid(true);

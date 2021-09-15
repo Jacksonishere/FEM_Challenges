@@ -20,8 +20,9 @@ const Modal = () => {
 		}
 	};
 	const resetModal = () => {
-		setIdTrigger(-2);
 		scrollTopTimeout.current = setTimeout(() => {
+			console.log("resetmodal called");
+			setIdTrigger(-2);
 			domNodeTop.current.scrollIntoView();
 		}, 300);
 	};
@@ -43,7 +44,7 @@ const Modal = () => {
 		return () => {
 			document.removeEventListener("mousedown", handler);
 		};
-	});
+	}, [status]);
 
 	return (
 		<>

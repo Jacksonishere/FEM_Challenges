@@ -42,11 +42,11 @@ const PledgeProgress = () => {
 	return (
 		<article ref={scrollBackUp} className="container progress">
 			<section className={`progress-backed ${pledged ? "fade" : ""}`}>
-				<h1>{updatedProgress.current.total}</h1>
+				<h1>${updatedProgress.current.total.toLocaleString()}</h1>
 				<p>of $100,000 backed</p>
 			</section>
 			<section className={`progress-backers ${pledged ? "fade" : ""}`}>
-				<h1>{updatedProgress.current.backers}</h1>
+				<h1>{updatedProgress.current.backers.toLocaleString()}</h1>
 				<p>total backers</p>
 			</section>
 			<section className={`progress-days ${pledged ? "fade" : ""}`}>
