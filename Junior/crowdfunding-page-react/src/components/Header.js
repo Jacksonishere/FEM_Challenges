@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useRef, useContext } from "react";
+import { useContext } from "react";
 
 import useClickOutside from "../customHooks/useClickOutside";
 import { OverlayContext } from "../context/OverlayContext";

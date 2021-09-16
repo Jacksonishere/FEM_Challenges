@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { ModalOverlayContext } from "../context/ModalOverlayContext";
 import { TriggerContext } from "../context/TriggerContext";
 
@@ -7,7 +7,7 @@ import PledgeCard from "./subcomponents/PledgeCard";
 import check from "../images/icon-check.svg";
 
 const Modal = () => {
-	const { idTrigger, setIdTrigger } = useContext(TriggerContext);
+	const { setIdTrigger } = useContext(TriggerContext);
 	const { status, setStatus } = useContext(ModalOverlayContext);
 
 	const scrollTopTimeout = useRef();
