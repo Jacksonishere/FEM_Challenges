@@ -20,14 +20,6 @@ const SelectTip = ({ updateTip, didReset, updateReset }) => {
 		percInput.current.value = "";
 	};
 
-
-
-    // if(didReset){
-    //     updateReset();
-    //     setSelectedBtn(-1);
-    // }
-
-    
 	const preventMinus = (e) => {
 		if (e.code === "Minus") {
 			e.preventDefault();

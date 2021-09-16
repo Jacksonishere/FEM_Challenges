@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useRef } from "react";
+import React, { useState } from "react";
 
 import Bill from "./Bill";
 import SelectTip from "./SelectTip";

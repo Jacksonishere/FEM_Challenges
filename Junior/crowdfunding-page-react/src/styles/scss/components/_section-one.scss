@@ -55,25 +55,26 @@
 
 					display: inline-block;
 					content: "Bookmark";
-					padding-right: .75rem;
+					padding-right: 0.75rem;
 					width: toRem(135);
 					color: $clr-neutral-700;
-
 				}
-				svg > g > circle{
-					transition: fill .3s ease;
+				svg > g > circle {
+					transition: fill 0.3s ease;
 				}
 			}
 		}
 	}
-	.bookmarked {
-		.bookmark {
-			&::after {
-				color: $clr-primary-400;
-				content: "Bookmarked";
-			}
-			svg > g > circle{
-				fill: $clr-primary-400;
+	@include breakpoint-up(medium) {
+		.bookmarked {
+			.bookmark {
+				&::after {
+					color: $clr-primary-400;
+					content: "Bookmarked";
+				}
+				svg > g > circle {
+					fill: $clr-primary-400;
+				}
 			}
 		}
 	}

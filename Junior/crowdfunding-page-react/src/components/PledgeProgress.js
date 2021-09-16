@@ -1,5 +1,4 @@
-import React from "react";
-import { useContext, useRef, useEffect, useState } from "react/cjs/react.development";
+import React, { useContext, useRef, useEffect, useState } from "react";
 import { ModalOverlayContext } from "../context/ModalOverlayContext";
 import { ProgressContext } from "../context/ProgressContext";
 
