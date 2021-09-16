@@ -21,7 +21,7 @@ const PledgeProgress = () => {
 				setTimeout(() => {
 					setPleged(true);
 					updatedProgress.current = progress;
-				}, 500);
+				}, 400);
 			}, 350);
 		} else {
 			setPleged(false);
@@ -32,7 +32,7 @@ const PledgeProgress = () => {
 	useEffect(() => {
 		let unfade = setTimeout(() => {
 			setPleged(false);
-		}, 1050);
+		}, 700);
 
 		return () => {
 			clearTimeout(unfade);

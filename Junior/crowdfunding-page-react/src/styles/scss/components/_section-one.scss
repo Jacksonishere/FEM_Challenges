@@ -43,15 +43,37 @@
 			}
 		}
 		.bookmark {
+			transition: opacity 0.3s ease;
+			&:hover {
+				opacity: 0.85;
+			}
 			@include breakpoint-up(medium) {
 				@include flex(row, c);
 				background-color: rgba(0, 0, 0, 0.05);
 				&::after {
+					transition: color 0.3s ease;
+
 					display: inline-block;
-					padding: 1rem;
 					content: "Bookmark";
+					padding-right: .75rem;
+					width: toRem(135);
 					color: $clr-neutral-700;
+
 				}
+				svg > g > circle{
+					transition: fill .3s ease;
+				}
+			}
+		}
+	}
+	.bookmarked {
+		.bookmark {
+			&::after {
+				color: $clr-primary-400;
+				content: "Bookmarked";
+			}
+			svg > g > circle{
+				fill: $clr-primary-400;
 			}
 		}
 	}
