@@ -30,6 +30,7 @@
 			border-radius: $br-small;
 
 			@include breakpoint-up(large) {
+				visibility: visible !important;
 				margin-left: 3rem;
 				padding-right: 0;
 				@include flex(row, c, c);
@@ -78,7 +79,6 @@
 					.empty {
 						height: 0;
 					}
-					cursor: pointer;
 					overflow: hidden;
 					ul {
 						margin-top: 1rem;

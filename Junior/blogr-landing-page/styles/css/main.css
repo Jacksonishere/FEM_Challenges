@@ -176,6 +176,10 @@ p {
   line-height: 1.8;
 }
 
+li {
+  cursor: pointer;
+}
+
 a {
   color: #4b5862;
 }
@@ -228,6 +232,7 @@ main p {
 }
 @media (min-width: 64em) {
   .header .nav-menu {
+    visibility: visible !important;
     margin-left: 3rem;
     padding-right: 0;
     display: flex;
@@ -280,7 +285,6 @@ main p {
 }
 .header .nav-menu .menu-item .dropdown-wrapper {
   height: 0;
-  cursor: pointer;
   overflow: hidden;
 }
 .header .nav-menu .menu-item .dropdown-wrapper .empty {
