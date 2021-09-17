@@ -12,7 +12,7 @@ const Pledge = () => {
 
 	return (
 		<section className="container pledge">
-			<h1>Mastecraft Bamboo Monitor Riser</h1>
+			<h2>Mastecraft Bamboo Monitor Riser</h2>
 			<p>A beautifully handcrafted monitor stand to reduce neck and eye strain</p>
 			<div className={`interactions ${bookedMarked ? "bookmarked" : ''}`}>
 				<button className="back" onClick={(e) => {

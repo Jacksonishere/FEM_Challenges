@@ -75,7 +75,7 @@ const PledgeCard = ({ id, successHandler }) => {
 				}}>
 				<label className="custom-radio">
 					<input type="radio" name="select" value="selected" />
-					<div className="custom-radio-styles"></div>
+					<span className="custom-radio-styles"></span>
 				</label>
 
 				<strong className="title">{card.title}</strong>
@@ -99,7 +99,7 @@ const PledgeCard = ({ id, successHandler }) => {
 				style={{ maxHeight: idTrigger === id ? hidden.current.scrollHeight : "0px" }}>
 				<div className={`hidden-content ${invalid ? "invalidForm" : ""}`}>
 					<p>Enter your pledge</p>
-					<form action="" className="pledge-amount" onSubmit={handleSubmit}>
+					<form action="#" className="pledge-amount" onSubmit={handleSubmit}>
 						<label htmlFor="amount">
 							<b>$</b>
 						</label>
