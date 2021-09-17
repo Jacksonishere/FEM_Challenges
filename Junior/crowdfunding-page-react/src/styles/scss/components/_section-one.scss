@@ -47,34 +47,33 @@
 			&:hover {
 				opacity: 0.85;
 			}
-			@include breakpoint-up(medium) {
-				@include flex(row, c);
-				background-color: rgba(0, 0, 0, 0.05);
-				&::after {
-					transition: color 0.3s ease;
-
-					display: inline-block;
-					content: "Bookmark";
+			@include flex(row, c);
+			background-color: rgba(0, 0, 0, 0.05);
+			&::after {
+				transition: color 0.3s ease;
+				display: inline-block;
+				color: $clr-neutral-700;
+				@include breakpoint-up(medium) {
 					padding-right: 0.75rem;
 					width: toRem(135);
-					color: $clr-neutral-700;
+					content: "Bookmark";
 				}
-				svg > g > circle {
-					transition: fill 0.3s ease;
-				}
+			}
+			svg > g > circle {
+				transition: fill 0.3s ease;
 			}
 		}
 	}
-	@include breakpoint-up(medium) {
-		.bookmarked {
-			.bookmark {
-				&::after {
-					color: $clr-primary-400;
+	.bookmarked {
+		.bookmark {
+			&::after {
+				color: $clr-primary-400;
+				@include breakpoint-up(medium) {
 					content: "Bookmarked";
 				}
-				svg > g > circle {
-					fill: $clr-primary-400;
-				}
+			}
+			svg > g > circle {
+				fill: $clr-primary-400;
 			}
 		}
 	}
