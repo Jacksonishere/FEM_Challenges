@@ -1,0 +1,20 @@
+body{
+    position: relative;
+    font-family: $ff-primary;
+    font-size: var(--fs-400);
+
+    background: url("/images/bg-pattern.svg");
+    background-repeat: no-repeat;
+
+    color: $clr-neutral-700;
+    text-align: center;
+}
+
+h1{
+    color: $clr-neutral-900;
+    font-size: var(--fs-h1);
+}
+
+.attribution{
+    margin-top: 4rem;
+}

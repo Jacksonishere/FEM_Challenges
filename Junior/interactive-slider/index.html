@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="/styles/css/main.css" />
+
+		<title>Frontend Mentor | Interactive pricing component</title>
+
+		<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<section class="container intro">
+				<h1>Simple, traffic-based pricing</h1>
+				<p>Sign-up for our 30-day trial. <br />No credit card required.</p>
+			</section>
+		</header>
+
+		<main class="main">
+			<article class="container main-content">
+				<section class="billing-info">
+					<p class="views">100k Pageviews</p>
+					<input type="range" name="pageviews" min="0" max="100" value="50" step="25" class="slider" />
+
+					<div class="price">
+						<b>$16.00</b>
+						<p>/ month</p>
+					</div>
+
+					<div class="toggle">
+						<span>Monthly Billing</span>
+						<label class="custom-toggle-btn">
+							<input id="toggle" type="checkbox" name="toggle" />
+              <span class="toggler"></span>
+						</label>
+						<span>Yearly Billing</span>
+						<span class="discount">25%</span>
+					</div>
+				</section>
+
+				<section class="service-info">
+					<ul class="service-info-list">
+						<li>Unlimited websites</li>
+						<li>100% data ownership</li>
+						<li>Email reports</li>
+					</ul>
+					<button class="start">Start my trial</button>
+				</section>
+			</article>
+		</main>
+
+		<div class="attribution">
+			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+			<a href="#">Your Name Here</a>.
+		</div>
+	</body>
+</html>

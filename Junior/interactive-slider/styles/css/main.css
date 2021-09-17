@@ -1,0 +1,326 @@
+/* FLEX AND GRIDBOX */
+/* CENTER BLOCK */
+/* PSEUDO ELEMENT */
+/* BACKGROUND  */
+/* TRANSITIONS */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: min(90%, 400px);
+}
+@media (min-width: 48em) {
+  .container {
+    width: min(90%, 540px);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sweepfromSide {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.sweepfromLevel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+:root {
+  --fs-400: .8125rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-h1: 1.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+}
+@media (min-width: 48em) {
+  :root {
+    --fs-400: clamp(.8125, 1.7vw, .9375rem);
+    --fs-h1: 1.875rem;
+  }
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style-type: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+figure {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  display: block;
+  cursor: pointer;
+}
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  position: relative;
+  font-family: "Manrope", sans-serif;
+  font-size: var(--fs-400);
+  background: url("/images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  color: #858fad;
+  text-align: center;
+}
+
+h1 {
+  color: #293356;
+  font-size: var(--fs-h1);
+}
+
+.attribution {
+  margin-top: 4rem;
+}
+
+.header {
+  padding: 5.5625rem 0 4rem;
+  background: url("/images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.header .intro p {
+  margin-top: 0.375rem;
+  line-height: 1.7;
+}
+
+.main .main-content {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0px 16px 22px 8px #bdccff54;
+}
+.main .main-content .billing-info {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 2.5rem 0;
+  grid-auto-flow: row;
+  border-bottom: solid 1px #cdd7ee;
+}
+.main .main-content .billing-info .views {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.125rem;
+}
+.main .main-content .billing-info .slider {
+  -webkit-appearance: none;
+  margin: 2.5rem 0;
+  width: 80%;
+  height: 0.5rem;
+  background: linear-gradient(to right, #a5f3eb, #a5f3eb 50%, #eaeefb 50%, #eaeefb);
+  border-radius: 1rem;
+}
+.main .main-content .billing-info .slider::-webkit-slider-thumb {
+  appearance: none;
+  position: relative;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: url("/images/icon-slider.svg"), linear-gradient(#10d5c2, #10d5c2);
+  box-shadow: 0px 12px 18px 8px #a5f3eb;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.main .main-content .billing-info .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.main .main-content .billing-info .price b {
+  color: #293356;
+  font-size: 2rem;
+}
+.main .main-content .billing-info .price p {
+  margin-left: 0.5rem;
+}
+.main .main-content .billing-info .toggle {
+  margin-top: 2.5rem;
+}
+.main .main-content .billing-info .toggle > * + * {
+  margin-left: 0.6375rem;
+}
+.main .main-content .billing-info .toggle .custom-toggle-btn {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 2.6875rem;
+  height: 1.375rem;
+}
+.main .main-content .billing-info .toggle .custom-toggle-btn input[type=checkbox] {
+  display: none;
+}
+.main .main-content .billing-info .toggle .custom-toggle-btn input[type=checkbox]:checked + .toggler {
+  background-color: #293356;
+}
+.main .main-content .billing-info .toggle .custom-toggle-btn input[type=checkbox]:checked + .toggler::after {
+  left: 60%;
+}
+.main .main-content .billing-info .toggle .custom-toggle-btn .toggler {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #cdd7ee;
+  transition: background-color 0.3s ease;
+  border-radius: 1rem;
+}
+.main .main-content .billing-info .toggle .custom-toggle-btn .toggler::after {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  width: 0.875rem;
+  height: 0.875rem;
+  background-color: white;
+  transition: left 0.3s ease;
+  border-radius: 100%;
+}
+.main .main-content .billing-info .toggle .discount {
+  padding: 0.3125rem 0.4375rem;
+  color: #ff8c66;
+  background-color: #feece7;
+  border-radius: 1rem;
+}
+@media (min-width: 48em) {
+  .main .main-content .billing-info {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+  .main .main-content .billing-info .views {
+    grid-area: 1/1/2/2;
+  }
+  .main .main-content .billing-info .slider {
+    grid-area: 2/1/3/3;
+  }
+  .main .main-content .billing-info .price {
+    grid-area: 1/2/2/3;
+  }
+  .main .main-content .billing-info .toggle {
+    grid-area: 3/1/4/3;
+    margin-top: 2rem;
+    margin-right: 4rem;
+    justify-self: flex-end;
+  }
+}
+.main .main-content .service-info {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-auto-flow: row;
+  padding: 2.5rem 0;
+}
+.main .main-content .service-info-list > * + * {
+  margin-top: 1rem;
+}
+.main .main-content .service-info-list li::before {
+  content: url(/images/icon-check.svg);
+  margin-right: 1rem;
+}
+.main .main-content .service-info .start {
+  margin-top: 2.5rem;
+  padding: 0.75rem 2.875rem;
+  color: #bdccff;
+  font-weight: 600;
+  background-color: #293356;
+  border-radius: 4rem;
+}
+@media (min-width: 48em) {
+  .main .main-content .service-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .main .main-content .service-info-list {
+    text-align: left;
+    grid-column: 1/2;
+  }
+  .main .main-content .service-info .start {
+    grid-column: 2/3;
+    margin-top: 0;
+  }
+}/*# sourceMappingURL=main.css.map */

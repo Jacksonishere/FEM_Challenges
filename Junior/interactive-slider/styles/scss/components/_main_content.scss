@@ -1,0 +1,189 @@
+.header {
+	padding: toRem(89) 0 4rem;
+	background: url("/images/pattern-circles.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	.intro {
+		p {
+			margin-top: 0.375rem;
+			line-height: 1.7;
+		}
+	}
+}
+
+.main {
+	.main-content {
+		background-color: $clr-neutral-100;
+        border-radius: $br;
+        box-shadow: 0px 16px 22px 8px #bdccff54;
+        
+		.billing-info {
+            @include grid(c,c);
+            padding: 2.5rem 0;
+            grid-auto-flow: row;
+			border-bottom: solid 1px $clr-neutral-400;
+
+			.views {
+				text-transform: uppercase;
+                font-weight: 800;
+				letter-spacing: 0.125rem;
+			}
+
+			.slider {
+				-webkit-appearance: none;
+				margin: 2.5rem 0;
+				width: 80%;
+				height: 0.5rem;
+				background: linear-gradient(
+					to right,
+					$clr-primary-c-400,
+					$clr-primary-c-400 50%,
+					$clr-neutral-300 50%,
+					$clr-neutral-300
+				);
+
+				border-radius: $br;
+
+				&::-webkit-slider-thumb {
+					appearance: none;
+					position: relative;
+					width: toRem(40);
+					height: toRem(40);
+					border-radius: 50%;
+					background: url("/images/icon-slider.svg"), linear-gradient($clr-primary-c-700, $clr-primary-c-700);
+                    box-shadow: 0px 12px 18px 8px hsla(174, 77%, 80%, 1);
+
+					background-repeat: no-repeat;
+					background-position: center center;
+				}
+			}
+
+			.price {
+				@include flex(row, c, c);
+				b {
+					color: $clr-neutral-900;
+					font-size: 2rem;
+				}
+				p {
+					margin-left: 0.5rem;
+				}
+			}
+
+			.toggle {
+                margin-top: 2.5rem;
+				> * + * {
+					margin-left: 0.6375rem;
+				}
+
+				.custom-toggle-btn {
+					display: inline-block;
+					vertical-align: middle;
+					position: relative;
+					width: toRem(43);
+					height: toRem(22);
+
+					input[type="checkbox"] {
+						display: none;
+
+						&:checked + .toggler {
+							background-color: $clr-neutral-900;
+
+							&::after {
+								left: 60%;
+							}
+						}
+					}
+
+					.toggler {
+						@include flex(row, c);
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						background-color: $clr-neutral-400;
+
+						transition: background-color 0.3s ease;
+						border-radius: $br;
+						&::after {
+							content: "";
+							position: absolute;
+							left: 0.25rem;
+							width: 0.875rem;
+							height: 0.875rem;
+							background-color: $clr-neutral-100;
+
+							transition: left 0.3s ease;
+							border-radius: 100%;
+						}
+					}
+				}
+                .discount{
+                    padding: toRem(5) toRem(7);
+                    color: $clr-primary-r-500;
+                    background-color: $clr-primary-r-200;
+                    border-radius: $br;
+                }
+			}
+            @include breakpoint-up(medium){
+                // align-items: flex-start;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(3, auto);
+
+                .views{
+                    grid-area: 1 / 1 / 2 / 2;
+                }
+                .slider{
+                    grid-area: 2 / 1 / 3 / 3;
+                }
+                .price{
+                    grid-area: 1 / 2 / 2 / 3;
+                }
+                .toggle{
+                    grid-area: 3 / 1 / 4 / 3;
+                    margin-top: 2rem;
+                    margin-right: 4rem;
+                    // text-align: right;
+                    justify-self: flex-end;
+                }
+                
+            }
+		}
+
+        .service-info{
+            @include grid(c,c);
+            grid-auto-flow: row;
+            padding: 2.5rem 0;   
+            
+            &-list{
+                > * + * {
+                    margin-top: 1rem;
+                }
+                li::before {
+                    content: url(/images/icon-check.svg);
+                    margin-right: 1rem;
+                }
+            }
+
+            .start{
+                margin-top: 2.5rem;
+                padding: .75rem toRem(46);
+                color: $clr-primary-c-300;
+                font-weight: 600;
+                background-color: $clr-neutral-900;
+                border-radius: 4rem;
+            }
+            @include breakpoint-up(medium){
+                grid-template-columns: repeat(2, 1fr);
+
+                &-list{
+                    text-align: left;
+                    grid-column: 1 / 2;
+                }
+                .start{
+                    grid-column: 2 / 3;
+                    margin-top: 0;
+                }
+            }
+        }
+	}
+}
