@@ -49,6 +49,9 @@ a:not([class]) {
 }
 
 /* Make images easier to work with */
+figure{
+	@include grid(c, c);
+}
 img {
 	max-width: 100%;
 	display: block;

@@ -3,31 +3,25 @@ body{
     font-size: var(--fs-400);
     position: relative;
     padding-top: 1px;
+}
 
 
+.main-container{
+    padding: 3rem 0;
     background: url("/images/pattern-curve.svg") no-repeat;
     background-position: bottom left;
+    background-repeat: no-repeat;
     background-size: 100%;
-    // &::before{
-    //     @include pseudo(100%, toRem(800));
-    //     z-index: -1;
-
-    //     @include breakpoint-down(medium){
-    //         background: url("/images/bg-mobile.png") no-repeat center center/cover;
-    //     }
-        
-    //     @include breakpoint-up(medium){
-    //         background-color: $clr-neutral-900;
-    //         background-image: url("/images/bg-desktop.png");
-    //         background-repeat: no-repeat;
-    //         background-position: bottom left;
-    //     }
-    // }
+    @include breakpoint-up(medium){
+        padding: none;
+        @include grid(c,c);
+        height: toRem(700);
+        background-size: auto;
+    }
 }
-
-.attribution{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
+// .attribution{
+//     position: absolute;
+//     bottom: 0;
+//     left: 50%;
+//     transform: translateX(-50%);
+// }

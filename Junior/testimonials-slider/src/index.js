@@ -38,7 +38,7 @@ const testimonies = [
 	{
 		img: "/images/image-tanya.jpg",
 		testimony:
-			"“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”",
+			"“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. \n”",
 		name: "Tanya Sinclair",
 		role: "UX Engineer",
 	},

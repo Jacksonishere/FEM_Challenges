@@ -1,8 +1,7 @@
 .main {
-	padding: toRem(53) 0;
 	@include breakpoint-up(medium) {
-		padding: toRem(112) 0;
 		@include grid(c);
+		height: unquote("clamp(397px, 55vw, 657px)");
 		grid-auto-flow: column;
 		grid-template-columns: 4.2fr 1.1fr 4.7fr;
 		grid-template-rows: auto;
@@ -68,8 +67,14 @@
 		}
 		@include breakpoint-up(medium) {
 			grid-area: 1 / 2 / 2 / 4;
-			max-width: toRem(577);
-			justify-self: flex-end;
+			// max-width: toRem(577);
+			width: 100%;
+			height: 100%;
+			@include grid(c,c);
+
+			&-btns{
+				align-self: flex-end;
+			}
 		}
 	}
 	.testimonial {
@@ -107,6 +112,7 @@
 		}
         
 		@include breakpoint-down(medium) {
+			padding-bottom: 4rem;
 			span {
 				display: block;
 			}
@@ -118,7 +124,6 @@
 			grid-area: 1 / 1 / 2 / 3;
 			z-index: 2;
 			background-position: top 0 left 19%;
-			height: 65%;
 			text-align: left;
 
 			span {

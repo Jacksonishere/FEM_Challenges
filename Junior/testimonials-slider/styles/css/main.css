@@ -88,11 +88,16 @@ ol[class] {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
+figure {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -125,10 +130,8 @@ svg {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
-    -webkit-animation-duration: 0.01ms !important;
-            animation-duration: 0.01ms !important;
-    -webkit-animation-iteration-count: 1 !important;
-            animation-iteration-count: 1 !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
@@ -138,26 +141,31 @@ body {
   font-size: var(--fs-400);
   position: relative;
   padding-top: 1px;
+}
+
+.main-container {
+  padding: 3rem 0;
   background: url("/images/pattern-curve.svg") no-repeat;
   background-position: bottom left;
+  background-repeat: no-repeat;
   background-size: 100%;
 }
-
-.attribution {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.main {
-  padding: 3.3125rem 0;
-}
 @media (min-width: 48em) {
-  .main {
-    padding: 7rem 0;
+  .main-container {
+    padding: none;
     display: grid;
     align-items: center;
+    justify-items: center;
+    height: 43.75rem;
+    background-size: auto;
+  }
+}
+
+@media (min-width: 48em) {
+  .main {
+    display: grid;
+    align-items: center;
+    height: clamp(397px, 55vw, 657px);
     grid-auto-flow: column;
     grid-template-columns: 4.2fr 1.1fr 4.7fr;
     grid-template-rows: auto;
@@ -219,8 +227,14 @@ body {
 @media (min-width: 48em) {
   .main .slider {
     grid-area: 1/2/2/4;
-    max-width: 36.0625rem;
-    justify-self: flex-end;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  .main .slider-btns {
+    align-self: flex-end;
   }
 }
 .main .testimonial {
@@ -255,6 +269,9 @@ body {
   color: #202046;
 }
 @media (max-width: 47.9375em) {
+  .main .testimonial {
+    padding-bottom: 4rem;
+  }
   .main .testimonial span {
     display: block;
   }
@@ -266,7 +283,6 @@ body {
     grid-area: 1/1/2/3;
     z-index: 2;
     background-position: top 0 left 19%;
-    height: 65%;
     text-align: left;
   }
   .main .testimonial span {
