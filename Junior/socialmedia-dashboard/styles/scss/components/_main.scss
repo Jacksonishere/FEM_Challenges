@@ -1,0 +1,106 @@
+.main {
+	.socials {
+		.card {
+			.border-top {
+				height: 0.25rem;
+				margin-bottom: 1.5rem;
+
+				&.facebook {
+					background: $clr-facebook;
+				}
+				&.twitter {
+					background: $clr-twitter;
+				}
+				&.instagram {
+					background: $clr-instagram;
+				}
+				&.youtube {
+					background: $clr-youtube;
+				}
+			}
+			position: relative;
+			overflow: hidden;
+			border-radius: $br;
+			background-color: var(--clr-card-bg);
+			padding-bottom: 1.5rem;
+
+			.username {
+				margin-left: 0.125rem;
+				font-size: var(--fs-300);
+			}
+			h2 {
+				margin-top: 1.5rem;
+			}
+			.followers {
+				font-weight: 300;
+				text-transform: uppercase;
+				letter-spacing: 2px;
+			}
+			.gain {
+				margin-top: 1rem;
+				@include flex(row, c, c);
+				color: $clr-primary-g;
+				&::before {
+					position: relative;
+					content: "";
+					margin-right: 0.25rem;
+					width: 8px;
+					height: 4px;
+					background: url(/images/icon-up.svg) no-repeat;
+				}
+			}
+			&.youtube {
+				.gain {
+					color: $clr-primary-r;
+					&::before {
+						background: url(/images/icon-down.svg);
+					}
+				}
+			}
+		}
+	}
+
+    .overview{
+        margin: 2.5rem auto 1.75rem;
+        color: var(--clr-text);
+    }
+    .stats{
+        .statcard{
+            padding: toRem(26) 1.5rem .75rem;
+            @include grid(c, fs);
+            grid-auto-flow: row;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, min-content);
+            gap: 1rem;
+            background: var(--clr-card-bg);
+            border-radius: $br;
+
+            :nth-child(even){
+                justify-self: flex-end;
+            }
+
+            .num, .growth{
+                align-self: flex-end;
+            }
+
+            .growth{
+                margin-bottom: .375rem;
+                color: $clr-primary-g;
+                @include flex(row,c);
+                img{
+                    margin-right: .25rem;
+                }
+
+                &.down{
+                    color: $clr-primary-r;
+                }
+            }
+        }
+    }
+
+    .socials, .stats{
+        @include grid();
+        grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,45 @@
+:root{
+    --fs-300: .75rem;
+    --fs-400: .875rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+
+    --fs-h1: 1.5rem;
+    --fs-h2: 3.5rem;
+    --fs-h3: 2rem;
+
+    --clr-toggle: hsl(230, 22%, 74%);
+    --clr-toggled: linear-gradient(45deg, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+    --clr-bg: hsl(0, 0%, 100%);
+    --clr-top-bg: hsl(225, 100%, 98%);
+    --clr-card-bg: hsl(227, 47%, 96%);
+    --clr-text: hsl(228, 12%, 44%);
+    --clr-big-text: hsl(230, 17%, 14%);
+    
+    @include breakpoint-up(medium){
+    }
+
+    @include breakpoint-up(large){
+    }
+
+}
+
+.dark-mode{
+    --clr-bg: hsl(230, 17%, 14%);
+    --clr-top-bg: hsl(232, 19%, 15%);
+    --clr-card-bg: hsl(228, 28%, 20%);
+    --clr-text: hsl(228, 34%, 66%);
+    --clr-big-text: hsl(0, 0%, 100%);
+
+}
+
+$ff-primary: 'Inter', sans-serif;
+$br: .5rem;
+
+$clr-primary-r: hsl(356, 69%, 56%);
+$clr-primary-g: hsl(163, 72%, 41%);
+$clr-facebook: hsl(208, 92%, 53%);
+$clr-twitter: hsl(203, 89%, 53%);
+$clr-instagram: linear-gradient(45deg, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+$clr-youtube: hsl(348, 97%, 39%);

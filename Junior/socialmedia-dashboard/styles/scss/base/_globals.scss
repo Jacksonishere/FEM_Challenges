@@ -1,0 +1,52 @@
+html, body{
+    width: 100%;
+}
+
+body{
+    position: relative;
+    font-family: $ff-primary;
+    font-size: var(--fs-400);
+    color: var(--clr-text);
+    background-color: var(--clr-bg);
+
+    text-align: center;
+
+    &::after{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: toRem(244);
+        background-color: var(--clr-top-bg);
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+}
+
+h1,h2,h3{
+    color: var(--clr-big-text);
+}
+
+h1{
+    text-align: left;
+    font-size: var(--fs-h1);
+}
+
+h2{
+    line-height: 1.2;
+    font-size: var(--fs-h2);
+}
+
+h3{
+    font-size: var(--fs-h3);
+}
+
+span, svg{
+    display: inline-block;
+}
+
+svg{
+    vertical-align: middle;
+}

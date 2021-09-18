@@ -1,0 +1,18 @@
+.container{
+    @include center-auto;
+    width: unquote("min(88%, 1100px)");
+
+    @include breakpoint-up(medium){
+    }
+}
+
+.text-center{
+    text-align: center;
+}
+
+.sweepfromSide{
+    @include sweepfromSide;
+}
+.sweepfromLevel{
+    @include sweepfromLevel;
+}
