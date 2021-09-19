@@ -1,0 +1,46 @@
+html, body{
+    width: 100%;
+}
+body{
+    position: relative;
+    font-family: $ff-primary;
+    font-size: var(--fs-400);
+  
+    background-color: #FAFAFA;
+    text-align: center;
+
+    @include breakpoint-btwn(medium,large){
+        text-align: left;
+    }
+}
+
+h1,h2,h3{
+    line-height: 1.3;
+    color: $clr-neutral-700;
+}
+
+h1{
+    font-size: var(--fs-h1);
+}
+
+h2{
+    font-size: var(--fs-h2);
+}
+
+h3{
+    font-size: var(--fs-h3);
+}
+
+p,li{
+    color: $clr-neutral-500;
+
+}
+
+a{
+    padding: .875rem 2.5rem;
+    width: max-content; 
+    color: white;
+    background-color: $clr-primary-b-700;
+    font-weight: bold;
+    border-radius: 2rem;
+}

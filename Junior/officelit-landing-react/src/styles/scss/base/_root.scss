@@ -1,0 +1,30 @@
+:root{
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+
+    --fs-h1: 3.5rem;
+    --fs-h2: 1.25rem;
+    --fs-h3: 1rem;
+
+    @include breakpoint-up(medium){
+        // --fs-400: clamp(1rem, 2vw, 1.625rem);
+    }
+
+    @include breakpoint-up(large){
+    }
+
+}
+
+$clr-primary-b-400: rgb(130,156,255);
+$clr-primary-b-700: rgb(81,117,255);
+$clr-primary-r-700: rgb(240,91,91);
+
+$clr-neutral-500: rgb(116,123,149);
+$clr-neutral-700: rgb(51,57,80);
+$clr-neutral-900: rgb(37,41,58);
+
+
+$ff-primary: 'Kumbh Sans', sans-serif;
+
+$br: 1rem;

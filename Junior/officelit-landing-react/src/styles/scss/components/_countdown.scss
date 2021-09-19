@@ -1,0 +1,38 @@
+.countdown{
+    max-width: toRem(448);
+    &-date{
+        color: white;
+        letter-spacing: .375rem;
+        text-transform: uppercase;
+        span{
+            color: $clr-primary-b-700;
+        }
+
+        @include breakpoint-up(large){
+            text-align: left;
+        }
+    }
+
+    &-clock{
+        margin-top: 2rem;
+        @include grid();
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+        gap: .75rem;
+
+        div{
+            padding: .5rem 1.125rem .75rem;
+            background-color: $clr-neutral-700;
+            border-radius: .5rem;
+            p{
+                font-weight: bold;
+                font-size: unquote("clamp(.75rem, 3.3vw, 1rem)");  
+                strong{
+                    display: block;
+                    color: white;
+                    font-size: unquote("clamp(2rem, 7.5vw, 3.5rem)");
+                }
+            }
+        }
+    }
+}

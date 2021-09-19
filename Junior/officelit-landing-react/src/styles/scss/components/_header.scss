@@ -1,0 +1,41 @@
+.header{
+    padding: toRem(46) 0 toRem(80);
+    position: relative; 
+    overflow-x: clip;
+
+    &-bg::after{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: toRem(1000);
+        background-image:  url(../../../assets/home/bg-pattern-header.svg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 125%;
+        // background: no-repeat top center/125%;
+    }
+
+    @include breakpoint-up(medium){
+        padding: toRem(72) 0;
+
+        &-bg::after{
+            top: -43%;
+            left: 32%;
+            background-size: 86%;
+        }
+        
+        figure{
+            justify-items: flex-start;
+        }
+    }
+
+    @include breakpoint-up(large){
+        &-bg::after{
+            top: toRem(-400);
+            background-size: toRem(1134);
+        }
+    }
+}
