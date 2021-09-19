@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../Header";
+import "../../styles/scss/homepage/homepage.scss";
 
 import chart from "../../assets/home/illustration-charts.svg";
 import Countdown from "../Countdown";

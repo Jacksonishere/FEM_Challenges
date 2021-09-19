@@ -1,10 +1,14 @@
 import React from 'react'
+import Header from '../Header'
 
 const Signup = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <Header />
+            <main className="main">
+                section
+            </main>
+        </>
     )
 }
 
