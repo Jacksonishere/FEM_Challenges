@@ -39,7 +39,7 @@ const Home = () => {
 							<li>2 gb storage</li>
 							<li>Great security and support</li>
 						</ul>
-						<Link to="/about">Try for Free</Link>
+						<Link to="/signup">Try for Free</Link>
 					</li>
 					<li className="card blue">
 						<div className="intro">
@@ -52,7 +52,7 @@ const Home = () => {
 							<li>50 gb storage</li>
 							<li>More control and insights</li>
 						</ul>
-						<Link to="/about">Try for Free</Link>
+						<Link to="/signup">Try for Free</Link>
 					</li>
 					<li className="card white">
 						<div className="intro">
@@ -65,7 +65,7 @@ const Home = () => {
 							<li>100 gb storage</li>
 							<li>VIP support</li>
 						</ul>
-						<Link to="/about">Try for Free</Link>
+						<Link to="/signup">Try for Free</Link>
 					</li>
 				</ul>
 			</main>
@@ -73,7 +73,7 @@ const Home = () => {
 			<footer className="footer">
 				<section className="container content">
 					<Countdown />
-					<Link to="/about">Get Started</Link>
+					<Link to="/signup">Get Started</Link>
 				</section>
 			</footer>
 		</>
