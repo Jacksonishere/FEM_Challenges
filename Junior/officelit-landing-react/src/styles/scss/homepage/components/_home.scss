@@ -1,5 +1,6 @@
 .home{
     .section-one{
+        outline: solid 1px magenta;
         .chart{
             @include center-auto;
             width: 50%;

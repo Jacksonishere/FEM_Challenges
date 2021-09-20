@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Countdown = () => {
+const Countdown = ({className}) => {
     return (
-        <div className="countdown">
+        <div className={`countdown ${className}`}>
             <h3 className="countdown-date">Coming <span>4 Nov 2020</span></h3>
             <div className="countdown-clock">
                 <div className="days">

@@ -5,7 +5,6 @@ import Signup from "./components/signup/Signup";
 const App = () => {
 	return (
 		<>
-			{/* <Header /> */}
       {/* <Home /> */}
       <Signup />
 		</>
