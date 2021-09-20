@@ -1,5 +1,6 @@
 html, body{
     width: 100%;
+    min-height: 100vh;
 }
 body{
     position: relative;
@@ -36,7 +37,7 @@ p,li{
 
 }
 
-a,button{
+a:not(.homelink),button{
     padding: .875rem 2.5rem;
     width: max-content; 
     color: white;

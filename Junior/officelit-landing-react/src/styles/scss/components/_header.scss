@@ -3,7 +3,11 @@
     position: relative; 
     overflow-x: clip;
 
-    &-bg::after{
+    a{
+        @include grid();
+        place-items: center;
+    }
+    &-home::after{
         content: "";
         position: absolute;
         z-index: -1;
@@ -21,7 +25,7 @@
     @include breakpoint-up(medium){
         padding: toRem(72) 0 toRem(102);
         
-        &-bg{
+        &-home{
             padding: toRem(72) 0;
             &::after{
                 top: -43%;
@@ -30,13 +34,13 @@
             }
         }
         
-        figure{
+        a{
             justify-items: flex-start;
         }
     }
 
     @include breakpoint-up(large){
-        &-bg::after{
+        &-home::after{
             top: toRem(-400);
             background-size: toRem(1134);
         }

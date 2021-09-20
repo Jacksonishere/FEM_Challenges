@@ -7,7 +7,7 @@ const Signup = () => {
 	return (
 		<>
 			<Header />
-			<main className="main">
+			<main className="signup-main">
                 <div className="container">
 				<section className=" section-one">
 					{/* <div className="intro"> */}

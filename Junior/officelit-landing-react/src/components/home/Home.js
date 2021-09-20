@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import Header from "../Header";
 import "../../styles/scss/homepage/homepage.scss";
 
@@ -8,8 +10,8 @@ import Countdown from "../Countdown";
 const Home = () => {
 	return (
 		<>
-			<Header className="header-bg" />
-			<main className="main home">
+			<Header className="header header-home" />
+			<main className="home-main">
 				<section className="container section-one">
 					<figure className="chart">
 						<img src={chart} alt="chart" />
@@ -20,9 +22,9 @@ const Home = () => {
 							Say goodbye to inefficient juggling of multiple apps, teams, and projects. Officelite is the new
 							collaboration platform built with an intuitive interface to improve productivity.
 						</p>
-						<a className="getStarted" href="/">
+						<Link className="getStarted" to="/signup">
 							Get Started
-						</a>
+						</Link>
 					</div>
 				</section>
 				<ul className="container cards">
@@ -37,7 +39,7 @@ const Home = () => {
 							<li>2 gb storage</li>
 							<li>Great security and support</li>
 						</ul>
-						<a href="/">Try for Free</a>
+						<Link to="/about">Try for Free</Link>
 					</li>
 					<li className="card blue">
 						<div className="intro">
@@ -50,7 +52,7 @@ const Home = () => {
 							<li>50 gb storage</li>
 							<li>More control and insights</li>
 						</ul>
-						<a href="/">Try for Free</a>
+						<Link to="/about">Try for Free</Link>
 					</li>
 					<li className="card white">
 						<div className="intro">
@@ -63,7 +65,7 @@ const Home = () => {
 							<li>100 gb storage</li>
 							<li>VIP support</li>
 						</ul>
-						<a href="/">Try for Free</a>
+						<Link to="/about">Try for Free</Link>
 					</li>
 				</ul>
 			</main>
@@ -71,7 +73,7 @@ const Home = () => {
 			<footer className="footer">
 				<section className="container content">
 					<Countdown />
-					<a href="/">Get Started</a>
+					<Link to="/about">Get Started</Link>
 				</section>
 			</footer>
 		</>

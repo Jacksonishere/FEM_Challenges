@@ -1,14 +1,18 @@
-import React from 'react'
-import logo from '../assets/shared/logo.svg';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Header = ({className}) => {
-    return (
-        <header className={`header ${className ? "header-bg" : ""}`}>
-            <figure className="container">
-                <img src={logo} alt="logo" />
-            </figure>
-        </header>
-    )
-}
+import logo from "../assets/shared/logo.svg";
 
-export default Header
+const Header = ({ className }) => {
+	return (
+		<header className={`header ${className ? "header-home" : ""}`}>
+			{/* <figure className="container"> */}
+			<Link className="container homelink" to="/">
+				<img src={logo} alt="logo" />
+			</Link>
+			{/* </figure> */}
+		</header>
+	);
+};
+
+export default Header;
