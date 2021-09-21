@@ -1,0 +1,109 @@
+@use "../base/" as *;
+
+.header {
+	padding: 1.5rem 0;
+}
+
+.nav {
+	position: relative;
+	@include flex(row, c, sb);
+
+	&-logo {
+	}
+
+	&-menu {
+		li > a {
+			text-transform: uppercase;
+			letter-spacing: 0.125rem;
+		}
+
+		@include breakpoint-down(medium) {
+			opacity: 0;
+			visibility: hidden;
+			margin-top: -1rem;
+			transition: margin 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+
+			padding: 2.5rem 1.5rem;
+			position: fixed;
+			inset: 0;
+			top: toRem(80);
+			background-color: $clr-neutral-700;
+			background-image: url(/images/bg-pattern-mobile-nav.svg);
+			background-repeat: no-repeat;
+			background-size: 100%;
+			background-position: bottom;
+
+			> * + * {
+				margin-top: 2rem;
+			}
+
+			li > a {
+				color: white;
+				font-size: 1.25rem;
+                font-weight: bold;
+
+				&.plans {
+					padding: 1rem 0;
+					width: 100%;
+					border: 1px solid white;
+				}
+			}
+		}
+
+		@include breakpoint-up(medium) {
+			@include flex(row, c, sb);
+			> * + * {
+				margin-left: 1.5rem;
+			}
+
+			li > a {
+                color: $clr-neutral-400;
+                font-size: .8125rem;
+
+                &.plans{
+                    padding: .625rem toRem(27);
+                    color: $clr-neutral-700;
+                    border: 1px solid $clr-neutral-700;
+
+                    transition: color .3s ease, background-color .3s ease;
+
+                    &:hover, &:focus-visible{
+                        color: $clr-neutral-200;
+                        background-color: $clr-neutral-700;
+                    }
+                }
+			}
+		}
+	}
+
+	&-open {
+		transition: transform 0.3s ease;
+		transform: scale(1);
+	}
+	&-close {
+		position: absolute;
+		right: 0;
+		transition: transform 0.3s ease;
+		transform: scale(0);
+	}
+	@include breakpoint-up(medium) {
+		&-open,
+		&-close {
+			display: none;
+		}
+	}
+
+	&.show {
+		.nav-menu {
+			opacity: 1;
+			visibility: visible;
+			margin-top: 0;
+		}
+		.nav-open {
+			transform: scale(0);
+		}
+		.nav-close {
+			transform: scale(1);
+		}
+	}
+}

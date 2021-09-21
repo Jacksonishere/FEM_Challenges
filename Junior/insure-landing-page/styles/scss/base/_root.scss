@@ -1,0 +1,31 @@
+@use "./mixins" as *;
+
+:root{
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.5rem;
+
+    @include breakpoint-up(medium){
+        // --fs-400: clamp(1rem, 2vw, 1.625rem);
+    }
+
+    @include breakpoint-up(large){
+    }
+
+}
+
+$clr-primary-400: hsl(216, 30%, 68%);
+$clr-primary-700: hsl(256, 26%, 20%);
+
+$clr-neutral-200: hsl(0, 0%, 98%);
+$clr-neutral-400: hsl(273, 4%, 51%);
+$clr-neutral-700: hsl(270, 9%, 17%);
+
+$ff-primary: 'Karla', sans-serif;
+$ff-secondary: 'DM Serif Display', serif;;
+
+$br: 1rem;

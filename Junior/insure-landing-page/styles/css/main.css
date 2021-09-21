@@ -1,0 +1,208 @@
+/* FLEX AND GRIDBOX */
+/* CENTER BLOCK */
+/* PSEUDO ELEMENT */
+/* BACKGROUND  */
+/* TRANSITIONS */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: min(90%, 1100px);
+}
+.text-center {
+  text-align: center;
+}
+
+.sweepfromSide {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.sweepfromLevel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+:root {
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-h1: 3rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+}
+/* Box sizing rules, removing default padding and margins */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style-type: none;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
+}
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  position: relative;
+  font-family: "Karla", sans-serif;
+  font-size: var(--fs-400);
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Serif Display", serif;
+}
+
+a:not(.plans) {
+  transition: color 0.3s ease;
+}
+a:not(.plans):hover, a:not(.plans):focus-visible {
+  color: #2b272f;
+}
+
+.header {
+  padding: 1.5rem 0;
+}
+
+.nav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-menu li > a {
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+}
+@media (max-width: 47.9375em) {
+  .nav-menu {
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -1rem;
+    transition: margin 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
+    padding: 2.5rem 1.5rem;
+    position: fixed;
+    inset: 0;
+    top: 5rem;
+    background-color: #2b272f;
+    background-image: url(/images/bg-pattern-mobile-nav.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: bottom;
+  }
+  .nav-menu > * + * {
+    margin-top: 2rem;
+  }
+  .nav-menu li > a {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  .nav-menu li > a.plans {
+    padding: 1rem 0;
+    width: 100%;
+    border: 1px solid white;
+  }
+}
+@media (min-width: 48em) {
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-menu > * + * {
+    margin-left: 1.5rem;
+  }
+  .nav-menu li > a {
+    color: #837d87;
+    font-size: 0.8125rem;
+  }
+  .nav-menu li > a.plans {
+    padding: 0.625rem 1.6875rem;
+    color: #2b272f;
+    border: 1px solid #2b272f;
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  .nav-menu li > a.plans:hover, .nav-menu li > a.plans:focus-visible {
+    color: #fafafa;
+    background-color: #2b272f;
+  }
+}
+.nav-open {
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+.nav-close {
+  position: absolute;
+  right: 0;
+  transition: transform 0.3s ease;
+  transform: scale(0);
+}
+@media (min-width: 48em) {
+  .nav-open, .nav-close {
+    display: none;
+  }
+}
+.nav.show .nav-menu {
+  opacity: 1;
+  visibility: visible;
+  margin-top: 0;
+}
+.nav.show .nav-open {
+  transform: scale(0);
+}
+.nav.show .nav-close {
+  transform: scale(1);
+}/*# sourceMappingURL=main.css.map */

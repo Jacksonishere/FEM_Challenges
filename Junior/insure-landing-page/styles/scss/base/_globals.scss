@@ -1,0 +1,20 @@
+@use "./root" as *;
+
+body{
+    position: relative;
+    font-family: $ff-primary;
+    font-size: var(--fs-400);
+  
+    text-align: center;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: $ff-secondary;
+}
+
+a:not(.plans){
+    transition: color .3s ease;
+    &:hover, &:focus-visible{
+        color: $clr-neutral-700;
+    }
+}
