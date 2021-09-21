@@ -3,18 +3,21 @@ import { Switch, Route } from "react-router";
 
 import Home from "./components/home/Home";
 import Signup from "./components/signup/Signup";
+import CountdownContextProvider from "./context/CountdownContext";
 
 const App = () => {
 	return (
 		<>
-			<Switch>
-				<Route exact path="/">
-					<Home />
-				</Route>
-				<Route path="/signup">
-					<Signup />
-				</Route>
-			</Switch>
+			<CountdownContextProvider>
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route path="/signup">
+						<Signup />
+					</Route>
+				</Switch>
+			</CountdownContextProvider>
 		</>
 	);
 };

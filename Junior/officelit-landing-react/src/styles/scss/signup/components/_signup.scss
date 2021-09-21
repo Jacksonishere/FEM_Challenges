@@ -1,81 +1,102 @@
-.signup-main{
+.signup-main {
 	text-align: center;
 
-    .container{
-        @include grid(null, c);
-        
-        .section-one {
-            .title {
-                font-size: 2.5rem;
-            }
-            .desc {
-                margin-top: 1.5rem;
-            }
-        }
-    
-        form {
-            max-width: toRem(445);
-            padding: 0 1.5rem 1.5rem;
-            background-color: white;
-            border-radius: $br;
-    
-            input,
-            .select {
-                padding: 1.5rem 1.5rem 1.4375rem;
-                width: 100%;
-    
-                &::placeholder {
-                    color: #747b95;
-                }
-                &:not(:last-child) {
-                    border-bottom: 1px solid #747b95;
-                }
-            }
-    
-            .select {
-                padding: 0;
-                select {
-                    padding: 1.5rem 1.5rem 1.4375rem;
-                    width: 100%;
-                    display: block;
-                    appearance: none;
-                }
-                position: relative;
-                @include grid(c);
+	.container {
+		@include grid(null, c);
+
+		.section-one {
+			.title {
+				font-size: 2.5rem;
+			}
+			.desc {
+				margin-top: 1.5rem;
+			}
+		}
+
+		form {
+			width: 100%;
+			max-width: toRem(445);
+			padding: 0 1.5rem 1.5rem;
+			background-color: white;
+			border-radius: $br;
+
+			label {
+				position: relative;
+				padding: 1.5rem 1.5rem 1.4375rem;
+
+				&::placeholder {
+					color: #747b95;
+				}
+				&:not(:last-child) {
+					border-bottom: 1px solid #747b95;
+				}
+
+				//For the error element
+				width: 100%;
+				@include grid(c, fe);
+				input {
+					width: 100%;
+				}
+			}
+			.error{
+                border-bottom-color: red !important;
                 &::after {
-                    justify-self: flex-end;
-                    margin-right: 1.5rem;
                     position: absolute;
                     content: "";
-                    width: 0.8125rem;
-                    height: 0.5rem;
-                    background: url(../../../../assets/sign-up/icon-arrow-down.svg) no-repeat;
+                    margin-right: 1.5rem;
+                    width: toRem(20);
+                    height: toRem(20);
+    
+                    background: url(../../../../assets/sign-up/icon-cross.svg) no-repeat;
                 }
             }
-    
-            button {
-                margin-top: 2.5rem;
-                width: 100%;
-                // font-weight: ;
-            }
-        }
-    
-        @include breakpoint-up(medium) {
-            .section-one {
-                max-width: toRem(572);
-                .title{
-                    font-size: 3.5rem;
-                }
-            }
-        }
-        @include breakpoint-up(large){
-            text-align: left;
-            @include grid(c);
-            grid-auto-flow: column;
-            grid-auto-columns: 1.2fr 1fr;
-            gap: toRem(125);
-        }
-    }
+
+			.select {
+				padding: 0;
+				select {
+					font-weight: bold;
+					padding: 1.5rem 1.5rem 1.4375rem;
+					width: 100%;
+					display: block;
+					appearance: none;
+				}
+				position: relative;
+				@include grid(c);
+				&::after {
+					display: block;
+					justify-self: flex-end;
+					margin-right: 1.5rem;
+					position: absolute;
+					content: "";
+					width: 0.8125rem;
+					height: 0.5rem;
+					background: url(../../../../assets/sign-up/icon-arrow-down.svg) no-repeat;
+				}
+			}
+
+			button {
+				margin-top: 2.5rem;
+				width: 100%;
+				// font-weight: ;
+			}
+		}
+
+		@include breakpoint-up(medium) {
+			.section-one {
+				max-width: toRem(572);
+				.title {
+					font-size: 3.5rem;
+				}
+			}
+		}
+		@include breakpoint-up(large) {
+			text-align: left;
+			@include grid(c);
+			grid-auto-flow: column;
+			grid-auto-columns: 1.2fr 1fr;
+			gap: toRem(125);
+		}
+	}
 }
 
 .signup-footer {
@@ -102,15 +123,15 @@
 			background-position: 50% 48%;
 		}
 	}
-    @include breakpoint-up(large){
-        height: toRem(250);
-        &::before{
-            position: absolute;
-            height: 100%;
-            left: 71%;
-            right: 0;
-            background-size: toRem(1753);
+	@include breakpoint-up(large) {
+		height: toRem(250);
+		&::before {
+			position: absolute;
+			height: 100%;
+			left: 71%;
+			right: 0;
+			background-size: toRem(1753);
 			background-position: 50% 75%;
-        }
-    }
+		}
+	}
 }
