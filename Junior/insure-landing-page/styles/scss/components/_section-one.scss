@@ -1,0 +1,90 @@
+@use "../base/" as *;
+
+.section-one {
+	position: relative;
+	color: white;
+	background-color: $clr-primary-700;
+
+	.left,
+	.right {
+		position: absolute;
+		opacity: 0.8;
+	}
+	.left {
+		width: unquote("min(50%, 275px)");
+		inset: calc(100vw / .83) auto auto 0;
+	}
+	.right {
+		width: unquote("min(33%, 140px)");
+		inset: auto 0 0 auto;
+		transform: translateY(50%);
+	}
+
+    @include breakpoint-btwn(medium,large){
+        .left, .right{display: none;}
+    }
+    @include breakpoint-up(large){
+        .left, .right{
+            z-index:  1;
+            opacity: 1;
+        }
+        .left{
+            content: url(/images/bg-pattern-intro-left-desktop.svg);
+            top: 65%;
+            width: unquote("min(13%, 200px)");
+        }
+        .right{
+            content: url(/images/bg-pattern-intro-right-desktop.svg);
+            inset: 0 0 auto auto;
+            width: unquote("min(30%, 385px)");
+            transform: translate(0);
+        }
+    }
+
+	.content {
+        position: relative;
+		.hero {
+            margin: 0 -1.5rem;
+			img {
+				width: 100%;
+			}
+		}
+
+		.humanizing {
+			padding: toRem(92) 0;
+
+			h1 {
+			}
+			p {
+				margin-top: 1rem;
+			}
+
+		}
+
+		@include breakpoint-up(medium) {
+			@include flex(row, c, sb);
+			.hero,
+			.humanizing {
+				width: 100%;
+			}
+
+			.hero {
+                margin: 0 -1.5rem 0 1rem;
+				order: 2;
+				> img {
+					content: url(/images/image-intro-desktop.jpg);
+				}
+			}
+			.humanizing {
+				order: 1;
+                padding: 0;
+			}
+		}
+        @include breakpoint-up(large){
+            .hero{
+                margin: 0 0 0 1.5rem;
+                transform: translateY(100px);
+            }
+        }
+	}
+}

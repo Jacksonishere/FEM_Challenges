@@ -1,10 +1,12 @@
 @use "./mixins" as *;
+@use "./functions" as *;
 
 .container{
     @include center-auto;
-    width: unquote("min(90%, 1100px)");
-
-    @include breakpoint-up(medium){
+    max-width: toRem(1110);
+    padding: 0 1.5rem;
+    @include breakpoint-up(xlarge){
+        padding: 0;
     }
 }
 

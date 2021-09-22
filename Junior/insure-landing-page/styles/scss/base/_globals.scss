@@ -1,20 +1,53 @@
 @use "./root" as *;
+@use "./mixins" as *;
 
-body{
-    position: relative;
-    font-family: $ff-primary;
-    font-size: var(--fs-400);
-  
-    text-align: center;
+body {
+	position: relative;
+	font-family: $ff-primary;
+	font-size: var(--fs-400);
+
+	text-align: center;
+	@include breakpoint-up(medium) {
+		text-align: left;
+	}
 }
 
-h1,h2,h3,h4,h5,h6{
-    font-family: $ff-secondary;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $ff-secondary;
 }
 
-a:not(.plans){
-    transition: color .3s ease;
-    &:hover, &:focus-visible{
-        color: $clr-neutral-700;
-    }
+h1 {
+	font-size: var(--fs-h1);
+	line-height: 1.1;
+}
+
+a:not(.plans) {
+	transition: color 0.3s ease;
+	&:hover,
+	&:focus-visible {
+		color: $clr-neutral-700;
+	}
+}
+
+.hover-btn {
+	margin-top: 2rem;
+	padding: 0.675rem 1.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.125rem;
+	color: var(--hover-btn-clr, white);
+	background-color: var(--hover-btn-bgclr, transparent);
+	border: 1px solid var(--hover-btn-clr, white);
+
+	transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+
+	&:hover {
+		color: var(--hovered-btn-clr, $clr-neutral-700);
+		background-color: var(--hovered-btn-bgclr, white);
+		// border: 1px solid var(--hovered-btn-clr, $clr-neutral-700);
+	}
 }

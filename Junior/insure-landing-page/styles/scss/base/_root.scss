@@ -10,7 +10,7 @@
     --fs-h3: 1.5rem;
 
     @include breakpoint-up(medium){
-        // --fs-400: clamp(1rem, 2vw, 1.625rem);
+        --fs-h1: clamp(3rem, 6.25vw, 4.5rem);
     }
 
     @include breakpoint-up(large){
