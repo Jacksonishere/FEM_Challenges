@@ -297,12 +297,12 @@ h3 {
 }
 @media (min-width: 64em) {
   .section-one .left {
-    z-index: 0;
     content: url(/images/bg-pattern-intro-left-desktop.svg);
     top: 65%;
     width: min(13%, 200px);
   }
   .section-one .right {
+    z-index: 1;
     content: url(/images/bg-pattern-intro-right-desktop.svg);
     inset: 0 0 auto auto;
     width: min(30%, 385px);

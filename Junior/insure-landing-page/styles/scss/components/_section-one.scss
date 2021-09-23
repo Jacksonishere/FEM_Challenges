@@ -27,12 +27,12 @@
 	}
 	@include breakpoint-up(large) {
 		.left {
-			z-index: 0;
 			content: url(/images/bg-pattern-intro-left-desktop.svg);
 			top: 65%;
 			width: unquote("min(13%, 200px)");
 		}
 		.right {
+			z-index: 1;
 			content: url(/images/bg-pattern-intro-right-desktop.svg);
 			inset: 0 0 auto auto;
 			width: unquote("min(30%, 385px)");
