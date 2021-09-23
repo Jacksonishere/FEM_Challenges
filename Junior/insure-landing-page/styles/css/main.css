@@ -442,13 +442,16 @@ h3 {
     display: grid;
     align-items: center;
     grid-auto-flow: column;
-    grid-auto-columns: 1fr;
+    grid-auto-columns: max-content 1fr;
     background-position: 100% 50%;
     background-image: url(/images/bg-pattern-intro-right-desktop.svg);
   }
   .section-three .content button {
     margin-top: 0;
     justify-self: right;
+  }
+  .section-three .content span {
+    display: block;
   }
 }
 
