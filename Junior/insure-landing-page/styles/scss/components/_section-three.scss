@@ -1,0 +1,24 @@
+@use "../base/" as *;
+.section-three{
+    .content{
+        padding: toRem(72) 2.5rem;
+        background-color: $clr-primary-700;
+        background-image: url(/images/bg-pattern-how-we-work-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        
+        @include breakpoint-up(medium){
+            @include grid(c);
+            grid-auto-flow: column;
+            grid-auto-columns: 1fr;
+            
+            background-position: 100% 50%;
+            background-image: url(/images/bg-pattern-intro-right-desktop.svg);
+
+            button{
+                margin-top: 0;
+                justify-self: right;
+            }
+        }
+    }
+}

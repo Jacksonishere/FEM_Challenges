@@ -3,12 +3,10 @@
 
 .container{
     @include center-auto;
-    max-width: toRem(1110);
-    padding: 0 1.5rem;
-    @include breakpoint-up(xlarge){
-        padding: 0;
-    }
+    width: unquote("min(90%, 1100px)");
+   
 }
+
 
 .text-center{
     text-align: center;

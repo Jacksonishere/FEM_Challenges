@@ -8,11 +8,10 @@
 	.left,
 	.right {
 		position: absolute;
-		opacity: 0.8;
 	}
 	.left {
 		width: unquote("min(50%, 275px)");
-		inset: calc(100vw / .83) auto auto 0;
+		inset: calc(100vw / 0.83) auto auto 0;
 	}
 	.right {
 		width: unquote("min(33%, 140px)");
@@ -20,37 +19,38 @@
 		transform: translateY(50%);
 	}
 
-    @include breakpoint-btwn(medium,large){
-        .left, .right{display: none;}
-    }
-    @include breakpoint-up(large){
-        .left, .right{
-            z-index:  1;
-            opacity: 1;
-        }
-        .left{
-            content: url(/images/bg-pattern-intro-left-desktop.svg);
-            top: 65%;
-            width: unquote("min(13%, 200px)");
-        }
-        .right{
-            content: url(/images/bg-pattern-intro-right-desktop.svg);
-            inset: 0 0 auto auto;
-            width: unquote("min(30%, 385px)");
-            transform: translate(0);
-        }
-    }
+	@include breakpoint-btwn(medium, large) {
+		.left,
+		.right {
+			display: none;
+		}
+	}
+	@include breakpoint-up(large) {
+		.left {
+			z-index: 0;
+			content: url(/images/bg-pattern-intro-left-desktop.svg);
+			top: 65%;
+			width: unquote("min(13%, 200px)");
+		}
+		.right {
+			content: url(/images/bg-pattern-intro-right-desktop.svg);
+			inset: 0 0 auto auto;
+			width: unquote("min(30%, 385px)");
+			transform: translate(0);
+		}
+	}
 
 	.content {
-        position: relative;
+		position: relative;
 		.hero {
-            margin: 0 -1.5rem;
+			margin: 0 -5vw;
 			img {
 				width: 100%;
 			}
 		}
 
 		.humanizing {
+			position: relative;
 			padding: toRem(92) 0;
 
 			h1 {
@@ -58,7 +58,6 @@
 			p {
 				margin-top: 1rem;
 			}
-
 		}
 
 		@include breakpoint-up(medium) {
@@ -69,7 +68,7 @@
 			}
 
 			.hero {
-                margin: 0 -1.5rem 0 1rem;
+				margin: 0 -5vw 0 1rem;
 				order: 2;
 				> img {
 					content: url(/images/image-intro-desktop.jpg);
@@ -77,14 +76,25 @@
 			}
 			.humanizing {
 				order: 1;
-                padding: 0;
+				padding: 0;
 			}
 		}
-        @include breakpoint-up(large){
-            .hero{
-                margin: 0 0 0 1.5rem;
-                transform: translateY(100px);
-            }
-        }
+		@include breakpoint-up(large) {
+			.hero {
+				margin: 0 0 0 1.5rem;
+				transform: translateY(100px);
+			}
+			.humanizing {
+				&::before {
+					content: "";
+					position: absolute;
+					inset: 0;
+					margin-top: -3rem;
+					width: toRem(150);
+					height: 1px;
+					background-color: white;
+				}
+			}
+		}
 	}
 }

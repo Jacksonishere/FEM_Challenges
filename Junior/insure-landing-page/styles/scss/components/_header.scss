@@ -6,6 +6,7 @@
 
 .nav {
 	position: relative;
+	z-index: 1;
 	@include flex(row, c, sb);
 
 	&-logo {
@@ -25,8 +26,7 @@
 
 			padding: 2.5rem 1.5rem;
 			position: fixed;
-			inset: 0;
-			top: toRem(80);
+			inset:  toRem(80) 0 0 0;
 			background-color: $clr-neutral-700;
 			background-image: url(/images/bg-pattern-mobile-nav.svg);
 			background-repeat: no-repeat;

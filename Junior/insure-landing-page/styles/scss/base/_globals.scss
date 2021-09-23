@@ -9,6 +9,7 @@ body {
 	text-align: center;
 	@include breakpoint-up(medium) {
 		text-align: left;
+		overflow: visible !important;
 	}
 }
 
@@ -19,14 +20,21 @@ h4,
 h5,
 h6 {
 	font-family: $ff-secondary;
+	line-height: 1.1;
 }
 
 h1 {
 	font-size: var(--fs-h1);
-	line-height: 1.1;
+}
+h2 {
+	color: white;
+	font-size: var(--fs-h2);
+}
+h3 {
+	font-size: var(--fs-h3);
 }
 
-a:not(.plans) {
+.nav-menu a:not(.plans) {
 	transition: color 0.3s ease;
 	&:hover,
 	&:focus-visible {
@@ -34,13 +42,31 @@ a:not(.plans) {
 	}
 }
 
+.footer-header a {
+	transition: transform .3s ease;
+	svg > path{
+		transition: fill .3s ease;
+	}
+
+	&:hover{
+		transform: scale(1.15);
+		svg > path{
+			fill: $clr-neutral-700;
+		}
+	}
+}
+.category-links a:hover{
+	text-decoration: underline;
+}
+
+
 .hover-btn {
 	margin-top: 2rem;
 	padding: 0.675rem 1.5rem;
 	text-transform: uppercase;
 	letter-spacing: 0.125rem;
 	color: var(--hover-btn-clr, white);
-	background-color: var(--hover-btn-bgclr, transparent);
+	background-color: var(--hover-btn-bgclr, $clr-primary-700);
 	border: 1px solid var(--hover-btn-clr, white);
 
 	transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;

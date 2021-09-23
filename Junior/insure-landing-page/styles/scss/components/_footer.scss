@@ -1,0 +1,70 @@
+@use "../base/" as *;
+
+.footer{
+    margin-top: toRem(140);
+    padding: toRem(90) 0;
+    background-image: url(/images/bg-pattern-footer-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+
+    @include breakpoint-up(medium){
+        background-image: url(/images/bg-pattern-footer-desktop.svg);
+    }
+    &-header{
+        .logo{@include center-auto;}
+        .socials{
+            margin-top: 2rem;
+            @include flex(row,c,c);
+
+            > * + * {
+                margin-left: 1rem;
+            }
+        }
+        @include breakpoint-up(medium){
+            .logo{margin: 0;}
+            .socials{margin-top: 0;}
+            @include flex(row, c, sb);
+        }
+    }
+
+    hr{
+        margin-top: 2rem;
+    }
+
+    &-nav{
+        font-size: toRem(14);
+        font-weight: bold;
+        p,a{
+            letter-spacing: .125rem ;
+            text-transform: uppercase;
+        }
+        p{
+            color: $clr-neutral-400;
+        }
+        a{
+            color: $clr-neutral-700;
+        }
+
+        .category{
+            margin-top: 2rem;
+
+            &-links{
+                margin-top: 2rem;
+
+                > * + * {
+                    margin-top: 1rem;
+                }
+            }
+        }
+        @include breakpoint-up(medium){
+            @include grid(fs, sb);
+            grid-auto-flow: column;
+            grid-template-columns: repeat(4, max-content) 1fr;
+            gap: 15%;
+
+            .category{
+                width: max-content;
+            }
+        }
+    }
+}

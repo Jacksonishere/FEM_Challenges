@@ -1,0 +1,64 @@
+@use "../base/" as *;
+
+.section-two {
+	margin: toRem(180) auto toRem(140);
+	@include breakpoint-up(large) {
+		margin-top: toRem(330);
+	}
+	.content {
+		padding-top: 2rem;
+
+		h1 {
+			position: relative;
+			&::before {
+				position: absolute;
+				content: "";
+				margin-top: toRem(-40);
+				top: 0;
+				left: 50%;
+				width: toRem(150);
+				height: 1px;
+				transform: translateX(-50%);
+				background-color: $clr-neutral-400;
+				@include breakpoint-up(medium) {
+					left: 0;
+					transform: none;
+				}
+				@include breakpoint-up(large) {
+					margin-top: toRem(-60);
+				}
+			}
+		}
+
+		.features {
+			.card {
+				margin-top: toRem(80);
+
+				img {
+					@include center-auto;
+				}
+				h3 {
+					margin-top: 2rem;
+				}
+				p {
+					margin-top: 1.5rem;
+					color: $clr-neutral-400;
+				}
+			}
+			@include breakpoint-up(medium) {
+				margin-top: toRem(100);
+				@include grid();
+				grid-auto-flow: column;
+				grid-auto-columns: 1fr;
+				gap: 2rem;
+
+				.card {
+					margin-top: 0;
+					img {
+						margin-left: 0;
+					}
+				}
+			}
+		}
+	}
+}
