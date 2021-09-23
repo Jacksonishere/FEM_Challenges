@@ -1,0 +1,106 @@
+@use "../base/" as *;
+
+.header{
+    position: relative;
+    a{
+        position: relative;
+        color: $clr-neutral-900;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+        &::after{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 100%;
+            height: 2px;
+            background-color: $clr-neutral-900;
+            
+            transition: right .3s ease;
+        }
+        &:hover::after{
+            right: 0;
+        }
+    }
+    .login{
+        color: $clr-neutral-400;
+
+        &::after{
+            background-color: $clr-neutral-400;
+        }
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 0 0 auto 50%;
+        height: toRem(425);
+        background-color: $clr-neutral-300;
+        border-bottom-left-radius: 4rem;
+    }
+}
+
+.nav{
+    position: relative;
+    padding: toRem(38) 0;
+    @include flex(row, c, sb);
+    
+    &-menu{
+        padding: 1.5rem;
+        border-radius: $br;
+        @include breakpoint-down(medium){
+            //animation for click
+            margin-top: -2rem;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility .3s ease, opacity .3s ease, margin .3s ease;
+            
+            //spacing between links
+            > * + * {
+                margin-top: 1.5rem;
+            }
+            
+            position: absolute;
+            inset: 100% 0 auto 0;
+            background-color: white;
+            text-align: center;
+            box-shadow: 0px 9px 20px -10px rgba(91, 95, 113, .7);
+        }
+        @include breakpoint-up(medium){
+            @include flex(row, c);
+            > * + *{
+                margin-left: unquote("clamp(1.5rem, 3.125vw, 2.5rem)");
+            }
+        }
+    }
+
+    &-open, &-close{
+        transition: transform .3s ease;
+        @include breakpoint-up(medium){
+            display: none;
+        }
+    }
+
+    &-close{
+        position: absolute;
+        right: 2px;
+        transform: scale(0);
+    }
+
+    &.show{
+        .nav-menu{
+            margin-top: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+        .nav-open{
+            transform: scale(0);
+        }
+        .nav-close{
+            transform: scale(1);
+        }
+    }
+}

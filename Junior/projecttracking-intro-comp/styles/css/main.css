@@ -1,0 +1,337 @@
+/* FLEX AND GRIDBOX */
+/* CENTER BLOCK */
+/* PSEUDO ELEMENT */
+/* BACKGROUND  */
+/* TRANSITIONS */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: min(88%, 1100px);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sweepfromSide {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.sweepfromLevel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+:root {
+  --fs-300: .875rem;
+  --fs-400: 1.125rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-h1: 2.5rem;
+  --fs-h2: 2rem;
+  --fs-h3: 1.5rem;
+}
+@media (min-width: 48em) {
+  :root {
+    --fs-h1: clamp(2.5rem, 5.2vw , 4rem);
+  }
+}
+/* Box sizing rules, removing default padding and margins */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core body defaults */
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.7;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul,
+ol {
+  list-style-type: none;
+}
+
+/* a elements no text decor */
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
+}
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  position: relative;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: var(--fs-400);
+  text-align: left;
+}
+@media (min-width: 48em) {
+  body {
+    overflow: visible !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+button {
+  background-color: white;
+}
+
+.header {
+  position: relative;
+}
+.header a {
+  position: relative;
+  color: #242942;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.header a::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 100%;
+  height: 2px;
+  background-color: #242942;
+  transition: right 0.3s ease;
+}
+.header a:hover::after {
+  right: 0;
+}
+.header .login {
+  color: #a0a1ac;
+}
+.header .login::after {
+  background-color: #a0a1ac;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0 0 auto 50%;
+  height: 26.5625rem;
+  background-color: #eef3f6;
+  border-bottom-left-radius: 4rem;
+}
+
+.nav {
+  position: relative;
+  padding: 2.375rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-menu {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+}
+@media (max-width: 47.9375em) {
+  .nav-menu {
+    margin-top: -2rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+    position: absolute;
+    inset: 100% 0 auto 0;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0px 9px 20px -10px rgba(91, 95, 113, 0.7);
+  }
+  .nav-menu > * + * {
+    margin-top: 1.5rem;
+  }
+}
+@media (min-width: 48em) {
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-menu > * + * {
+    margin-left: clamp(1.5rem, 3.125vw, 2.5rem);
+  }
+}
+.nav-open, .nav-close {
+  transition: transform 0.3s ease;
+}
+@media (min-width: 48em) {
+  .nav-open, .nav-close {
+    display: none;
+  }
+}
+.nav-close {
+  position: absolute;
+  right: 2px;
+  transform: scale(0);
+}
+.nav.show .nav-menu {
+  margin-top: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.nav.show .nav-open {
+  transform: scale(0);
+}
+.nav.show .nav-close {
+  transform: scale(1);
+}
+
+.section-one {
+  overflow-x: clip;
+}
+
+.intro .hero {
+  margin-top: 1.5rem;
+  margin-left: -1.375rem;
+  max-width: none;
+  max-height: 15rem;
+}
+.intro-content {
+  margin-top: 6.25rem;
+}
+.intro-content .new,
+.intro-content .preview {
+  color: #a0a1ac;
+  text-transform: uppercase;
+}
+.intro-content .new {
+  letter-spacing: 5px;
+}
+.intro-content .new::before {
+  content: "new";
+  margin-right: 1rem;
+  padding: 7px 11px;
+  color: white;
+  background-color: #242942;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-radius: 10rem;
+}
+.intro-content h1 {
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+.intro-content .desc {
+  margin: 1.5rem 0;
+  max-width: 17.5rem;
+  line-height: 1.6;
+  font-family: "Barlow", sans-serif;
+  color: #5b5f71;
+}
+.intro-content .scheduler {
+  width: min(100%, 380px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.intro-content .scheduler .schedule,
+.intro-content .scheduler .preview {
+  font-size: var(--fs-300);
+  width: 100%;
+}
+.intro-content .scheduler .schedule {
+  padding: 0.75rem 1.5rem;
+  color: white;
+  background-color: #ff5c5c;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+.intro-content .scheduler .schedule:hover {
+  opacity: 0.7;
+}
+.intro-content .scheduler .preview {
+  text-align: center;
+  letter-spacing: 1px;
+}
+@media (min-width: 64em) {
+  .intro {
+    margin-top: 3rem;
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+    grid-auto-columns: 50%;
+  }
+  .intro .hero {
+    margin-top: 0;
+    grid-column: 2/3;
+    max-height: 27.5rem;
+  }
+  .intro-content {
+    margin-top: 0;
+    grid-column: 1/2;
+  }
+  .intro-content .scheduler {
+    margin-top: 3.75rem;
+  }
+}/*# sourceMappingURL=main.css.map */
