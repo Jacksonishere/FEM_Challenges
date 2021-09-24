@@ -1,0 +1,43 @@
+@use "./mixins" as *;
+
+:root{
+    --fs-100: .75rem;
+    --fs-200: .8125rem;
+    --fs-300: .9375rem;
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+    --fs-700: 1.5rem;
+    --fs-800: 2rem;
+    --fs-900: 3rem;
+
+
+    --fs-h1: 1.5rem;
+    --fs-h2: 1.25rem;
+    --fs-h3: 1.75rem;
+
+    @include breakpoint-up(medium){
+        // --fs-h1: clamp(3rem, 6.25vw, 4.5rem);
+        // --fs-h2: clamp(2.5rem, 5.2vw, 3.5rem);
+    }
+
+    @include breakpoint-up(large){
+    }
+
+}
+
+$clr-primary-p-400: hsl(321, 100%, 78%);
+$clr-primary-p-700: hsl(322, 100%, 66%);
+$clr-primary-r-400: hsl(0, 100%, 63%);
+
+$clr-neutral-200: hsl(207, 100%, 98%);
+$clr-neutral-900: hsl(192, 100%, 9%);
+
+$ff-primary: 'Open Sans', sans-serif;;
+$ff-secondary: 'Poppins', sans-serif;;
+
+$br-xs: .5rem;
+$br-s: 1rem;
+$br-m: 2rem;
+$br-l: 4rem;
+

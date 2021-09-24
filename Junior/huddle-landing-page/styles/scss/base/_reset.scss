@@ -1,0 +1,65 @@
+/* Box sizing rules, removing default padding and margins */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Set core body defaults */
+html, body{
+	width: 100%;
+	min-height: 100vh;
+}
+
+body {
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.6;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul,
+ol{
+	list-style-type: none;
+}
+
+/* a elements no text decor */
+a {
+	text-decoration: none;
+}
+
+/* Make images easier to work with */
+img, svg {
+	display: block;
+	max-width: 100%;
+}
+
+
+/* Inherit fonts for inputs and buttons */
+a,
+input,
+button,
+textarea,
+select {
+	font: inherit;
+	border: none;
+	outline: none;
+	display: inline-block;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}

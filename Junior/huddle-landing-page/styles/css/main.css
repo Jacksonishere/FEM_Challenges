@@ -1,0 +1,238 @@
+/* FLEX AND GRIDBOX */
+/* CENTER BLOCK */
+/* PSEUDO ELEMENT */
+/* BACKGROUND  */
+/* TRANSITIONS */
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: min(90%, 1100px);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.sweepfromSide {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.sweepfromLevel {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+:root {
+  --fs-100: .75rem;
+  --fs-200: .8125rem;
+  --fs-300: .9375rem;
+  --fs-400: 1rem;
+  --fs-500: 1.125rem;
+  --fs-600: 1.25rem;
+  --fs-700: 1.5rem;
+  --fs-800: 2rem;
+  --fs-900: 3rem;
+  --fs-h1: 1.5rem;
+  --fs-h2: 1.25rem;
+  --fs-h3: 1.75rem;
+}
+/* Box sizing rules, removing default padding and margins */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core body defaults */
+html, body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul,
+ol {
+  list-style-type: none;
+}
+
+/* a elements no text decor */
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+a,
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  outline: none;
+  display: inline-block;
+  cursor: pointer;
+}
+a:focus,
+input:focus,
+button:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  font-size: var(--fs-400);
+  text-align: center;
+}
+@media (min-width: 48em) {
+  body {
+    overflow: visible !important;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+.getstarted {
+  margin-top: 2.5rem;
+  padding: 0.75rem 2.25rem;
+  color: white;
+  font-weight: bold;
+  background-color: #ff52bf;
+  border-radius: 4rem;
+}
+
+.nav {
+  padding-top: clamp(16px, 5.5vw, 100px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav.container {
+  width: min(90%, 1300px);
+}
+.nav > img {
+  max-height: clamp(16px, 3.2vw, 40px);
+}
+.nav > a {
+  padding: 0.3125rem 1.125rem;
+  font-size: clamp(10px, 2vw,16px);
+  color: #ff52bf;
+  border: 1px solid #ff52bf;
+  border-radius: 4rem;
+}
+
+.intro {
+  margin-top: 7rem;
+}
+.intro.container {
+  width: min(85%, 1020px);
+}
+.intro > p {
+  margin-top: 2rem;
+}
+.intro > img {
+  margin-top: 6.25rem;
+}
+
+.stats.container {
+  width: min(60%, 880px);
+}
+@media (min-width: 48em) {
+  .stats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .stats.container {
+    width: min(90%, 880px);
+  }
+}
+.stats-card {
+  margin-top: 6.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: max-content;
+}
+.stats-card p {
+  color: #808e9a;
+}
+.stats-card p > b {
+  position: relative;
+  display: block;
+  font-size: 3.75rem;
+  color: #00252e;
+}
+.stats-card p > b::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 100%;
+  width: clamp(33px, 3.5vw, 56px);
+  height: clamp(33px, 3.5vw, 56px);
+}
+.stats-card p > b.communities::before {
+  background: url(/images/icon-communities.svg) no-repeat center center/100%;
+}
+.stats-card p > b.messages::before {
+  background: url(/images/icon-messages.svg) no-repeat center center/100%;
+}
+
+.features .feature-h {
+  margin-top: 4.5rem;
+}
+.features .feature-desc {
+  margin-top: 1.75rem;
+}
+.features .grow,
+.features .your {
+  position: relative;
+  background-color: #f5faff;
+}/*# sourceMappingURL=main.css.map */

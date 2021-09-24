@@ -1,0 +1,104 @@
+@use "../base/" as *;
+
+.getstarted {
+	margin-top: 2.5rem;
+	padding: 0.75rem 2.25rem;
+	color: white;
+	font-weight: bold;
+	background-color: $clr-primary-p-700;
+	border-radius: $br-l;
+}
+
+.header {
+}
+.nav {
+	&.container {
+		width: unquote("min(90%, 1300px)");
+	}
+	padding-top: unquote("clamp(16px, 5.5vw, 100px)");
+	@include flex(row, c, sb);
+
+	> img {
+		max-height: unquote("clamp(16px, 3.2vw, 40px)");
+	}
+	> a {
+		padding: 0.3125rem 1.125rem;
+		font-size: unquote("clamp(10px, 2vw,16px)");
+		color: $clr-primary-p-700;
+		border: 1px solid $clr-primary-p-700;
+		border-radius: $br-l;
+	}
+}
+.intro {
+	&.container {
+		width: unquote("min(85%, 1020px)");
+	}
+	margin-top: toRem(112);
+	> p {
+		margin-top: 2rem;
+	}
+	> img {
+		margin-top: toRem(100);
+	}
+}
+.stats {
+	&.container {
+		width: unquote("min(60%, 880px)");
+	}
+
+	@include breakpoint-up(medium) {
+		@include flex(row, c, sb);
+		&.container {
+			width: unquote("min(90%, 880px)");
+		}
+	}
+
+	&-card {
+		margin-top: toRem(100);
+		@include center-auto;
+		width: max-content;
+
+		p {
+			color: #808e9a;
+			> b {
+				position: relative;
+				display: block;
+				font-size: 3.75rem;
+				color: $clr-neutral-900;
+
+				&::before {
+					position: absolute;
+					content: "";
+					left: 0;
+					bottom: 100%;
+					width: unquote("clamp(33px, 3.5vw, 56px)");
+					height: unquote("clamp(33px, 3.5vw, 56px)");
+				}
+				&.communities::before {
+					background: url(/images/icon-communities.svg) no-repeat center center/100%;
+				}
+				&.messages::before {
+					background: url(/images/icon-messages.svg) no-repeat center center/100%;
+				}
+			}
+		}
+	}
+}
+
+.features{
+    .feature {
+        &-h {
+            margin-top: 4.5rem;
+        }
+        &-desc {
+            margin-top: 1.75rem;
+        }
+    }
+
+    .grow,
+    .your {
+        position: relative;
+        background-color: $clr-neutral-200;
+    }
+}
+
