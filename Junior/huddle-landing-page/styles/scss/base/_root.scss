@@ -9,7 +9,7 @@
     --fs-600: 1.25rem;
     --fs-700: 1.5rem;
     --fs-800: 2rem;
-    --fs-900: 3rem;
+    --fs-900: 3.75rem;
 
 
     --fs-h1: 1.5rem;
@@ -17,8 +17,9 @@
     --fs-h3: 1.75rem;
 
     @include breakpoint-up(medium){
-        // --fs-h1: clamp(3rem, 6.25vw, 4.5rem);
-        // --fs-h2: clamp(2.5rem, 5.2vw, 3.5rem);
+        --fs-900: clamp(3.75rem, 5.85vw, 6rem);
+        --fs-h1: clamp(1.5rem, 2.4vw, 3rem);
+        --fs-h2: clamp(1.25rem, 1.95vw, 2.5rem);
     }
 
     @include breakpoint-up(large){
