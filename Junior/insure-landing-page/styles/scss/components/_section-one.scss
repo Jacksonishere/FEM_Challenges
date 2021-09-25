@@ -11,11 +11,15 @@
 	}
 	.left {
 		width: unquote("min(50%, 275px)");
-		inset: calc(100vw / 0.83) auto auto 0;
+		// inset: calc(100vw / 0.83) auto auto 0;
+		top: calc(100vw / 0.83);
+		left: 0;
 	}
 	.right {
 		width: unquote("min(33%, 140px)");
-		inset: auto 0 0 auto;
+		// inset: auto 0 0 auto;
+		right: 0;
+		bottom: 0;
 		transform: translateY(50%);
 	}
 
@@ -34,7 +38,9 @@
 		.right {
 			z-index: 1;
 			content: url(/images/bg-pattern-intro-right-desktop.svg);
-			inset: 0 0 auto auto;
+			// inset: 0 0 auto auto;
+			top: 0;
+			right: 0;
 			width: unquote("min(30%, 385px)");
 			transform: translate(0);
 		}
@@ -88,7 +94,12 @@
 				&::before {
 					content: "";
 					position: absolute;
-					inset: 0;
+					// inset: 0;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+
 					margin-top: -3rem;
 					width: toRem(150);
 					height: 1px;

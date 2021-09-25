@@ -170,7 +170,9 @@ a:not(.fa, .see) {
 a:not(.fa, .see)::before {
   content: "";
   position: absolute;
-  inset: 100% 100% auto 0;
+  top: 100%;
+  left: 0;
+  right: 100%;
   height: 1px;
   background-color: white;
   transition: right 0.3s ease;
@@ -225,7 +227,9 @@ a:not(.fa, .see):hover::before {
     justify-content: flex-start;
     position: fixed;
     z-index: 1000;
-    inset: 0 0 0 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
     width: 12.5rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
@@ -253,7 +257,8 @@ a:not(.fa, .see):hover::before {
 }
 .nav-close {
   position: absolute;
-  inset: 1.5rem 1.5rem auto auto;
+  top: 1.5rem;
+  right: 1.5rem;
   margin-top: 0;
 }
 .nav.show .nav-menu {

@@ -26,7 +26,11 @@
 
 			padding: 2.5rem 1.5rem;
 			position: fixed;
-			inset:  toRem(80) 0 0 0;
+			// inset:  toRem(80) 0 0 0;
+			top: toRem(80);
+			right: 0;
+			bottom: 0;
+			left: 0;
 			background-color: $clr-neutral-700;
 			background-image: url(/images/bg-pattern-mobile-nav.svg);
 			background-repeat: no-repeat;

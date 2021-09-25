@@ -198,7 +198,10 @@ h3 {
     transition: margin 0.3s ease, visibility 0.3s ease, opacity 0.3s ease;
     padding: 2.5rem 1.5rem;
     position: fixed;
-    inset: 5rem 0 0 0;
+    top: 5rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
     background-color: #2b272f;
     background-image: url(/images/bg-pattern-mobile-nav.svg);
     background-repeat: no-repeat;
@@ -282,11 +285,13 @@ h3 {
 }
 .section-one .left {
   width: min(50%, 275px);
-  inset: calc(100vw / 0.83) auto auto 0;
+  top: calc(100vw / 0.83);
+  left: 0;
 }
 .section-one .right {
   width: min(33%, 140px);
-  inset: auto 0 0 auto;
+  right: 0;
+  bottom: 0;
   transform: translateY(50%);
 }
 @media (min-width: 48em) and (max-width: 63.9375em) {
@@ -304,7 +309,8 @@ h3 {
   .section-one .right {
     z-index: 1;
     content: url(/images/bg-pattern-intro-right-desktop.svg);
-    inset: 0 0 auto auto;
+    top: 0;
+    right: 0;
     width: min(30%, 385px);
     transform: translate(0);
   }
@@ -356,7 +362,10 @@ h3 {
   .section-one .content .humanizing::before {
     content: "";
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     margin-top: -3rem;
     width: 9.375rem;
     height: 1px;
