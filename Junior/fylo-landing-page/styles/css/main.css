@@ -536,16 +536,24 @@ a:not(.fa, .see):hover::before {
 .footer-content ul > * + * {
   margin-top: 1.25rem;
 }
+.footer-content .more .location,
+.footer-content .more .phone,
+.footer-content .more .email {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .footer-content .more .location::before,
 .footer-content .more .phone::before,
 .footer-content .more .email::before {
   margin-right: 1rem;
   font-size: 0;
-  vertical-align: middle;
+  line-height: 0;
 }
 .footer-content .more .location {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 .footer-content .more .location::before {
   transform: translateY(5px);
