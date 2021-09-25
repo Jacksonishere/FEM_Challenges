@@ -28,8 +28,19 @@ You can click the image to view the live site! 💻😁
 [<img src="./Junior/testimonials-slider/design/desktop-preview.jpg" alt="preview" width="200"/>](https://gallant-booth-41163f.netlify.app/)
 [<img src="./Junior/typemaster-landing-page/assets/preview.jpg" alt="preview" width="200"/>](https://keen-hodgkin-0f1548.netlify.app/)
 [<img src="./Junior/blogr-landing-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://mystifying-benz-ac6c83.netlify.app/)
+[<img src="./Junior/projecttracking-intro-comp/desktop-preview.jpg" alt="preview" width="200"/>](https://affectionate-heisenberg-4b374c.netlify.app/)
+[<img src="./Junior/socialmedia-dashboard/design/desktop-preview.jpg" alt="preview" width="200"/>](https://admiring-ritchie-2e21db.netlify.app/)
+[<img src="./Junior/huddle-landing-page/desktop-preview.jpg" alt="preview" width="200"/>](https://modest-swanson-4abd45.netlify.app/)
+[<img src="./Junior/fylo-landing-page/desktop-preview.jpg" alt="preview" width="200"/>](https://hopeful-nobel-6b0ee9.netlify.app/)
+[<img src="./Junior/insure-landing-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://xenodochial-meitner-db6982.netlify.app/)
+[<img src="./Junior/officelit-landing-react/preview.jpg" alt="preview" width="200"/>](https://frosty-heisenberg-e06fe7.netlify.app/)
 [<img src="./Junior/tip-calculator-react/design/desktop-preview.jpg" alt="preview" width="200"/>](https://wonderful-newton-523645.netlify.app/)
 [<img src="./Junior/crowdfunding-page-react/design/desktop-preview.jpg" alt="preview" width="200"/>](https://friendly-villani-81a354.netlify.app/)
+
+
+
+
+
 
 
 
