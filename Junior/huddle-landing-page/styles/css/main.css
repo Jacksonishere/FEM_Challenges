@@ -418,10 +418,14 @@ h3 {
 .footer-content .moreinfo .desc {
   margin-top: 2rem;
 }
+.footer-content .moreinfo .phone, .footer-content .moreinfo .email {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .footer-content .moreinfo .phone::before, .footer-content .moreinfo .email::before {
   font-size: 0;
   line-height: 0;
-  vertical-align: middle;
   margin-right: 1rem;
 }
 .footer-content .moreinfo .phone {

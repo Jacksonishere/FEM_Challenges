@@ -274,10 +274,11 @@
                 margin-top: 2rem;
             }
             .phone,.email{
+				@include flex(row, c);
                 &::before{
 					font-size: 0;
 					line-height: 0;
-                    vertical-align: middle;
+                    // vertical-align: middle;
                     margin-right: 1rem;
                 }
             }
