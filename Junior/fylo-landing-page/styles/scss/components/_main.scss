@@ -36,7 +36,7 @@
 			position: fixed;
 			z-index: 1000;
 			inset: 0 0 0 auto;
-            width: toRem(200);
+			width: toRem(200);
 			transform: translateX(100%);
 			transition: transform 0.3s ease;
 			padding: 4rem 2rem;
@@ -77,16 +77,26 @@
 
 .section-one {
 	position: relative;
+	padding-bottom: 3rem;
 	> .background {
 		position: absolute;
 		width: 100%;
 		bottom: 40%;
 	}
-	background: linear-gradient(to bottom, hsl(217, 28%, 15%) 60%, hsl(218, 28%, 13%) 60%, hsl(218, 28%, 13%));
-
 	> .container {
 		position: relative;
 		width: unquote("min(85%, 730px)");
+	}
+
+	background: linear-gradient(to bottom, hsl(217, 28%, 15%) 60%, hsl(218, 28%, 13%) 60%, hsl(218, 28%, 13%));
+
+	@include breakpoint-up(medium) {
+		padding-bottom: 9rem;
+		background: hsl(217, 28%, 15%);
+
+		> .background {
+			bottom: 0;
+		}
 	}
 }
 
@@ -98,6 +108,8 @@
 		margin-top: 2rem;
 	}
 	> p {
+		width: unquote("min(100%, 590px)");
+		@include center-auto;
 		margin-top: 1.25rem;
 	}
 }
@@ -108,7 +120,7 @@
 	}
 }
 .features {
-	margin-top: 3rem;
+	// margin-top: 3rem;
 
 	.card {
 		margin-top: toRem(80);
@@ -123,7 +135,7 @@
 		}
 	}
 	@include breakpoint-up(medium) {
-		margin-top: 9rem;
+		// margin-top: 9rem;
 		@include grid(fe);
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: repeat(2, 1fr);
@@ -298,15 +310,15 @@
 				top: 100%;
 				left: 0;
 				width: 100%;
-                margin: 0.125rem 0 0 1rem;
-                text-align: left;
-                font-size: .75rem;
-                font-weight: bold;
+				margin: 0.125rem 0 0 1rem;
+				text-align: left;
+				font-size: 0.75rem;
+				font-weight: bold;
 				color: $clr-accent-r;
 
-                @include breakpoint-up(medium){
-                    margin-left: 1.5rem;
-                }
+				@include breakpoint-up(medium) {
+					margin-left: 1.5rem;
+				}
 			}
 			&.error::after {
 				content: "Enter a valid email";

@@ -44,4 +44,10 @@ a:not(.homelink),button{
     background-color: $clr-primary-b-700;
     font-weight: bold;
     border-radius: 2rem;
+    transition: transform .3s ease, opacity .3s ease;
+
+    &:hover{
+        transform: scale(1.05);
+        opacity: .85;
+    }   
 }

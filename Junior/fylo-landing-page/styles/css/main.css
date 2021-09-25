@@ -262,6 +262,7 @@ a:not(.fa, .see):hover::before {
 
 .section-one {
   position: relative;
+  padding-bottom: 3rem;
   background: linear-gradient(to bottom, #1c2431 60%, #181f2a 60%, #181f2a);
 }
 .section-one > .background {
@@ -273,6 +274,15 @@ a:not(.fa, .see):hover::before {
   position: relative;
   width: min(85%, 730px);
 }
+@media (min-width: 48em) {
+  .section-one {
+    padding-bottom: 9rem;
+    background: #1c2431;
+  }
+  .section-one > .background {
+    bottom: 0;
+  }
+}
 
 .intro > img {
   margin-left: auto;
@@ -282,6 +292,9 @@ a:not(.fa, .see):hover::before {
   margin-top: 2rem;
 }
 .intro > p {
+  width: min(100%, 590px);
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1.25rem;
 }
 
@@ -289,9 +302,6 @@ a:not(.fa, .see):hover::before {
   width: min(88%, 880px);
 }
 
-.features {
-  margin-top: 3rem;
-}
 .features .card {
   margin-top: 5rem;
 }
@@ -307,7 +317,6 @@ a:not(.fa, .see):hover::before {
 }
 @media (min-width: 48em) {
   .features {
-    margin-top: 9rem;
     display: grid;
     align-items: flex-end;
     grid-template-columns: repeat(2, 1fr);

@@ -123,6 +123,17 @@
             grid-auto-flow: column;
             grid-auto-columns: 1fr;
             grid-gap: toRem(30);
+
+            .card{
+                height: 100%;
+                @include flex(column, c);
+                
+                &:not(:first-child){
+                    a{
+                        margin-top: auto;
+                    }
+                }
+            }
         }
 
     }
