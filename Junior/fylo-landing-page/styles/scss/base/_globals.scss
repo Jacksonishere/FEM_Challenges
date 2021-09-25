@@ -39,3 +39,23 @@ h3 {
 a{
 	color: white;
 }
+a:not(.fa, .see) {
+	margin-right: .5rem;
+	position: relative;
+	transition: transform 0.3s ease;
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 100% 100% auto 0;
+		height: 1px;
+		background-color: white;
+		transition: right 0.3s ease;
+	}
+
+	&:hover {
+		transform: scale(1.1);
+		&::before {
+			right: 0;
+		}
+	}
+}

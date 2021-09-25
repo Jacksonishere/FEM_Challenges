@@ -51,26 +51,6 @@
 				margin-left: 2rem;
 			}
 			font-size: var(--fs-200);
-
-			a {
-				position: relative;
-				transition: transform 0.3s ease;
-				&::before {
-					content: "";
-					position: absolute;
-					inset: 100% 100% auto 0;
-					height: 1px;
-					background-color: white;
-					transition: right 0.3s ease;
-				}
-
-				&:hover {
-					transform: scale(1.1);
-					&::before {
-						right: 0;
-					}
-				}
-			}
 		}
 	}
 
@@ -187,10 +167,15 @@
 				background-color: #62e0d9;
 			}
 			&::after {
+				display: inline-block;
 				content: url(/images/icon-arrow.svg);
 				font-size: 0;
 				vertical-align: middle;
 				margin-left: 0.5rem;
+				transition: transform 0.3s ease;
+			}
+			&:hover::after {
+				transform: scale(1.3) translateX(2px);
 			}
 		}
 	}
@@ -286,7 +271,7 @@
 		width: unquote("min(88%, 860px)");
 	}
 
-    background: linear-gradient(to bottom, #181F2B 65%,  #0B1524 65%);
+	background: linear-gradient(to bottom, #181f2b 65%, #0b1524 65%);
 }
 .subscribe {
 	padding: 2.5rem 1.5rem;
@@ -311,11 +296,22 @@
 			position: relative;
 			&::after {
 				position: absolute;
-				// content: "Enter a valid email please";
-				color: $clr-accent-r;
+				content: "";
 				top: 100%;
 				left: 0;
 				width: 100%;
+                margin: 0.125rem 0 0 1rem;
+                text-align: left;
+                font-size: .75rem;
+                font-weight: bold;
+				color: $clr-accent-r;
+
+                @include breakpoint-up(medium){
+                    margin-left: 1.5rem;
+                }
+			}
+			&.error::after {
+				content: "Enter a valid email";
 			}
 		}
 		.getstarted {
@@ -390,13 +386,26 @@
 		.fa {
 			display: grid;
 			place-items: center;
-			padding: 0.5rem;
+			padding: 0.5.625rem;
 			width: 2.5rem;
 			height: 2.5rem;
 			text-align: center;
 			font-size: 1rem;
 			border: 1px solid white;
 			border-radius: 100%;
+
+			transition: color 0.3s ease, border-color 0.3s ease;
+
+			&::before {
+				transition: transform 0.3s ease;
+			}
+			&:hover {
+				color: #62e0d9;
+				border-color: #62e0d9;
+				&::before {
+					transform: scale(1.3);
+				}
+			}
 		}
 	}
 
@@ -404,7 +413,7 @@
 		@include grid();
 		grid-template-columns: 1fr repeat(3, max-content);
 		grid-template-rows: repeat(2, auto);
-        gap: 3rem 10vw;
+		gap: 3rem 10vw;
 
 		> img {
 			grid-area: 1 / 1 / 2 / -1;
@@ -422,8 +431,8 @@
 			grid-area: 2 / 4 / 3 / 5;
 		}
 
-        ul{
-            margin-top: 0;
-        }
+		ul {
+			margin-top: 0;
+		}
 	}
 }
