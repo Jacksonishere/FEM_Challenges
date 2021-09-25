@@ -1,7 +1,7 @@
 @use "../base/" as *;
 
 .section-one {
-	overflow-x: clip;
+	overflow: clip;
 }
 
 .intro {

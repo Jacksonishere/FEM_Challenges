@@ -64,7 +64,10 @@
             }
             
             position: absolute;
-            inset: 100% 0 auto 0;
+            // inset: 100% 0 auto 0;
+            top: 100%;
+            left: 0;
+            right: 0;
             background-color: white;
             text-align: center;
             box-shadow: 0px 9px 20px -10px rgba(91, 95, 113, .7);
