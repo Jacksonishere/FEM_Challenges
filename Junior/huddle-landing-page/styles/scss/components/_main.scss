@@ -275,9 +275,10 @@
             }
             .phone,.email{
                 &::before{
-                    font-size: 0;
+					font-size: 0;
+					line-height: 0;
                     vertical-align: middle;
-                    margin-right: 1.5rem;
+                    margin-right: 1rem;
                 }
             }
             .phone{
@@ -303,9 +304,17 @@
                 a{
                     opacity: .9;
                     transition: transform .3s ease, opacity .3s ease;
+					
+					>svg>path{
+						transition: fill .3s ease;
+					}
                     &:hover{
                         transform: scale(1.15);
                         opacity: 1;
+
+						>svg>path{
+							fill: #00C7FA;
+						}
                     }
                 }
             }

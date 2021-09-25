@@ -420,8 +420,9 @@ h3 {
 }
 .footer-content .moreinfo .phone::before, .footer-content .moreinfo .email::before {
   font-size: 0;
+  line-height: 0;
   vertical-align: middle;
-  margin-right: 1.5rem;
+  margin-right: 1rem;
 }
 .footer-content .moreinfo .phone {
   margin-top: 2.5rem;
@@ -448,7 +449,13 @@ h3 {
   opacity: 0.9;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+.footer-content .moreinfo .socials a > svg > path {
+  transition: fill 0.3s ease;
+}
 .footer-content .moreinfo .socials a:hover {
   transform: scale(1.15);
   opacity: 1;
+}
+.footer-content .moreinfo .socials a:hover > svg > path {
+  fill: #00C7FA;
 }/*# sourceMappingURL=main.css.map */
