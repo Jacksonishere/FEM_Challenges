@@ -1,0 +1,429 @@
+@use "../base/" as *;
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+.getstarted {
+	margin-top: 2rem;
+	padding: 0.8125rem toRem(100);
+	background: linear-gradient(#63e1d9, #34a0cd);
+	font-weight: bold;
+	border-radius: $br-l;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+	&:hover {
+		opacity: 0.8;
+		transform: scale(1.05);
+	}
+}
+
+.header {
+	background-color: $clr-primary-intro;
+}
+.nav {
+	overflow: hidden;
+	padding: 1.5rem 0 4rem;
+	position: relative;
+	@include flex(row, c, sb);
+	@include breakpoint-up(medium) {
+		padding: 3rem 0 4rem;
+	}
+
+	&-logo {
+		margin: 0;
+		max-height: 1.5rem;
+	}
+	&-menu {
+		@include breakpoint-down(medium) {
+			@include flex(column, fs, fs);
+			position: fixed;
+			z-index: 1000;
+			inset: 0 0 0 150px;
+			transform: translateX(100%);
+			transition: transform 0.3s ease;
+			padding: 4rem 2rem;
+			background-color: $clr-primary-intro;
+
+			> * + * {
+				margin-top: 2rem;
+			}
+		}
+		@include breakpoint-up(medium) {
+			@include flex(row);
+			> * + * {
+				margin-left: 2rem;
+			}
+			font-size: var(--fs-200);
+
+			a {
+				position: relative;
+				transition: transform 0.3s ease;
+				&::before {
+					content: "";
+					position: absolute;
+					inset: 100% 100% auto 0;
+					height: 1px;
+					background-color: white;
+					transition: right 0.3s ease;
+				}
+
+				&:hover {
+					transform: scale(1.1);
+					&::before {
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&-open,
+	&-close {
+		@include breakpoint-up(medium) {
+			display: none;
+		}
+	}
+
+	&-close {
+		position: absolute;
+		inset: 1.5rem 1.5rem auto auto;
+		margin-top: 0;
+	}
+
+	&.show {
+		.nav-menu {
+			transform: translateX(0);
+		}
+	}
+}
+
+.section-one {
+	position: relative;
+	> .background {
+		position: absolute;
+		width: 100%;
+		bottom: 40%;
+	}
+	background: linear-gradient(to bottom, hsl(217, 28%, 15%) 60%, hsl(218, 28%, 13%) 60%, hsl(218, 28%, 13%));
+
+	> .container {
+		position: relative;
+		width: unquote("min(85%, 730px)");
+	}
+}
+
+.intro {
+	> img {
+		@include center-auto;
+	}
+	> h1 {
+		margin-top: 2rem;
+	}
+	> p {
+		margin-top: 1.25rem;
+	}
+}
+
+.section-two {
+	> .container {
+		width: unquote("min(88%, 880px)");
+	}
+}
+.features {
+	margin-top: 3rem;
+
+	.card {
+		margin-top: toRem(80);
+		> img {
+			@include center-auto;
+		}
+		> h2 {
+			margin-top: 2.5rem;
+		}
+		> p {
+			margin-top: 1rem;
+		}
+	}
+	@include breakpoint-up(medium) {
+		margin-top: 9rem;
+		@include grid(fe);
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+		gap: unquote("min(5.4vw, 80px)") unquote("min(10.1vw, 140px)");
+
+		.card {
+			margin-top: 0;
+			max-width: toRem(350);
+
+			&:nth-child(even) {
+				justify-self: flex-end;
+			}
+		}
+	}
+}
+
+.section-three {
+	text-align: left;
+	margin-top: toRem(140);
+}
+
+.productive {
+	.content {
+		> h1 {
+			margin-top: 2rem;
+		}
+		> p {
+			margin-top: 1rem;
+		}
+		> a {
+			margin-top: 0.5rem;
+			position: relative;
+			color: #62e0d9;
+
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 105%;
+				height: 1px;
+				background-color: #62e0d9;
+			}
+			&::after {
+				content: url(/images/icon-arrow.svg);
+				font-size: 0;
+				vertical-align: middle;
+				margin-left: 0.5rem;
+			}
+		}
+	}
+	@include breakpoint-btwn(medium, large) {
+		text-align: center;
+	}
+	@include breakpoint-up(large) {
+		@include grid(c);
+		grid-auto-flow: column;
+		grid-auto-columns: 1.5fr 1fr;
+		gap: unquote("clamp(2rem, 3.125vw, 5rem)");
+		gap: 5rem;
+
+		.content > h1 {
+			margin-top: 0;
+		}
+	}
+}
+
+.section-four {
+	margin: toRem(150) 0;
+	> .container {
+		width: unquote("min(83%, 1180px)");
+	}
+
+	.testimonials {
+		@include breakpoint-up(large) {
+			@include grid();
+			grid-auto-flow: column;
+			grid-auto-columns: 1fr;
+			gap: 2vw;
+		}
+	}
+}
+
+.testimonial {
+	&:first-child {
+		position: relative;
+
+		&::before {
+			content: open-quote;
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform: translate(-30%, -38%);
+			z-index: -1;
+			color: #62e0d9;
+			font-size: unquote("clamp(80px, 18.4vw, 200px)");
+			font-family: "Nunito Sans", sans-serif;
+		}
+	}
+
+	margin-top: 1.5rem;
+	padding: 2rem 1.5rem;
+	background-color: $clr-primary-testimonials;
+	text-align: left;
+	line-height: 1.7;
+	border-radius: $br-xs;
+
+	.said {
+		font-size: var(--fs-100);
+	}
+
+	.testimonee {
+		margin-top: 1.25rem;
+
+		@include flex(row, c);
+
+		img {
+			margin: 0;
+			max-width: 2rem;
+			border-radius: 50%;
+		}
+
+		.profile {
+			margin-left: 0.5rem;
+			letter-spacing: 1px;
+			> p {
+				font-size: toRem(8);
+
+				> b {
+					display: block;
+					font-size: 0.75rem;
+				}
+			}
+		}
+	}
+}
+
+.section-five {
+	text-align: center;
+	> .container {
+		width: unquote("min(88%, 860px)");
+	}
+
+    background: linear-gradient(to bottom, #181F2B 65%,  #0B1524 65%);
+}
+.subscribe {
+	padding: 2.5rem 1.5rem;
+	background-color: #1b2330;
+	border-radius: $br-xs;
+
+	> p {
+		margin: 1.5rem 0;
+	}
+	> form {
+		.sub {
+			display: block;
+			> input {
+				width: 100%;
+				padding: 0.75rem 1.75rem;
+				border-radius: $br-xl;
+				background-color: white;
+				&::placeholder {
+					color: lightgray;
+				}
+			}
+			position: relative;
+			&::after {
+				position: absolute;
+				// content: "Enter a valid email please";
+				color: $clr-accent-r;
+				top: 100%;
+				left: 0;
+				width: 100%;
+			}
+		}
+		.getstarted {
+			margin-top: 1.5rem;
+			padding: 0.75rem 4rem;
+			width: 100%;
+			color: white;
+		}
+
+		@include breakpoint-up(medium) {
+			@include flex(row);
+			.sub {
+				width: 66.6%;
+			}
+			.getstarted {
+				margin: 0 0 0 2rem;
+				padding: 0.75rem 1.75rem;
+				width: 33.3%;
+			}
+		}
+	}
+}
+
+.footer {
+	padding: 4rem 0;
+	text-align: left;
+	background-color: $clr-primary-footer;
+}
+.footer-content {
+	> img {
+		margin: 0;
+		max-height: 1.5rem;
+	}
+
+	ul {
+		margin-top: 2.5rem;
+		> * + * {
+			margin-top: 1.25rem;
+		}
+	}
+
+	.more {
+		.location,
+		.phone,
+		.email {
+			&::before {
+				margin-right: 1rem;
+				font-size: 0;
+				vertical-align: middle;
+			}
+		}
+		.location {
+			@include flex(row);
+		}
+		.location::before {
+			transform: translateY(5px);
+			content: url(/images/icon-location.svg);
+		}
+		.phone::before {
+			content: url(/images/icon-phone.svg);
+		}
+		.email::before {
+			content: url(/images/icon-email.svg);
+		}
+	}
+	.socials {
+		@include flex(row, fs, c);
+		> * + * {
+			margin: 0 0 0 1rem;
+		}
+
+		.fa {
+			display: grid;
+			place-items: center;
+			padding: 0.5rem;
+			width: 2.5rem;
+			height: 2.5rem;
+			text-align: center;
+			font-size: 1rem;
+			border: 1px solid white;
+			border-radius: 100%;
+		}
+	}
+
+	@include breakpoint-up(large) {
+		@include grid();
+		grid-template-columns: 1fr repeat(3, max-content);
+		grid-template-rows: repeat(2, auto);
+        gap: 3rem 10vw;
+
+		> img {
+			grid-area: 1 / 1 / 2 / -1;
+		}
+		.more {
+			grid-area: 2 / 1 / 3 / 2;
+		}
+		.about {
+			grid-area: 2 / 2 / 3 / 3;
+		}
+		.contact {
+			grid-area: 2 / 3 / 3 / 4;
+		}
+		.socials {
+			grid-area: 2 / 4 / 3 / 5;
+		}
+
+        ul{
+            margin-top: 0;
+        }
+	}
+}

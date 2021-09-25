@@ -1,0 +1,49 @@
+@use "./mixins" as *;
+
+:root{
+    --fs-100: .8125rem;
+    --fs-200: .875rem;
+    --fs-300: .9375rem;
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+    --fs-700: 1.5rem;
+    --fs-800: 2rem;
+    --fs-900: 3rem;
+
+
+    --fs-h1: 1.5rem;
+    --fs-h2: 1.25rem;
+    --fs-h3: 1.75rem;
+
+    @include breakpoint-up(medium){
+        --fs-h1: clamp(1.5rem, 3.4vw, 2.5rem);
+        --fs-h2: clamp(1.25rem, 2.5vw, 1.5rem);
+
+    }
+    
+    @include breakpoint-up(large){
+        --fs-100: .9375rem;
+        --fs-200: 1rem;
+    }
+
+}
+
+$clr-primary-intro: hsl(217, 28%, 15%);
+$clr-primary-main: hsl(218, 28%, 13%);
+$clr-primary-testimonials: hsl(219, 30%, 18%);
+$clr-primary-footer: hsl(216, 53%, 9%);
+
+$clr-accent-c: hsl(176, 68%, 64%);
+$clr-accent-b: hsl(198, 60%, 50%);
+$clr-accent-r: hsl(0, 100%, 63%);
+
+$ff-primary: 'Open Sans', sans-serif;
+$ff-secondary: 'Raleway', sans-serif;
+
+$br-xxs: .25rem;
+$br-xs: .5rem;
+$br-s: 1rem;
+$br-m: 2rem;
+$br-l: 4rem;
+$br-xl: 8rem;

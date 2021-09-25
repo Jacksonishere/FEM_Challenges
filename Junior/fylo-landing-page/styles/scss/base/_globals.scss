@@ -1,0 +1,41 @@
+@use "./root" as *;
+@use "./mixins" as *;
+
+body {
+	position: relative;
+	font-family: $ff-primary;
+	font-size: var(--fs-200);
+	color: white;
+	background-color: $clr-primary-main;
+
+	text-align: center;
+	
+	@include breakpoint-up(medium) {
+		// text-align: left;
+		overflow: visible !important;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.5;
+	font-family: $ff-secondary;
+}
+
+h1 {
+	font-size: var(--fs-h1);
+}
+h2 {
+	font-size: var(--fs-h2);
+}
+h3 {
+	font-size: var(--fs-h3);
+}
+
+a{
+	color: white;
+}

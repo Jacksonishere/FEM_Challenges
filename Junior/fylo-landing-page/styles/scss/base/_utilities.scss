@@ -1,0 +1,21 @@
+@use "./mixins" as *;
+@use "./functions" as *;
+
+.container{
+    @include center-auto;
+    // padding: 0 5vw;
+    width: unquote("min(88%, 1240px)");
+   
+}
+
+
+.text-center{
+    text-align: center;
+}
+
+.sweepfromSide{
+    @include sweepfromSide;
+}
+.sweepfromLevel{
+    @include sweepfromLevel;
+}
