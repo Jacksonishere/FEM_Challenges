@@ -247,7 +247,7 @@ button {
 }
 
 .section-one {
-  overflow: clip;
+  overflow: hidden;
 }
 
 .intro .hero {
