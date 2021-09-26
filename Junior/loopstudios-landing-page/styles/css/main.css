@@ -7,7 +7,7 @@
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: min(88%, 1100px);
+  width: min(88%, 1110px);
 }
 
 .text-center {
@@ -230,13 +230,18 @@ h3 {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2rem 6%;
-  transition: background-color 0.3s linear;
+  padding: 2rem 0;
+  transition: background-color 0.3s ease;
   background-color: transparent;
+}
+.nav .nav-content {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  width: min(88%, 1110px);
+  margin-left: auto;
+  margin-right: auto;
 }
 .nav img {
   position: relative;

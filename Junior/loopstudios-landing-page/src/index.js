@@ -15,7 +15,7 @@ navClose.addEventListener("click", (e) => {
 const header = document.querySelector("header");
 const headerOptions = {
 	root: null,
-	rootMargin: "-130px 0px 0px 0px",
+	rootMargin: "-150px 0px 0px 0px",
 };
 
 const headerObserver = new IntersectionObserver((entries, headerObserver) => {

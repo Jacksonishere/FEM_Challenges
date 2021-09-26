@@ -46,11 +46,17 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 2rem 6%;
-    transition: background-color .3s linear;
+	padding: 2rem 0;
+    transition: background-color .3s ease;
 	background-color: transparent;
 
-	@include flex(row, c, sb);
+    .nav-content{
+        // position: relative;
+        @include flex(row, c, sb);
+        width: min(88%, 1110px);
+        @include center-auto;
+
+    }
 
 	img {
 		position: relative;
