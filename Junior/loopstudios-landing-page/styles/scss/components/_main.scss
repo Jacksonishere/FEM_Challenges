@@ -27,7 +27,6 @@
 	max-height: 1.5rem;
 }
 .header {
-	position: relative;
 	background: url(/images/mobile/image-hero.jpg) no-repeat center center/cover;
 
 	@include breakpoint-up(large) {
@@ -42,11 +41,13 @@
 }
 
 .nav {
-	position: absolute;
+	position: fixed;
+    z-index: 100;
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 1.5rem 0;
+	padding: 2rem 6%;
+    transition: background-color .3s linear;
 	background-color: transparent;
 
 	@include flex(row, c, sb);
@@ -73,9 +74,10 @@
 			@include flex(column, fs, c);
 			position: fixed;
 			top: 0;
+            left: 0;
 			bottom: 0;
 			width: 100%;
-			margin-left: -6%;
+			// margin-left: -6%;
 			padding: 0 6%;
 			font-size: 1.5rem;
 			background-color: black;
@@ -106,7 +108,7 @@
 
 	&-close {
 		position: absolute;
-		right: 0;
+		right: 6%;
 		transform: scale(0);
 	}
 
@@ -123,6 +125,11 @@
 			transform: scale(1);
 		}
 	}
+
+    &.scrolled{
+        background-color: black;
+        box-shadow: 0 10px 20px rgba(black, .2);
+    }
 }
 .header-section {
 	text-align: left;

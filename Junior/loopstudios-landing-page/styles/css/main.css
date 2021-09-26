@@ -209,7 +209,6 @@ h3 {
 }
 
 .header {
-  position: relative;
   background: url(/images/mobile/image-hero.jpg) no-repeat center center/cover;
 }
 @media (min-width: 64em) {
@@ -226,11 +225,13 @@ h3 {
 }
 
 .nav {
-  position: absolute;
+  position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 0;
+  padding: 2rem 6%;
+  transition: background-color 0.3s linear;
   background-color: transparent;
   display: flex;
   flex-direction: row;
@@ -258,9 +259,9 @@ h3 {
     justify-content: center;
     position: fixed;
     top: 0;
+    left: 0;
     bottom: 0;
     width: 100%;
-    margin-left: -6%;
     padding: 0 6%;
     font-size: 1.5rem;
     background-color: black;
@@ -290,7 +291,7 @@ h3 {
 }
 .nav-close {
   position: absolute;
-  right: 0;
+  right: 6%;
   transform: scale(0);
 }
 .nav.show .nav-menu {
@@ -303,6 +304,10 @@ h3 {
 }
 .nav.show .nav-close {
   transform: scale(1);
+}
+.nav.scrolled {
+  background-color: black;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .header-section {
