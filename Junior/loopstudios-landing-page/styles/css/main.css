@@ -146,10 +146,14 @@ body {
   color: #8c8c8c;
   text-align: center;
 }
+@media (min-width: 48em) {
+  body {
+    overflow: visible !important;
+  }
+}
 @media (min-width: 64em) {
   body {
     text-align: left;
-    overflow: visible !important;
   }
 }
 
@@ -218,7 +222,7 @@ h3 {
   align-items: center;
   justify-items: flex-start;
   position: relative;
-  height: 40.625rem;
+  height: 41.75rem;
 }
 
 .nav {
@@ -356,7 +360,7 @@ h3 {
   letter-spacing: 0.25rem;
   text-transform: uppercase;
   border: solid 1px black;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s linear;
 }
 .section-two > .content .seeall:hover {
   color: white;

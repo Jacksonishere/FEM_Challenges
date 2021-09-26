@@ -37,7 +37,7 @@
 	.container {
 		@include grid(c, fs);
 		position: relative;
-		height: toRem(650);
+		height: toRem(668);
 	}
 }
 
@@ -183,7 +183,7 @@
 		letter-spacing: 0.25rem;
 		text-transform: uppercase;
 		border: solid 1px black;
-		transition: background-color 0.3s ease, color 0.3s ease;
+		transition: background-color 0.3s ease, color 0.3s linear;
 
 		&:hover {
 			color: white;

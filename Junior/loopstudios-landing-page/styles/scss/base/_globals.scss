@@ -8,10 +8,12 @@ body {
 	color: $clr-neutral-400;
 
 	text-align: center;
-	
+
+	@include breakpoint-up(medium) {
+		overflow: visible !important;
+	}
 	@include breakpoint-up(large) {
 		text-align: left;
-		overflow: visible !important;
 	}
 }
 
