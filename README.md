@@ -33,6 +33,7 @@ You can click the image to view the live site! 💻😁
 [<img src="./Junior/huddle-landing-page/desktop-preview.jpg" alt="preview" width="200"/>](https://modest-swanson-4abd45.netlify.app/)
 [<img src="./Junior/fylo-landing-page/desktop-preview.jpg" alt="preview" width="200"/>](https://hopeful-nobel-6b0ee9.netlify.app/)
 [<img src="./Junior/insure-landing-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://xenodochial-meitner-db6982.netlify.app/)
+[<img src="./Junior/loopstudios-landing-page/desktop-preview.jpg" alt="preview" width="200"/>](https://brave-hoover-d20c69.netlify.app/)
 [<img src="./Junior/officelit-landing-react/preview.jpg" alt="preview" width="200"/>](https://frosty-heisenberg-e06fe7.netlify.app/)
 [<img src="./Junior/tip-calculator-react/design/desktop-preview.jpg" alt="preview" width="200"/>](https://wonderful-newton-523645.netlify.app/)
 [<img src="./Junior/crowdfunding-page-react/design/desktop-preview.jpg" alt="preview" width="200"/>](https://friendly-villani-81a354.netlify.app/)
