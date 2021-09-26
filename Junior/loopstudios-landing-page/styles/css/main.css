@@ -35,12 +35,13 @@
   --fs-800: 2rem;
   --fs-900: 3rem;
   --fs-h1: 2.5rem;
-  --fs-h2: 2rem;
+  --fs-h2: 1.5rem;
   --fs-h3: 1.75rem;
 }
 @media (min-width: 48em) {
   :root {
     --fs-h1: clamp(2.5rem, 5.2vw, 4.5rem);
+    --fs-h2: clamp(1.5rem, 3.125vw, 3rem);
   }
 }
 @media (min-width: 64em) {
@@ -207,13 +208,23 @@ h3 {
 .logo {
   max-height: 1.5rem;
 }
+@media (min-width: 48em) {
+  .logo {
+    max-height: 1.75rem;
+  }
+}
 
 .header {
-  background: url(/images/mobile/image-hero.jpg) no-repeat center center/cover;
+  background-color: #979797;
+  background-image: url(/images/mobile/image-hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
 }
 @media (min-width: 64em) {
   .header {
-    background: url(/images/desktop/image-hero.jpg) no-repeat center center/cover;
+    background-image: url(/images/desktop/image-hero.jpg);
   }
 }
 .header .container {
@@ -233,6 +244,11 @@ h3 {
   padding: 2rem 0;
   transition: background-color 0.3s ease;
   background-color: transparent;
+}
+@media (min-width: 48em) {
+  .nav {
+    padding: 2.5rem 0;
+  }
 }
 .nav .nav-content {
   display: flex;
