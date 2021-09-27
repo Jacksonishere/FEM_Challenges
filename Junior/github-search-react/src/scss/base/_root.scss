@@ -33,6 +33,9 @@
     --date: #697c9a;
     --search: #0079ff;
     --shadow: rgba(105, 124, 154, 0.2);
+    --r: 0;
+    --g: 0;
+    --b: 0;
 
 }
 .dark-mode{
@@ -42,6 +45,9 @@
     --text: white;
     --date: white;
     --shadow: transparent;
+    --r: 255;
+    --g: 255;
+    --b: 255;
 }
 
 

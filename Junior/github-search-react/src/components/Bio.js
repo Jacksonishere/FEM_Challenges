@@ -4,7 +4,7 @@ import website from "../assets/icon-website.svg";
 import twitter from "../assets/icon-twitter.svg";
 import location from "../assets/icon-location.svg";
 
-const Bio = ({ user }) => {
+const Bio = ({ user, fetchStatus }) => {
 	const convertDate = (date) => {
 		const formattedDate = new Date(date);
 		const newDate = formattedDate.toString().split(" ").slice(1, 4);
@@ -17,6 +17,12 @@ const Bio = ({ user }) => {
 				<div>null user</div>
 			) : (
 				<div className="container bio">
+					{fetchStatus === "fetching" && (
+						<div className="loading">
+							<div className="spinner"></div>
+						</div>
+					)}
+
 					<img className="avatar" src={user.avatar_url} alt="" />
 					<div className="profile">
 						<h2>{user.name ?? user.userName}</h2>
@@ -25,7 +31,7 @@ const Bio = ({ user }) => {
 					</div>
 
 					<p className="userbio">{user.Bio ?? "This profile has no bio"}</p>
-					
+
 					<ul className="stats">
 						<li>
 							<p>
@@ -50,7 +56,7 @@ const Bio = ({ user }) => {
 						</li>
 						<li className={`blog ${user.blog ? "" : "unknown"}`}>
 							<img src={website} alt="" />
-							{user.blog ? <a href="/">{user.blog}</a> : <p>Nothing here!</p>}
+							{user.blog ? <a href={user.blog}>{user.blog}</a> : <p>Nothing here!</p>}
 						</li>
 						<li className={`twitter ${user.twitter ? "" : "unknown"}`}>
 							<img src={twitter} alt="" />
