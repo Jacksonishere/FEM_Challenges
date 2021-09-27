@@ -1,0 +1,56 @@
+@use "./mixins" as *;
+
+:root{
+    --fs-100: .75rem;
+    --fs-200: .8125rem;
+    --fs-300: .9375rem;
+    --fs-400: 1rem;
+    --fs-500: 1.125rem;
+    --fs-600: 1.25rem;
+    --fs-700: 1.5rem;
+    --fs-800: 2rem;
+    --fs-900: 3rem;
+
+
+    --fs-h1: 1.625rem;
+    --fs-h2: 1rem;
+    --fs-h3: 1.75rem;
+
+    @include breakpoint-up(medium){
+        --fs-h2: 1.625rem;
+        --fs-100: 1rem;
+        --fs-200: 1rem;
+        --fs-400: 1.375rem;
+    }
+
+    @include breakpoint-up(large){
+    }
+    
+    --bg1: #F6F8FF;
+    --bg2: white;
+    --bold: #2b3442;
+    --text: #4b7a9b;
+    --date: #697c9a;
+    --search: #0079ff;
+    --shadow: rgba(105, 124, 154, 0.2);
+
+}
+.dark-mode{
+    --bg1: #141d2f;
+    --bg2: #1e2a47;
+    --bold: white;
+    --text: white;
+    --date: white;
+    --shadow: transparent;
+}
+
+
+$ff-primary: 'Space Mono', monospace;
+
+$br-xxs: .25rem;
+$br-xs: .5rem;
+$br-s: 1rem;
+$br-m: 2rem;
+$br-l: 4rem;
+$br-xl: 8rem;
+

@@ -1,0 +1,184 @@
+@use "../base/" as *;
+
+.search-form,
+.bio {
+	background-color: var(--bg2);
+	border-radius: 1.25rem;
+
+	-webkit-box-shadow: 0px 10px 22px -7px  var(--shadow);
+	box-shadow: 0px 10px 22px -7px  var(--shadow); 
+}
+body,
+.stats {
+	background-color: var(--bg1);
+}
+
+.header {
+	padding: 2rem 0;
+}
+.header-content {
+	@include flex(row, c, sb);
+
+	.dark-toggle {
+		@include flex(row, c);
+		cursor: pointer;
+
+		color: var(--text);
+		font-weight: bold;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+
+		input {
+			display: none;
+		}
+
+		svg {
+			margin-left: 0.8125rem;
+		}
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}
+.search-form {
+	@include flex(row, c);
+	padding: 0.375rem 0.375rem 0.375rem 1rem;
+
+	img {
+		margin: 0;
+	}
+	input {
+		padding: 0.5rem;
+		width: 100%;
+
+		color: var(--text);
+		&::placeholder {
+			color: var(--text);
+		}
+	}
+
+	button {
+		margin-left: auto;
+		padding: 0.875rem 1.125rem;
+		background-color: var(--search);
+		color: white;
+		font-weight: bold;
+		border-radius: 0.75rem;
+	}
+}
+
+.bio {
+	margin-top: 1rem;
+	padding: 1.5rem;
+
+	@include grid(c, fs);
+	grid-template-areas:
+		"avatar profile"
+		"bio bio"
+		"stats stats"
+		"about about";
+	grid-template-columns: 0.26fr 0.74fr;
+	gap: 2rem 1rem;
+
+	@include breakpoint-up(medium) {
+		grid-template-areas:
+			"avatar profile"
+			"avatar bio"
+			". stats"
+			". about";
+		grid-template-columns: 17% 1fr;
+		gap: 2rem;
+	}
+
+	.avatar {
+		grid-area: avatar;
+		margin: 0;
+		max-height: toRem(100);
+		border-radius: 50%;
+
+		@include breakpoint-up(medium) {
+			max-height: none;
+		}
+	}
+
+	.profile {
+		grid-area: profile;
+		a {
+			margin-top: 0.25rem;
+			color: var(--search);
+		}
+
+		@include breakpoint-up(medium) {
+			width: 100%;
+			position: relative;
+			> p {
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+	.userbio {
+		grid-area: bio;
+		@include breakpoint-up(medium) {
+			margin-top: -2rem;
+		}
+	}
+	.stats {
+		grid-area: stats;
+		@include flex(row, c, sb);
+		padding: 0.5rem 0rem 0.375rem;
+		width: 100%;
+		text-align: center;
+		border-radius: 0.5rem;
+
+		li {
+			width: 33%;
+			> p {
+				font-size: var(--fs-100);
+
+				> b {
+					display: block;
+					color: var(--bold);
+					font-size: var(--fs-400);
+				}
+			}
+		}
+		@include breakpoint-up(medium) {
+			padding: 1rem 2rem 0.875rem;
+			text-align: left;
+			li {
+				width: max-content;
+			}
+		}
+	}
+	.about {
+		grid-area: about;
+		width: 100%;
+		text-align: left;
+
+		@include grid();
+		gap: 0.75rem;
+
+		> li {
+			@include grid(c, fs);
+			grid-auto-flow: column;
+			grid-auto-columns: 20px 1fr;
+			gap: 1rem;
+			> img {
+				margin: 0;
+			}
+		}
+
+		@include breakpoint-up(medium) {
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-columns: repeat(2, auto);
+		}
+
+		.unknown {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+}
