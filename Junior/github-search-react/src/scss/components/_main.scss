@@ -44,7 +44,7 @@ body,
 .search-form {
 	position: relative;
 	@include flex(row, c);
-	padding: 0.375rem 0.375rem 0.375rem 1rem;
+	padding: 0.375rem 0.375rem 0.375rem clamp(0.75rem, 3vw, 2rem);
 
 	img {
 		margin: 0;
@@ -159,7 +159,8 @@ body,
 		"stats stats"
 		"about about";
 	grid-template-columns: 0.26fr 0.74fr;
-	gap: 2rem 1rem;
+	grid-template-rows: repeat(4, auto);
+	gap: 1.75rem 1rem;
 
 	@include breakpoint-up(medium) {
 		padding: 2.5rem;
@@ -179,6 +180,7 @@ body,
 		border-radius: 50%;
 
 		@include breakpoint-up(medium) {
+			align-self: flex-start;
 			max-height: none;
 		}
 	}
@@ -191,6 +193,7 @@ body,
 		}
 
 		@include breakpoint-up(medium) {
+			align-self: flex-start;
 			width: 100%;
 			position: relative;
 			> p {
@@ -203,7 +206,7 @@ body,
 	.userbio {
 		grid-area: bio;
 		@include breakpoint-up(medium) {
-			margin-top: -2rem;
+			margin-top: -1.5rem;
 		}
 	}
 	.stats {
@@ -215,7 +218,7 @@ body,
 		border-radius: 0.5rem;
 
 		li {
-			width: 33%;
+			width: 33.3%;
 			> p {
 				font-size: var(--fs-100);
 
@@ -253,8 +256,22 @@ body,
 		}
 
 		@include breakpoint-up(medium) {
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-columns: repeat(2, auto);
+			@include flex(row);
+			flex-wrap: wrap;
+			> li {
+				// width: 48%;
+				flex-basis: 48%;
+			}
+
+			.twitter {
+				order: 2;
+			}
+			.blog {
+				order: 3;
+			}
+			.company {
+				order: 4;
+			}
 		}
 
 		.unknown {

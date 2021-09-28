@@ -30,7 +30,7 @@ const Bio = ({ user, fetchStatus }) => {
 						<p>Joined {convertDate(user.created_at)}</p>
 					</div>
 
-					<p className="userbio">{user.Bio ?? "This profile has no bio"}</p>
+					<p className="userbio">{user.bio ?? "This profile has no bio"}</p>
 
 					<ul className="stats">
 						<li>
