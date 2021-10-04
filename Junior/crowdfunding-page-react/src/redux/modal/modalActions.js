@@ -30,3 +30,8 @@ export const backCancel = () => {
         type: modalTypes.BACK_CANCEL
     }
 }
+export const backThanks = () => {
+    return {
+        type: modalTypes.BACK_THANKS
+    }
+}

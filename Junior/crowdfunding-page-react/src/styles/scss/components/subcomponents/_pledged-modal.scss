@@ -1,38 +1,49 @@
-.pledged-modal{
-    padding: 2rem 1.5rem 2rem;
-    position: fixed;
-    top: 50%;
-    left: 0;
-    right: 0;
-    width: unquote("min(88vw, 455px)");
-    height: unquote("min(88vh, 425px)");
-    transform: translateY(-55%);
+.pledged-modal {
+	padding: 2rem 1.5rem 2rem;
+	position: fixed;
+	top: 50%;
+	left: 0;
+	right: 0;
+	width: unquote("min(88vw, 455px)");
+	height: unquote("min(88vh, 425px)");
 
-    z-index: 7;
-    background-color: white;
+	z-index: 7;
+	background-color: white;
 
-    visibility: hidden;
-	opacity: 0;
-    transition: visibility .3s ease, opacity .3s ease, transform .3s ease;
-    
-    box-shadow: 0 0 30px 10px rgba(0, 0, 0, .2);
-    text-align: center;
-    border-radius: $br-s;
+	box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	border-radius: $br-s;
 
-    &.enabled {
-		visibility: visible;
+	&.thankyou-enter {
+		opacity: 0;
+		transform: translateY(-55%);
+	}
+	&.thankyou-enter-active {
 		opacity: 1;
-        transform: translateY(-55%);
+		transform: translateY(-50%);
+		transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+	}
+	&.thankyou-enter-done {
+		opacity: 1;
+		transform: translateY(-50%);
+	}
+	&.thankyou-exit {
+		opacity: 1;
+		transform: translateY(-50%);
+	}
+	&.thankyou-exit-active {
+		opacity: 0;
+		transform: translateY(-55%);
+		transition: opacity 0.3s ease, transform 0.3s ease;
 	}
 
-    > * + * {
-        margin-top: 2.5rem;
-    }
+	> * + * {
+		margin-top: 2.5rem;
+	}
 
-    button{
-        background-color: $clr-primary-400;
-        font-weight: 700;
-        width: toRem(107);
-    }
-
+	button {
+		background-color: $clr-primary-400;
+		font-weight: 700;
+		width: toRem(107);
+	}
 }

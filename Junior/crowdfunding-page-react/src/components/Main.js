@@ -23,7 +23,7 @@ const Main = () => {
 							<main className="main">
 								<ModalOverlay />
 								<Pledge />
-								<PledgeProgress />
+								{/* <PledgeProgress /> */}
 								<PledgeInfo />
 								<Modal />
 							</main>

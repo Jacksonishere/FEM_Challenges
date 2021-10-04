@@ -28,21 +28,31 @@ const Modal = ({ show, back, cancel, toggleOverlayOff }) => {
 		});
 	};
 
+	const clickHandler = useRef();
 	const modalRef = useCallback((modalNode) => {
 		let outsideClickHandler = (e) => {
+			console.log("clicked");
 			if (!modalNode.contains(e.target)) {
 				document.removeEventListener("mousedown", outsideClickHandler);
 				cancelBack();
 			}
 		};
+		clickHandler.current = outsideClickHandler;
 		if (modalNode != null) {
+			console.log("adding event listner");
 			document.addEventListener("mousedown", outsideClickHandler);
 		}
 	}, []);
 
+	useEffect(() => {
+		if (show === "thankyou") {
+			document.removeEventListener("mousedown", clickHandler.current);
+		}
+	}, [show]);
+
 	return (
 		<>
-			<CSSTransition in={show === true} timeout={300} classNames="modal" unmountOnExit>
+			<CSSTransition in={show === "pledge"} timeout={300} classNames="modal" unmountOnExit>
 				<article className="container modal" ref={modalRef}>
 					<section className="modal-back">
 						<h2 className="modal-back-title">Back this project</h2>
@@ -68,22 +78,19 @@ const Modal = ({ show, back, cancel, toggleOverlayOff }) => {
 					</div>
 				</article>
 			</CSSTransition>
-			{/* <div className={`container pledged-modal ${status === "pledged" ? "enabled" : ""}`}>
-				<figure>
-					<img src={check} alt="" />
-				</figure>
-				<h2>Thanks for your support!</h2>
-				<p>
-					Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an
-					email once our campaign is completed.
-				</p>
-				<button
-					onClick={() => {
-						setStatus("hidden");
-					}}>
-					Got it!
-				</button>
-			</div> */}
+			<CSSTransition in={show === "thankyou"} timeout={1000} classNames="thankyou" unmountOnExit>
+				<div className="container pledged-modal">
+					<figure>
+						<img src={check} alt="" />
+					</figure>
+					<h2>Thanks for your support!</h2>
+					<p>
+						Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an
+						email once our campaign is completed.
+					</p>
+					<button onClick={cancelBack}>Got it!</button>
+				</div>
+			</CSSTransition>
 		</>
 	);
 };

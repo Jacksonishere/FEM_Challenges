@@ -3,9 +3,9 @@ import { CardsContext } from "../../context/CardsContext";
 import { ProgressContext } from "../../context/ProgressContext";
 
 import { connect } from "react-redux";
-import { backProject, backBamboo, backBlack, backMahogany } from "../../redux";
+import { backProject, backBamboo, backBlack, backMahogany, backThanks } from "../../redux";
 
-const PledgeCard = React.forwardRef(({ id, back, backing, backAction }, ref) => {
+const PledgeCard = React.forwardRef(({ id, back, backing, backAction, thankYou }, ref) => {
 	//Use cards from card context to display info and to set the remaining for when the form is successful
 	console.log("rerendering pledgecard");
 	const { cards, setCards } = useContext(CardsContext);
@@ -48,6 +48,7 @@ const PledgeCard = React.forwardRef(({ id, back, backing, backAction }, ref) => 
 				total: progress.total + parseFloat(submittedInput),
 				backers: progress.backers + 1,
 			});
+			thankYou();
 		}
 	};
 
@@ -95,28 +96,31 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch, { back }) => {
+	let backAction;
 	switch (back) {
 		case "project":
-			return {
-				backAction: () => dispatch(backProject()),
-			};
+			backAction = () => dispatch(backProject());
+			break;
 		case "bamboo":
-			return {
-				backAction: () => dispatch(backBamboo()),
-			};
+			backAction = () => dispatch(backBamboo());
+			break;
+
 		case "black":
-			return {
-				backAction: () => dispatch(backBlack()),
-			};
+			backAction = () => dispatch(backBlack());
+			break;
+
 		case "mahogany":
-			return {
-				backAction: () => dispatch(backMahogany()),
-			};
+			backAction = () => dispatch(backMahogany());
+			break;
+
 		default:
-			return {
-				backAction: null,
-			};
+			backAction = null;
+			break;
 	}
+	return {
+		backAction: backAction,
+		thankYou: () => dispatch(backThanks()),
+	};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps, null, { forwardRef: true })(PledgeCard);

@@ -1,7 +1,7 @@
 import * as modalTypes from "./modalTypes";
 
 const initialState = {
-	show: false,
+	show: "",
 	backing: "",
 };
 
@@ -10,32 +10,38 @@ const modalReducer = (state = initialState, action) => {
 		case modalTypes.BACK:
 			return {
 				...state,
-				show: true,
+				show: "pledge",
 			};
 		case modalTypes.BACK_PROJECT:
 			return {
-				show: true,
+				show: "pledge",
 				backing: "project",
 			};
 
 		case modalTypes.BACK_BAMBOO:
 			return {
-				show: true,
+				show: "pledge",
 				backing: "bamboo",
 			};
 		case modalTypes.BACK_BLACK:
 			return {
-				show: true,
+				show: "pledge",
 				backing: "black",
 			};
 		case modalTypes.BACK_MAHOGANY:
 			return {
-				show: true,
+				show: "pledge",
 				backing: "mahogany",
 			};
 		case modalTypes.BACK_CANCEL:
-			return initialState;
-
+			return {
+				show: "",
+			};
+		case modalTypes.BACK_THANKS:
+			return {
+				show: "thankyou",
+				backing: "",
+			};
 		default:
 			return state;
 	}
