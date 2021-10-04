@@ -2,16 +2,17 @@ import React, { useContext, useRef, useEffect, useState, useCallback } from "rea
 import { CardsContext } from "../../context/CardsContext";
 import { ProgressContext } from "../../context/ProgressContext";
 
-import { connect } from "react-redux";
-import { backProject, backBamboo, backBlack, backMahogany, backThanks } from "../../redux";
+import { connect, batch } from "react-redux";
+import { backBack, backBamboo, backBlack, backMahogany, backThanks } from "../../redux";
+import { updateBamboo, updateBlack, updateMahogany } from "../../redux";
 
-const PledgeCard = React.forwardRef(({ id, back, backing, backAction, thankYou }, ref) => {
+const PledgeCard = React.forwardRef(({ id, back, backing, backAction, card, update, thankYou }, ref) => {
 	//Use cards from card context to display info and to set the remaining for when the form is successful
-	console.log("rerendering pledgecard");
-	const { cards, setCards } = useContext(CardsContext);
-	const card = cards[id];
+	// console.log("rerendering pledgecard");
+	// const { cards, setCards } = useContext(CardsContext);
+	// const card = cards[id];
 
-	const { progress, setProgress } = useContext(ProgressContext);
+	// const { progress, setProgress } = useContext(ProgressContext);
 
 	const [hiddenHeight, setHiddenHeight] = useState(0);
 	const hidden = useCallback((hiddenNode) => {
@@ -32,23 +33,13 @@ const PledgeCard = React.forwardRef(({ id, back, backing, backAction, thankYou }
 		if (isNaN(submittedInput) || submittedInput < card.price) {
 			setInvalid(true);
 		} else {
-			if (back !== "project") {
-				const updateCards = cards.map((card, index) => {
-					if (id === index) {
-						return { ...card, remaining: card.remaining - 1 };
-					} else {
-						return card;
-					}
-				});
-				setCards(updateCards);
-			}
 			formInput.current.value = null;
-			setInvalid(false);
-			setProgress({
-				total: progress.total + parseFloat(submittedInput),
-				backers: progress.backers + 1,
+			batch(() => {
+				if (update) {
+					update();
+				}
+				thankYou();
 			});
-			thankYou();
 		}
 	};
 
@@ -60,9 +51,9 @@ const PledgeCard = React.forwardRef(({ id, back, backing, backAction, thankYou }
 					<span className="custom-radio-styles"></span>
 				</label>
 				<strong className="title">{card.title}</strong>
-				{id !== 0 ? <p className="price">{`Pledge $${card.price} or more`}</p> : ""}
+				{id !== "back" ? <p className="price">{`Pledge $${card.price} or more`}</p> : ""}
 				<p className="desc">{card.desc}</p>
-				{id !== 0 ? (
+				{id !== "back" ? (
 					<div className="remaining">
 						<b>{card.remaining}</b>
 						<span>left</span>{" "}
@@ -89,27 +80,32 @@ const PledgeCard = React.forwardRef(({ id, back, backing, backAction, thankYou }
 	);
 });
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, { id }) => {
 	return {
 		backing: state.modal.backing,
+		card: state.updatePledge[id],
 	};
 };
 
 const mapDispatchToProps = (dispatch, { back }) => {
 	let backAction;
+	let update;
 	switch (back) {
-		case "project":
-			backAction = () => dispatch(backProject());
+		case "back":
+			backAction = () => dispatch(backBack());
 			break;
 		case "bamboo":
+			update = () => dispatch(updateBamboo());
 			backAction = () => dispatch(backBamboo());
 			break;
 
 		case "black":
+			update = () => dispatch(updateBlack());
 			backAction = () => dispatch(backBlack());
 			break;
 
 		case "mahogany":
+			update = () => dispatch(updateMahogany());
 			backAction = () => dispatch(backMahogany());
 			break;
 
@@ -119,6 +115,7 @@ const mapDispatchToProps = (dispatch, { back }) => {
 	}
 	return {
 		backAction: backAction,
+		update: update,
 		thankYou: () => dispatch(backThanks()),
 	};
 };

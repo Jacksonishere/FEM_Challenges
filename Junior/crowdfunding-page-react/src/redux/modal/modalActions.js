@@ -5,9 +5,9 @@ export const back = () => {
         type: modalTypes.BACK
     }
 }
-export const backProject = () => {
+export const backBack = () => {
     return {
-        type: modalTypes.BACK_PROJECT
+        type: modalTypes.BACK_BACK
     }
 }
 export const backBamboo = () => {

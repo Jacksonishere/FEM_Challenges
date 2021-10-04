@@ -8,13 +8,12 @@ import PledgeCard from "./subcomponents/PledgeCard";
 import useOutsideClick from "../customHooks/useClickOutside";
 import check from "../images/icon-check.svg";
 
-const Modal = ({ show, back, cancel, toggleOverlayOff }) => {
+const Modal = ({ show, backing, cancel, toggleOverlayOff }) => {
 	const scrollTimeout = useRef();
 
 	const scrolltoViewRef = useCallback((domNode) => {
-		console.log("received a domnode as its parameters");
 		if (domNode != null) {
-			scrollTimeout.current ?? clearTimeout(scrollTimeout.current);
+			clearTimeout(scrollTimeout.current);
 			scrollTimeout.current = setTimeout(() => {
 				domNode.scrollIntoView({ behavior: "smooth" });
 			}, 500);
@@ -28,26 +27,24 @@ const Modal = ({ show, back, cancel, toggleOverlayOff }) => {
 		});
 	};
 
-	const clickHandler = useRef();
+	const showingRef = useRef();
 	const modalRef = useCallback((modalNode) => {
 		let outsideClickHandler = (e) => {
-			console.log("clicked");
 			if (!modalNode.contains(e.target)) {
 				document.removeEventListener("mousedown", outsideClickHandler);
-				cancelBack();
+
+				if (showingRef.current !== "thankyou") {
+					cancelBack();
+				}
 			}
 		};
-		clickHandler.current = outsideClickHandler;
 		if (modalNode != null) {
-			console.log("adding event listner");
 			document.addEventListener("mousedown", outsideClickHandler);
 		}
 	}, []);
 
 	useEffect(() => {
-		if (show === "thankyou") {
-			document.removeEventListener("mousedown", clickHandler.current);
-		}
+		showingRef.current = show;
 	}, [show]);
 
 	return (
@@ -71,10 +68,10 @@ const Modal = ({ show, back, cancel, toggleOverlayOff }) => {
 						</p>
 					</section>
 					<div className="pledge-cards">
-						<PledgeCard id={0} ref={back === "project" ? scrolltoViewRef : null} back={"project"} />
-						<PledgeCard id={1} ref={back === "bamboo" ? scrolltoViewRef : null} back={"bamboo"} />
-						<PledgeCard id={2} ref={back === "black" ? scrolltoViewRef : null} back={"black"} />
-						<PledgeCard id={3} ref={back === "mahogany" ? scrolltoViewRef : null} back={"mahogany"} />
+						<PledgeCard id={"back"} ref={backing === "back" ? scrolltoViewRef : null} back={"back"} />
+						<PledgeCard id={"bamboo"} ref={backing === "bamboo" ? scrolltoViewRef : null} back={"bamboo"} />
+						<PledgeCard id={"black"} ref={backing === "black" ? scrolltoViewRef : null} back={"black"} />
+						<PledgeCard id={"mahogany"} ref={backing === "mahogany" ? scrolltoViewRef : null} back={"mahogany"} />
 					</div>
 				</article>
 			</CSSTransition>
@@ -98,7 +95,7 @@ const Modal = ({ show, back, cancel, toggleOverlayOff }) => {
 const mapStateToProps = (state) => {
 	return {
 		show: state.modal.show,
-		back: state.modal.backing,
+		backing: state.modal.backing,
 	};
 };
 

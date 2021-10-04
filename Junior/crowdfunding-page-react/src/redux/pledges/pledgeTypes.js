@@ -1,0 +1,3 @@
+export const UPDATE_BAMBOO = 'UPDATE_BAMBOO';
+export const UPDATE_BLACK = 'UPDATE_BLACK';
+export const UPDATE_MAHOGANY = 'UPDATE_MAHOGANY';

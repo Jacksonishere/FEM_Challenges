@@ -21,9 +21,9 @@ const PledgeInfo = ({ backBamboo, backBlack, backMahogany }) => {
 				</p>
 			</section>
 			<section className="rewards">
-				<RewardCard id={1} back={backBamboo} />
-				<RewardCard id={2} back={backBlack} />
-				<RewardCard id={3} back={backMahogany} />
+				<RewardCard id={'bamboo'} back={backBamboo} />
+				<RewardCard id={'black'} back={backBlack} />
+				<RewardCard id={'mahogany'} back={backMahogany} />
 			</section>
 		</article>
 	);

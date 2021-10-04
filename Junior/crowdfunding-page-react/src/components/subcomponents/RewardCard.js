@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { CardsContext } from "../../context/CardsContext";
 
-const RewardCard = ({ id, back }) => {
-	const { cards } = useContext(CardsContext);
-	const card = cards[id];
+import { connect } from "react-redux";
+
+const RewardCard = ({ back, card }) => {
+	// const { cards } = useContext(CardsContext);
+	// const card = cards[id];
 
 	return (
 		<div className={`card ${card.remaining > 0 ? "" : "oos"}`}>
@@ -21,4 +23,10 @@ const RewardCard = ({ id, back }) => {
 	);
 };
 
-export default RewardCard;
+const mapStateToProps = (state, { id }) => {
+	return {
+		card: state.updatePledge[id],
+	};
+};
+
+export default connect(mapStateToProps, null)(RewardCard);

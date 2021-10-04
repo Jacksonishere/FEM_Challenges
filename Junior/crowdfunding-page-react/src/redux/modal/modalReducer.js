@@ -9,13 +9,13 @@ const modalReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case modalTypes.BACK:
 			return {
-				...state,
+				backing: "",
 				show: "pledge",
 			};
-		case modalTypes.BACK_PROJECT:
+		case modalTypes.BACK_BACK:
 			return {
 				show: "pledge",
-				backing: "project",
+				backing: "back",
 			};
 
 		case modalTypes.BACK_BAMBOO:
@@ -35,12 +35,13 @@ const modalReducer = (state = initialState, action) => {
 			};
 		case modalTypes.BACK_CANCEL:
 			return {
+				...state,
 				show: "",
 			};
 		case modalTypes.BACK_THANKS:
 			return {
+				...state,
 				show: "thankyou",
-				backing: "",
 			};
 		default:
 			return state;
