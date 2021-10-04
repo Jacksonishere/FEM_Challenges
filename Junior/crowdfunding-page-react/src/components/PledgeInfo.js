@@ -1,7 +1,11 @@
 import React from "react";
 import RewardCard from "./subcomponents/RewardCard";
 
-const PledgeInfo = () => {
+import { connect, batch } from "react-redux";
+import { backBamboo, backBlack, backMahogany } from "../redux";
+import { toggleOn } from "../redux";
+
+const PledgeInfo = ({ backBamboo, backBlack, backMahogany }) => {
 	return (
 		<article className="container pledges">
 			<section className="about">
@@ -17,12 +21,35 @@ const PledgeInfo = () => {
 				</p>
 			</section>
 			<section className="rewards">
-				<RewardCard id={1} />
-				<RewardCard id={2} />
-				<RewardCard id={3} />
+				<RewardCard id={1} back={backBamboo} />
+				<RewardCard id={2} back={backBlack} />
+				<RewardCard id={3} back={backMahogany} />
 			</section>
 		</article>
 	);
 };
 
-export default PledgeInfo;
+const mapDispatchToProps = (dispatch) => {
+	return {
+		backBamboo: () => {
+			batch(() => {
+				dispatch(backBamboo());
+				dispatch(toggleOn());
+			});
+		},
+		backBlack: () => {
+			batch(() => {
+				dispatch(backBlack());
+				dispatch(toggleOn());
+			});
+		},
+		backMahogany: () => {
+			batch(() => {
+				dispatch(backMahogany());
+				dispatch(toggleOn());
+			});
+		},
+	};
+};
+
+export default connect(null, mapDispatchToProps)(PledgeInfo);

@@ -1,39 +1,27 @@
-import React, { useContext, useRef, useEffect, useState } from "react";
-import { TriggerContext } from "../../context/TriggerContext";
+import React, { useContext, useRef, useEffect, useState, useCallback } from "react";
 import { CardsContext } from "../../context/CardsContext";
 import { ProgressContext } from "../../context/ProgressContext";
 
-const PledgeCard = ({ id, successHandler }) => {
-	//for triggering card, giving it the green accents when selected
-	const { idTrigger, setIdTrigger } = useContext(TriggerContext);
-	const selectedCard = useRef();
-	//hidden form until a card is selected
-	const hidden = useRef();
+import { connect } from "react-redux";
+import { backProject, backBamboo, backBlack, backMahogany } from "../../redux";
 
+const PledgeCard = React.forwardRef(({ id, back, backing, backAction }, ref) => {
 	//Use cards from card context to display info and to set the remaining for when the form is successful
+	console.log("rerendering pledgecard");
 	const { cards, setCards } = useContext(CardsContext);
 	const card = cards[id];
 
-	//Ref that persists, that holds the previous scrollTimeout that gets added when the user clicks on select reward outside the modal and inside the modal.
-	const scrollTimeout = useRef();
+	const { progress, setProgress } = useContext(ProgressContext);
 
-	useEffect(() => {
-		if (idTrigger === id) {
-			scrollTimeout.current = setTimeout(() => {
-				selectedCard.current.scrollIntoView({ behavior: "smooth" });
-			}, 350);
+	const [hiddenHeight, setHiddenHeight] = useState(0);
+	const hidden = useCallback((hiddenNode) => {
+		if (hiddenNode != null) {
+			setHiddenHeight(hiddenNode.scrollHeight);
 		}
-
-		return () => {
-			clearTimeout(scrollTimeout.current);
-		};
-	}, [idTrigger]);
+	}, []);
 
 	const [invalid, setInvalid] = useState(false);
 	const formInput = useRef();
-
-	const { progress, setProgress } = useContext(ProgressContext);
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const formData = new FormData(e.target);
@@ -44,7 +32,7 @@ const PledgeCard = ({ id, successHandler }) => {
 		if (isNaN(submittedInput) || submittedInput < card.price) {
 			setInvalid(true);
 		} else {
-			if (id > 0) {
+			if (back !== "project") {
 				const updateCards = cards.map((card, index) => {
 					if (id === index) {
 						return { ...card, remaining: card.remaining - 1 };
@@ -60,28 +48,18 @@ const PledgeCard = ({ id, successHandler }) => {
 				total: progress.total + parseFloat(submittedInput),
 				backers: progress.backers + 1,
 			});
-			successHandler();
 		}
 	};
 
 	return (
-		<div
-			ref={selectedCard}
-			className={`pledge-card ${card.remaining === 0 ? "oos" : ""} ${idTrigger === id ? "selected" : ""}`}>
-			<div
-				className="top"
-				onClick={(e) => {
-					setIdTrigger(id);
-				}}>
+		<div ref={ref} className={`pledge-card ${card.remaining === 0 ? "oos" : ""} ${back === backing ? "selected" : ""}`}>
+			<div className="top" onClick={backAction}>
 				<label className="custom-radio">
 					<input type="radio" name="select" value="selected" />
 					<span className="custom-radio-styles"></span>
 				</label>
-
 				<strong className="title">{card.title}</strong>
-
 				{id !== 0 ? <p className="price">{`Pledge $${card.price} or more`}</p> : ""}
-
 				<p className="desc">{card.desc}</p>
 				{id !== 0 ? (
 					<div className="remaining">
@@ -93,10 +71,7 @@ const PledgeCard = ({ id, successHandler }) => {
 				)}
 			</div>
 
-			<div
-				className="hidden"
-				ref={hidden}
-				style={{ maxHeight: idTrigger === id ? hidden.current.scrollHeight : "0px" }}>
+			<div className="hidden" ref={hidden} style={{ maxHeight: back === backing ? `${hiddenHeight}px` : "0px" }}>
 				<div className={`hidden-content ${invalid ? "invalidForm" : ""}`}>
 					<p>Enter your pledge</p>
 					<form action="#" className="pledge-amount" onSubmit={handleSubmit}>
@@ -111,13 +86,37 @@ const PledgeCard = ({ id, successHandler }) => {
 			</div>
 		</div>
 	);
+});
+
+const mapStateToProps = (state) => {
+	return {
+		backing: state.modal.backing,
+	};
 };
 
-PledgeCard.defaultProps = {
-	title: "",
-	price: "",
-	desc: "",
-	remaining: "",
+const mapDispatchToProps = (dispatch, { back }) => {
+	switch (back) {
+		case "project":
+			return {
+				backAction: () => dispatch(backProject()),
+			};
+		case "bamboo":
+			return {
+				backAction: () => dispatch(backBamboo()),
+			};
+		case "black":
+			return {
+				backAction: () => dispatch(backBlack()),
+			};
+		case "mahogany":
+			return {
+				backAction: () => dispatch(backMahogany()),
+			};
+		default:
+			return {
+				backAction: null,
+			};
+	}
 };
 
-export default PledgeCard;
+export default connect(mapStateToProps, mapDispatchToProps, null, { forwardRef: true })(PledgeCard);

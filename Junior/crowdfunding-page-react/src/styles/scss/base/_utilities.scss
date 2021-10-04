@@ -1,42 +1,67 @@
-.container{
-    // margin: 0 toRem(24);
-    @include center-auto;
-    width: 90%;
-    max-width: 730px;
+.container {
+	// margin: 0 toRem(24);
+	@include center-auto;
+	width: 90%;
+	max-width: 730px;
+
+	@include breakpoint-up(medium) {
+	}
+}
+
+.text-center {
+	text-align: center;
+}
+
+.sweepfromSide {
+	@include sweepfromSide;
+}
+.sweepfromLevel {
+	@include sweepfromLevel;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 5;
+
+	transition: visibility 0.3s ease, background-color 0.3s ease;
+	visibility: hidden;
+	background-color: rgba(0, 0, 0, 0);
+
+	&.show {
+		pointer-events: all;
+		visibility: visible;
+		background-color: rgba(0, 0, 0, 0.3);
+	}
+}
+
+.pledge-overlay {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: all;
+	z-index: 7;
     
-    @include breakpoint-up(medium){
-    }
+    background-color: rgba(0, 0, 0, .3);
 }
 
-.text-center{
-    text-align: center;
-}
 
-.sweepfromSide{
-    @include sweepfromSide;
+.on-enter {
+    opacity: 0;
 }
-.sweepfromLevel{
-    @include sweepfromLevel;
+.on-enter-active {
+    opacity: 1;
+    transition: opacity .3s ease;
 }
-
-.overlay, .pledge-overlay{
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 5;
-    
-    transition: visibility .3s ease, background-color .3s ease;
-    visibility: hidden;
-    background-color: rgba(0,0,0,0);
-
-    &.show{
-        pointer-events: all;
-        visibility: visible;
-        background-color: rgba(0,0,0, .3);
-    }
+.on-enter-done{
 }
-
-.pledge-overlay{
-    z-index: 7;
+.on-exit {
+    opacity: 1;
+}
+.on-exit-active {
+    opacity: 0;
+    transition: opacity .3s ease;
 }

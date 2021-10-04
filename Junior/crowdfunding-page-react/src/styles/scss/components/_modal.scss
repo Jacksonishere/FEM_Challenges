@@ -1,51 +1,56 @@
 .modal {
-    padding: 2rem 1.5rem;
-    position: fixed;
-    top: 10vh;
-    left: 0;
-    right: 0;
-    height: 80vh;
+	padding: 2rem 1.5rem;
+	position: fixed;
+	top: 10vh;
+	left: 0;
+	right: 0;
+	height: 80vh;
+	z-index: 7;
+	background-color: white;
 
-    z-index: 7;
-    background-color: white;
+	overflow: scroll;
+	text-align: left;
+	border-radius: $br-s;
 
+	&::-webkit-scrollbar {
+		display: none;
+	}
 
-    overflow: scroll;
-	visibility: hidden;
-	opacity: 0;
-	transform: translateY(-3rem);
-    transition: visibility .3s ease, opacity .3s ease, transform .3s ease;
-    
-    text-align: left;
-    border-radius: $br-s;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-	&.enabled {
-		visibility: visible;
+	&-enter {
+		opacity: 0;
+		transform: translateY(-3rem);
+	}
+	&-enter-active {
+		opacity: 1;
+		transform: translateY(0);
+		transition: all 0.3s ease;
+	}
+	&-exit {
 		opacity: 1;
 		transform: translateY(0);
 	}
+	&-exit-active {
+		opacity: 0;
+		transform: translateY(-3rem);
+		transition: all 0.3s ease;
+	}
 
-    &-back{
-        scroll-margin-top: 2rem;
-        @include grid(c);
-        grid-template-columns: 1fr max-content;
-        grid-template-rows: repeat(2, auto);
-        gap: 1rem 0;
+	&-back {
+		scroll-margin-top: 2rem;
+		@include grid(c);
+		grid-template-columns: 1fr max-content;
+		grid-template-rows: repeat(2, auto);
+		gap: 1rem 0;
 
-        &-title{
-            grid-area: 1 / 1 / 2 / 2;
-        }
-        &-close{
-            grid-area: 1 / 2 / 2 / 3;
-            justify-self: flex-end;
-        }
-        &-support{
-            grid-area: 2 / 1 / 3 / 3;
-        }
-    }
-
+		&-title {
+			grid-area: 1 / 1 / 2 / 2;
+		}
+		&-close {
+			grid-area: 1 / 2 / 2 / 3;
+			justify-self: flex-end;
+		}
+		&-support {
+			grid-area: 2 / 1 / 3 / 3;
+		}
+	}
 }

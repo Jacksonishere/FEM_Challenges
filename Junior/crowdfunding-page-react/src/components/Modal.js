@@ -1,78 +1,74 @@
-import React, { useContext, useEffect, useRef } from "react";
-import { ModalOverlayContext } from "../context/ModalOverlayContext";
-import { TriggerContext } from "../context/TriggerContext";
+import React, { useEffect, useCallback, useRef } from "react";
+import { connect, batch } from "react-redux";
+import { backCancel, toggleOff } from "../redux";
+
+import { CSSTransition } from "react-transition-group";
 
 import PledgeCard from "./subcomponents/PledgeCard";
-
+import useOutsideClick from "../customHooks/useClickOutside";
 import check from "../images/icon-check.svg";
 
-const Modal = () => {
-	const { setIdTrigger } = useContext(TriggerContext);
-	const { status, setStatus } = useContext(ModalOverlayContext);
+const Modal = ({ show, back, cancel, toggleOverlayOff }) => {
+	const scrollTimeout = useRef();
 
-	const scrollTopTimeout = useRef();
-	const domNodeTop = useRef();
-
-	const domNode = useRef();
-	const handler = (e) => {
-		if (!domNode.current.contains(e.target)) {
-			setStatus("hidden");
+	const scrolltoViewRef = useCallback((domNode) => {
+		console.log("received a domnode as its parameters");
+		if (domNode != null) {
+			scrollTimeout.current ?? clearTimeout(scrollTimeout.current);
+			scrollTimeout.current = setTimeout(() => {
+				domNode.scrollIntoView({ behavior: "smooth" });
+			}, 500);
 		}
-	};
-	const resetModal = () => {
-		scrollTopTimeout.current = setTimeout(() => {
-			console.log("resetmodal called");
-			setIdTrigger(-2);
-			domNodeTop.current.scrollIntoView();
-		}, 300);
-	};
+	}, []);
 
-	const successHandler = (e) => {
-		setStatus("pledged");
+	const cancelBack = () => {
+		batch(() => {
+			cancel();
+			toggleOverlayOff();
+		});
 	};
 
-	useEffect(() => {
-		if (status === "hidden") {
-			resetModal();
-		} else {
-			clearTimeout(scrollTopTimeout.current);
-		}
-
-		if (status === "show") {
-			document.addEventListener("mousedown", handler);
-		}
-		return () => {
-			document.removeEventListener("mousedown", handler);
+	const modalRef = useCallback((modalNode) => {
+		let outsideClickHandler = (e) => {
+			if (!modalNode.contains(e.target)) {
+				document.removeEventListener("mousedown", outsideClickHandler);
+				cancelBack();
+			}
 		};
-	}, [status]);
+		if (modalNode != null) {
+			document.addEventListener("mousedown", outsideClickHandler);
+		}
+	}, []);
 
 	return (
 		<>
-			<article ref={domNode} className={`container modal ${status === "show" ? "enabled" : ""}`}>
-				<section ref={domNodeTop} className="modal-back">
-					<h2 className="modal-back-title">Back this project</h2>
-					<button className="modal-back-close" onClick={() => setStatus("hidden")}>
-						<svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
-								fill="#000"
-								fillRule="evenodd"
-								opacity=".4"
-							/>
-						</svg>
-					</button>
-					<p className="modal-back-support">
-						Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
-					</p>
-				</section>
-				<section className="">
-					<PledgeCard id={0} successHandler={successHandler} />
-					<PledgeCard id={1} successHandler={successHandler} />
-					<PledgeCard id={2} successHandler={successHandler} />
-					<PledgeCard id={3} successHandler={successHandler} />
-				</section>
-			</article>
-			<div className={`container pledged-modal ${status === "pledged" ? "enabled" : ""}`}>
+			<CSSTransition in={show === true} timeout={300} classNames="modal" unmountOnExit>
+				<article className="container modal" ref={modalRef}>
+					<section className="modal-back">
+						<h2 className="modal-back-title">Back this project</h2>
+						<button className="modal-back-close" onClick={cancelBack}>
+							<svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M11.314 0l2.828 2.828L9.9 7.071l4.243 4.243-2.828 2.828L7.07 9.9l-4.243 4.243L0 11.314 4.242 7.07 0 2.828 2.828 0l4.243 4.242L11.314 0z"
+									fill="#000"
+									fillRule="evenodd"
+									opacity=".4"
+								/>
+							</svg>
+						</button>
+						<p className="modal-back-support">
+							Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?
+						</p>
+					</section>
+					<div className="pledge-cards">
+						<PledgeCard id={0} ref={back === "project" ? scrolltoViewRef : null} back={"project"} />
+						<PledgeCard id={1} ref={back === "bamboo" ? scrolltoViewRef : null} back={"bamboo"} />
+						<PledgeCard id={2} ref={back === "black" ? scrolltoViewRef : null} back={"black"} />
+						<PledgeCard id={3} ref={back === "mahogany" ? scrolltoViewRef : null} back={"mahogany"} />
+					</div>
+				</article>
+			</CSSTransition>
+			{/* <div className={`container pledged-modal ${status === "pledged" ? "enabled" : ""}`}>
 				<figure>
 					<img src={check} alt="" />
 				</figure>
@@ -87,9 +83,23 @@ const Modal = () => {
 					}}>
 					Got it!
 				</button>
-			</div>
+			</div> */}
 		</>
 	);
 };
 
-export default Modal;
+const mapStateToProps = (state) => {
+	return {
+		show: state.modal.show,
+		back: state.modal.backing,
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		cancel: () => dispatch(backCancel()),
+		toggleOverlayOff: () => dispatch(toggleOff()),
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

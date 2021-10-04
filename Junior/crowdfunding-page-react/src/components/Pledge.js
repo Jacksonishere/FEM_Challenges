@@ -1,23 +1,30 @@
-import React , { useContext, useState } from "react";
-import { ModalOverlayContext } from "../context/ModalOverlayContext";
+import React, { useState } from "react";
 
+import { connect, batch } from "react-redux";
+import { toggleOn } from "../redux";
+import { back } from "../redux";
 
-const Pledge = () => {
-	const {setStatus} = useContext(ModalOverlayContext);
-
+const Pledge = ({ toggleModalOverlay, toggleModalBack }) => {
 	const [bookedMarked, setBookMarked] = useState(false);
 	const toggleBookMarked = () => {
-		setBookMarked(a => !a);
-	}
+		setBookMarked((a) => !a);
+	};
 
 	return (
 		<section className="container pledge">
 			<h2>Mastecraft Bamboo Monitor Riser</h2>
 			<p>A beautifully handcrafted monitor stand to reduce neck and eye strain</p>
-			<div className={`interactions ${bookedMarked ? "bookmarked" : ''}`}>
-				<button className="back" onClick={(e) => {
-					setStatus("show");
-				}}>Back this project</button>
+			<div className={`interactions ${bookedMarked ? "bookmarked" : ""}`}>
+				<button
+					className="back"
+					onClick={(e) => {
+						batch(() => {
+							toggleModalOverlay();
+							toggleModalBack();
+						});
+					}}>
+					Back this project
+				</button>
 				<button className="bookmark" onClick={toggleBookMarked}>
 					<svg width="56" height="56" xmlns="http://www.w3.org/2000/svg">
 						<g fill="none" fillRule="evenodd">
@@ -31,4 +38,11 @@ const Pledge = () => {
 	);
 };
 
-export default Pledge;
+const mapDispatchToProps = (dispatch) => {
+	return {
+		toggleModalOverlay: () => dispatch(toggleOn()),
+		toggleModalBack: () => dispatch(back()),
+	};
+};
+
+export default connect(null, mapDispatchToProps)(Pledge);
