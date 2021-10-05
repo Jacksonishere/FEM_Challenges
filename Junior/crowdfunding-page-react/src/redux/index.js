@@ -5,3 +5,5 @@ export { back, backBack, backBamboo, backBlack, backMahogany, backCancel, backTh
 export { updateBamboo, updateBlack, updateMahogany } from "./pledges/pledgeActions";
 
 export { updateProgress } from "./progress/progressActions";
+
+export { pledged, unpledged } from "./pledged/pledgedAction"

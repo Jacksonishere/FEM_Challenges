@@ -6,3 +6,4 @@ export const updateProgress = (amount) => {
 		amount: amount,
 	};
 };
+

@@ -7,7 +7,6 @@ import Modal from "./Modal";
 
 import ModalOverlay from "./subcomponents/ModalOverlay";
 
-
 import ModalOverlayContextProvider from "../context/ModalOverlayContext";
 import TriggerContextProvider from "../context/TriggerContext";
 import CardsContextProvider from "../context/CardsContext";
@@ -23,7 +22,7 @@ const Main = () => {
 							<main className="main">
 								<ModalOverlay />
 								<Pledge />
-								{/* <PledgeProgress /> */}
+								<PledgeProgress />
 								<PledgeInfo />
 								<Modal />
 							</main>

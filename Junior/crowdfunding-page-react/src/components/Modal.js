@@ -5,10 +5,11 @@ import { backCancel, toggleOff } from "../redux";
 import { CSSTransition } from "react-transition-group";
 
 import PledgeCard from "./subcomponents/PledgeCard";
-import useOutsideClick from "../customHooks/useClickOutside";
 import check from "../images/icon-check.svg";
 
-const Modal = ({ show, backing, cancel, toggleOverlayOff }) => {
+import { pledged } from "../redux";
+
+const Modal = ({ show, backing, cancel, toggleOverlayOff, pledged }) => {
 	const scrollTimeout = useRef();
 
 	const scrolltoViewRef = useCallback((domNode) => {
@@ -85,7 +86,15 @@ const Modal = ({ show, backing, cancel, toggleOverlayOff }) => {
 						Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an
 						email once our campaign is completed.
 					</p>
-					<button onClick={cancelBack}>Got it!</button>
+					<button
+						onClick={() =>
+							batch(() => {
+								cancelBack();
+								pledged();
+							})
+						}>
+						Got it!
+					</button>
 				</div>
 			</CSSTransition>
 		</>
@@ -103,6 +112,7 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		cancel: () => dispatch(backCancel()),
 		toggleOverlayOff: () => dispatch(toggleOff()),
+		pledged: () => dispatch(pledged()),
 	};
 };
 

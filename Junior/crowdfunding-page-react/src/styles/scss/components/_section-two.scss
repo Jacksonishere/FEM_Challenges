@@ -37,7 +37,7 @@
 		p {
 			margin-top: 0.75rem;
 		}
-		transition: opacity 0.4s ease;
+		transition: opacity 0.7s ease;
 		&.fade {
 			opacity: 0;
 		}
@@ -64,7 +64,7 @@
 	}
 
 	&-bar {
-		transition: opacity .5 ease;
+		transition: opacity 0.7s ease;
 		&.fade {
 			opacity: 0;
 		}
@@ -83,7 +83,7 @@
 			// &.fade {
 			// 	opacity: 0;
 			// }
-			transition: right 0.4s ease;
+			transition: right 1s ease;
 			position: absolute;
 			left: 0;
 			// right: 100%;
