@@ -36,7 +36,9 @@ You can click the image to view the live site! 💻😁
 [<img src="./Junior/loopstudios-landing-page/desktop-preview.jpg" alt="preview" width="200"/>](https://brave-hoover-d20c69.netlify.app/)
 [<img src="./Junior/officelit-landing-react/preview.jpg" alt="preview" width="200"/>](https://frosty-heisenberg-e06fe7.netlify.app/)
 [<img src="./Junior/tip-calculator-react/design/desktop-preview.jpg" alt="preview" width="200"/>](https://wonderful-newton-523645.netlify.app/)
+[<img src="./Junior/github-search-react/preview.jpg" alt="preview" width="200"/>](https://kind-almeida-0b965a.netlify.app/)
 [<img src="./Junior/crowdfunding-page-react/design/desktop-preview.jpg" alt="preview" width="200"/>](https://friendly-villani-81a354.netlify.app/)
+
 
 
 
