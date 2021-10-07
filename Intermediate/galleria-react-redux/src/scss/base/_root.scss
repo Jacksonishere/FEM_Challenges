@@ -1,0 +1,45 @@
+@use "./mixins" as *;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+:root{
+    --fs-100: clamp(.5625rem, 1.4vw, .6875rem);
+    --fs-200: clamp(.75rem, 1.8vw, .9375rem);
+    --fs-300: clamp(.8125rem, 2vw, 1.0625rem);
+    --fs-400: clamp(.875rem, 2.15vw, 1.75rem);
+    --fs-500: clamp(.9375rem, 2.3vw , 1.25rem);
+    --fs-600: 1.25rem;
+    --fs-700: 1.5rem;
+    --fs-800: 2rem;
+    --fs-900: clamp(6.25rem, 20vw, 12.5rem);
+
+
+    --fs-h1: 3.5rem;
+    --fs-h2: 1.5rem;
+    --fs-h3: 1.25rem;
+
+    @include breakpoint-up(medium){
+        --fs-h1: clamp(3.5rem, 6.5vw, 4rem);
+        --fs-h2: clamp(1.5rem, 2.8vw, 2rem);
+        --fs-h3: clamp(1.25rem, 2.1vw, 1.5rem);
+    }
+
+    @include breakpoint-up(large){
+    }
+
+}
+
+$clr-neutral-100: white;
+$clr-neutral-200: hsl(0, 0%, 95%);
+$clr-neutral-400: hsl(0, 0%, 90%);
+$clr-neutral-700: #7D7D7D;
+$clr-neutral-900: hsl(0, 0%, 0%);
+
+$ff-primary: 'Libre Baskerville', serif;
+
+$br-xxs: .25rem;
+$br-xs: .5rem;
+$br-s: 1rem;
+$br-m: 2rem;
+$br-l: 4rem;
+$br-xl: 8rem;
+

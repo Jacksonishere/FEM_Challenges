@@ -1,0 +1,18 @@
+@use "../../base/" as *;
+
+.header {
+	img {
+		margin: 0;
+		max-height: clamp(2rem, 4.9vw, 3rem);
+	}
+	&-content {
+		padding: 1.5rem 0;
+		@include flex(row, c, sb);
+
+		.start {
+			letter-spacing: 2.5px;
+			font-size: var(--fs-100);
+		}
+	}
+	border-bottom: 1px solid #E5E5E5;
+}
