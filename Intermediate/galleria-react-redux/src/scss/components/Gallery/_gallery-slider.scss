@@ -1,0 +1,40 @@
+@use "../../base/" as *;
+
+.gallery-slider-footer {
+	position: relative;
+	border-top: solid 1px #e5e5e5;
+	padding: 1.5rem 0;
+
+	.slider-number {
+		position: absolute;
+		top: -1px;
+		left: 0;
+		height: 1px;
+		background-color: black;
+		width: 10%;
+	}
+}
+
+.gallery-slider {
+	@include flex(row, c, sb);
+
+	&-info {
+		b {
+			display: block;
+			font-size: var(--fs-400);
+		}
+		p {
+			margin-top: 0.5rem;
+			color: black;
+			font-size: var(--fs-200);
+		}
+	}
+
+	&-buttons {
+		@include flex(row, c);
+		transform: scale(0.7);
+		.back-btn {
+			margin-right: 1.5rem;
+		}
+	}
+}

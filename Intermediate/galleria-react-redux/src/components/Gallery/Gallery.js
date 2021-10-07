@@ -1,18 +1,18 @@
 import React from "react";
 
-import { GalleryData } from "../../data.js";
+import { GalleryData } from "../../data";
 //Component
-import GalleryItem from "./GalleryItem/GalleryItem";
+import GalleryItem from "./GalleryItem";
 
 const Gallery = () => {
 	return (
-		<section className="gallery-section">
+		<main className="gallery-section">
 			<div className="container gallery">
 				{GalleryData.map((item, index) => (
 					<GalleryItem key={index} galleryItem={item} id={index} />
 				))}
 			</div>
-		</section>
+		</main>
 	);
 };
 
