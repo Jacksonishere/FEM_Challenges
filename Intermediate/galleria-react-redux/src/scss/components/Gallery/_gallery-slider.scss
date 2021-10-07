@@ -36,5 +36,12 @@
 		.back-btn {
 			margin-right: 1.5rem;
 		}
+
+        @include breakpoint-up(medium){
+            transform: scale(.85);
+        }
+        @include breakpoint-up(large){
+            transform: scale(1);
+        }
 	}
 }

@@ -6,6 +6,9 @@
     width: min(88%, 1440px);
 
     @include breakpoint-up(medium){
+        width: min(92%, 1440px);
+    }
+    @include breakpoint-up(large){
         width: min(94.5%, 1440px);
     }
    

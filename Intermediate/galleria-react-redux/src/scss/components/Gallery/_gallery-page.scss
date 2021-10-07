@@ -1,12 +1,24 @@
 @use "../../base/" as *;
 
 .gallery-page-section {
-	padding: 1.5rem 0 .5rem;
+	padding: min(6vw, 6.25rem) 0 0.5rem;
+	@include breakpoint-up(medium) {
+		padding: min(5vw, 6.25rem) 0 0.5rem;
+	}
+
+	@include breakpoint-up(large) {
+		padding: min(5.5vw, 6.25rem) 0 min(5.5vw, 6.25rem);
+		.container {
+			@include flex(row);
+		}
+	}
+
 	img {
 		display: block;
 		width: 100%;
-		// object-fit: cover;
-		// object-position: top left;
+		height: 100%;
+		object-fit: cover;
+		object-position: top center;
 	}
 }
 
@@ -19,9 +31,10 @@
 		z-index: 5;
 		grid-area: 1 / 1 / 2 / -1;
 		@include flex(row, c, sb);
-		margin: 0.75rem 0 0 0.75rem;
+		margin: clamp(0.75rem, 2.4vw, 1rem) 0 0 clamp(0.75rem, 2.4vw, 1rem);
 		padding: 0.75rem;
 		max-width: toRem(152);
+		max-height: 2.5rem;
 		background-color: rgba(0, 0, 0, 0.8);
 
 		svg {
@@ -47,16 +60,63 @@
 		padding: 1.5rem;
 		background-color: white;
 
-		h1 {
-		}
 		p {
 			margin-top: 0.5rem;
+			font-size: clamp(.9375rem, 1.95vw, 1.1875rem);
 		}
 	}
 
 	&-artist {
 		grid-area: -2 / 1 / -1 / 2;
-		padding-left: 0.8125rem;
+		margin-left: 0.8125rem;
+	}
+	@include breakpoint-up(medium) {
+		grid-template-columns: repeat(2, 34%) 22% 1fr;
+
+		.view-image {
+			grid-area: -2 / 1 / -1 / -1;
+			margin: 0 0 1rem 1rem;
+		}
+		&-hero {
+			grid-area: 1 / 1 / -1 / 3;
+		}
+		&-info {
+			grid-area: 1 / 2 / 2 / -2;
+			margin: -1px 0 0 0;
+			padding: 0 0 4rem 4.25rem;
+			max-width: toRem(380);
+			p {
+				margin-top: 1.25rem;
+			}
+		}
+		&-artist {
+			margin-left: 1.5rem;
+			grid-area: 2 / 3 / 3 / 4;
+		}
+	}
+	@include breakpoint-up(large) {
+		width: 58.5%;
+		grid-template-columns: 48.5% 7.6% 18.7% 1fr;
+		grid-template-rows: repeat(4, auto);
+		.view-image {
+			align-self: flex-end;
+			grid-area: -3 / 1 / -2 / -1;
+		}
+		&-hero {
+			grid-area: 1 / 1 / -2 / 3;
+		}
+		&-info {
+			grid-area: 1 / 2 / 2 / -1;
+		}
+		&-artist {
+			grid-area: -3 / 3 / -1 / -2;
+			img {
+				max-height: toRem(128);
+			}
+		}
+	}
+	@include breakpoint-up(xlarge){
+		width: 63%;
 	}
 }
 
@@ -67,9 +127,11 @@
 	.year {
 		position: absolute;
 		z-index: -1;
-		bottom: 94%;
-		right: 0;
-		line-height: 0;
+		@include breakpoint-down(medium) {
+			top: -2.5%;
+			right: 0;
+		}
+		line-height: 1;
 		font-size: var(--fs-900);
 		font-weight: bold;
 		color: $clr-neutral-200;
@@ -77,6 +139,7 @@
 
 	.desc {
 		font-weight: bold;
+		font-size: 0.875rem;
 		line-height: 2.1;
 	}
 
@@ -86,5 +149,31 @@
 		text-transform: uppercase;
 		letter-spacing: 2px;
 		font-size: var(--fs-100);
+	}
+
+	@include breakpoint-up(medium) {
+		padding: toRem(140) 0 3.5rem;
+		&-container {
+			margin: 0 auto;
+			max-width: toRem(480);
+		}
+		.year {
+			top: 10%;
+			left: 0;
+		}
+	}
+	@include breakpoint-up(large) {
+		width: 41.5%;
+		padding-bottom: 0;
+		&-container {
+			margin: 0;
+			max-width: toRem(380);
+		}
+		.year {
+			top: 0;
+		}
+	}
+	@include breakpoint-up(xlarge){
+		width: 37%;
 	}
 }
