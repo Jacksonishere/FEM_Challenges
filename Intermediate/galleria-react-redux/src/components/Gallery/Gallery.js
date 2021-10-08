@@ -1,8 +1,8 @@
 import React from "react";
-
-import { GalleryData } from "../../data";
 //Component
 import GalleryItem from "./GalleryItem";
+
+import { GalleryData } from "../../data";
 
 const Gallery = () => {
 	return (

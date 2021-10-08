@@ -1,16 +1,111 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
+import { motion } from "framer-motion";
+
+import { useSelector } from "react-redux";
+
 import { GalleryData } from "../../data";
+
+const dummyContainerVar = {
+	hidden: {},
+	visible: {},
+	exit: {},
+};
+const GalleryContainerVar = {
+	hidden: (i) => {
+		switch (i) {
+			case "prev":
+				return {
+					opacity: 0,
+					x: 20,
+				};
+			case "next":
+				return {
+					opacity: 0,
+					x: -20,
+				};
+			default:
+				return {
+					opacity: 0,
+					y: -20,
+				};
+		}
+	},
+	visible: (i) => {
+		let visbileAnim = {
+			opacity: 1,
+			x: 0,
+			y: 0,
+		};
+		switch (i) {
+			case null:
+				return {
+					...visbileAnim,
+					transition: {
+						type: "tween",
+						duration: 0.8,
+						ease: "easeIn",
+					},
+				};
+			default:
+				return {
+					...visbileAnim,
+					transition: {
+						type: "tween",
+						duration: 0.4,
+						delay: 0.2,
+					},
+				};
+		}
+	},
+	exit: (i) => {
+		let exitAnim = {
+			opacity: 0,
+			transition: {
+				type: "tween",
+				duration: 0.3,
+			},
+		};
+		switch (i) {
+			case "prev":
+				return {
+					...exitAnim,
+					x: -40,
+				};
+			case "next":
+				return {
+					...exitAnim,
+					x: 40,
+				};
+			default:
+				return {
+					...exitAnim,
+					y: -20,
+					transition: {
+						...exitAnim.transition,
+						duration: 0.8,
+					},
+				};
+		}
+	},
+};
 
 const GalleryPage = () => {
 	let { id } = useParams();
 	let galleryItem = GalleryData[id];
 
+	const direction = useSelector((state) => state.slider.direction);
+
 	return (
-		<main className="gallery-page-section">
-			<div className="container">
+		<motion.main
+			className="gallery-page-section"
+			variants={dummyContainerVar}
+			initial="hidden"
+			animate="visible"
+			exit="exit">
+			<motion.div className="container" variants={GalleryContainerVar} custom={direction}>
 				<section className="gallery-art">
 					<button className="view-image">
 						<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
@@ -44,8 +139,8 @@ const GalleryPage = () => {
 						</Link>
 					</div>
 				</section>
-			</div>
-		</main>
+			</motion.div>
+		</motion.main>
 	);
 };
 

@@ -13,7 +13,7 @@ const GalleryItemContainer = {
 		y: 0,
 		transition: {
 			type: "tween",
-			duration: 1,
+			duration: .8,
 			when: "beforeChildren",
 		},
 	},
@@ -22,6 +22,13 @@ const GalleryItemContainer = {
 		transition: {
 			type: "tween",
 			duration: 0.2,
+		},
+	},
+	exit: {
+		opacity: 0,
+		transition: {
+			type: "tween",
+			duration: .8,
 		},
 	},
 };
@@ -59,7 +66,8 @@ const GalleryItem = ({ id, galleryItem }) => {
 			variants={GalleryItemContainer}
 			initial="hidden"
 			animate="visible"
-			whileHover="hover">
+			whileHover="hover"
+			exit="exit">
 			<Link className="gallery-item" to={"gallery/" + id}>
 				<motion.img src={galleryItem.images.thumbnail} alt="" variants={GalleryImageHover} />
 				<motion.div className="gallery-item-info" variants={GalleryInfoContainer}>
