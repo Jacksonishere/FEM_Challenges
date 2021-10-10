@@ -13,7 +13,7 @@ const GalleryItemContainer = {
 		y: 0,
 		transition: {
 			type: "tween",
-			duration: .8,
+			duration: 0.8,
 			when: "beforeChildren",
 		},
 	},
@@ -28,7 +28,7 @@ const GalleryItemContainer = {
 		opacity: 0,
 		transition: {
 			type: "tween",
-			duration: .8,
+			duration: 0.8,
 		},
 	},
 };
@@ -47,6 +47,7 @@ const GalleryInfoContainer = {
 			ease: "easeIn",
 		},
 	},
+	exit: {},
 };
 
 const GalleryImageHover = {
@@ -57,6 +58,7 @@ const GalleryImageHover = {
 			duration: 0.2,
 		},
 	},
+	exit: {},
 };
 
 const GalleryItem = ({ id, galleryItem }) => {

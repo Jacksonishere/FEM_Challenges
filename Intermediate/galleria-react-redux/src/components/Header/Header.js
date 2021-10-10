@@ -7,10 +7,15 @@ import { Link } from "react-router-dom";
 import ResetClick from "../../customHooks/ResetClick";
 import { resetClicked } from "../../redux/slider/slidingSlice";
 
+import { useDispatch } from "react-redux";
+
 const Header = () => {
 	//Get pathname
 	const { pathname } = useLocation();
 	const onHome = pathname === "/";
+
+	const dispatch = useDispatch();
+
 
 	return (
 		<header className="header">
