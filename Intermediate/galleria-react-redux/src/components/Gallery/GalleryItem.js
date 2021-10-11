@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router";
 
 import { motion } from "framer-motion";
 
@@ -62,6 +63,7 @@ const GalleryImageHover = {
 };
 
 const GalleryItem = ({ id, galleryItem }) => {
+	const location = useLocation();
 	return (
 		<motion.div
 			className="gallery-container"
@@ -69,7 +71,8 @@ const GalleryItem = ({ id, galleryItem }) => {
 			initial="hidden"
 			animate="visible"
 			whileHover="hover"
-			exit="exit">
+			exit="exit"
+			>
 			<Link className="gallery-item" to={"gallery/" + id}>
 				<motion.img src={galleryItem.images.thumbnail} alt="" variants={GalleryImageHover} />
 				<motion.div className="gallery-item-info" variants={GalleryInfoContainer}>

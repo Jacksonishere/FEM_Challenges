@@ -10,17 +10,14 @@ import GalleryModal from "./components/Gallery/GalleryModal";
 //Custom hook
 import ScrollToTop from "./customHooks/ScrollToTop";
 //Redux
-import { untoggleModal } from "./redux/modal/modalSlice";
-import { useDispatch } from "react-redux";
 
 function App() {
 	const location = useLocation();
-	const dispatch = useDispatch();
 	return (
 		<>
 			<Header />
 			<GalleryModal />
-			<AnimatePresence exitBeforeEnter onExitComplete={() => dispatch(untoggleModal())}>
+			<AnimatePresence exitBeforeEnter>
 				<Switch location={location} key={location.key}>
 					<Route exact path="/">
 						<Gallery />
