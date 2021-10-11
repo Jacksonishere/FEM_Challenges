@@ -25,6 +25,10 @@ a {
 		padding: 2rem 0 0.5rem;
 	}
 
+	@include breakpoint-up(large) {
+		padding: 0;
+		flex-direction: row;
+	}
 	&-logo {
 		font-size: toRem(28);
 		font-family: $ff-secondary;
@@ -96,17 +100,25 @@ a {
 		margin-top: 1.5rem;
 		width: 100%;
 
+		@include breakpoint-up(large) {
+			margin-top: 0;
+			width: min(70%, 665px);
+			li{
+				padding: .5rem 0;
+			}
+		}
 		li {
 			position: relative;
 
 			.bar {
 				position: absolute;
-				top: 0;
+				bottom: 0;
+				@include breakpoint-up(large) {
+					top: 0;
+				}
 				left: 0;
 				right: 0;
 				height: 0.25rem;
-				transform: scale(0);
-				transform-origin: center;
 
 				&.mercury {
 					background-color: $mercury;
@@ -135,16 +147,25 @@ a {
 			}
 
 			.nav-menu-item {
-				font-size: clamp(0.6875rem, 1.4vw, 0.9375rem);
-				opacity: 0.7;
+				font-size: 11px;
 			}
 
 			&.selected {
-				.bar {
-					transform: scale(1);
-				}
+				transform: scale(1.15);
 				.nav-menu-item {
-					opacity: 1;
+					.planet {
+						opacity: 1 !important;
+					}
+				}
+				@include breakpoint-btwn(medium, large) {
+					.bar {
+						transform: scale(1) translateY(-.5rem) !important;
+					}
+				}
+				@include breakpoint-up(large) {
+					.bar {
+						transform: scale(0) !important;
+					}
 				}
 			}
 		}

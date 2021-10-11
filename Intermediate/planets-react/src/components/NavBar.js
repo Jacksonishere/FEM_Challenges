@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //react responsive
 import { useMediaQuery } from "react-responsive";
 //react router
 import { Link } from "react-router-dom";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 //framer motion
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -89,28 +89,60 @@ const NavMobileItem = ({ planetName }) => {
 };
 
 const NavMenu = () => {
-	const { planet: param } = useParams();
-	console.log(param, "param", planet);
+	const { pathname } = useLocation();
+	const planet = pathname.split("/")[1].toLowerCase();
+	const [currPlanet, setCurrPlanet] = useState(planet);
+
+	useEffect(() => {
+		console.log(pathname, pathname.split("/"));
+		if (pathname === "/") {
+			setCurrPlanet("mercury");
+		} else {
+			setCurrPlanet(planet);
+		}
+	}, [pathname]);
 
 	return (
 		<ul className="nav-menu">
 			{planets.map((planet, index) => (
-				<NavItem key={index} planetName={planet.name} selectedPlanet={param ? param : "mercury"} />
+				<NavItem key={index} planetName={planet.name} currPlanet={currPlanet} />
 			))}
 		</ul>
 	);
 };
 
-const NavItem = ({ planetName, selectedPlanet }) => {
+const navItemBarVar = {
+	initial: {
+		scale: 0,
+	},
+	hover: {
+		scale: 1,
+	},
+};
+const navItemLinkVar = {
+	initial: {
+		opacity: 0.7,
+	},
+	hover: {
+		opacity: 1,
+	},
+};
+
+const NavItem = ({ planetName, currPlanet }) => {
 	const planet = planetName.toLowerCase();
-	// console.log(planet, "planet", selectedPlanet);
+	const samePlanet = planet === currPlanet;
+	useEffect(() => {
+		console.log(samePlanet, planet, currPlanet);
+	});
 	return (
-		<li className={`${planet === selectedPlanet ? "selected" : ""}`}>
-			<div className={`bar ${planet}`}></div>
-			<Link to={`/${planet}`} className="nav-menu-item">
-				<p className="planet">{planetName}</p>
+		<motion.li initial="initial" whileHover="hover" className={`${samePlanet ? "selected" : ""}`}>
+			<motion.div variants={navItemBarVar} className={`bar ${planet}`}></motion.div>
+			<Link to={samePlanet ? "#" : `/${planet}`} className="nav-menu-item">
+				<motion.p variants={navItemLinkVar} className="planet">
+					{planetName}
+				</motion.p>
 			</Link>
-		</li>
+		</motion.li>
 	);
 };
 
