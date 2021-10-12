@@ -42,22 +42,13 @@ const Categories = ({ subject, setSubject }) => {
 };
 
 const h1Var = {
-	animate: {
-		// rotateZ: [180, 0],
-		transition: {
-			staggerChildren: 0.05,
-			// duration: .7
-		},
+	initial: {
+		y: 20,
+		opacity: 0,
 	},
-};
-const spanVar = {
 	animate: {
-		rotateZ: [180, 0],
-		x: ["0.55em", "0em"],
-		y: ["1.1em", "0em"],
-		transition: {
-			duration: 0.1,
-		},
+		y: 0,
+		opacity: 1,
 	},
 };
 const PlanetInfo = ({ subject }) => {
@@ -90,10 +81,8 @@ const PlanetInfo = ({ subject }) => {
 				<figure className={currPlanet}>{planetImages()}</figure>
 			</div>
 			<section className="planet-info ">
-				<motion.h1>
-					{planet.name.split("").map((char, index) => (
-						<motion.span key={index}>{char}</motion.span>
-					))}
+				<motion.h1 key={currPlanet} variants={h1Var} initial="initial" animate="animate">
+					{planet.name}
 				</motion.h1>
 				<p className="desc">{planetInfo.content}</p>
 				<p className="source">
