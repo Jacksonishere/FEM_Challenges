@@ -5,6 +5,8 @@ import { useLocation } from "react-router";
 import Background from "./components/Background";
 import Header from "./components/Header";
 
+import PlanetPage from "./components/PlanetPage";
+
 function App() {
 	const location = useLocation();
 	return (
@@ -13,7 +15,7 @@ function App() {
 			<Header />
 			<Switch location={location} key={location.key}>
 				<Route path="/:planet">
-					<div>hi</div>
+					<PlanetPage />
 				</Route>
 			</Switch>
 		</>
