@@ -1,0 +1,332 @@
+@use "../../base/" as *;
+
+.planet {
+	width: min(88%, 1110px);
+	padding-bottom: 45px;
+	text-align: center;
+
+	@include breakpoint-up(medium) {
+		@include grid();
+		grid-template-areas:
+			"hero hero"
+			"info subject"
+			"moreinfo moreinfo";
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, max-content);
+		text-align: left;
+	}
+
+	@include breakpoint-up(large) {
+		grid-template-columns: 58% 1fr 32%;
+		grid-template-areas:
+			"hero . info"
+			"hero . subject"
+			"moreinfo moreinfo moreinfo";
+		gap: 2.5rem 0;
+	}
+
+	&-subject {
+		@include flex(row, c, sb);
+		button {
+			position: relative;
+			padding: 1.5rem 0 1.375rem;
+			color: rgba(255, 255, 255, 0.6);
+			font-size: clamp(9px, 1.125vw, 12px);
+			letter-spacing: 2px;
+			text-transform: uppercase;
+
+			&::after {
+				position: absolute;
+				content: "";
+				@include breakpoint-down(medium) {
+					left: -4px;
+					right: -2px;
+					bottom: 0;
+					height: 3px;
+				}
+				@include breakpoint-up(medium) {
+					z-index: -1;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			&.selected {
+				color: rgba(255, 255, 255, 1);
+			}
+			&.selected.Mercury::after {
+				background-color: $mercury;
+			}
+			&.selected.Venus::after {
+				background-color: $venus;
+			}
+			&.selected.Earth::after {
+				background-color: $earth;
+			}
+			&.selected.Mars::after {
+				background-color: $mars;
+			}
+			&.selected.Jupiter::after {
+				background-color: $juipter;
+			}
+			&.selected.Saturn::after {
+				background-color: $saturn;
+			}
+			&.selected.Uranus::after {
+				background-color: $uranus;
+			}
+			&.selected.Neptune::after {
+				background-color: $neptune;
+			}
+		}
+		@include breakpoint-up(medium) {
+			grid-area: subject;
+			justify-self: flex-end;
+			@include flex(column, c, c);
+			width: min(100%, 300px);
+
+			button {
+				@include flex(row, c, fs);
+				width: 100%;
+				padding: 15px 1.75rem 13px;
+				color: white;
+				border: solid 1px rgba(255, 255, 255, 0.2);
+
+				&:not(:first-child) {
+					margin-top: 1rem;
+				}
+				&::before {
+					margin-right: 1rem;
+					color: rgba(255, 255, 255, 0.7);
+				}
+				&.selected {
+					border: solid 1px transparent;
+				}
+
+				&::after {
+					transition: background-color 0.3s ease;
+				}
+				&:hover:not(.selected)::after {
+					background-color: rgba(255, 255, 255, 0.2);
+				}
+				&.overview::before {
+					content: "01";
+				}
+				&.structure::before {
+					content: "02";
+				}
+				&.surface::before {
+					content: "03";
+				}
+			}
+		}
+		@include breakpoint-up(large) {
+			width: 100%;
+			align-self: flex-start;
+			justify-self: flex-start;
+		}
+	}
+
+	.figure-container {
+		@include grid();
+		place-items: center;
+		height: 300px;
+
+		img {
+			max-width: none;
+		}
+		figure {
+			@include grid();
+			place-items: center;
+			position: relative;
+			&.Mercury img {
+				width: toRem(111);
+				@include breakpoint-up(medium) {
+					width: toRem(184);
+				}
+				@include breakpoint-up(large) {
+					width: toRem(290);
+				}
+			}
+			&.Venus img {
+				width: toRem(154);
+				@include breakpoint-up(medium) {
+					width: toRem(253);
+				}
+				@include breakpoint-up(large) {
+					width: toRem(400);
+				}
+			}
+			&.Earth img {
+				width: toRem(145);
+				@include breakpoint-up(medium) {
+					width: toRem(285);
+				}
+				@include breakpoint-up(large) {
+					width: toRem(450);
+				}
+			}
+			&.Mars img {
+				width: toRem(129);
+				@include breakpoint-up(medium) {
+					width: toRem(213);
+				}
+				@include breakpoint-up(large) {
+					width: toRem(336);
+				}
+			}
+			&.Jupiter img {
+				width: toRem(229);
+				@include breakpoint-up(medium) {
+					width: toRem(369);
+				}
+				@include breakpoint-up(large) {
+					width: toRem(582);
+				}
+			}
+			&.Saturn img {
+				width: toRem(256);
+				@include breakpoint-up(medium) {
+					width: toRem(400);
+				}
+				@include breakpoint-up(large) {
+					width: toRem(666);
+				}
+			}
+			&.Uranus img {
+				width: toRem(176);
+				@include breakpoint-up(medium) {
+					width: toRem(290);
+				}
+				@include breakpoint-up(large) {
+					width: toRem(458);
+				}
+			}
+			&.Neptune img {
+				width: toRem(173);
+				@include breakpoint-up(medium) {
+					width: toRem(285);
+				}
+				@include breakpoint-up(large) {
+					width: toRem(450);
+				}
+			}
+			.surface {
+				position: absolute;
+				top: 85%;
+				width: 75px !important;
+
+				&.Saturn {
+					top: 68%;
+				}
+
+				@include breakpoint-up(medium) {
+					width: 85px !important;
+				}
+				@include breakpoint-up(large) {
+					width: 129px !important;
+				}
+			}
+		}
+		@include breakpoint-up(medium) {
+			grid-area: hero;
+			height: 450px;
+		}
+		@include breakpoint-up(large) {
+			height: 750px;
+		}
+	}
+
+	&-info {
+		h1 {
+			overflow: hidden;
+			text-transform: uppercase;
+			transform-origin: bottom left;
+			span {
+				display: inline-block;
+				transform-origin: bottom left;
+			}
+		}
+
+		.desc {
+			margin-top: 1rem;
+			font-size: clamp(11px, 1.43vw, 14px);
+			line-height: 2.1;
+		}
+		.source {
+			@include flex(row, c, c);
+			margin-top: 38px;
+			color: rgb(131, 131, 145);
+			font-size: clamp(12px, 1.5vw, 14px);
+
+			a {
+				margin-left: 0.5rem;
+				color: inherit;
+				font-weight: bold;
+			}
+			span {
+				transform: translateY(-1px);
+				margin-left: 4px;
+			}
+		}
+		@include breakpoint-up(medium) {
+			grid-area: info;
+
+			.desc {
+				margin-top: 1.75rem;
+			}
+			.source {
+				justify-content: flex-start;
+			}
+		}
+		@include breakpoint-up(large) {
+			align-self: flex-end;
+		}
+	}
+
+	&-moreInfo {
+		@include grid();
+		gap: 0.5rem;
+
+		margin-top: 2.25rem;
+
+		.card {
+			border: solid 1px rgba(255, 255, 255, 0.2);
+			@include flex(row, c, sb);
+			padding: 0.75rem 1.25rem;
+
+			p,
+			h2 {
+				width: max-content;
+				text-transform: uppercase;
+			}
+			p {
+				font-size: clamp(8px, 1vw, 11px);
+				font-weight: bold;
+				letter-spacing: 1px;
+				color: rgba(255, 255, 255, 0.6);
+			}
+			h2 {
+				color: white;
+				transform: translateY(-3px);
+			}
+		}
+		@include breakpoint-up(medium) {
+			grid-area: moreinfo;
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-rows: max-content;
+
+			.card {
+				@include flex(column, fs, fs);
+				padding: 1.125rem 1.25rem;
+				h2 {
+					margin-top: 0.75rem;
+				}
+			}
+		}
+		@include breakpoint-up(large) {
+			margin-top: 0;
+		}
+	}
+}

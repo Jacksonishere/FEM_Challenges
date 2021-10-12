@@ -18,7 +18,7 @@ const Background = () => {
 	return (
 		<div className="background">
 			<Stars />
-			{/* <Comets /> */}
+			<Comets />
 		</div>
 	);
 };
@@ -68,11 +68,7 @@ const Stars = () => {
 
 const cometSkyVar = {
 	initial: {},
-	animate: {
-		transition: {
-			staggerChildren: 0.7,
-		},
-	},
+	animate: {},
 };
 
 const cometVar = {
@@ -87,6 +83,7 @@ const cometVar = {
 				type: "tween",
 				ease: "linear",
 				duration: 0.7,
+				delay: 1 * i,
 				repeatDelay: 1 * i,
 			},
 		};

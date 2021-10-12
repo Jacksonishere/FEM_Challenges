@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 //react responsive
 import { useMediaQuery } from "react-responsive";
-//react router
-import { Link } from "react-router-dom";
-import { useLocation, useParams } from "react-router";
+//redux
+import { useDispatch, useSelector } from "react-redux";
 //framer motion
 import { motion, AnimatePresence } from "framer-motion";
 
 //data
 import { planets } from "../data";
+
+import { setPlanet } from "../redux/planet/planetSlice";
 
 const NavBar = () => {
 	const isMobile = useMediaQuery({ maxWidth: 767 });
@@ -17,12 +18,20 @@ const NavBar = () => {
 	const [show, setShow] = useState(false);
 	const showMobileMenuHandler = () => setShow((currShow) => !currShow);
 
+	useEffect(() => {
+		if (show) {
+			document.body.style.overflow = "hidden";
+		} else {
+			document.body.style.overflow = "visible";
+		}
+	}, [show]);
+
 	return (
 		<nav className="container nav">
 			<p className="nav-logo">the planets</p>
 			{isMobile ? (
 				<>
-					<AnimatePresence>{show && <NavMobileMenu show={show} />}</AnimatePresence>
+					<AnimatePresence>{show && <NavMobileMenu setShow={setShow} />}</AnimatePresence>
 					<HamButton hamCLicked={showMobileMenuHandler} show={show} />
 				</>
 			) : (
@@ -64,43 +73,38 @@ const mobileMenuItemVar = {
 	},
 };
 
-const NavMobileMenu = ({ show }) => {
+const NavMobileMenu = ({ setShow }) => {
 	return (
 		<motion.ul variants={mobileMenuVar} initial="hidden" animate="visible" exit="exit" className="nav-mobile-menu">
 			{planets.map((planet, index) => (
-				<NavMobileItem key={index} planetName={planet.name} />
+				<NavMobileItem key={index} planetName={planet.name} clickHandler={() => setShow(false)} />
 			))}
 		</motion.ul>
 	);
 };
 
-const NavMobileItem = ({ planetName }) => {
+const NavMobileItem = ({ planetName, clickHandler }) => {
+	const dispatch = useDispatch();
 	return (
 		<motion.li variants={mobileMenuItemVar}>
-			<Link to={`planet/${planetName}`} className="nav-mobile-menu-item">
+			<button
+				className="nav-mobile-menu-item"
+				onClick={() => {
+					clickHandler();
+					dispatch(setPlanet(planetName));
+				}}>
 				<div className={`circle ${planetName.toLowerCase()}`}></div>
 				<svg className="chevron" xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 					<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 				</svg>{" "}
-				<p className="planet">{planetName}</p>
-			</Link>
+				<p className="planet-btn">{planetName}</p>
+			</button>
 		</motion.li>
 	);
 };
 
 const NavMenu = () => {
-	const { pathname } = useLocation();
-	const planet = pathname.split("/")[1].toLowerCase();
-	const [currPlanet, setCurrPlanet] = useState(planet);
-
-	useEffect(() => {
-		console.log(pathname, pathname.split("/"));
-		if (pathname === "/") {
-			setCurrPlanet("mercury");
-		} else {
-			setCurrPlanet(planet);
-		}
-	}, [pathname]);
+	const currPlanet = useSelector((state) => state.planet.planet);
 
 	return (
 		<ul className="nav-menu">
@@ -129,19 +133,18 @@ const navItemLinkVar = {
 };
 
 const NavItem = ({ planetName, currPlanet }) => {
+	const dispatch = useDispatch();
+
 	const planet = planetName.toLowerCase();
-	const samePlanet = planet === currPlanet;
-	useEffect(() => {
-		console.log(samePlanet, planet, currPlanet);
-	});
+	const samePlanet = planetName === currPlanet;
 	return (
 		<motion.li initial="initial" whileHover="hover" className={`${samePlanet ? "selected" : ""}`}>
 			<motion.div variants={navItemBarVar} className={`bar ${planet}`}></motion.div>
-			<Link to={samePlanet ? "#" : `/${planet}`} className="nav-menu-item">
-				<motion.p variants={navItemLinkVar} className="planet">
+			<button className="nav-menu-item" onClick={() => dispatch(setPlanet(planetName))}>
+				<motion.p variants={navItemLinkVar} className="planet-btn">
 					{planetName}
 				</motion.p>
-			</Link>
+			</button>
 		</motion.li>
 	);
 };

@@ -8,7 +8,7 @@ body {
 	font-weight: 400;
 
 	color: white;
-	background-color: transparent;
+	background-color: $background;
 
 	@include breakpoint-up(medium) {
 		overflow: visible !important;
@@ -22,6 +22,7 @@ h4,
 h5,
 h6 {
 	line-height: 1.15;
+	font-family: $ff-secondary;
 }
 
 h1 {
