@@ -1,0 +1,35 @@
+@use "../base/" as *;
+
+.carousel {
+	position: relative;
+    height: 550px;
+	
+    .hero {
+        position: absolute;
+		margin: 0;
+		max-width: none;
+		width: 100%;
+		max-height: 530px;
+		object-fit: cover;
+		object-position: bottom center;
+	}
+
+	&-btns {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		width: clamp(112px, 20vw, 160px);
+		height: clamp(56px, 10vw, 80px);
+
+		@include flex(row, c);
+		button {
+			width: 50%;
+            height: 100%;
+			@include flex(row, c, c);
+            background-color: black;
+            img{
+                width: 15%;
+            }
+		}
+	}
+}
