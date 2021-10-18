@@ -10,47 +10,37 @@ import right from "../images/icon-angle-right.svg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const heroVar = {
-	enter: (direction) => {
-		return {
-			x: direction > 0 ? 1000 : -1000,
-			opacity: 0,
-		};
+	enter: {
+		opacity: 0,
 	},
-	animate: {
-		x: 0,
+	center: {
 		opacity: 1,
 	},
-	exit: (direction) => {
-		return {
-			x: direction < 0 ? 1000 : -1000,
-			opacity: 0,
-		};
+	exit: {
+		position: "absolute",
+		opacity: 0,
 	},
 };
 
 const Carousel = () => {
 	const images = [hero1, hero2, hero3];
 
-	const [[currImage, direction], setCurrImage] = useState([0, 0]);
-	console.log(direction, "WTF", currImage);
-
+	const [currImage, setCurrImage] = useState(0);
 	return (
 		<section className="carousel">
-			<AnimatePresence initial={false} custom={direction}>
+			<AnimatePresence>
 				<motion.img
+					className="hero"
 					key={currImage}
 					src={images[currImage]}
-					alt=""
-					className="hero"
 					variants={heroVar}
 					initial="enter"
-					animate="animate"
-					transition={{
-						x: { type: "spring", stiffness: 300, damping: 30 },
-						opacity: { duration: 0.2 },
-					}}
+					animate="center"
 					exit="exit"
-					custom={direction}
+					transition={{
+						type: "tween",
+						duration: 0.2,
+					}}
 				/>
 			</AnimatePresence>
 			<div className="carousel-btns">
@@ -58,9 +48,9 @@ const Carousel = () => {
 					className="left"
 					onClick={() => {
 						if (currImage === 0) {
-							setCurrImage([images.length - 1, -1]);
+							setCurrImage(images.length - 1);
 						} else {
-							setCurrImage([(currImage - 1) % images.length, -1]);
+							setCurrImage(currImage - 1);
 						}
 					}}>
 					<img src={left} alt="" />
@@ -68,7 +58,7 @@ const Carousel = () => {
 				<button
 					className="right"
 					onClick={() => {
-						setCurrImage([(currImage + 1) % images.length, 1]);
+						setCurrImage((currImage + 1) % 3);
 					}}>
 					<img src={right} alt="" />
 				</button>
