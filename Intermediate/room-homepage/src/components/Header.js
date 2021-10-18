@@ -9,7 +9,7 @@ import closeHamMenu from "../images/icon-close.svg";
 import logo from "../images/logo.svg";
 
 const Header = () => {
-	const isMobile = useMediaQuery({ maxWidth: 768 });
+	const isMobile = useMediaQuery({ maxWidth: 767 });
 	return <header className="header">{isMobile ? <MobileNavBar /> : <NavBar />}</header>;
 };
 

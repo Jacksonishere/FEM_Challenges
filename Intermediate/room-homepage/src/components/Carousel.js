@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 
-import hero1 from "../images/mobile-image-hero-1.jpg";
-import hero2 from "../images/mobile-image-hero-2.jpg";
-import hero3 from "../images/mobile-image-hero-3.jpg";
+import mobilehero1 from "../images/mobile-image-hero-1.jpg";
+import mobilehero2 from "../images/mobile-image-hero-2.jpg";
+import mobilehero3 from "../images/mobile-image-hero-3.jpg";
+
+import hero1 from "../images/desktop-image-hero-1.jpg";
+import hero2 from "../images/desktop-image-hero-2.jpg";
+import hero3 from "../images/desktop-image-hero-3.jpg";
 
 import left from "../images/icon-angle-left.svg";
 import right from "../images/icon-angle-right.svg";
 
 import { motion, AnimatePresence } from "framer-motion";
+
+import { useMediaQuery } from "react-responsive";
 
 const heroVar = {
 	enter: {
@@ -23,7 +29,13 @@ const heroVar = {
 };
 
 const Carousel = () => {
-	const images = [hero1, hero2, hero3];
+	const isNotMobile = useMediaQuery({ minWidth: 768 });
+	let images = [];
+	if (!isNotMobile) {
+		images = [mobilehero1, mobilehero2, mobilehero3];
+	} else {
+		images = [hero1, hero2, hero3];
+	}
 
 	const [currImage, setCurrImage] = useState(0);
 	return (
