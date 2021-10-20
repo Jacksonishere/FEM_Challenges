@@ -2,8 +2,9 @@
 
 .carousel {
 	position: relative;
-	
-    .hero {
+	height: min(96vw, 530px);
+
+	.hero {
 		margin: 0;
 		max-width: none;
 		width: 100%;
@@ -22,12 +23,25 @@
 		@include flex(row, c);
 		button {
 			width: 50%;
-            height: 100%;
+			height: 100%;
 			@include flex(row, c, c);
-            background-color: black;
-            img{
-                width: 15%;
-            }
+			background-color: black;
+			img {
+				width: 15%;
+			}
+		}
+	}
+	@include breakpoint-up(medium) {
+		height: min(63.57vw, 530px);
+	}
+	@include breakpoint-up(large) {
+		grid-area: 1 / 1 / 2 / 2;
+		height: min(37.06vw, 530px);
+		&-btns {
+			left: 100%;
+			right: auto;
+			width: clamp(112px, 9.73vw, 160px);
+			height: clamp(56px, 4.87vw, 80px);
 		}
 	}
 }

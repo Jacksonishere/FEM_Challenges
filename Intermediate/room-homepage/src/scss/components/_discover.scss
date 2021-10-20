@@ -1,0 +1,27 @@
+@use "../base/" as *;
+
+.discover {
+	padding: 4.25rem 0;
+	max-width: 400px;
+
+	p {
+		margin-top: 1rem;
+	}
+	a {
+		@include flex(row, c, fs);
+		margin-top: 3.5rem;
+		color: black;
+		letter-spacing: 0.75rem;
+		text-transform: uppercase;
+		i {
+			display: block;
+			margin: -4px 0 0 2rem;
+		}
+	}
+	@include breakpoint-up(large) {
+		grid-area: 1 / 2 / 2 / -1;
+		padding: 0;
+		align-self: center;
+		justify-self: center;
+	}
+}

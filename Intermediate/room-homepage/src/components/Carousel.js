@@ -40,7 +40,7 @@ const Carousel = () => {
 	const [currImage, setCurrImage] = useState(0);
 	return (
 		<section className="carousel">
-			<AnimatePresence>
+			<AnimatePresence initial>
 				<motion.img
 					className="hero"
 					key={currImage}
@@ -51,7 +51,8 @@ const Carousel = () => {
 					exit="exit"
 					transition={{
 						type: "tween",
-						duration: 0.2,
+						duration: 0.35,
+						ease: "easeInOut",
 					}}
 				/>
 			</AnimatePresence>

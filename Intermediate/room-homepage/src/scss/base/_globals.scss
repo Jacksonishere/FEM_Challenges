@@ -10,7 +10,6 @@ body {
 	@include breakpoint-up(medium) {
 		overflow: visible !important;
 	}
-	background-color: black;
 }
 
 h1,
@@ -19,10 +18,11 @@ h3,
 h4,
 h5,
 h6 {
-	line-height: 1.15;
+	line-height: 1.2;
 }
 
 h1 {
+	font-weight: 600;
 	font-size: var(--fs-h1);
 }
 h2 {
@@ -32,3 +32,16 @@ h3 {
 	font-size: var(--fs-h3);
 }
 
+p {
+	color: #a0a0a0;
+	font-size: .75rem;
+	line-height: 1.8;
+}
+
+.main{
+	@include breakpoint-up(large){
+		@include grid();
+		grid-template-rows: repeat(2, auto);
+		grid-template-columns: 58.3% 41.7%;
+	}
+}

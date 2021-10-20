@@ -13,6 +13,21 @@ const Header = () => {
 	return <header className="header">{isMobile ? <MobileNavBar /> : <NavBar />}</header>;
 };
 
+const overlayVar = {
+	hidden: {
+		opacity: 0,
+	},
+	visible: {
+		opacity: 1,
+		transition: {
+			type: "tween",
+			duration: 0.2,
+		},
+	},
+	exit: {
+		opacity: 0,
+	},
+};
 const navMenuVar = {
 	hidden: {
 		opacity: 0,
@@ -31,10 +46,6 @@ const navMenuVar = {
 	exit: {
 		opacity: 0,
 		left: "100%",
-		transition: {
-			type: "tween",
-			duration: 0.15,
-		},
 	},
 };
 const MobileNavBar = () => {
@@ -42,40 +53,53 @@ const MobileNavBar = () => {
 	console.log("rendering mobile navbar", showMenu);
 
 	return (
-		<nav className="container mobile-nav-bar">
-			<button className="ham" onClick={() => setShowMenu(true)}>
-				<img src={hamMenu} alt="" />
-			</button>
-			<img src={logo} alt="" className="logo" />
+		<>
 			<AnimatePresence>
 				{showMenu && (
 					<motion.div
-						variants={navMenuVar}
+						className="overlay"
+						variants={overlayVar}
 						initial="hidden"
 						animate="visible"
-						exit="exit"
-						className="mobile-nav-bar-menu">
-						<button className="close" onClick={() => setShowMenu(false)}>
-							<img src={closeHamMenu} alt="" />
-						</button>
-						<ul className="mobile-nav-bar-menu-links">
-							<li>
-								<a href="/">home</a>
-							</li>
-							<li>
-								<a href="/">shop</a>
-							</li>
-							<li>
-								<a href="/">about</a>
-							</li>
-							<li>
-								<a href="/">contact</a>
-							</li>
-						</ul>
-					</motion.div>
+						exit="exit"></motion.div>
 				)}
 			</AnimatePresence>
-		</nav>
+
+			<nav className="container mobile-nav-bar">
+				<button className="ham" onClick={() => setShowMenu(true)}>
+					<img src={hamMenu} alt="" />
+				</button>
+				<img src={logo} alt="" className="logo" />
+				<AnimatePresence>
+					{showMenu && (
+						<motion.div
+							variants={navMenuVar}
+							initial="hidden"
+							animate="visible"
+							exit="exit"
+							className="mobile-nav-bar-menu">
+							<button className="close" onClick={() => setShowMenu(false)}>
+								<img src={closeHamMenu} alt="" />
+							</button>
+							<ul className="mobile-nav-bar-menu-links">
+								<li>
+									<a href="/">home</a>
+								</li>
+								<li>
+									<a href="/">shop</a>
+								</li>
+								<li>
+									<a href="/">about</a>
+								</li>
+								<li>
+									<a href="/">contact</a>
+								</li>
+							</ul>
+						</motion.div>
+					)}
+				</AnimatePresence>
+			</nav>
+		</>
 	);
 };
 

@@ -3,9 +3,9 @@
 .header {
 	position: absolute;
 	z-index: 1000;
-    top: 0;
-    left: 0;
-    width: 100%;
+	top: 0;
+	left: 0;
+	width: 100%;
 	padding: 45px 0;
 	background-color: transparent;
 	overflow: hidden;
@@ -16,6 +16,15 @@
 	display: block;
 }
 
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: all;
+	background-color: rgba(127, 127, 127, 0.5);
+}
 .mobile-nav-bar {
 	@include flex(row, c);
 
