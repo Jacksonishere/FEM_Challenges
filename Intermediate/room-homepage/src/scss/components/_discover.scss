@@ -8,6 +8,7 @@
 		margin-top: 1rem;
 	}
 	a {
+		width: max-content;
 		@include flex(row, c, fs);
 		margin-top: 3.5rem;
 		color: black;

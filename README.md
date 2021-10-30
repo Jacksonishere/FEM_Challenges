@@ -40,6 +40,10 @@ You can click the image to view the live site! 💻😁
 [<img src="./Junior/crowdfunding-page-react/design/desktop-preview.jpg" alt="preview" width="200"/>](https://friendly-villani-81a354.netlify.app/)
 
 
+#### ⭐️⭐️⭐️ INTERMEDIATE
+[<img src="./Intermediate/room-homepage/src/desktop-preview.jpg" alt="preview" width="200"/>](https://trusting-bose-ee2eb2.netlify.app/)
+[<img src="./Intermediate/galleria-react-redux/src/assets/desktop-preview.jpg" alt="preview" width="200"/>](https://wizardly-franklin-ca9253.netlify.app/)
+[<img src="./Intermediate/planets-react/src/assets/desktop-preview.jpg" alt="preview" width="200"/>](https://clever-colden-b88c81.netlify.app/)
 
 
 
