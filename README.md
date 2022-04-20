@@ -7,17 +7,10 @@ Frontend Mentor challenges help you improve your frontend coding skills by build
 
 You can click the image to view the live site! 💻😁 
 
-#### ⭐️ NEWBIE
-
-[<img src="./coming-soon-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://vigorous-sammet-32ae20.netlify.app)
-[<img src="./four-card-feature/design/desktop-preview.jpg" alt="preview" width="200"/>](https://keen-hopper-546d33.netlify.app/)
-[<img src="./signup-form/design/desktop-preview.jpg" alt="preview" width="200"/>](https://nifty-swirles-883837.netlify.app/)
-[<img src="./grid-price-component/design/desktop-preview.jpg" alt="preview" width="200"/>](https://sleepy-kirch-e67a81.netlify.app/)
-[<img src="./ping-coming-soon-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://modest-mclean-0ba8cf.netlify.app/)
-[<img src="./huddle-landing-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://sad-carson-cad135.netlify.app/)
-[<img src="./meet-landing-page/assets/preview.jpg" alt="preview" width="200"/>](https://pensive-volhard-d9ff60.netlify.app/)
-[<img src="./faq-accordion/design/desktop-preview.jpg" alt="preview" width="200"/>](https://zen-kowalevski-eefc95.netlify.app/)
-[<img src="./pod-landing-page/assets/preview.jpg" alt="preview" width="200"/>](https://gallant-ritchie-25fab9.netlify.app/)
+#### ⭐️⭐️⭐️ INTERMEDIATE
+[<img src="./Intermediate/room-homepage/src/desktop-preview.jpg" alt="preview" width="200"/>](https://trusting-bose-ee2eb2.netlify.app/)
+[<img src="./Intermediate/planets-react/src/assets/preview.jpg" alt="preview" width="200"/>](https://clever-colden-b88c81.netlify.app/)
+[<img src="./Intermediate/galleria-react-redux/src/assets/preview.jpg" alt="preview" width="200"/>](https://wizardly-franklin-ca9253.netlify.app/)
 
 #### ⭐️⭐️ JUNIOR
 
@@ -39,20 +32,14 @@ You can click the image to view the live site! 💻😁
 [<img src="./Junior/github-search-react/preview.jpg" alt="preview" width="200"/>](https://kind-almeida-0b965a.netlify.app/)
 [<img src="./Junior/crowdfunding-page-react/design/desktop-preview.jpg" alt="preview" width="200"/>](https://friendly-villani-81a354.netlify.app/)
 
+#### ⭐️ NEWBIE
 
-#### ⭐️⭐️⭐️ INTERMEDIATE
-[<img src="./Intermediate/room-homepage/src/desktop-preview.jpg" alt="preview" width="200"/>](https://trusting-bose-ee2eb2.netlify.app/)
-[<img src="./Intermediate/planets-react/src/assets/preview.jpg" alt="preview" width="200"/>](https://clever-colden-b88c81.netlify.app/)
-[<img src="./Intermediate/galleria-react-redux/src/assets/preview.jpg" alt="preview" width="200"/>](https://wizardly-franklin-ca9253.netlify.app/)
-
-
-
-
-
-
-
-
-
-
-
-
+[<img src="./coming-soon-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://vigorous-sammet-32ae20.netlify.app)
+[<img src="./four-card-feature/design/desktop-preview.jpg" alt="preview" width="200"/>](https://keen-hopper-546d33.netlify.app/)
+[<img src="./signup-form/design/desktop-preview.jpg" alt="preview" width="200"/>](https://nifty-swirles-883837.netlify.app/)
+[<img src="./grid-price-component/design/desktop-preview.jpg" alt="preview" width="200"/>](https://sleepy-kirch-e67a81.netlify.app/)
+[<img src="./ping-coming-soon-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://modest-mclean-0ba8cf.netlify.app/)
+[<img src="./huddle-landing-page/design/desktop-preview.jpg" alt="preview" width="200"/>](https://sad-carson-cad135.netlify.app/)
+[<img src="./meet-landing-page/assets/preview.jpg" alt="preview" width="200"/>](https://pensive-volhard-d9ff60.netlify.app/)
+[<img src="./faq-accordion/design/desktop-preview.jpg" alt="preview" width="200"/>](https://zen-kowalevski-eefc95.netlify.app/)
+[<img src="./pod-landing-page/assets/preview.jpg" alt="preview" width="200"/>](https://gallant-ritchie-25fab9.netlify.app/)
